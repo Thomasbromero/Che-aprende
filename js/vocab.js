@@ -90,6 +90,8 @@ const Vocab = (function () {
   }
 
   function grade(g) {
+    Streak.recordActivity();
+    updateHeaderStreak();
     Store.setSrs(current.id, SRS.schedule(Store.srs(current.id), g));
     if (g === 0) queue.push(current); // "otra vez": reaparece al final de la sesión
     next();

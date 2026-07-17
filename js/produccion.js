@@ -57,6 +57,8 @@ const Produccion = (function () {
         {
           class: "btn primary",
           onClick: () => {
+            Streak.recordActivity();
+            updateHeaderStreak();
             const accepts = (it.accept || [it.answer]).map(norm);
             const ok = accepts.includes(norm(input.value));
             if (ok) correct++;

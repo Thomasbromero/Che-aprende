@@ -87,6 +87,8 @@ const Grammar = (function () {
             {
               class: "btn option",
               onClick: () => {
+                Streak.recordActivity();
+                updateHeaderStreak();
                 const ok = opt === ex.answer;
                 if (ok) correct++;
                 Array.from(opts.children).forEach((c) => {
@@ -117,6 +119,8 @@ const Grammar = (function () {
           {
             class: "btn primary",
             onClick: () => {
+              Streak.recordActivity();
+              updateHeaderStreak();
               const accepts = (ex.accept || [ex.answer]).map(norm);
               const ok = accepts.includes(norm(input.value));
               if (ok) correct++;

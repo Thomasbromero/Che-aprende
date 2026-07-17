@@ -8,15 +8,15 @@ function init() {
   setupLang();
   applyStaticI18n();
   renderHeader();
+  updateHeaderStreak();
   setupNav();
   showView("home");
 }
 
 function renderHeader() {
-  const s = Store.settings();
   const title = document.getElementById("app-title");
-  if (title) title.textContent = "🧉 " + (s.appName || "Che, aprendé");
-  document.title = s.appName || "Che, aprendé";
+  if (title) title.textContent = "🧉 Che, aprendé";
+  document.title = "Che, aprendé";
 }
 
 function setupTheme() {
@@ -70,8 +70,17 @@ function updateLangButton() {
   const btn = document.getElementById("lang-toggle");
   if (!btn) return;
   const l = I18n.lang();
-  btn.textContent = l === "hu" ? "🌐 HU" : "🌐 ES";
+  btn.textContent = l === "hu" ? "🇭🇺" : "🇦🇷";
   btn.setAttribute("aria-label", l === "hu" ? "Váltás spanyolra" : "Cambiar a húngaro");
+}
+
+function updateHeaderStreak() {
+  const el = document.getElementById("header-streak");
+  if (!el) return;
+  const st = Streak.status();
+  clear(el);
+  el.appendChild(h("span", { class: "streak-flame " + (st.doneToday ? "active" : "inactive") }, "🔥"));
+  el.appendChild(h("span", { class: "streak-count" }, String(st.count)));
 }
 
 function applyStaticI18n() {
@@ -97,6 +106,7 @@ function showView(name) {
   else if (name === "vocabulario") Vocab.render(host);
   else if (name === "produccion") Produccion.render(host);
   else if (name === "ajustes") renderAjustes(host);
+  updateHeaderStreak();
   window.scrollTo(0, 0);
 }
 
@@ -107,6 +117,14 @@ function renderHome(host) {
 
   host.appendChild(h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")));
   host.appendChild(h("p", { class: "muted" }, I18n.t("home_subtitle")));
+
+  const streak = Streak.status();
+  host.appendChild(
+    h("div", { class: "streak-row" }, [
+      h("span", { class: "streak-flame " + (streak.doneToday ? "active" : "inactive") }, "🔥"),
+      h("span", { class: "streak-text" }, I18n.t("home_streak", streak.count)),
+    ])
+  );
 
   if (!s.name) {
     const input = h("input", { class: "text-input", type: "text", placeholder: I18n.t("home_name_placeholder") });
@@ -152,17 +170,13 @@ function renderAjustes(host) {
   const nameInput = h("input", { class: "text-input", type: "text", value: s.name || "", placeholder: I18n.t("settings_name_placeholder") });
   host.appendChild(field(I18n.t("settings_name_label"), nameInput));
 
-  const appInput = h("input", { class: "text-input", type: "text", value: s.appName || "", placeholder: I18n.t("settings_appname_placeholder") });
-  host.appendChild(field(I18n.t("settings_appname_label"), appInput));
-
   host.appendChild(
     h(
       "button",
       {
         class: "btn primary wide",
         onClick: () => {
-          Store.updateSettings({ name: nameInput.value.trim(), appName: appInput.value.trim() || "Che, aprendé" });
-          renderHeader();
+          Store.updateSettings({ name: nameInput.value.trim() });
           toast(I18n.t("settings_saved_toast"));
         },
       },
