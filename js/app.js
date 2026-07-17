@@ -147,7 +147,7 @@ function renderHome(host) {
 
   host.appendChild(
     h("div", { class: "home-grid" }, [
-      homeCard("🗂️", I18n.t("home_vocab_title"), v.due > 0 ? I18n.t("home_vocab_due", v.due) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
+      homeCard("🗂️", I18n.t("home_vocab_title"), v.pending > 0 ? I18n.t("home_vocab_pending", v.pending) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
       homeCard("📐", I18n.t("home_grammar_title"), I18n.t("home_grammar_topics", GRAMMAR.length), () => showView("gramatica")),
       homeCard("✍️", I18n.t("home_production_title"), I18n.t("home_production_prompts", PRODUCCION.length), () => showView("produccion")),
     ])

@@ -15,7 +15,7 @@ const I18N = {
     home_name_placeholder: "¿Cómo te llamás?",
     home_save: "Guardar",
     home_vocab_title: "Vocabulario",
-    home_vocab_due: (n) => `${n} para repasar`,
+    home_vocab_pending: (n) => `${n} por completar`,
     home_vocab_uptodate: "Al día",
     home_grammar_title: "Gramática",
     home_grammar_topics: (n) => `${n} temas`,
@@ -33,10 +33,16 @@ const I18N = {
     settings_reset_confirm: "¿Seguro que querés borrar todo el progreso?",
 
     vocab_remaining: (n) => `Quedan ${n}`,
-    vocab_uptodate_title: "¡Al día!",
-    vocab_uptodate_desc: "No tenés tarjetas para repasar ahora. Volvé más tarde.",
-    vocab_empty_desc: "No hay tarjetas cargadas todavía.",
-    vocab_practice_all: "Practicar todas igual",
+    vocab_filter_all: "Todas",
+    vocab_filter_done: "Completas",
+    vocab_filter_pending: "Por completar",
+    vocab_empty_title: (f) => (f === "pending" ? "¡Completaste todas!" : f === "done" ? "Todavía nada" : "Sin tarjetas"),
+    vocab_empty_desc: (f) =>
+      f === "pending"
+        ? 'Repasá las que ya hiciste en "Completas", o mirá "Todas".'
+        : f === "done"
+        ? 'Todavía no completaste ninguna. Probá con "Por completar".'
+        : "No hay tarjetas cargadas todavía.",
     vocab_show: "Mostrar",
     vocab_again: "Otra vez",
     vocab_hard: "Difícil",
@@ -85,7 +91,7 @@ const I18N = {
     home_name_placeholder: "Mi a neved?",
     home_save: "Mentés",
     home_vocab_title: "Szókincs",
-    home_vocab_due: (n) => `${n} ismétlésre vár`,
+    home_vocab_pending: (n) => `${n} befejezetlen`,
     home_vocab_uptodate: "Naprakész",
     home_grammar_title: "Nyelvtan",
     home_grammar_topics: (n) => `${n} téma`,
@@ -103,10 +109,16 @@ const I18N = {
     settings_reset_confirm: "Biztosan törlöd az összes haladást?",
 
     vocab_remaining: (n) => `Hátra van: ${n}`,
-    vocab_uptodate_title: "Naprakész!",
-    vocab_uptodate_desc: "Nincs most ismétlendő kártyád. Nézz vissza később.",
-    vocab_empty_desc: "Még nincsenek feltöltött kártyák.",
-    vocab_practice_all: "Gyakoroljuk mindet mégis",
+    vocab_filter_all: "Mind",
+    vocab_filter_done: "Kész",
+    vocab_filter_pending: "Befejezetlen",
+    vocab_empty_title: (f) => (f === "pending" ? "Mindet befejezted!" : f === "done" ? "Még semmi" : "Nincs kártya"),
+    vocab_empty_desc: (f) =>
+      f === "pending"
+        ? 'Ismételd a "Kész" szavakat, vagy nézd meg a "Mind" fület.'
+        : f === "done"
+        ? 'Még egy szót sem fejeztél be. Próbáld ki a "Befejezetlen" fület.'
+        : "Még nincsenek feltöltött kártyák.",
     vocab_show: "Mutasd",
     vocab_again: "Újra",
     vocab_hard: "Nehéz",

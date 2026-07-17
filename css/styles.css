@@ -193,6 +193,23 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 
 .progress-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
 
+/* ---- Filtros (vocabulario) ---- */
+.filter-tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+.filter-tab {
+  flex: 1;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 9px 4px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.filter-tab.active { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+
 /* ---- Flashcard ---- */
 .flashcard { text-align: center; }
 .flashcard .term { font-size: 1.7rem; font-weight: 700; }

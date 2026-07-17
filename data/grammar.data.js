@@ -122,5 +122,82 @@ window.GRAMMAR = [
       { type: "choice", prompt: "Dale, ___ prestás la campera a ella.", options: ["se la", "le la"], answer: "se la", explain: "Le + la → se la, siempre." },
       { type: "fill", prompt: "¡Contámelo! Quiero que ___ cuentes ya. (contar)", accept: ["me lo"], answer: "me lo", explain: "Objeto indirecto (me) + objeto directo (lo): me lo cuentes." }
     ]
+  },
+  {
+    id: "futuro-simple",
+    title: "Futuro simple",
+    explain: "El FUTURO SIMPLE se forma agregando las terminaciones -é, -ás, -á, -emos, -án directamente al INFINITIVO (sin sacar nada), igual para las tres conjugaciones: hablar → hablaré, comer → comerás, vivir → vivirá. Algunos verbos son irregulares en la raíz pero mantienen las mismas terminaciones: tener → tendré, poder → podré, saber → sabré, hacer → haré, decir → diré, poner → pondré, salir → saldré, venir → vendré. En el habla cotidiana rioplatense, para el futuro cercano se usa más 'ir a + infinitivo' (voy a comer) que el futuro simple; este último suena más formal o se usa para promesas y predicciones. Pista en húngaro: a jövő idő itt egyszerűen az infinitivo végéhez ragasztott végződésekkel készül (nem kell a szótövet levágni), a rendhagyóság csak a tövet érinti, a végződések mindig ugyanazok.",
+    examples: [
+      "Mañana hablaré con el jefe. (promesa/plan)",
+      "El año que viene tendremos más tiempo libre.",
+      "¿Vendrás a la fiesta el sábado?",
+      "Va a llover esta tarde. (futuro cercano, más común en el habla diaria)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Mañana (yo) ___ con vos sobre el proyecto. (hablar)", options: ["hablaré", "hablo"], answer: "hablaré", explain: "Acción planeada para el futuro → futuro simple: hablaré." },
+      { type: "choice", prompt: "El año que viene (nosotros) ___ más plata. (tener)", options: ["tendremos", "teneremos"], answer: "tendremos", explain: "'Tener' es irregular en futuro: tendremos (no 'teneremos')." },
+      { type: "fill", prompt: "¿A qué hora ___ (vos) mañana? (venir)", accept: ["vendras"], answer: "vendrás", explain: "'Venir' es irregular en futuro: vendrás." },
+      { type: "choice", prompt: "Ellos ___ la verdad tarde o temprano. (saber)", options: ["saberán", "sabrán"], answer: "sabrán", explain: "'Saber' es irregular en futuro: sabrán (no 'saberán')." },
+      { type: "choice", prompt: "___ (yo) todo lo posible para ayudarte. (hacer)", options: ["Haré", "Haceré"], answer: "Haré", explain: "'Hacer' es irregular en futuro: haré (no 'haceré')." },
+      { type: "fill", prompt: "Ella ___ el examen sin problemas. (aprobar)", accept: ["aprobara"], answer: "aprobará", explain: "Verbo regular en futuro: aprobará." }
+    ]
+  },
+  {
+    id: "condicional-simple",
+    title: "Condicional simple",
+    explain: "El CONDICIONAL SIMPLE se forma agregando las terminaciones -ía, -ías, -ía, -íamos, -ían al INFINITIVO, usando la misma raíz irregular que el futuro cuando la hay: hablar → hablaría, tener → tendría, poder → podría, saber → sabría, hacer → haría, poner → pondría, venir → vendría, decir → diría. Se usa para hipótesis ('si tuviera plata, viajaría'), pedidos corteses ('¿podrías ayudarme?') y consejos ('yo que vos, iría'). Pista en húngaro: a feltételes mód ugyanazt a rendhagyó tövet használja, mint a jövő idő, csak más végződésekkel — ha tudod a jövő idő rendhagyó alakját, könnyen levezeted belőle a feltételes módot is.",
+    examples: [
+      "Si tuviera tiempo, iría al cine.",
+      "¿Podrías pasarme la sal?",
+      "Yo que vos, hablaría con ella.",
+      "Me encantaría conocer Budapest."
+    ],
+    exercises: [
+      { type: "choice", prompt: "Si pudiera, (yo) ___ a Hungría todos los años. (viajar)", options: ["viajaría", "viajaré"], answer: "viajaría", explain: "Hipótesis → condicional: viajaría." },
+      { type: "choice", prompt: "¿___ (vos) cerrar la ventana, por favor? (poder)", options: ["Podrías", "Poderías"], answer: "Podrías", explain: "'Poder' es irregular en condicional: podrías (no 'poderías')." },
+      { type: "fill", prompt: "Yo que vos, le ___ la verdad. (decir)", accept: ["diria"], answer: "diría", explain: "'Decir' es irregular en condicional: diría." },
+      { type: "choice", prompt: "Con más tiempo, (nosotros) ___ el proyecto mejor. (hacer)", options: ["haríamos", "haceríamos"], answer: "haríamos", explain: "'Hacer' es irregular en condicional: haríamos (no 'haceríamos')." },
+      { type: "choice", prompt: "Me ___ mucho ir a un asado este finde. (gustar)", options: ["gustaría", "gustaré"], answer: "gustaría", explain: "Deseo cortés → condicional: gustaría." },
+      { type: "fill", prompt: "¿___ (vos) ayudarme con las valijas? (poder)", accept: ["podrias"], answer: "podrías", explain: "Pedido cortés → condicional: podrías." }
+    ]
+  },
+  {
+    id: "comparativos-superlativos",
+    title: "Comparativos y superlativos",
+    explain: "Para comparar: MÁS + adjetivo + QUE (más alto que), MENOS + adjetivo + QUE (menos caro que), TAN + adjetivo + COMO (tan lindo como, igualdad). Hay comparativos irregulares que no llevan 'más': bueno → mejor, malo → peor, grande → mayor (edad) / más grande (tamaño), pequeño → menor (edad) / más chico (tamaño). Superlativo: EL/LA + MÁS/MENOS + adjetivo (+ DE): 'el más alto de la clase'. También existe el superlativo con -ísimo/a, que intensifica sin comparar: 'riquísimo' = muy muy rico. Pista en húngaro: a magyarban a közép- és felsőfok végződéssel készül (-bb, leg-bb), a spanyolban viszont külön szavakkal (más...que, el más...) — ez szerkezetileg egészen más, ne fordítsd szó szerint.",
+    examples: [
+      "Este mate es más rico que el otro.",
+      "Ella es menor que su hermano.",
+      "Buenos Aires es tan grande como Budapest, más o menos.",
+      "Es el mejor asado que comí en mi vida.",
+      "Está riquísimo este postre."
+    ],
+    exercises: [
+      { type: "choice", prompt: "Este ejercicio es ___ difícil que el anterior.", options: ["más", "tan"], answer: "más", explain: "Superioridad → más + adjetivo + que." },
+      { type: "choice", prompt: "Mi hermano es ___ que yo. (bueno, comparativo irregular)", options: ["más bueno", "mejor"], answer: "mejor", explain: "'Bueno' tiene comparativo irregular: mejor (no 'más bueno')." },
+      { type: "fill", prompt: "Ella es tan alta ___ vos.", accept: ["como"], answer: "como", explain: "Igualdad → tan + adjetivo + como." },
+      { type: "choice", prompt: "Es el restaurante ___ caro de todo el barrio.", options: ["más", "tan"], answer: "más", explain: "Superlativo → el/la + más + adjetivo (+ de)." },
+      { type: "choice", prompt: "Mi abuelo es ___ que mi papá. (grande = edad, comparativo irregular)", options: ["más grande", "mayor"], answer: "mayor", explain: "Para edad, el comparativo irregular es mayor (no 'más grande')." },
+      { type: "fill", prompt: "Este flan está ___. (rico, superlativo con -ísimo)", accept: ["riquisimo"], answer: "riquísimo", explain: "Superlativo absoluto: rico → riquísimo (irregular: qu antes de í)." }
+    ]
+  },
+  {
+    id: "compuesto-vs-simple",
+    title: "Pretérito compuesto vs. simple (uso rioplatense)",
+    explain: "El PRETÉRITO PERFECTO COMPUESTO se forma con HABER (he, has, ha, hemos, han) + PARTICIPIO (-ado/-ido): he comido, has hablado, ha vivido. En España se usa mucho para hechos recientes ('hoy he comido asado'), pero en el español rioplatense es MUCHO MENOS COMÚN: en Argentina y Uruguay, para lo mismo se prefiere directamente el PRETÉRITO SIMPLE, incluso para cosas que acaban de pasar: 'hoy comí asado' (no 'he comido'). El compuesto se reserva más para contextos formales o escritos. Pista en húngaro: ha spanyol tanfolyamon a 'pretérito perfecto compuesto'-t tanultad mint a leggyakoribb múlt időt, itt Argentínában ne lepődj meg, hogy a hétköznapi beszédben szinte mindig az egyszerű múltat (pretérito simple) használják helyette, még a nagyon friss eseményekre is.",
+    examples: [
+      "Hoy comí un montón. (rioplatense, no 'he comido')",
+      "¿Alguna vez estuviste en Europa? (más común que '¿has estado?')",
+      "Nunca he probado el mate, contame cómo es. (uso posible, pero menos frecuente)",
+      "Esta semana laburé mucho. (no 'he trabajado')"
+    ],
+    exercises: [
+      { type: "choice", prompt: "¿Cuál suena más natural en una charla cotidiana en Argentina?", options: ["Hoy comí temprano.", "Hoy he comido temprano."], answer: "Hoy comí temprano.", explain: "En el habla rioplatense cotidiana se prefiere el pretérito simple, incluso para hechos recientes." },
+      { type: "choice", prompt: "___ (yo) toda la tarde estudiando. (pasar, forma típica rioplatense)", options: ["Pasé", "He pasado"], answer: "Pasé", explain: "Pretérito simple: la forma más natural en el Río de la Plata para hechos del día." },
+      { type: "fill", prompt: "Esta mañana (vos) ___ tarde, ¿no? (levantarse, pretérito simple)", accept: ["te levantaste"], answer: "te levantaste", explain: "Pretérito simple, forma habitual rioplatense (no 'te has levantado')." },
+      { type: "choice", prompt: "¿Alguna vez ___ mate amargo? (probar, más natural en Argentina)", options: ["probaste", "has probado"], answer: "probaste", explain: "Para experiencias de vida, en el habla rioplatense también predomina el pretérito simple." },
+      { type: "choice", prompt: "Recién ___ con tu hermana por teléfono. (hablar, hecho reciente)", options: ["hablé", "he hablado"], answer: "hablé", explain: "Hecho reciente → en Argentina, pretérito simple: hablé (no 'he hablado')." },
+      { type: "fill", prompt: "Todavía no ___ el informe, lo termino mañana. (terminar, uso rioplatense)", accept: ["termine"], answer: "terminé", explain: "Aunque en España se diría 'no he terminado', en Argentina es muy común 'no terminé'." }
+    ]
   }
 ];

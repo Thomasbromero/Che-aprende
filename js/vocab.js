@@ -1,24 +1,37 @@
-/* Módulo Vocabulario: tarjetas con repaso espaciado. */
+/* Módulo Vocabulario: tarjetas con repaso espaciado, filtradas por categoría
+   (todas / completas / por completar). "Completa" = ya se calificó al menos una vez. */
 const Vocab = (function () {
   let host = null;
   let queue = [];
   let current = null;
+  let filter = "pending"; // "all" | "done" | "pending"
 
-  function dueCards() {
-    return VOCAB.filter((c) => SRS.isDue(Store.srs(c.id)));
+  function doneCards() {
+    return VOCAB.filter((c) => !!Store.srs(c.id));
+  }
+
+  function pendingCards() {
+    return VOCAB.filter((c) => !Store.srs(c.id));
+  }
+
+  function cardsForFilter(f) {
+    if (f === "done") return doneCards();
+    if (f === "pending") return pendingCards();
+    return VOCAB.slice();
   }
 
   function stats() {
-    return { total: VOCAB.length, due: dueCards().length };
+    return { total: VOCAB.length, pending: pendingCards().length };
   }
 
   function render(container) {
     host = container;
-    startSession(false);
+    startSession(filter);
   }
 
-  function startSession(practiceAll) {
-    queue = shuffle(practiceAll ? VOCAB.slice() : dueCards());
+  function startSession(f) {
+    filter = f;
+    queue = shuffle(cardsForFilter(f));
     next();
   }
 
@@ -27,23 +40,38 @@ const Vocab = (function () {
     draw();
   }
 
+  function filterTabs() {
+    const tabs = [
+      { key: "all", label: I18n.t("vocab_filter_all") },
+      { key: "done", label: I18n.t("vocab_filter_done") },
+      { key: "pending", label: I18n.t("vocab_filter_pending") },
+    ];
+    return h(
+      "div",
+      { class: "filter-tabs" },
+      tabs.map((t) =>
+        h(
+          "button",
+          {
+            class: "filter-tab" + (filter === t.key ? " active" : ""),
+            onClick: () => startSession(t.key),
+          },
+          t.label
+        )
+      )
+    );
+  }
+
   function draw() {
     clear(host);
-    const s = stats();
+    host.appendChild(filterTabs());
 
     if (!current) {
       host.appendChild(
         h("div", { class: "panel center" }, [
-          h("div", { class: "big-emoji" }, "✅"),
-          h("h2", {}, I18n.t("vocab_uptodate_title")),
-          h(
-            "p",
-            { class: "muted" },
-            s.total ? I18n.t("vocab_uptodate_desc") : I18n.t("vocab_empty_desc")
-          ),
-          s.total
-            ? h("button", { class: "btn ghost", onClick: () => startSession(true) }, I18n.t("vocab_practice_all"))
-            : null,
+          h("div", { class: "big-emoji" }, filter === "pending" ? "✅" : filter === "done" ? "🌱" : "🗂️"),
+          h("h2", {}, I18n.t("vocab_empty_title", filter)),
+          h("p", { class: "muted" }, I18n.t("vocab_empty_desc", filter)),
         ])
       );
       return;
