@@ -1,4 +1,6 @@
-/* Módulo Gramática: lista de temas + ejercicios autocorregidos. */
+/* Módulo Gramática: lista de temas + ejercicios autocorregidos.
+   Los temas (título, explicación, ejemplos, ejercicios) son contenido de aprendizaje
+   y siempre quedan en español, sin importar el idioma de la interfaz. */
 const Grammar = (function () {
   let host = null;
 
@@ -9,7 +11,7 @@ const Grammar = (function () {
 
   function list() {
     clear(host);
-    host.appendChild(h("p", { class: "muted" }, "Elegí un tema para practicar."));
+    host.appendChild(h("p", { class: "muted" }, I18n.t("grammar_pick_topic")));
     GRAMMAR.forEach((topic) => {
       const done = Store.grammarDone(topic.id);
       host.appendChild(
@@ -18,7 +20,7 @@ const Grammar = (function () {
           h(
             "div",
             { class: "topic-sub muted small" },
-            topic.exercises.length + " ejercicios" + (done ? " · ✓ hecho" : "")
+            I18n.t("grammar_exercise_count", topic.exercises.length) + (done ? I18n.t("grammar_done_suffix") : "")
           ),
         ])
       );
@@ -36,7 +38,7 @@ const Grammar = (function () {
       );
     }
     host.appendChild(
-      h("button", { class: "btn primary wide", onClick: () => runExercises(topic) }, "Empezar ejercicios")
+      h("button", { class: "btn primary wide", onClick: () => runExercises(topic) }, I18n.t("grammar_start"))
     );
   }
 
@@ -53,9 +55,9 @@ const Grammar = (function () {
         host.appendChild(
           h("div", { class: "panel center" }, [
             h("div", { class: "big-emoji" }, correct === exs.length ? "🎉" : "👏"),
-            h("h2", {}, "Terminaste: " + correct + " / " + exs.length),
-            h("button", { class: "btn primary wide", onClick: () => runExercises(topic) }, "De nuevo"),
-            h("button", { class: "btn ghost wide", onClick: () => list() }, "Volver a temas"),
+            h("h2", {}, I18n.t("grammar_finished", correct, exs.length)),
+            h("button", { class: "btn primary wide", onClick: () => runExercises(topic) }, I18n.t("grammar_again")),
+            h("button", { class: "btn ghost wide", onClick: () => list() }, I18n.t("grammar_back_to_topics")),
           ])
         );
         return;
@@ -74,7 +76,7 @@ const Grammar = (function () {
       const nextBtn = h(
         "button",
         { class: "btn primary wide hidden", onClick: () => { i++; step(); } },
-        "Siguiente"
+        I18n.t("grammar_next")
       );
 
       if (ex.type === "choice") {
@@ -105,7 +107,7 @@ const Grammar = (function () {
         const input = h("input", {
           class: "text-input",
           type: "text",
-          placeholder: "Escribí la respuesta",
+          placeholder: I18n.t("grammar_answer_placeholder"),
           autocomplete: "off",
           autocapitalize: "none",
           spellcheck: "false",
@@ -123,11 +125,11 @@ const Grammar = (function () {
               input.classList.add(ok ? "right" : "wrong");
               showFeedback(feedback, ok, ex.answer, ex.explain);
               if (ok && input.value.trim() !== ex.answer)
-                feedback.appendChild(h("div", { class: "fb-explain" }, "Escritura correcta: " + ex.answer));
+                feedback.appendChild(h("div", { class: "fb-explain" }, I18n.t("feedback_correct_spelling", ex.answer)));
               nextBtn.classList.remove("hidden");
             },
           },
-          "Corregir"
+          I18n.t("grammar_check")
         );
         input.addEventListener("keydown", (e) => {
           if (e.key === "Enter" && !input.disabled) check.click();

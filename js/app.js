@@ -1,8 +1,12 @@
 /* App: navegación, inicio y ajustes. */
 document.addEventListener("DOMContentLoaded", init);
 
+let currentView = "home";
+
 function init() {
   setupTheme();
+  setupLang();
+  applyStaticI18n();
   renderHeader();
   setupNav();
   showView("home");
@@ -49,6 +53,33 @@ function toggleTheme() {
   applyTheme();
 }
 
+function setupLang() {
+  updateLangButton();
+  const btn = document.getElementById("lang-toggle");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      I18n.toggle();
+      updateLangButton();
+      applyStaticI18n();
+      showView(currentView);
+    });
+  }
+}
+
+function updateLangButton() {
+  const btn = document.getElementById("lang-toggle");
+  if (!btn) return;
+  const l = I18n.lang();
+  btn.textContent = l === "hu" ? "🌐 HU" : "🌐 ES";
+  btn.setAttribute("aria-label", l === "hu" ? "Váltás spanyolra" : "Cambiar a húngaro");
+}
+
+function applyStaticI18n() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.textContent = I18n.t(el.dataset.i18n);
+  });
+}
+
 function setupNav() {
   document.querySelectorAll(".nav-btn").forEach((btn) => {
     btn.addEventListener("click", () => showView(btn.dataset.view));
@@ -56,6 +87,7 @@ function setupNav() {
 }
 
 function showView(name) {
+  currentView = name;
   document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === "view-" + name));
   document.querySelectorAll(".nav-btn").forEach((b) => b.classList.toggle("active", b.dataset.view === name));
   const host = document.querySelector("#view-" + name + " .view-body");
@@ -73,11 +105,11 @@ function renderHome(host) {
   const s = Store.settings();
   const v = Vocab.stats();
 
-  host.appendChild(h("h2", { class: "greet" }, s.name ? "¡Hola, " + s.name + "! 👋" : "¡Hola! 👋"));
-  host.appendChild(h("p", { class: "muted" }, "Practicá un rato. Elegí por dónde arrancar."));
+  host.appendChild(h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")));
+  host.appendChild(h("p", { class: "muted" }, I18n.t("home_subtitle")));
 
   if (!s.name) {
-    const input = h("input", { class: "text-input", type: "text", placeholder: "¿Cómo te llamás?" });
+    const input = h("input", { class: "text-input", type: "text", placeholder: I18n.t("home_name_placeholder") });
     const save = h(
       "button",
       {
@@ -89,7 +121,7 @@ function renderHome(host) {
           }
         },
       },
-      "Guardar"
+      I18n.t("home_save")
     );
     input.addEventListener("keydown", (e) => { if (e.key === "Enter") save.click(); });
     host.appendChild(h("div", { class: "inline namebox" }, [input, save]));
@@ -97,9 +129,9 @@ function renderHome(host) {
 
   host.appendChild(
     h("div", { class: "home-grid" }, [
-      homeCard("🗂️", "Vocabulario", v.due > 0 ? v.due + " para repasar" : "Al día", () => showView("vocabulario")),
-      homeCard("📐", "Gramática", GRAMMAR.length + " temas", () => showView("gramatica")),
-      homeCard("✍️", "Producción", PRODUCCION.length + " consignas", () => showView("produccion")),
+      homeCard("🗂️", I18n.t("home_vocab_title"), v.due > 0 ? I18n.t("home_vocab_due", v.due) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
+      homeCard("📐", I18n.t("home_grammar_title"), I18n.t("home_grammar_topics", GRAMMAR.length), () => showView("gramatica")),
+      homeCard("✍️", I18n.t("home_production_title"), I18n.t("home_production_prompts", PRODUCCION.length), () => showView("produccion")),
     ])
   );
 }
@@ -115,13 +147,13 @@ function homeCard(emoji, title, sub, onClick) {
 function renderAjustes(host) {
   clear(host);
   const s = Store.settings();
-  host.appendChild(h("h2", {}, "Ajustes"));
+  host.appendChild(h("h2", {}, I18n.t("settings_title")));
 
-  const nameInput = h("input", { class: "text-input", type: "text", value: s.name || "", placeholder: "Tu nombre" });
-  host.appendChild(field("Nombre", nameInput));
+  const nameInput = h("input", { class: "text-input", type: "text", value: s.name || "", placeholder: I18n.t("settings_name_placeholder") });
+  host.appendChild(field(I18n.t("settings_name_label"), nameInput));
 
-  const appInput = h("input", { class: "text-input", type: "text", value: s.appName || "", placeholder: "Nombre de la app" });
-  host.appendChild(field("Nombre de la app", appInput));
+  const appInput = h("input", { class: "text-input", type: "text", value: s.appName || "", placeholder: I18n.t("settings_appname_placeholder") });
+  host.appendChild(field(I18n.t("settings_appname_label"), appInput));
 
   host.appendChild(
     h(
@@ -131,29 +163,29 @@ function renderAjustes(host) {
         onClick: () => {
           Store.updateSettings({ name: nameInput.value.trim(), appName: appInput.value.trim() || "Che, aprendé" });
           renderHeader();
-          toast("Guardado ✓");
+          toast(I18n.t("settings_saved_toast"));
         },
       },
-      "Guardar"
+      I18n.t("settings_save")
     )
   );
 
   host.appendChild(h("hr", {}));
-  host.appendChild(h("p", { class: "muted small" }, "Borrar todo el progreso (repasos y ajustes). No se puede deshacer."));
+  host.appendChild(h("p", { class: "muted small" }, I18n.t("settings_reset_desc")));
   host.appendChild(
     h(
       "button",
       {
         class: "btn danger wide",
         onClick: () => {
-          if (confirm("¿Seguro que querés borrar todo el progreso?")) {
+          if (confirm(I18n.t("settings_reset_confirm"))) {
             Store.reset();
             renderHeader();
             showView("home");
           }
         },
       },
-      "Reiniciar progreso"
+      I18n.t("settings_reset_btn")
     )
   );
 }

@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#3a9bd8" />
   <title>Che, aprendé</title>
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="app-header">
-    <span class="theme-spacer" aria-hidden="true"></span>
     <h1 id="app-title">🧉 Che, aprendé</h1>
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">🌙</button>
+    <div class="header-actions">
+      <button id="lang-toggle" class="icon-btn" type="button" aria-label="Cambiar idioma">🌐 ES</button>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema">🌙</button>
+    </div>
   </header>
 
   <main class="app-main">
@@ -23,11 +28,11 @@
   </main>
 
   <nav class="bottom-nav">
-    <button class="nav-btn active" data-view="home"><span class="ico">🏠</span><span class="lbl">Inicio</span></button>
-    <button class="nav-btn" data-view="gramatica"><span class="ico">📐</span><span class="lbl">Gramática</span></button>
-    <button class="nav-btn" data-view="vocabulario"><span class="ico">🗂️</span><span class="lbl">Vocab</span></button>
-    <button class="nav-btn" data-view="produccion"><span class="ico">✍️</span><span class="lbl">Producción</span></button>
-    <button class="nav-btn" data-view="ajustes"><span class="ico">⚙️</span><span class="lbl">Ajustes</span></button>
+    <button class="nav-btn active" data-view="home"><span class="ico">🏠</span><span class="lbl" data-i18n="nav_home">Inicio</span></button>
+    <button class="nav-btn" data-view="gramatica"><span class="ico">📐</span><span class="lbl" data-i18n="nav_grammar">Gramática</span></button>
+    <button class="nav-btn" data-view="vocabulario"><span class="ico">🗂️</span><span class="lbl" data-i18n="nav_vocab">Vocab</span></button>
+    <button class="nav-btn" data-view="produccion"><span class="ico">✍️</span><span class="lbl" data-i18n="nav_production">Producción</span></button>
+    <button class="nav-btn" data-view="ajustes"><span class="ico">⚙️</span><span class="lbl" data-i18n="nav_settings">Ajustes</span></button>
   </nav>
 
   <!-- datos -->
@@ -36,6 +41,7 @@
   <script src="data/produccion.data.js"></script>
   <!-- lógica -->
   <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/srs.js"></script>
   <script src="js/util.js"></script>
   <script src="js/vocab.js"></script>

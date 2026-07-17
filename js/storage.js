@@ -4,7 +4,7 @@ const Store = (function () {
 
   function defaults() {
     return {
-      settings: { name: "", appName: "Che, aprendé", theme: null }, // theme: null = seguir al sistema, o "light" / "dark"
+      settings: { name: "", appName: "Che, aprendé", theme: null, uiLang: null }, // theme: null = seguir al sistema. uiLang: null = español, o "hu"
       srs: {},         // { [cardId]: { ease, interval, reps, due, last } }
       grammar: {},     // { [topicId]: { done: true } }
     };

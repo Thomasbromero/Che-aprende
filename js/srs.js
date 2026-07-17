@@ -33,12 +33,12 @@ const SRS = (function () {
   }
 
   function dueInLabel(card) {
-    if (!card || !card.due) return "nuevo";
+    if (!card || !card.due) return I18n.t("srs_new");
     const diff = card.due - now();
-    if (diff <= 0) return "para repasar";
+    if (diff <= 0) return I18n.t("srs_due");
     const days = Math.ceil(diff / DAY);
-    if (days <= 1) return "en 1 día";
-    return "en " + days + " días";
+    if (days <= 1) return I18n.t("srs_in_1_day");
+    return I18n.t("srs_in_days", days);
   }
 
   return { isDue, schedule, dueInLabel, now };

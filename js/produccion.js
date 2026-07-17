@@ -1,4 +1,6 @@
-/* Módulo Producción: producción controlada con autocorrección. */
+/* Módulo Producción: producción controlada con autocorrección.
+   Las consignas (prompt, hint, answer, explain) son contenido de aprendizaje
+   y siempre quedan en español, sin importar el idioma de la interfaz. */
 const Produccion = (function () {
   let host = null;
 
@@ -19,8 +21,8 @@ const Produccion = (function () {
         host.appendChild(
           h("div", { class: "panel center" }, [
             h("div", { class: "big-emoji" }, correct === items.length ? "🎉" : "👏"),
-            h("h2", {}, "Terminaste: " + correct + " / " + items.length),
-            h("button", { class: "btn primary wide", onClick: () => run() }, "De nuevo"),
+            h("h2", {}, I18n.t("production_finished", correct, items.length)),
+            h("button", { class: "btn primary wide", onClick: () => run() }, I18n.t("production_again")),
           ])
         );
         return;
@@ -30,7 +32,7 @@ const Produccion = (function () {
       host.appendChild(
         h("div", { class: "progress-row" }, [
           h("span", { class: "muted small" }, i + 1 + " / " + items.length),
-          h("span", { class: "muted small" }, "Producción"),
+          h("span", { class: "muted small" }, I18n.t("production_label")),
         ])
       );
       host.appendChild(h("div", { class: "card question" }, promptHtml(it.prompt)));
@@ -40,7 +42,7 @@ const Produccion = (function () {
       const input = h("input", {
         class: "text-input",
         type: "text",
-        placeholder: "Tu respuesta",
+        placeholder: I18n.t("production_answer_placeholder"),
         autocomplete: "off",
         autocapitalize: "none",
         spellcheck: "false",
@@ -48,7 +50,7 @@ const Produccion = (function () {
       const nextBtn = h(
         "button",
         { class: "btn primary wide hidden", onClick: () => { i++; step(); } },
-        "Siguiente"
+        I18n.t("production_next")
       );
       const check = h(
         "button",
@@ -64,16 +66,16 @@ const Produccion = (function () {
             input.classList.add(ok ? "right" : "wrong");
             showFeedback(feedback, ok, it.answer, it.explain);
             if (ok && input.value.trim() !== it.answer)
-              feedback.appendChild(h("div", { class: "fb-explain" }, "Escritura correcta: " + it.answer));
+              feedback.appendChild(h("div", { class: "fb-explain" }, I18n.t("feedback_correct_spelling", it.answer)));
             nextBtn.classList.remove("hidden");
           },
         },
-        "Corregir"
+        I18n.t("production_check")
       );
       const reveal = h(
         "button",
         { class: "btn ghost", onClick: () => { input.value = it.answer; input.focus(); } },
-        "Ver respuesta"
+        I18n.t("production_reveal")
       );
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !input.disabled) check.click();

@@ -61,11 +61,11 @@ function showFeedback(container, ok, answer, explain) {
   clear(container);
   container.className = "feedback " + (ok ? "ok" : "no");
   container.appendChild(
-    h("div", { class: "fb-head" }, ok ? "✓ ¡Correcto!" : "✗ Casi… la respuesta es: " + answer)
+    h("div", { class: "fb-head" }, ok ? I18n.t("feedback_correct") : I18n.t("feedback_wrong", answer))
   );
   if (explain) container.appendChild(h("div", { class: "fb-explain" }, explain));
 }
 
 function backBtn(onClick) {
-  return h("button", { class: "back-link", onClick }, "← Volver");
+  return h("button", { class: "back-link", onClick }, I18n.t("back"));
 }
