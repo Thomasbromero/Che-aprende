@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
+  setupTheme();
   renderHeader();
   setupNav();
   showView("home");
@@ -12,6 +13,40 @@ function renderHeader() {
   const title = document.getElementById("app-title");
   if (title) title.textContent = "🧉 " + (s.appName || "Che, aprendé");
   document.title = s.appName || "Che, aprendé";
+}
+
+function setupTheme() {
+  applyTheme();
+  const btn = document.getElementById("theme-toggle");
+  if (btn) btn.addEventListener("click", toggleTheme);
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      if (!Store.settings().theme) applyTheme(); // en modo automático, seguí al sistema
+    });
+  }
+}
+
+function effectiveTheme() {
+  const t = Store.settings().theme;
+  if (t === "light" || t === "dark") return t;
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme() {
+  const t = Store.settings().theme;
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else document.documentElement.removeAttribute("data-theme");
+
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  const eff = effectiveTheme();
+  btn.textContent = eff === "dark" ? "☀️" : "🌙";
+  btn.setAttribute("aria-label", eff === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+}
+
+function toggleTheme() {
+  Store.updateSettings({ theme: effectiveTheme() === "dark" ? "light" : "dark" });
+  applyTheme();
 }
 
 function setupNav() {

@@ -16,7 +16,7 @@
   --shadow: 0 1px 3px rgba(20, 30, 45, 0.08), 0 8px 24px rgba(20, 30, 45, 0.06);
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #10151b;
     --card: #1a2028;
     --text: #e8ecf1;
@@ -30,6 +30,21 @@
     --bad-bg: #2b1712;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
   }
+}
+/* Forzado manual con el botón de tema, gana sin importar el sistema operativo */
+:root[data-theme="dark"] {
+  --bg: #10151b;
+  --card: #1a2028;
+  --text: #e8ecf1;
+  --muted: #93a0ad;
+  --border: #29313c;
+  --accent: #4aa8e0;
+  --accent-ink: #0a0f14;
+  --good: #4cc27f;
+  --good-bg: #12291d;
+  --bad: #e2705c;
+  --bad-bg: #2b1712;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 * { box-sizing: border-box; }
@@ -48,18 +63,40 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   padding: 14px 16px calc(14px + env(safe-area-inset-top));
 }
 .app-header h1 {
+  flex: 1;
   margin: 0;
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-align: center;
 }
+.theme-toggle,
+.theme-spacer {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+}
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.theme-toggle:active { transform: scale(0.95); }
+.theme-spacer { visibility: hidden; }
 
 /* ---- Layout ---- */
 .app-main {
