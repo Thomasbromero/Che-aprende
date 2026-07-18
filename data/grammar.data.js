@@ -199,5 +199,29 @@ window.GRAMMAR = [
       { type: "choice", prompt: "Recién ___ con tu hermana por teléfono. (hablar, hecho reciente)", options: ["hablé", "he hablado"], answer: "hablé", explain: "Hecho reciente → en Argentina, pretérito simple: hablé (no 'he hablado')." },
       { type: "fill", prompt: "Todavía no ___ el informe, lo termino mañana. (terminar, uso rioplatense)", accept: ["termine"], answer: "terminé", explain: "Aunque en España se diría 'no he terminado', en Argentina es muy común 'no terminé'." }
     ]
+  },
+  {
+    id: "conjugacion-verbos",
+    title: "Conjugación de verbos",
+    explain: "Acá no hay una frase con contexto: te damos un verbo, una persona y un tiempo, y vos escribís la forma conjugada. Sirve para practicar de memoria las terminaciones y los verbos irregulares más comunes, mezclando presente, pretérito indefinido, imperfecto, futuro, condicional y subjuntivo. Usamos siempre voseo (vos) en vez de tú, como se habla en Argentina. Pista en húngaro: itt nincs mondatkörnyezet — csak az ige, a személy és az idő van megadva, neked kell felidézned a ragozott alakot fejből. Ez a lecke a memorizálást gyakorolja, nem a használat megértését (azt a többi lecke tanítja).",
+    examples: [
+      "hablar — presente, yo → hablo",
+      "tener — presente, vos → tenés",
+      "hacer — pretérito indefinido, yo → hice",
+      "ser — imperfecto, nosotros → éramos",
+      "poder — futuro, vos → podrás"
+    ],
+    exercises: [
+      { type: "fill", prompt: "Conjugá 'hablar' — presente, yo: ___", accept: ["hablo"], answer: "hablo", explain: "Presente regular de un verbo -AR: hablo." },
+      { type: "fill", prompt: "Conjugá 'tener' — presente, vos: ___", accept: ["tenes"], answer: "tenés", explain: "Presente de vos: se acentúa la última sílaba. 'Tener' además cambia la raíz en otras personas (tengo, tiene), pero en vos queda tenés." },
+      { type: "fill", prompt: "Conjugá 'hacer' — pretérito indefinido, yo: ___", accept: ["hice"], answer: "hice", explain: "'Hacer' es irregular en pretérito: hice (no 'hací')." },
+      { type: "choice", prompt: "Conjugá 'ir' — pretérito indefinido, ustedes:", options: ["fueron", "iyeron"], answer: "fueron", explain: "'Ir' en pretérito comparte la forma con 'ser': fueron." },
+      { type: "fill", prompt: "Conjugá 'ser' — imperfecto, nosotros: ___", accept: ["eramos"], answer: "éramos", explain: "'Ser' es irregular en imperfecto: era, eras, era, éramos, eran." },
+      { type: "fill", prompt: "Conjugá 'vivir' — imperfecto, ella: ___", accept: ["vivia"], answer: "vivía", explain: "Imperfecto regular de un verbo -IR: vivía." },
+      { type: "choice", prompt: "Conjugá 'poder' — futuro, vos:", options: ["podrás", "poderás"], answer: "podrás", explain: "'Poder' es irregular en futuro: podrás (no 'poderás')." },
+      { type: "fill", prompt: "Conjugá 'estudiar' — condicional, yo: ___", accept: ["estudiaria"], answer: "estudiaría", explain: "Condicional regular: infinitivo + ía." },
+      { type: "fill", prompt: "Conjugá 'decir' — condicional, ustedes: ___", accept: ["dirian"], answer: "dirían", explain: "'Decir' es irregular en condicional: dirían (no 'decirían')." },
+      { type: "fill", prompt: "Conjugá 'escribir' — subjuntivo presente, vos: ___", accept: ["escribas"], answer: "escribas", explain: "Subjuntivo presente de un verbo -IR: escribas." }
+    ]
   }
 ];

@@ -15,7 +15,7 @@ const Grammar = (function () {
     GRAMMAR.forEach((topic) => {
       const done = Store.grammarDone(topic.id);
       host.appendChild(
-        h("button", { class: "topic-card", onClick: () => openTopic(topic) }, [
+        h("button", { class: "topic-card" + (done ? " done" : ""), onClick: () => openTopic(topic) }, [
           h("div", { class: "topic-title" }, topic.title),
           h(
             "div",
