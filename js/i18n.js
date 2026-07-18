@@ -12,8 +12,6 @@ const I18N = {
     home_greet_hi: "¡Hola!",
     home_greet_hi_name: (name) => `¡Hola, ${name}! 👋`,
     home_subtitle: "Practicá un rato. Elegí por dónde arrancar.",
-    home_name_placeholder: "¿Cómo te llamás?",
-    home_save: "Guardar",
     home_vocab_title: "Vocabulario",
     home_vocab_pending: (n) => `${n} por completar`,
     home_vocab_uptodate: "Al día",
@@ -23,7 +21,17 @@ const I18N = {
     home_production_prompts: (n) => `${n} consignas`,
     home_streak: (n) => (n === 1 ? "1 día seguido" : `${n} días seguidos`),
 
+    onboarding_name_question: "Antes de arrancar, ¿cómo te llamás?",
+    onboarding_name_placeholder: "¿Cómo te llamás?",
+    onboarding_continue: "Continuar",
+    onboarding_question: "¿Qué idioma querés aprender?",
+    onboarding_coming_soon: "Próximamente",
+
+    under_construction_desc: "Todavía estamos construyendo el contenido para este idioma. ¡Pronto vas a poder practicarlo acá!",
+    under_construction_hint: "Si querés cambiar de idioma, andá a Ajustes y reiniciá el progreso.",
+
     settings_title: "Ajustes",
+    settings_learning_lang_label: (lang) => `Estás aprendiendo: ${lang}`,
     settings_name_label: "Nombre",
     settings_name_placeholder: "Tu nombre",
     settings_save: "Guardar",
@@ -88,8 +96,6 @@ const I18N = {
     home_greet_hi: "Szia!",
     home_greet_hi_name: (name) => `Szia, ${name}! 👋`,
     home_subtitle: "Gyakorolj egy kicsit. Válaszd ki, hol kezdjük.",
-    home_name_placeholder: "Mi a neved?",
-    home_save: "Mentés",
     home_vocab_title: "Szókincs",
     home_vocab_pending: (n) => `${n} befejezetlen`,
     home_vocab_uptodate: "Naprakész",
@@ -99,7 +105,17 @@ const I18N = {
     home_production_prompts: (n) => `${n} feladat`,
     home_streak: (n) => `${n} napos sorozat`,
 
+    onboarding_name_question: "Mielőtt elkezdenénk, mi a neved?",
+    onboarding_name_placeholder: "Mi a neved?",
+    onboarding_continue: "Tovább",
+    onboarding_question: "Milyen nyelvet szeretnél tanulni?",
+    onboarding_coming_soon: "Hamarosan",
+
+    under_construction_desc: "Még építjük ennek a nyelvnek a tartalmát. Hamarosan itt is gyakorolhatod!",
+    under_construction_hint: "Ha nyelvet szeretnél váltani, menj a Beállításokba és állítsd vissza a haladást.",
+
     settings_title: "Beállítások",
+    settings_learning_lang_label: (lang) => `Ezt tanulod: ${lang}`,
     settings_name_label: "Név",
     settings_name_placeholder: "Neved",
     settings_save: "Mentés",

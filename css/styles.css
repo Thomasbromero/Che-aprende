@@ -49,6 +49,44 @@
 
 * { box-sizing: border-box; }
 
+/* ---- Onboarding ---- */
+#onboarding-screen { display: none; }
+body.onboarding-active #onboarding-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px 16px;
+}
+body.onboarding-active .app-header,
+body.onboarding-active .app-main,
+body.onboarding-active .bottom-nav { display: none; }
+
+.onboarding-card { width: 100%; max-width: 420px; text-align: center; }
+.onboarding-emoji { font-size: 3rem; }
+.onboarding-title { font-size: 1.6rem; font-weight: 700; margin: 8px 0 4px; letter-spacing: -0.01em; }
+.onboarding-subtitle { color: var(--muted); margin-bottom: 24px; }
+.onboarding-options { display: grid; gap: 12px; }
+.onboarding-option {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; text-align: left;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  cursor: pointer; box-shadow: var(--shadow);
+  font: inherit; color: var(--text);
+}
+.onboarding-option:active { transform: scale(0.98); }
+.onboarding-option:disabled { opacity: 0.5; cursor: not-allowed; }
+.onboarding-option:disabled:active { transform: none; }
+.onboarding-flag { font-size: 1.8rem; flex: 0 0 auto; }
+.onboarding-lang-name { font-weight: 700; flex: 1; }
+.onboarding-badge {
+  flex: 0 0 auto;
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--border);
+  border-radius: 999px; padding: 4px 8px;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;

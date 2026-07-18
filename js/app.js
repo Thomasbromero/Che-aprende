@@ -1,16 +1,123 @@
-/* App: navegación, inicio y ajustes. */
+/* App: onboarding, navegación, inicio y ajustes. */
 document.addEventListener("DOMContentLoaded", init);
 
 let currentView = "home";
 
+const LANGS = [
+  { code: "es", flag: "🇦🇷", name: "Español", ready: true },
+  { code: "en", flag: "🇬🇧", name: "Inglés", ready: false },
+  { code: "hu", flag: "🇭🇺", name: "Húngaro", ready: false },
+  { code: "de", flag: "🇩🇪", name: "Alemán", ready: false },
+];
+
+function langName(code) {
+  const l = LANGS.find((x) => x.code === code);
+  return l ? l.flag + " " + l.name : code;
+}
+
 function init() {
+  // Estas solo se enganchan una vez (listeners de botones); no van dentro de enterApp
+  // porque enterApp se puede volver a llamar (ej: despues de reiniciar progreso).
   setupTheme();
   setupLang();
   applyStaticI18n();
   renderHeader();
-  updateHeaderStreak();
   setupNav();
+  enterApp();
+}
+
+function enterApp() {
+  if (!Store.settings().learningLang) {
+    renderOnboarding();
+    return;
+  }
+  document.body.classList.remove("onboarding-active");
+  updateHeaderStreak();
   showView("home");
+}
+
+let onboardingStep = "name"; // "name" | "lang"
+
+function renderOnboarding() {
+  document.body.classList.add("onboarding-active");
+  onboardingStep = "name";
+  drawOnboarding();
+}
+
+function drawOnboarding() {
+  const host = document.getElementById("onboarding-screen");
+  clear(host);
+  host.appendChild(onboardingStep === "lang" ? onboardingLangCard() : onboardingNameCard());
+}
+
+function onboardingNameCard() {
+  const input = h("input", { class: "text-input", type: "text", placeholder: I18n.t("onboarding_name_placeholder") });
+  const cont = h(
+    "button",
+    {
+      class: "btn primary wide",
+      onClick: () => {
+        Store.updateSettings({ name: input.value.trim() });
+        onboardingStep = "lang";
+        drawOnboarding();
+      },
+    },
+    I18n.t("onboarding_continue")
+  );
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") cont.click(); });
+  return h("div", { class: "onboarding-card" }, [
+    h("div", { class: "onboarding-emoji" }, "🧉"),
+    h("div", { class: "onboarding-title" }, "Che, aprendé"),
+    h("p", { class: "onboarding-subtitle" }, I18n.t("onboarding_name_question")),
+    input,
+    cont,
+  ]);
+}
+
+function onboardingLangCard() {
+  return h("div", { class: "onboarding-card" }, [
+    h("div", { class: "onboarding-emoji" }, "🧉"),
+    h("div", { class: "onboarding-title" }, "Che, aprendé"),
+    h("p", { class: "onboarding-subtitle" }, I18n.t("onboarding_question")),
+    h(
+      "div",
+      { class: "onboarding-options" },
+      LANGS.map((l) =>
+        h(
+          "button",
+          {
+            class: "onboarding-option",
+            type: "button",
+            disabled: l.ready ? null : true,
+            onClick: l.ready ? () => chooseLearningLang(l.code) : null,
+          },
+          [
+            h("span", { class: "onboarding-flag" }, l.flag),
+            h("span", { class: "onboarding-lang-name" }, l.name),
+            l.ready ? null : h("span", { class: "onboarding-badge" }, I18n.t("onboarding_coming_soon")),
+          ]
+        )
+      )
+    ),
+  ]);
+}
+
+function chooseLearningLang(code) {
+  Store.updateSettings({ learningLang: code });
+  enterApp();
+}
+
+function renderUnderConstruction(host) {
+  clear(host);
+  const lang = Store.settings().learningLang;
+  host.appendChild(
+    h("div", { class: "panel center" }, [
+      h("div", { class: "big-emoji" }, "🚧"),
+      h("h2", {}, langName(lang)),
+      h("p", { class: "muted" }, I18n.t("under_construction_desc")),
+      h("p", { class: "muted small" }, I18n.t("under_construction_hint")),
+    ])
+  );
 }
 
 function renderHeader() {
@@ -101,11 +208,16 @@ function showView(name) {
   document.querySelectorAll(".nav-btn").forEach((b) => b.classList.toggle("active", b.dataset.view === name));
   const host = document.querySelector("#view-" + name + " .view-body");
   if (!host) return;
-  if (name === "home") renderHome(host);
+
+  const lang = Store.settings().learningLang;
+  if (lang && lang !== "es" && name !== "ajustes") {
+    renderUnderConstruction(host);
+  } else if (name === "home") renderHome(host);
   else if (name === "gramatica") Grammar.render(host);
   else if (name === "vocabulario") Vocab.render(host);
   else if (name === "produccion") Produccion.render(host);
   else if (name === "ajustes") renderAjustes(host);
+
   updateHeaderStreak();
   window.scrollTo(0, 0);
 }
@@ -125,25 +237,6 @@ function renderHome(host) {
       h("span", { class: "streak-text" }, I18n.t("home_streak", streak.count)),
     ])
   );
-
-  if (!s.name) {
-    const input = h("input", { class: "text-input", type: "text", placeholder: I18n.t("home_name_placeholder") });
-    const save = h(
-      "button",
-      {
-        class: "btn primary",
-        onClick: () => {
-          if (input.value.trim()) {
-            Store.updateSettings({ name: input.value.trim() });
-            showView("home");
-          }
-        },
-      },
-      I18n.t("home_save")
-    );
-    input.addEventListener("keydown", (e) => { if (e.key === "Enter") save.click(); });
-    host.appendChild(h("div", { class: "inline namebox" }, [input, save]));
-  }
 
   host.appendChild(
     h("div", { class: "home-grid" }, [
@@ -166,6 +259,7 @@ function renderAjustes(host) {
   clear(host);
   const s = Store.settings();
   host.appendChild(h("h2", {}, I18n.t("settings_title")));
+  host.appendChild(h("p", { class: "muted small" }, I18n.t("settings_learning_lang_label", langName(s.learningLang))));
 
   const nameInput = h("input", { class: "text-input", type: "text", value: s.name || "", placeholder: I18n.t("settings_name_placeholder") });
   host.appendChild(field(I18n.t("settings_name_label"), nameInput));
@@ -195,7 +289,7 @@ function renderAjustes(host) {
           if (confirm(I18n.t("settings_reset_confirm"))) {
             Store.reset();
             renderHeader();
-            showView("home");
+            enterApp();
           }
         },
       },

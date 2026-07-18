@@ -4,7 +4,9 @@ const Store = (function () {
 
   function defaults() {
     return {
-      settings: { name: "", theme: null, uiLang: null, streak: null }, // theme: null = seguir al sistema. uiLang: null = español, o "hu". streak: null = { count, lastActiveDate }
+      // theme: null = seguir al sistema. uiLang: null = español, o "hu". streak: null = { count, lastActiveDate }
+      // learningLang: null = todavia no eligio (muestra el onboarding), o "es" / "en" / "hu" / "de"
+      settings: { name: "", theme: null, uiLang: null, streak: null, learningLang: null },
       srs: {},         // { [cardId]: { ease, interval, reps, due, last } }
       grammar: {},     // { [topicId]: { done: true } }
     };
@@ -17,6 +19,10 @@ const Store = (function () {
       const raw = JSON.parse(localStorage.getItem(KEY));
       if (!raw || typeof raw !== "object") return defaults();
       const d = defaults();
+      // Usuario que ya venia usando la app antes de que existiera este campo:
+      // lo tratamos como si ya hubiera elegido español, para no mostrarle el onboarding.
+      const isLegacyUser = !!raw.settings && !("learningLang" in raw.settings);
+      if (isLegacyUser) d.settings.learningLang = "es";
       return {
         settings: Object.assign(d.settings, raw.settings || {}),
         srs: raw.srs || {},
