@@ -354,8 +354,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; color: v
 .field-label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
 
 /* ---- Nav inferior ----
-   Fuera de Inicio, solo se muestran "Inicio" y "Ajustes"; los demas
-   botones quedan ocultos hasta volver a Inicio. */
+   Solo se muestran "Inicio" y "Ajustes" en todas las pantallas, incluido Inicio. */
 .bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
   display: flex; justify-content: center; align-items: center; gap: 3px;
@@ -377,10 +376,6 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; color: v
 .nav-btn[data-view="vocabulario"],
 .nav-btn[data-view="produccion"],
 .nav-btn[data-view="lectura"] { display: none; }
-body[data-view="home"] .nav-btn[data-view="gramatica"],
-body[data-view="home"] .nav-btn[data-view="vocabulario"],
-body[data-view="home"] .nav-btn[data-view="produccion"],
-body[data-view="home"] .nav-btn[data-view="lectura"] { display: flex; }
 
 /* ---- Toast ---- */
 .toast {
