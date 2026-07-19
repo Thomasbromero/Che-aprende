@@ -7,6 +7,7 @@ const I18N = {
     nav_grammar: "Gramática",
     nav_vocab: "Vocab",
     nav_production: "Producción",
+    nav_lectura: "Lectura",
     nav_settings: "Ajustes",
 
     home_greet_hi: "¡Hola!",
@@ -19,7 +20,13 @@ const I18N = {
     home_grammar_topics: (n) => `${n} temas`,
     home_production_title: "Producción",
     home_production_prompts: (n) => `${n} consignas`,
+    home_lectura_title: "Lectura",
+    home_lectura_count: (n) => `${n} provincias`,
     home_streak: (n) => (n === 1 ? "1 día seguido" : `${n} días seguidos`),
+
+    lectura_pick_provincia: "Elegí una provincia para leer sobre ella.",
+    lectura_coming_soon_desc: "Todavía estamos armando el contenido de esta provincia. ¡Pronto vas a poder leer sobre ella acá!",
+    provincia_back: "← Atrás",
 
     onboarding_name_question: "Antes de arrancar, ¿cómo te llamás?",
     onboarding_name_placeholder: "¿Cómo te llamás?",
@@ -91,6 +98,7 @@ const I18N = {
     nav_grammar: "Nyelvtan",
     nav_vocab: "Szókincs",
     nav_production: "Gyakorlás",
+    nav_lectura: "Olvasás",
     nav_settings: "Beállítások",
 
     home_greet_hi: "Szia!",
@@ -103,7 +111,13 @@ const I18N = {
     home_grammar_topics: (n) => `${n} téma`,
     home_production_title: "Gyakorlás",
     home_production_prompts: (n) => `${n} feladat`,
+    home_lectura_title: "Olvasás",
+    home_lectura_count: (n) => `${n} tartomány`,
     home_streak: (n) => `${n} napos sorozat`,
+
+    lectura_pick_provincia: "Válassz egy tartományt, hogy olvass róla.",
+    lectura_coming_soon_desc: "Még építjük ennek a tartománynak a tartalmát. Hamarosan olvashatsz majd róla itt!",
+    provincia_back: "← Vissza",
 
     onboarding_name_question: "Mielőtt elkezdenénk, mi a neved?",
     onboarding_name_placeholder: "Mi a neved?",

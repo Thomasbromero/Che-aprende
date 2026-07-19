@@ -18,7 +18,6 @@ function langName(code) {
 function init() {
   // Estas solo se enganchan una vez (listeners de botones); no van dentro de enterApp
   // porque enterApp se puede volver a llamar (ej: despues de reiniciar progreso).
-  setupTheme();
   setupLang();
   applyStaticI18n();
   renderHeader();
@@ -126,40 +125,6 @@ function renderHeader() {
   document.title = "Che, aprendé";
 }
 
-function setupTheme() {
-  applyTheme();
-  const btn = document.getElementById("theme-toggle");
-  if (btn) btn.addEventListener("click", toggleTheme);
-  if (window.matchMedia) {
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-      if (!Store.settings().theme) applyTheme(); // en modo automático, seguí al sistema
-    });
-  }
-}
-
-function effectiveTheme() {
-  const t = Store.settings().theme;
-  if (t === "light" || t === "dark") return t;
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
-function applyTheme() {
-  const t = Store.settings().theme;
-  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  else document.documentElement.removeAttribute("data-theme");
-
-  const btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  const eff = effectiveTheme();
-  btn.textContent = eff === "dark" ? "☀️" : "🌙";
-  btn.setAttribute("aria-label", eff === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
-}
-
-function toggleTheme() {
-  Store.updateSettings({ theme: effectiveTheme() === "dark" ? "light" : "dark" });
-  applyTheme();
-}
-
 function setupLang() {
   updateLangButton();
   const btn = document.getElementById("lang-toggle");
@@ -216,6 +181,7 @@ function showView(name) {
   else if (name === "gramatica") Grammar.render(host);
   else if (name === "vocabulario") Vocab.render(host);
   else if (name === "produccion") Produccion.render(host);
+  else if (name === "lectura") Lectura.render(host);
   else if (name === "ajustes") renderAjustes(host);
 
   updateHeaderStreak();
@@ -243,6 +209,7 @@ function renderHome(host) {
       homeCard("🗂️", I18n.t("home_vocab_title"), v.pending > 0 ? I18n.t("home_vocab_pending", v.pending) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
       homeCard("📐", I18n.t("home_grammar_title"), I18n.t("home_grammar_topics", GRAMMAR.length), () => showView("gramatica")),
       homeCard("✍️", I18n.t("home_production_title"), I18n.t("home_production_prompts", PRODUCCION.length), () => showView("produccion")),
+      homeCard("📖", I18n.t("home_lectura_title"), I18n.t("home_lectura_count", PROVINCIAS.length), () => showView("lectura")),
     ])
   );
 }

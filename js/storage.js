@@ -4,9 +4,9 @@ const Store = (function () {
 
   function defaults() {
     return {
-      // theme: null = seguir al sistema. uiLang: null = español, o "hu". streak: null = { count, lastActiveDate }
+      // uiLang: null = español, o "hu". streak: null = { count, lastActiveDate }
       // learningLang: null = todavia no eligio (muestra el onboarding), o "es" / "en" / "hu" / "de"
-      settings: { name: "", theme: null, uiLang: null, streak: null, learningLang: null },
+      settings: { name: "", uiLang: null, streak: null, learningLang: null },
       srs: {},         // { [cardId]: { ease, interval, reps, due, last } }
       grammar: {},     // { [topicId]: { done: true } }
     };

@@ -11,17 +11,17 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
 </head>
 <body>
   <div id="onboarding-screen" class="onboarding-screen"></div>
+  <div id="provincia-screen" class="provincia-screen"></div>
 
   <header class="app-header">
     <h1 id="app-title">🧉 Che, aprendé</h1>
     <div class="header-actions">
       <span id="header-streak" class="header-streak"></span>
       <button id="lang-toggle" class="icon-btn" type="button" aria-label="Cambiar idioma">🇦🇷</button>
-      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema">🌙</button>
     </div>
   </header>
 
@@ -30,6 +30,7 @@
     <section id="view-gramatica" class="view"><div class="view-body"></div></section>
     <section id="view-vocabulario" class="view"><div class="view-body"></div></section>
     <section id="view-produccion" class="view"><div class="view-body"></div></section>
+    <section id="view-lectura" class="view"><div class="view-body"></div></section>
     <section id="view-ajustes" class="view"><div class="view-body"></div></section>
   </main>
 
@@ -38,22 +39,25 @@
     <button class="nav-btn" data-view="gramatica"><span class="ico">📐</span><span class="lbl" data-i18n="nav_grammar">Gramática</span></button>
     <button class="nav-btn" data-view="vocabulario"><span class="ico">🗂️</span><span class="lbl" data-i18n="nav_vocab">Vocab</span></button>
     <button class="nav-btn" data-view="produccion"><span class="ico">✍️</span><span class="lbl" data-i18n="nav_production">Producción</span></button>
+    <button class="nav-btn" data-view="lectura"><span class="ico">📖</span><span class="lbl" data-i18n="nav_lectura">Lectura</span></button>
     <button class="nav-btn" data-view="ajustes"><span class="ico">⚙️</span><span class="lbl" data-i18n="nav_settings">Ajustes</span></button>
   </nav>
 
   <!-- datos -->
-  <script src="data/vocab.data.js?v=3"></script>
-  <script src="data/grammar.data.js?v=3"></script>
-  <script src="data/produccion.data.js?v=3"></script>
+  <script src="data/vocab.data.js?v=8"></script>
+  <script src="data/grammar.data.js?v=8"></script>
+  <script src="data/produccion.data.js?v=8"></script>
+  <script src="data/provincias.data.js?v=8"></script>
   <!-- lógica -->
-  <script src="js/storage.js?v=3"></script>
-  <script src="js/i18n.js?v=3"></script>
-  <script src="js/srs.js?v=3"></script>
-  <script src="js/streak.js?v=3"></script>
-  <script src="js/util.js?v=3"></script>
-  <script src="js/vocab.js?v=3"></script>
-  <script src="js/grammar.js?v=3"></script>
-  <script src="js/produccion.js?v=3"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/storage.js?v=8"></script>
+  <script src="js/i18n.js?v=8"></script>
+  <script src="js/srs.js?v=8"></script>
+  <script src="js/streak.js?v=8"></script>
+  <script src="js/util.js?v=8"></script>
+  <script src="js/vocab.js?v=8"></script>
+  <script src="js/grammar.js?v=8"></script>
+  <script src="js/produccion.js?v=8"></script>
+  <script src="js/lectura.js?v=8"></script>
+  <script src="js/app.js?v=8"></script>
 </body>
 </html>

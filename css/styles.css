@@ -15,38 +15,6 @@
   --radius: 16px;
   --shadow: 0 1px 3px rgba(20, 30, 45, 0.08), 0 8px 24px rgba(20, 30, 45, 0.06);
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #10151b;
-    --card: #1a2028;
-    --text: #e8ecf1;
-    --muted: #93a0ad;
-    --border: #29313c;
-    --accent: #4aa8e0;
-    --accent-ink: #0a0f14;
-    --good: #4cc27f;
-    --good-bg: #12291d;
-    --bad: #e2705c;
-    --bad-bg: #2b1712;
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
-  }
-}
-/* Forzado manual con el botón de tema, gana sin importar el sistema operativo */
-:root[data-theme="dark"] {
-  --bg: #10151b;
-  --card: #1a2028;
-  --text: #e8ecf1;
-  --muted: #93a0ad;
-  --border: #29313c;
-  --accent: #4aa8e0;
-  --accent-ink: #0a0f14;
-  --good: #4cc27f;
-  --good-bg: #12291d;
-  --bad: #e2705c;
-  --bad-bg: #2b1712;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
 * { box-sizing: border-box; }
 
 /* ---- Onboarding ---- */
@@ -80,6 +48,33 @@ body.onboarding-active .bottom-nav { display: none; }
 .onboarding-option:disabled:active { transform: none; }
 .onboarding-flag { font-size: 1.8rem; flex: 0 0 auto; }
 .onboarding-lang-name { font-weight: 700; flex: 1; }
+
+/* ---- Pantalla completa de provincia (Lectura) ---- */
+#provincia-screen { display: none; }
+body.provincia-active #provincia-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+}
+body.provincia-active .app-header,
+body.provincia-active .app-main,
+body.provincia-active .bottom-nav { display: none; }
+
+.provincia-content { flex: 1 1 auto; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.provincia-back-btn {
+  flex: 0 0 auto;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 16px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.provincia-back-btn.generic { background: var(--accent); color: var(--accent-ink); }
+.provincia-back-btn.ba { background: #1d2a44; color: #d39e22; border-top: 3px solid #d39e22; }
 .onboarding-badge {
   flex: 0 0 auto;
   font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;
@@ -203,7 +198,6 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
   transition: transform 0.06s ease;
 }
 .home-card:active { transform: scale(0.98); }
-.home-card:first-child { grid-column: 1 / -1; }
 .hc-emoji { font-size: 1.7rem; }
 .hc-title { font-weight: 700; margin-top: 6px; }
 .namebox { margin-top: 14px; }
@@ -215,6 +209,32 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 
 .header-streak { display: flex; align-items: center; gap: 3px; font-weight: 700; font-size: 0.9rem; padding: 0 2px; }
 .header-streak .streak-flame { font-size: 1.05rem; }
+
+/* ---- Lectura: Buenos Aires (diseño de prueba, especial solo para esta provincia) ---- */
+.ba-header-img { display: block; width: 100%; height: auto; }
+.ba-panel {
+  position: relative;
+  display: block;
+  background: #1d2a44;
+  border-top: 4px solid #d39e22;
+  padding: 22px 20px 30px;
+  text-align: center;
+  min-height: calc(100% - 145px);
+}
+.ba-corner-left, .ba-corner-right { position: absolute; top: 0; width: 56px; height: auto; }
+.ba-corner-left { left: 0; }
+.ba-corner-right { right: 0; }
+.ba-sol { width: 44px; height: auto; margin: 0 auto 14px; display: block; }
+.ba-title {
+  color: #a390bc;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+.ba-text { color: #a390bc; font-size: 0.95rem; line-height: 1.7; text-align: left; margin: 0 0 14px; }
+.ba-escarapela { width: 56px; height: auto; margin: 18px auto 0; display: block; }
 
 /* ---- Tarjetas / paneles ---- */
 .card {
