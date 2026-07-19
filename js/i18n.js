@@ -11,7 +11,7 @@ const I18N = {
     nav_settings: "Ajustes",
 
     home_greet_hi: "¡Hola!",
-    home_greet_hi_name: (name) => `¡Hola, ${name}! 👋`,
+    home_greet_hi_name: (name) => `¡Hola, ${name}!`,
     home_subtitle: "Practicá un rato. Elegí por dónde arrancar.",
     home_vocab_title: "Vocabulario",
     home_vocab_pending: (n) => `${n} por completar`,
@@ -32,7 +32,6 @@ const I18N = {
     onboarding_name_placeholder: "¿Cómo te llamás?",
     onboarding_continue: "Continuar",
     onboarding_question: "¿Qué idioma querés aprender?",
-    onboarding_coming_soon: "Próximamente",
 
     under_construction_desc: "Todavía estamos construyendo el contenido para este idioma. ¡Pronto vas a poder practicarlo acá!",
     under_construction_hint: "Si querés cambiar de idioma, andá a Ajustes y reiniciá el progreso.",
@@ -60,14 +59,7 @@ const I18N = {
         : "No hay tarjetas cargadas todavía.",
     vocab_show: "Mostrar",
     vocab_again: "Otra vez",
-    vocab_hard: "Difícil",
-    vocab_good: "Bien",
-    vocab_easy: "Fácil",
-
-    srs_new: "nuevo",
-    srs_due: "para repasar",
-    srs_in_1_day: "en 1 día",
-    srs_in_days: (n) => `en ${n} días`,
+    vocab_know: "La sé",
 
     grammar_pick_topic: "Elegí un tema para practicar.",
     grammar_exercise_count: (n) => `${n} ejercicios`,
@@ -102,7 +94,7 @@ const I18N = {
     nav_settings: "Beállítások",
 
     home_greet_hi: "Szia!",
-    home_greet_hi_name: (name) => `Szia, ${name}! 👋`,
+    home_greet_hi_name: (name) => `Szia, ${name}!`,
     home_subtitle: "Gyakorolj egy kicsit. Válaszd ki, hol kezdjük.",
     home_vocab_title: "Szókincs",
     home_vocab_pending: (n) => `${n} befejezetlen`,
@@ -123,7 +115,6 @@ const I18N = {
     onboarding_name_placeholder: "Mi a neved?",
     onboarding_continue: "Tovább",
     onboarding_question: "Milyen nyelvet szeretnél tanulni?",
-    onboarding_coming_soon: "Hamarosan",
 
     under_construction_desc: "Még építjük ennek a nyelvnek a tartalmát. Hamarosan itt is gyakorolhatod!",
     under_construction_hint: "Ha nyelvet szeretnél váltani, menj a Beállításokba és állítsd vissza a haladást.",
@@ -151,14 +142,7 @@ const I18N = {
         : "Még nincsenek feltöltött kártyák.",
     vocab_show: "Mutasd",
     vocab_again: "Újra",
-    vocab_hard: "Nehéz",
-    vocab_good: "Jó",
-    vocab_easy: "Könnyű",
-
-    srs_new: "új",
-    srs_due: "ismétlésre vár",
-    srs_in_1_day: "1 nap múlva",
-    srs_in_days: (n) => `${n} nap múlva`,
+    vocab_know: "Tudom",
 
     grammar_pick_topic: "Válassz egy témát a gyakorláshoz.",
     grammar_exercise_count: (n) => `${n} feladat`,

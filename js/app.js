@@ -50,11 +50,11 @@ function drawOnboarding() {
 }
 
 function onboardingNameCard() {
-  const input = h("input", { class: "text-input", type: "text", placeholder: I18n.t("onboarding_name_placeholder") });
+  const input = h("input", { class: "onboarding-input", type: "text", placeholder: I18n.t("onboarding_name_placeholder") });
   const cont = h(
     "button",
     {
-      class: "btn primary wide",
+      class: "onboarding-continue-btn",
       onClick: () => {
         Store.updateSettings({ name: input.value.trim() });
         onboardingStep = "lang";
@@ -65,7 +65,7 @@ function onboardingNameCard() {
   );
   input.addEventListener("keydown", (e) => { if (e.key === "Enter") cont.click(); });
   return h("div", { class: "onboarding-card" }, [
-    h("div", { class: "onboarding-emoji" }, "🧉"),
+    h("img", { class: "onboarding-sol", src: "assets/sol.png", alt: "" }),
     h("div", { class: "onboarding-title" }, "Che, aprendé"),
     h("p", { class: "onboarding-subtitle" }, I18n.t("onboarding_name_question")),
     input,
@@ -75,7 +75,7 @@ function onboardingNameCard() {
 
 function onboardingLangCard() {
   return h("div", { class: "onboarding-card" }, [
-    h("div", { class: "onboarding-emoji" }, "🧉"),
+    h("img", { class: "onboarding-sol", src: "assets/sol.png", alt: "" }),
     h("div", { class: "onboarding-title" }, "Che, aprendé"),
     h("p", { class: "onboarding-subtitle" }, I18n.t("onboarding_question")),
     h(
@@ -90,11 +90,7 @@ function onboardingLangCard() {
             disabled: l.ready ? null : true,
             onClick: l.ready ? () => chooseLearningLang(l.code) : null,
           },
-          [
-            h("span", { class: "onboarding-flag" }, l.flag),
-            h("span", { class: "onboarding-lang-name" }, l.name),
-            l.ready ? null : h("span", { class: "onboarding-badge" }, I18n.t("onboarding_coming_soon")),
-          ]
+          l.name
         )
       )
     ),
@@ -121,7 +117,7 @@ function renderUnderConstruction(host) {
 
 function renderHeader() {
   const title = document.getElementById("app-title");
-  if (title) title.textContent = "🧉 Che, aprendé";
+  if (title) title.textContent = "Che, aprendé";
   document.title = "Che, aprendé";
 }
 
@@ -142,7 +138,7 @@ function updateLangButton() {
   const btn = document.getElementById("lang-toggle");
   if (!btn) return;
   const l = I18n.lang();
-  btn.textContent = l === "hu" ? "🇭🇺" : "🇦🇷";
+  btn.textContent = l === "hu" ? "HU" : "AR";
   btn.setAttribute("aria-label", l === "hu" ? "Váltás spanyolra" : "Cambiar a húngaro");
 }
 
@@ -169,6 +165,7 @@ function setupNav() {
 
 function showView(name) {
   currentView = name;
+  document.body.dataset.view = name;
   document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === "view-" + name));
   document.querySelectorAll(".nav-btn").forEach((b) => b.classList.toggle("active", b.dataset.view === name));
   const host = document.querySelector("#view-" + name + " .view-body");
@@ -206,19 +203,18 @@ function renderHome(host) {
 
   host.appendChild(
     h("div", { class: "home-grid" }, [
-      homeCard("🗂️", I18n.t("home_vocab_title"), v.pending > 0 ? I18n.t("home_vocab_pending", v.pending) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
-      homeCard("📐", I18n.t("home_grammar_title"), I18n.t("home_grammar_topics", GRAMMAR.length), () => showView("gramatica")),
-      homeCard("✍️", I18n.t("home_production_title"), I18n.t("home_production_prompts", PRODUCCION.length), () => showView("produccion")),
-      homeCard("📖", I18n.t("home_lectura_title"), I18n.t("home_lectura_count", PROVINCIAS.length), () => showView("lectura")),
+      homeCard(I18n.t("home_vocab_title"), v.pending > 0 ? I18n.t("home_vocab_pending", v.pending) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
+      homeCard(I18n.t("home_grammar_title"), I18n.t("home_grammar_topics", GRAMMAR.length), () => showView("gramatica")),
+      homeCard(I18n.t("home_production_title"), I18n.t("home_production_prompts", PRODUCCION.length), () => showView("produccion")),
+      homeCard(I18n.t("home_lectura_title"), I18n.t("home_lectura_count", PROVINCIAS.length), () => showView("lectura")),
     ])
   );
 }
 
-function homeCard(emoji, title, sub, onClick) {
+function homeCard(title, sub, onClick) {
   return h("button", { class: "home-card", onClick }, [
-    h("div", { class: "hc-emoji" }, emoji),
     h("div", { class: "hc-title" }, title),
-    h("div", { class: "hc-sub muted small" }, sub),
+    h("div", { class: "hc-sub" }, sub),
   ]);
 }
 

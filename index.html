@@ -11,17 +11,23 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
-  <link rel="stylesheet" href="css/styles.css?v=8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=16" />
 </head>
 <body>
   <div id="onboarding-screen" class="onboarding-screen"></div>
   <div id="provincia-screen" class="provincia-screen"></div>
 
   <header class="app-header">
-    <h1 id="app-title">🧉 Che, aprendé</h1>
+    <div class="app-brand">
+      <img src="assets/sol.png" alt="" class="app-sol" />
+      <h1 id="app-title">Che, aprendé</h1>
+    </div>
     <div class="header-actions">
       <span id="header-streak" class="header-streak"></span>
-      <button id="lang-toggle" class="icon-btn" type="button" aria-label="Cambiar idioma">🇦🇷</button>
+      <button id="lang-toggle" class="lang-badge" type="button" aria-label="Cambiar idioma">AR</button>
     </div>
   </header>
 
@@ -44,20 +50,19 @@
   </nav>
 
   <!-- datos -->
-  <script src="data/vocab.data.js?v=8"></script>
-  <script src="data/grammar.data.js?v=8"></script>
-  <script src="data/produccion.data.js?v=8"></script>
-  <script src="data/provincias.data.js?v=8"></script>
+  <script src="data/vocab.data.js?v=16"></script>
+  <script src="data/grammar.data.js?v=16"></script>
+  <script src="data/produccion.data.js?v=16"></script>
+  <script src="data/provincias.data.js?v=16"></script>
   <!-- lógica -->
-  <script src="js/storage.js?v=8"></script>
-  <script src="js/i18n.js?v=8"></script>
-  <script src="js/srs.js?v=8"></script>
-  <script src="js/streak.js?v=8"></script>
-  <script src="js/util.js?v=8"></script>
-  <script src="js/vocab.js?v=8"></script>
-  <script src="js/grammar.js?v=8"></script>
-  <script src="js/produccion.js?v=8"></script>
-  <script src="js/lectura.js?v=8"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/storage.js?v=16"></script>
+  <script src="js/i18n.js?v=16"></script>
+  <script src="js/streak.js?v=16"></script>
+  <script src="js/util.js?v=16"></script>
+  <script src="js/vocab.js?v=16"></script>
+  <script src="js/grammar.js?v=16"></script>
+  <script src="js/produccion.js?v=16"></script>
+  <script src="js/lectura.js?v=16"></script>
+  <script src="js/app.js?v=16"></script>
 </body>
 </html>

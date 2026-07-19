@@ -1,19 +1,20 @@
-/* ---- Variables / temas ---- */
+/* ---- Variables / temas ----
+   Paleta autorizada para toda la app (excepto el contenido propio de cada
+   provincia en Lectura, como Buenos Aires, que tiene su propio diseño):
+   crema #fff4d6, navy #1d2a44, rosa #d4cdce, cian #1fb6b5. */
 :root {
-  --bg: #f5f7fa;
-  --card: #ffffff;
-  --text: #1c2430;
-  --muted: #6b7684;
-  --border: #e4e8ee;
-  --accent: #3a9bd8;
-  --accent-ink: #ffffff;
-  --good: #2e9e5b;
-  --good-bg: #e7f6ec;
-  --bad: #d8503a;
-  --bad-bg: #fbe9e5;
-  --sun: #f2b705;
+  --bg: #fff4d6;
+  --text: #1d2a44;
+  --muted: rgba(29, 42, 68, 0.62);
+  --card: #d4cdce;
+  --border: #d4cdce;
+  --accent: #1fb6b5;
+  --accent-ink: #1d2a44;
   --radius: 16px;
-  --shadow: 0 1px 3px rgba(20, 30, 45, 0.08), 0 8px 24px rgba(20, 30, 45, 0.06);
+  --v2-cream: #fff4d6;
+  --v2-navy: #1d2a44;
+  --v2-pink: #d4cdce;
+  --v2-cyan: #1fb6b5;
 }
 * { box-sizing: border-box; }
 
@@ -25,29 +26,41 @@ body.onboarding-active #onboarding-screen {
   justify-content: center;
   min-height: 100vh;
   padding: 24px 16px;
+  background: var(--v2-cream);
 }
 body.onboarding-active .app-header,
 body.onboarding-active .app-main,
 body.onboarding-active .bottom-nav { display: none; }
 
 .onboarding-card { width: 100%; max-width: 420px; text-align: center; }
-.onboarding-emoji { font-size: 3rem; }
-.onboarding-title { font-size: 1.6rem; font-weight: 700; margin: 8px 0 4px; letter-spacing: -0.01em; }
-.onboarding-subtitle { color: var(--muted); margin-bottom: 24px; }
+.onboarding-sol { width: 130px; height: 130px; margin: 0 auto 8px; display: block; }
+.onboarding-title { font-size: 1.8rem; font-weight: 700; color: var(--v2-navy); margin: 4px 0 28px; letter-spacing: -0.01em; }
+.onboarding-subtitle { color: var(--v2-navy); font-weight: 600; margin-bottom: 20px; }
+.onboarding-input {
+  display: block; width: 100%;
+  background: var(--v2-pink); border: none; border-radius: 999px;
+  padding: 16px 20px; margin-bottom: 14px;
+  font: inherit; font-size: 1rem; text-align: center; color: var(--v2-navy);
+}
+.onboarding-input::placeholder { color: var(--v2-cyan); font-weight: 600; }
+.onboarding-continue-btn {
+  display: block; width: 100%;
+  background: var(--v2-navy); color: var(--v2-cream);
+  border: none; border-radius: 999px; padding: 16px;
+  font: inherit; font-weight: 700; font-size: 1.05rem; cursor: pointer;
+}
+.onboarding-continue-btn:active { transform: scale(0.98); }
 .onboarding-options { display: grid; gap: 12px; }
 .onboarding-option {
-  display: flex; align-items: center; gap: 12px;
-  width: 100%; text-align: left;
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px;
-  cursor: pointer; box-shadow: var(--shadow);
-  font: inherit; color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  background: var(--v2-navy); color: var(--v2-cream);
+  border: none; border-radius: 999px; padding: 16px;
+  cursor: pointer; font: inherit; font-weight: 700; font-size: 1rem;
 }
 .onboarding-option:active { transform: scale(0.98); }
-.onboarding-option:disabled { opacity: 0.5; cursor: not-allowed; }
+.onboarding-option:disabled { opacity: 0.4; cursor: not-allowed; }
 .onboarding-option:disabled:active { transform: none; }
-.onboarding-flag { font-size: 1.8rem; flex: 0 0 auto; }
-.onboarding-lang-name { font-weight: 700; flex: 1; }
 
 /* ---- Pantalla completa de provincia (Lectura) ---- */
 #provincia-screen { display: none; }
@@ -73,18 +86,13 @@ body.provincia-active .bottom-nav { display: none; }
   font-size: 1rem;
   cursor: pointer;
 }
-.provincia-back-btn.generic { background: var(--accent); color: var(--accent-ink); }
+.provincia-back-btn.generic { background: var(--v2-navy); color: var(--v2-cream); }
+/* Excepcion: diseno propio de cada provincia (ej. Buenos Aires), no sigue la paleta general */
 .provincia-back-btn.ba { background: #1d2a44; color: #d39e22; border-top: 3px solid #d39e22; }
-.onboarding-badge {
-  flex: 0 0 auto;
-  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;
-  color: var(--muted); background: var(--bg); border: 1px solid var(--border);
-  border-radius: 999px; padding: 4px 8px;
-}
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -100,17 +108,19 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 16px calc(14px + env(safe-area-inset-top));
+  background: var(--v2-cream);
+  border-bottom: 3px solid var(--v2-cyan);
+  padding: 12px 16px calc(10px + env(safe-area-inset-top));
 }
+.app-brand { display: flex; align-items: center; gap: 8px; flex: 1 1 auto; min-width: 0; }
+.app-sol { width: 32px; height: 32px; flex: 0 0 auto; display: block; }
 .app-header h1 {
   flex: 1 1 auto;
   min-width: 0;
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  color: var(--v2-navy);
   letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
@@ -122,23 +132,21 @@ body {
   gap: 8px;
   flex: 0 0 auto;
 }
-.icon-btn {
+.lang-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  width: 36px;
   height: 36px;
-  min-width: 36px;
-  padding: 0 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  border-radius: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--v2-pink);
+  color: var(--v2-navy);
+  font-weight: 700;
+  font-size: 0.75rem;
   cursor: pointer;
 }
-.icon-btn:active { transform: scale(0.95); }
+.lang-badge:active { transform: scale(0.95); }
 
 /* ---- Layout ---- */
 .app-main {
@@ -154,52 +162,52 @@ h2 { font-size: 1.3rem; margin: 0 0 6px; letter-spacing: -0.01em; }
 .greet { font-size: 1.5rem; }
 .muted { color: var(--muted); }
 .small { font-size: 0.85rem; }
-hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; color: var(--v2-navy); }
 
 /* ---- Botones ---- */
 .btn {
   font: inherit;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  padding: 12px 16px;
-  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  background: var(--v2-navy);
+  color: var(--v2-cream);
+  padding: 14px 18px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: transform 0.05s ease, background 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.05s ease, opacity 0.15s ease;
 }
 .btn:active { transform: scale(0.98); }
-.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
-.btn.ghost { background: transparent; }
-.btn.danger { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, var(--border)); background: transparent; }
+.btn.primary { background: var(--v2-navy); color: var(--v2-cream); }
+.btn.ghost { background: transparent; color: var(--v2-navy); border: 2px solid var(--v2-navy); }
+.btn.danger { background: transparent; color: var(--v2-navy); border: 2px solid var(--v2-navy); }
 .btn.wide { display: block; width: 100%; margin-top: 12px; }
-.btn:disabled { opacity: 0.9; cursor: default; }
+.btn:disabled { opacity: 0.5; cursor: default; }
 
 .back-link {
   font: inherit;
   background: none;
   border: none;
-  color: var(--accent);
+  color: var(--v2-navy);
   cursor: pointer;
   padding: 0 0 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ---- Inicio ---- */
-.home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.home-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
 .home-card {
   text-align: left;
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 16px;
+  border: none;
+  background: var(--v2-navy);
+  color: var(--v2-cream);
+  border-radius: 20px;
+  padding: 22px 20px;
   cursor: pointer;
-  box-shadow: var(--shadow);
   transition: transform 0.06s ease;
 }
 .home-card:active { transform: scale(0.98); }
-.hc-emoji { font-size: 1.7rem; }
-.hc-title { font-weight: 700; margin-top: 6px; }
+.hc-title { font-weight: 700; font-size: 1.15rem; color: var(--v2-cream); }
+.hc-sub { color: var(--v2-cyan); font-size: 0.9rem; margin-top: 8px; font-weight: 600; }
 .namebox { margin-top: 14px; }
 
 .streak-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
@@ -207,10 +215,10 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 .streak-flame.active { filter: none; opacity: 1; }
 .streak-text { font-weight: 600; }
 
-.header-streak { display: flex; align-items: center; gap: 3px; font-weight: 700; font-size: 0.9rem; padding: 0 2px; }
+.header-streak { display: flex; align-items: center; gap: 3px; font-weight: 700; font-size: 0.9rem; padding: 0 2px; color: var(--v2-navy); }
 .header-streak .streak-flame { font-size: 1.05rem; }
 
-/* ---- Lectura: Buenos Aires (diseño de prueba, especial solo para esta provincia) ---- */
+/* ---- Lectura: Buenos Aires (excepcion, diseno propio de esta provincia) ---- */
 .ba-header-img { display: block; width: 100%; height: auto; }
 .ba-panel {
   position: relative;
@@ -239,11 +247,11 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 /* ---- Tarjetas / paneles ---- */
 .card {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius);
   padding: 20px;
-  box-shadow: var(--shadow);
   margin: 12px 0;
+  color: var(--v2-navy);
 }
 .panel { padding: 24px 16px; }
 .center { text-align: center; }
@@ -259,42 +267,43 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
   font-weight: 600;
   font-size: 0.85rem;
   padding: 9px 4px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--muted);
-  border-radius: 10px;
+  border: none;
+  background: var(--v2-pink);
+  color: var(--v2-navy);
+  border-radius: 999px;
   cursor: pointer;
   text-align: center;
 }
-.filter-tab.active { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.filter-tab.active { background: var(--v2-cyan); color: var(--v2-navy); font-weight: 700; }
 
 /* ---- Flashcard ---- */
 .flashcard { text-align: center; }
 .flashcard .term { font-size: 1.7rem; font-weight: 700; }
-.flashcard .back { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--border); }
-.flashcard .hu { font-size: 1.15rem; color: var(--accent); font-weight: 600; }
+.flashcard .back { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--v2-navy); }
+.flashcard .hu { font-size: 1.15rem; color: var(--v2-navy); font-weight: 700; }
 .flashcard .example { margin-top: 10px; font-style: italic; }
 .flashcard .note { margin-top: 10px; }
 .hidden { display: none; }
 
 .grades { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
 .btn.grade { padding: 12px 8px; }
-.btn.grade.again { color: var(--bad); }
-.btn.grade.easy { color: var(--good); }
 
-/* ---- Gramática ---- */
+/* ---- Gramática / Lectura (listas de tarjetas) ---- */
 .topic-card {
   display: block; width: 100%; text-align: left;
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px; margin: 10px 0;
-  cursor: pointer; box-shadow: var(--shadow);
+  background: var(--v2-navy); border: none;
+  color: var(--v2-cream);
+  border-radius: 20px; padding: 20px; margin: 10px 0;
+  cursor: pointer;
 }
-.topic-card.done { background: var(--good-bg); border-color: color-mix(in srgb, var(--good) 35%, var(--border)); }
-.topic-title { font-weight: 700; font-size: 1.05rem; }
+.topic-card.done { border: 3px solid var(--v2-cyan); }
+.topic-title { font-weight: 700; font-size: 1.05rem; color: var(--v2-cream); }
+.topic-sub { color: var(--v2-cyan); font-size: 0.85rem; margin-top: 6px; font-weight: 600; }
 .lesson {
-  background: var(--card); border: 1px solid var(--border);
-  border-left: 4px solid var(--sun);
+  background: var(--v2-pink); border: none;
+  border-left: 4px solid var(--v2-cyan);
   border-radius: 12px; padding: 14px 16px; margin: 12px 0;
+  color: var(--v2-navy);
 }
 .examples { margin: 12px 0; padding-left: 18px; }
 .examples li { margin: 6px 0; color: var(--muted); }
@@ -302,14 +311,14 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 .question { font-size: 1.15rem; text-align: center; }
 .blank {
   display: inline-block; min-width: 54px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--v2-cyan);
   margin: 0 4px; color: transparent; letter-spacing: 2px;
 }
 
 .options { display: grid; gap: 10px; }
-.btn.option { text-align: center; font-size: 1.05rem; }
-.btn.option.right { border-color: var(--good); background: var(--good-bg); color: var(--good); }
-.btn.option.wrong { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); }
+.btn.option { text-align: center; font-size: 1.05rem; background: var(--v2-navy); color: var(--v2-cream); }
+.btn.option.right { background: var(--v2-cyan); color: var(--v2-navy); }
+.btn.option.wrong { background: var(--v2-pink); color: var(--v2-navy); opacity: 0.75; }
 
 .inline { display: flex; gap: 8px; margin-top: 4px; }
 .inline .text-input { flex: 1; }
@@ -317,54 +326,66 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 .text-input {
   font: inherit;
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg);
-  color: var(--text);
+  padding: 13px 16px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: var(--v2-pink);
+  color: var(--v2-navy);
 }
-.text-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-.text-input.right { border-color: var(--good); }
-.text-input.wrong { border-color: var(--bad); }
+.text-input::placeholder { color: var(--v2-navy); opacity: 0.55; }
+.text-input:focus { outline: none; border-color: var(--v2-cyan); }
+.text-input.right { border-color: var(--v2-cyan); }
+.text-input.wrong { border-color: var(--v2-navy); }
 .hint { margin: 2px 0 10px; }
 
 /* ---- Feedback ---- */
-.feedback { margin-top: 12px; border-radius: 12px; }
-.feedback.ok, .feedback.no { padding: 12px 14px; }
-.feedback.ok { background: var(--good-bg); }
-.feedback.no { background: var(--bad-bg); }
+.feedback { margin-top: 12px; border-radius: 14px; }
+.feedback.ok, .feedback.no { padding: 14px 16px; }
+.feedback.ok { background: var(--v2-pink); border-left: 5px solid var(--v2-cyan); }
+.feedback.no { background: var(--v2-navy); }
 .fb-head { font-weight: 700; }
-.feedback.ok .fb-head { color: var(--good); }
-.feedback.no .fb-head { color: var(--bad); }
-.fb-explain { margin-top: 4px; color: var(--muted); font-size: 0.92rem; }
+.feedback.ok .fb-head { color: var(--v2-navy); }
+.feedback.no .fb-head { color: var(--v2-cream); }
+.feedback.ok .fb-explain { margin-top: 4px; font-size: 0.92rem; color: var(--v2-navy); opacity: 0.75; }
+.feedback.no .fb-explain { margin-top: 4px; font-size: 0.92rem; color: var(--v2-cream); opacity: 0.85; }
 
 /* ---- Ajustes ---- */
 .field { display: block; margin: 14px 0; }
 .field-label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
 
-/* ---- Nav inferior ---- */
+/* ---- Nav inferior ----
+   Fuera de Inicio, solo se muestran "Inicio" y "Ajustes"; los demas
+   botones quedan ocultos hasta volver a Inicio. */
 .bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
-  display: flex; justify-content: space-around;
-  background: color-mix(in srgb, var(--card) 92%, transparent);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border);
-  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  display: flex; justify-content: center; align-items: center; gap: 3px;
+  background: var(--v2-pink);
+  padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+  overflow-x: auto;
 }
 .nav-btn {
-  flex: 1; background: none; border: none; cursor: pointer;
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
-  color: var(--muted); font: inherit; font-size: 0.7rem; padding: 6px 2px;
-  border-radius: 10px;
+  flex: 0 0 auto; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--v2-navy); border: none; border-radius: 999px;
+  color: var(--v2-cream); font: inherit; font-weight: 600; font-size: 0.68rem;
+  padding: 9px 14px;
+  white-space: nowrap;
 }
-.nav-btn .ico { font-size: 1.2rem; filter: grayscale(0.4); opacity: 0.7; }
-.nav-btn.active { color: var(--accent); }
-.nav-btn.active .ico { filter: none; opacity: 1; }
+.nav-btn .ico { display: none; }
+.nav-btn.active { font-weight: 700; }
+.nav-btn[data-view="gramatica"],
+.nav-btn[data-view="vocabulario"],
+.nav-btn[data-view="produccion"],
+.nav-btn[data-view="lectura"] { display: none; }
+body[data-view="home"] .nav-btn[data-view="gramatica"],
+body[data-view="home"] .nav-btn[data-view="vocabulario"],
+body[data-view="home"] .nav-btn[data-view="produccion"],
+body[data-view="home"] .nav-btn[data-view="lectura"] { display: flex; }
 
 /* ---- Toast ---- */
 .toast {
   position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(10px);
-  background: var(--text); color: var(--bg);
+  background: var(--v2-navy); color: var(--v2-cream);
   padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
   opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; z-index: 50;
 }

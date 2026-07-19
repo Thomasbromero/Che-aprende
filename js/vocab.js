@@ -1,17 +1,25 @@
-/* Módulo Vocabulario: tarjetas con repaso espaciado, filtradas por categoría
-   (todas / completas / por completar). "Completa" = ya se calificó al menos una vez. */
+/* Módulo Vocabulario: tarjetas filtradas por categoría (todas / completas /
+   por completar). Al mostrar una tarjeta solo hay 2 botones: "Otra vez"
+   (la manda a "por completar") y "La sé" (la manda a "completas"). */
 const Vocab = (function () {
   let host = null;
   let queue = [];
   let current = null;
   let filter = "pending"; // "all" | "done" | "pending"
 
+  function isDone(c) {
+    const rec = Store.srs(c.id);
+    if (!rec) return false;
+    if (typeof rec.done === "boolean") return rec.done;
+    return (rec.reps || 0) >= 1; // formato viejo (antes de simplificar a 2 botones)
+  }
+
   function doneCards() {
-    return VOCAB.filter((c) => !!Store.srs(c.id));
+    return VOCAB.filter((c) => isDone(c));
   }
 
   function pendingCards() {
-    return VOCAB.filter((c) => !Store.srs(c.id));
+    return VOCAB.filter((c) => !isDone(c));
   }
 
   function cardsForFilter(f) {
@@ -80,7 +88,6 @@ const Vocab = (function () {
     host.appendChild(
       h("div", { class: "progress-row" }, [
         h("span", { class: "muted small" }, I18n.t("vocab_remaining", queue.length + 1)),
-        h("span", { class: "muted small" }, SRS.dueInLabel(Store.srs(current.id))),
       ])
     );
 
@@ -97,10 +104,8 @@ const Vocab = (function () {
     host.appendChild(card);
 
     const grades = h("div", { class: "grades" }, [
-      h("button", { class: "btn grade again", onClick: () => grade(0) }, I18n.t("vocab_again")),
-      h("button", { class: "btn grade hard", onClick: () => grade(1) }, I18n.t("vocab_hard")),
-      h("button", { class: "btn grade good", onClick: () => grade(2) }, I18n.t("vocab_good")),
-      h("button", { class: "btn grade easy", onClick: () => grade(3) }, I18n.t("vocab_easy")),
+      h("button", { class: "btn grade again", onClick: () => grade(false) }, I18n.t("vocab_again")),
+      h("button", { class: "btn grade easy", onClick: () => grade(true) }, I18n.t("vocab_know")),
     ]);
 
     const reveal = h(
@@ -117,11 +122,11 @@ const Vocab = (function () {
     host.appendChild(reveal);
   }
 
-  function grade(g) {
+  function grade(knowsIt) {
     Streak.recordActivity();
     updateHeaderStreak();
-    Store.setSrs(current.id, SRS.schedule(Store.srs(current.id), g));
-    if (g === 0) queue.push(current); // "otra vez": reaparece al final de la sesión
+    Store.setSrs(current.id, { done: knowsIt });
+    if (!knowsIt) queue.push(current); // "otra vez": reaparece al final de la sesión
     next();
   }
 

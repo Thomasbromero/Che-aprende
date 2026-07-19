@@ -19,7 +19,7 @@ const Grammar = (function () {
           h("div", { class: "topic-title" }, topic.title),
           h(
             "div",
-            { class: "topic-sub muted small" },
+            { class: "topic-sub" },
             I18n.t("grammar_exercise_count", topic.exercises.length) + (done ? I18n.t("grammar_done_suffix") : "")
           ),
         ])
