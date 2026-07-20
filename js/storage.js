@@ -9,6 +9,7 @@ const Store = (function () {
       settings: { name: "", uiLang: null, streak: null, learningLang: null },
       srs: {},         // { [cardId]: { ease, interval, reps, due, last } }
       grammar: {},     // { [topicId]: { done: true } }
+      produccion: {},  // { [itemId]: { done: true } }
     };
   }
 
@@ -27,6 +28,7 @@ const Store = (function () {
         settings: Object.assign(d.settings, raw.settings || {}),
         srs: raw.srs || {},
         grammar: raw.grammar || {},
+        produccion: raw.produccion || {},
       };
     } catch (e) {
       return defaults();
@@ -46,6 +48,8 @@ const Store = (function () {
     allSrs() { return state.srs; },
     markGrammar(id) { state.grammar[id] = { done: true }; save(); },
     grammarDone(id) { return !!(state.grammar[id] && state.grammar[id].done); },
+    markProduccion(id) { state.produccion[id] = { done: true }; save(); },
+    produccionDone(id) { return !!(state.produccion[id] && state.produccion[id].done); },
     reset() { state = defaults(); save(); },
   };
 })();

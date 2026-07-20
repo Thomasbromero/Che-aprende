@@ -1,7 +1,8 @@
 /* ---- Variables / temas ----
    Paleta autorizada para toda la app (excepto el contenido propio de cada
    provincia en Lectura, como Buenos Aires, que tiene su propio diseño):
-   crema #fff4d6, navy #1d2a44, rosa #d4cdce, cian #1fb6b5. */
+   crema #fff4d6, navy #1d2a44, rosa #d4cdce, cian #1fb6b5,
+   blanco #ffffff (textos puntuales de Inicio), menta #b8f7e4 (flechas de Inicio). */
 :root {
   --bg: #fff4d6;
   --text: #1d2a44;
@@ -15,6 +16,8 @@
   --v2-navy: #1d2a44;
   --v2-pink: #d4cdce;
   --v2-cyan: #1fb6b5;
+  --v2-white: #ffffff;
+  --v2-mint: #b8f7e4;
 }
 * { box-sizing: border-box; }
 
@@ -196,6 +199,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; color: v
 /* ---- Inicio ---- */
 .home-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
 .home-card {
+  display: block;
+  width: 100%;
   text-align: left;
   border: none;
   background: var(--v2-navy);
@@ -204,11 +209,77 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; color: v
   padding: 22px 20px;
   cursor: pointer;
   transition: transform 0.06s ease;
+  font: inherit;
 }
 .home-card:active { transform: scale(0.98); }
+.home-card-cyan { background: var(--v2-cyan); }
+.home-card-pink { background: var(--v2-pink); }
 .hc-title { font-weight: 700; font-size: 1.15rem; color: var(--v2-cream); }
+.hc-title-navy { color: var(--v2-navy); }
 .hc-sub { color: var(--v2-cyan); font-size: 0.9rem; margin-top: 8px; font-weight: 600; }
+.hc-sub-white { color: var(--v2-white); }
 .namebox { margin-top: 14px; }
+
+.home-badge {
+  display: inline-block;
+  background: var(--v2-pink);
+  color: var(--v2-navy);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--v2-cyan);
+  color: var(--v2-white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  border-radius: 999px;
+  margin-top: 18px;
+}
+.home-cta-navy { background: var(--v2-navy); }
+.home-cta-arrow { color: var(--v2-mint); font-weight: 700; }
+
+.home-progress {
+  background: var(--v2-cream);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.home-progress-fill { background: var(--v2-navy); height: 100%; border-radius: 999px; }
+
+.home-row { display: flex; gap: 14px; }
+.home-row .home-card { flex: 1; padding: 18px 16px; }
+.home-row .hc-title { font-size: 1rem; }
+.home-row .hc-sub { font-size: 0.82rem; }
+
+.home-settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--v2-cyan);
+  color: var(--v2-navy);
+  border: none;
+  border-radius: 999px;
+  padding: 18px;
+  margin-top: 20px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+.home-settings-btn:active { transform: scale(0.98); }
+
+body[data-view="home"] .bottom-nav { display: none; }
 
 .streak-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
 .streak-flame { font-size: 1.4rem; line-height: 1; filter: grayscale(1); opacity: 0.4; transition: filter 0.2s ease, opacity 0.2s ease; }

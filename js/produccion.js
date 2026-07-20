@@ -9,6 +9,11 @@ const Produccion = (function () {
     run();
   }
 
+  function stats() {
+    const completed = PRODUCCION.filter((it) => Store.produccionDone(it.id)).length;
+    return { total: PRODUCCION.length, completed };
+  }
+
   function run() {
     const items = PRODUCCION;
     let i = 0,
@@ -59,6 +64,7 @@ const Produccion = (function () {
           onClick: () => {
             Streak.recordActivity();
             updateHeaderStreak();
+            Store.markProduccion(it.id);
             const accepts = (it.accept || [it.answer]).map(norm);
             const ok = accepts.includes(norm(input.value));
             if (ok) correct++;
@@ -92,5 +98,5 @@ const Produccion = (function () {
     step();
   }
 
-  return { render };
+  return { render, stats };
 })();

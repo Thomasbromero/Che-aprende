@@ -189,6 +189,8 @@ function renderHome(host) {
   clear(host);
   const s = Store.settings();
   const v = Vocab.stats();
+  const p = Produccion.stats();
+  const pPct = p.total ? Math.round((p.completed / p.total) * 100) : 0;
 
   host.appendChild(h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")));
   host.appendChild(h("p", { class: "muted" }, I18n.t("home_subtitle")));
@@ -203,19 +205,38 @@ function renderHome(host) {
 
   host.appendChild(
     h("div", { class: "home-grid" }, [
-      homeCard(I18n.t("home_vocab_title"), v.pending > 0 ? I18n.t("home_vocab_pending", v.pending) : I18n.t("home_vocab_uptodate"), () => showView("vocabulario")),
-      homeCard(I18n.t("home_grammar_title"), I18n.t("home_grammar_topics", GRAMMAR.length), () => showView("gramatica")),
-      homeCard(I18n.t("home_production_title"), I18n.t("home_production_prompts", PRODUCCION.length), () => showView("produccion")),
-      homeCard(I18n.t("home_lectura_title"), I18n.t("home_lectura_count", PROVINCIAS.length), () => showView("lectura")),
+      h("button", { class: "home-card home-card-navy home-card-featured", onClick: () => showView("vocabulario") }, [
+        h("span", { class: "home-badge" }, I18n.t("home_continue_badge")),
+        h("div", { class: "hc-title" }, I18n.t("home_vocab_title")),
+        h("div", { class: "hc-sub" }, v.pending > 0 ? I18n.t("home_vocab_pending", v.pending) : I18n.t("home_vocab_uptodate")),
+        h("span", { class: "home-cta" }, [I18n.t("home_go_lesson"), h("span", { class: "home-cta-arrow" }, "→")]),
+      ]),
+      h("button", { class: "home-card home-card-cyan home-card-featured", onClick: () => showView("produccion") }, [
+        h("div", { class: "hc-title hc-title-navy" }, I18n.t("home_production_title")),
+        h("div", { class: "hc-sub hc-sub-white" }, I18n.t("home_production_completed", p.completed)),
+        h("div", { class: "home-progress" }, [h("div", { class: "home-progress-fill", style: "width:" + pPct + "%" })]),
+        h("span", { class: "home-cta home-cta-navy" }, [I18n.t("home_go_produccion"), h("span", { class: "home-cta-arrow" }, "→")]),
+      ]),
+      h("div", { class: "home-row" }, [
+        h("button", { class: "home-card home-card-navy home-card-small", onClick: () => showView("lectura") }, [
+          h("div", { class: "hc-title" }, I18n.t("home_lectura_title")),
+          h("div", { class: "hc-sub" }, I18n.t("home_lectura_count", PROVINCIAS.length)),
+        ]),
+        h("button", { class: "home-card home-card-pink home-card-small", onClick: () => showView("gramatica") }, [
+          h("div", { class: "hc-title hc-title-navy" }, I18n.t("home_grammar_title")),
+          h("div", { class: "hc-sub hc-sub-white" }, I18n.t("home_grammar_topics", GRAMMAR.length)),
+        ]),
+      ]),
     ])
   );
-}
 
-function homeCard(title, sub, onClick) {
-  return h("button", { class: "home-card", onClick }, [
-    h("div", { class: "hc-title" }, title),
-    h("div", { class: "hc-sub" }, sub),
-  ]);
+  host.appendChild(
+    h(
+      "button",
+      { class: "home-settings-btn", onClick: () => showView("ajustes") },
+      [I18n.t("home_go_ajustes"), h("span", { class: "home-cta-arrow" }, "→")]
+    )
+  );
 }
 
 function renderAjustes(host) {
