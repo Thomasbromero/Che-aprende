@@ -20,7 +20,7 @@ const I18N = {
     home_grammar_topics: (n) => `${n} temas`,
     home_production_title: "Producción",
     home_production_prompts: (n) => `${n} consignas`,
-    home_production_completed: (n) => `${n} Consignas completas`,
+    home_production_completed: (n) => (n === 1 ? `${n} consigna completa` : `${n} consignas completas`),
     home_lectura_title: "Lectura",
     home_lectura_count: (n) => `${n} Textos`,
     home_continue_badge: "Continuar aprendiendo",

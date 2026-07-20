@@ -193,7 +193,7 @@ function renderHome(host) {
   const pPct = p.total ? Math.round((p.completed / p.total) * 100) : 0;
 
   host.appendChild(h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")));
-  host.appendChild(h("p", { class: "muted" }, I18n.t("home_subtitle")));
+  host.appendChild(h("p", { class: "muted home-subtitle" }, I18n.t("home_subtitle")));
 
   const streak = Streak.status();
   host.appendChild(
