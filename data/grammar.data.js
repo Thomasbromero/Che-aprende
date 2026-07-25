@@ -6,6 +6,27 @@
 */
 window.GRAMMAR = [
   {
+    id: "presentarse",
+    title: "Presentarte: \"Hola, soy… Encantada\"",
+    explain: "Cuando conocés a alguien nuevo, usá siempre la misma fórmula: \"Hola, soy [tu nombre]. Encantada.\" y listo. La palabra 'encantada' concuerda con VOS, que sos quien habla, y nunca con la otra persona. Por eso no cambia nunca: da igual si es un hombre, una mujer, una persona sola o un grupo de veinte. Olvidate de 'encantada de conocerte', 'de conocerlo', 'de conocerlas': todo eso cambia según con quién hablás y es un quilombo al pedo. 'Encantada' sola ya suena perfecta y educada. Pista en húngaro: ez az 'Örvendek' megfelelője. Egyetlen alak, minden helyzetre — ha nő vagy, mindig 'encantada', akárkivel is beszélsz.",
+    examples: [
+      "Hola, soy Kata. Encantada. (fórmula completa)",
+      "—Te presento a Martín. —Encantada. (es un hombre → igual: encantada)",
+      "—Ellos son mis compañeros de laburo. —Encantada. (es un grupo → igual: encantada)",
+      "—Ella es mi mamá. —Encantada. (es una mujer → igual: encantada)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Sos mujer y conocés a alguien en una fiesta: \"Hola, soy Kata, ___.\"", options: ["encantada", "encantado"], answer: "encantada", explain: "Concuerda con vos, que sos quien habla. Si sos mujer, siempre 'encantada'." },
+      { type: "choice", prompt: "—Te presento a mi hermano Fede. —Hola, ___.", options: ["encantada", "encantado"], answer: "encantada", explain: "Él es varón, pero no importa: la palabra concuerda con vos, no con él. Encantada." },
+      { type: "choice", prompt: "Te presentan a tres personas juntas. Decís:", options: ["Encantada", "Encantadas"], answer: "Encantada", explain: "No cambia por la cantidad de gente. Siempre 'Encantada', en singular." },
+      { type: "choice", prompt: "Te presentan a una señora mayor. Lo más simple es decir:", options: ["Encantada", "Encantada de conocerla"], answer: "Encantada", explain: "Las dos se entienden, pero quedate con 'Encantada' sola: así no tenés que pensar si es él, ella, ellos o ellas." },
+      { type: "choice", prompt: "Conocés a los amigos de tu marido, todos varones. Decís:", options: ["Encantada", "Encantada de conocerlos"], answer: "Encantada", explain: "Con 'Encantada' alcanza y sobra. La versión larga solo te complica." },
+      { type: "fill", prompt: "Completá la fórmula: \"Hola, soy Vivi. ___.\"", accept: ["encantada"], answer: "Encantada", explain: "La fórmula fija: nombre + Encantada." },
+      { type: "fill", prompt: "Te presentan a un grupo de gente nueva. Saludás con una sola palabra: ___", accept: ["encantada"], answer: "Encantada", explain: "Una sola palabra, siempre la misma: Encantada." },
+      { type: "fill", prompt: "Alguien te pregunta \"¿Cómo te llamás?\". Respondé: \"Me llamo Kata. ___.\"", accept: ["encantada"], answer: "Encantada", explain: "Después de decir tu nombre, cerrás con Encantada." }
+    ]
+  },
+  {
     id: "ser-estar",
     title: "Ser vs. Estar",
     explain: "SER → identidad, características esenciales, origen, profesión, hora y fecha. ESTAR → estados y situaciones que cambian, ubicación, resultado. Pista en húngaro: a magyar 'van' mindkettőt jelenti, a spanyol viszont megkülönbözteti. Ojo con el voseo: vos SOS / vos ESTÁS.",

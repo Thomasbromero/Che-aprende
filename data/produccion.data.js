@@ -12,5 +12,8 @@ window.PRODUCCION = [
   { id: "p3", prompt: "Ayer (yo) ___ un asado con la familia. (comer)", accept: ["comi"], answer: "comí", hint: "Pretérito perfecto simple, 1ª persona.", explain: "Acción terminada en el pasado → comí (con tilde)." },
   { id: "p4", prompt: "Cuando era chica, (yo) ___ en la plaza todos los días. (jugar)", accept: ["jugaba"], answer: "jugaba", hint: "Imperfecto (hábito en el pasado).", explain: "Costumbre repetida en el pasado → imperfecto: jugaba." },
   { id: "p5", prompt: "No creo que vos ___ razón esta vez. (tener)", accept: ["tengas", "tengás"], answer: "tengas", hint: "Subjuntivo tras 'no creo que'.", explain: "La duda / negación de creencia pide subjuntivo: tengas." },
-  { id: "p6", prompt: "Si tuviera plata, (yo) ___ por todo el país. (viajar)", accept: ["viajaria"], answer: "viajaría", hint: "Condicional simple.", explain: "Hipótesis: 'si tuviera... viajaría' (condicional)." }
+  { id: "p6", prompt: "Si tuviera plata, (yo) ___ por todo el país. (viajar)", accept: ["viajaria"], answer: "viajaría", hint: "Condicional simple.", explain: "Hipótesis: 'si tuviera... viajaría' (condicional)." },
+  { id: "p7", prompt: "Te preguntan tu nombre en una fiesta: \"Me llamo Vivi. ___.\"", accept: ["encantada"], answer: "Encantada", hint: "Una sola palabra, la de siempre.", explain: "La fórmula fija al conocer a alguien: nombre + Encantada." },
+  { id: "p8", prompt: "Te presentan a un grupo de gente nueva. Los saludás con: \"___.\"", accept: ["encantada"], answer: "Encantada", hint: "No cambia aunque sean muchos.", explain: "'Encantada' no cambia por la cantidad ni por el género de los otros." },
+  { id: "p9", prompt: "—Te presento a mi hermano Fede. —Hola, soy Kata, ___.", accept: ["encantada"], answer: "encantada", hint: "Concuerda con vos, no con él.", explain: "Aunque él sea varón, vos decís 'encantada': concuerda con quien habla." }
 ];

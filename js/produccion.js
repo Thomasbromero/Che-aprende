@@ -73,7 +73,7 @@ const Produccion = (function () {
             reveal.disabled = true;
             input.classList.add(ok ? "right" : "wrong");
             showFeedback(feedback, ok, it.answer, it.explain);
-            if (ok && input.value.trim() !== it.answer)
+            if (ok && spellingDiffers(input.value, it.answer))
               feedback.appendChild(h("div", { class: "fb-explain" }, I18n.t("feedback_correct_spelling", it.answer)));
             nextBtn.classList.remove("hidden");
           },

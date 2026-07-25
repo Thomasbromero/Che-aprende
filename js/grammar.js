@@ -128,7 +128,7 @@ const Grammar = (function () {
               check.disabled = true;
               input.classList.add(ok ? "right" : "wrong");
               showFeedback(feedback, ok, ex.answer, ex.explain);
-              if (ok && input.value.trim() !== ex.answer)
+              if (ok && spellingDiffers(input.value, ex.answer))
                 feedback.appendChild(h("div", { class: "fb-explain" }, I18n.t("feedback_correct_spelling", ex.answer)));
               nextBtn.classList.remove("hidden");
             },

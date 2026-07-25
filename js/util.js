@@ -37,6 +37,12 @@ function norm(s) {
     .replace(/[̀-ͯ]/g, "");
 }
 
+// ¿La respuesta escrita difiere de la forma correcta en algo más que las mayúsculas?
+// Sirve para avisar del acento (comi → comí) sin marcar "encantada" vs "Encantada".
+function spellingDiffers(written, answer) {
+  return (written || "").trim().toLowerCase() !== (answer || "").toLowerCase();
+}
+
 function shuffle(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {

@@ -117,5 +117,10 @@ window.VOCAB = [
   { id: "propina", term: "la propina", hu: "a borravaló", example: "Dejale una propina al mozo, atendió bárbaro.", note: "" },
   { id: "conserje", term: "el/la conserje", hu: "a portás / recepciós", example: "Preguntale al conserje dónde queda la parada del colectivo.", note: "" },
   { id: "vista", term: "la vista", hu: "a kilátás", example: "La habitación tiene una vista hermosa a la montaña.", note: "" },
-  { id: "minibar", term: "el minibar", hu: "a minibár", example: "No toques nada del minibar, cobran carísimo.", note: "" }
+  { id: "minibar", term: "el minibar", hu: "a minibár", example: "No toques nada del minibar, cobran carísimo.", note: "" },
+
+  { id: "encantada", term: "Encantada", hu: "Örvendek", example: "Hola, soy Kata. Encantada.", note: "Se dice al conocer a alguien. Concuerda con quien habla, no con el otro: si sos mujer, siempre 'encantada', hables con quien hables." },
+  { id: "soy-nombre", term: "Hola, soy…", hu: "Szia, én … vagyok", example: "Hola, soy Vivi. Encantada.", note: "La forma más simple de presentarte. 'Hola, soy [nombre]. Encantada.' y listo." },
+  { id: "como-te-llamas", term: "¿Cómo te llamás?", hu: "Hogy hívnak?", example: "—¿Cómo te llamás? —Me llamo Kata.", note: "Voseo rioplatense. En España sería '¿Cómo te llamas?'." },
+  { id: "te-presento", term: "te presento a…", hu: "bemutatom neked …-t", example: "Kata, te presento a Martín, un amigo del laburo.", note: "Lo dice quien presenta. Vos solo respondés: Encantada." }
 ];
