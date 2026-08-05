@@ -17,7 +17,7 @@ const I18N = {
     home_vocab_pending: (n) => `${n} por completar`,
     home_vocab_uptodate: "Al día",
     home_grammar_title: "Gramática",
-    home_grammar_topics: (n) => `${n} temas`,
+    home_grammar_topics: (n) => (n === 1 ? `${n} tema` : `${n} temas`),
     home_production_title: "Producción",
     home_production_prompts: (n) => `${n} consignas`,
     home_production_completed: (n) => (n === 1 ? `${n} consigna completa` : `${n} consignas completas`),

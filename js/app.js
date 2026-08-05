@@ -7,8 +7,15 @@ const LANGS = [
   { code: "es", flag: "🇦🇷", name: "Español", ready: true },
   { code: "en", flag: "🇬🇧", name: "Inglés", ready: false },
   { code: "hu", flag: "🇭🇺", name: "Húngaro", ready: false },
-  { code: "de", flag: "🇩🇪", name: "Alemán", ready: false },
+  { code: "de", flag: "🇩🇪", name: "Alemán", ready: true },
 ];
+
+// Para cada idioma que se está aprendiendo, qué módulos ya tienen contenido cargado.
+// Home y Ajustes siempre están disponibles sin importar el idioma.
+const READY_MODULES = {
+  es: ["gramatica", "vocabulario", "produccion", "lectura"],
+  de: ["gramatica"],
+};
 
 function langName(code) {
   const l = LANGS.find((x) => x.code === code);
@@ -172,7 +179,8 @@ function showView(name) {
   if (!host) return;
 
   const lang = Store.settings().learningLang;
-  if (lang && lang !== "es" && name !== "ajustes") {
+  const ready = name === "home" || name === "ajustes" || (READY_MODULES[lang] || []).includes(name);
+  if (!ready) {
     renderUnderConstruction(host);
   } else if (name === "home") renderHome(host);
   else if (name === "gramatica") Grammar.render(host);
@@ -191,6 +199,7 @@ function renderHome(host) {
   const v = Vocab.stats();
   const p = Produccion.stats();
   const pPct = p.total ? Math.round((p.completed / p.total) * 100) : 0;
+  const grammarTopics = s.learningLang === "de" ? GRAMMAR_DE : GRAMMAR;
 
   host.appendChild(h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")));
   host.appendChild(h("p", { class: "muted home-subtitle" }, I18n.t("home_subtitle")));
@@ -224,7 +233,7 @@ function renderHome(host) {
         ]),
         h("button", { class: "home-card home-card-pink home-card-small", onClick: () => showView("gramatica") }, [
           h("div", { class: "hc-title hc-title-navy" }, I18n.t("home_grammar_title")),
-          h("div", { class: "hc-sub hc-sub-white" }, I18n.t("home_grammar_topics", GRAMMAR.length)),
+          h("div", { class: "hc-sub hc-sub-white" }, I18n.t("home_grammar_topics", grammarTopics.length)),
         ]),
       ]),
     ])

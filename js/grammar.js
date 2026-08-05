@@ -11,8 +11,9 @@ const Grammar = (function () {
 
   function list() {
     clear(host);
+    const data = Store.settings().learningLang === "de" ? GRAMMAR_DE : GRAMMAR;
     host.appendChild(h("p", { class: "muted" }, I18n.t("grammar_pick_topic")));
-    GRAMMAR.forEach((topic) => {
+    data.forEach((topic) => {
       const done = Store.grammarDone(topic.id);
       host.appendChild(
         h("button", { class: "topic-card" + (done ? " done" : ""), onClick: () => openTopic(topic) }, [
