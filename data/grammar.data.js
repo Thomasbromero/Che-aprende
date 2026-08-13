@@ -27,6 +27,29 @@ window.GRAMMAR = [
     ]
   },
   {
+    id: "indicaciones",
+    title: "Pedir indicaciones y pedir ayuda",
+    explain: "Cuando estás perdida o necesitás ayuda en la calle, hay frases fijas que te sacan del apuro. Para llamar la atención de un desconocido, empezá con 'Disculpe' o 'Perdón'. Para preguntar cómo llegar a un lugar: '¿Cómo llego a...?' o '¿Dónde queda...?'. Si estás perdida, decilo directo: 'Estoy perdida'. Y si necesitás una mano: '¿Me podés ayudar?' (a alguien que tratás de vos). Para entender la respuesta, las palabras clave son: seguir derecho (ir en línea recta, sin doblar), doblar a la derecha/izquierda, la cuadra (la distancia entre una esquina y la siguiente). Y si no entendiste, pedí que repitan sin vergüenza: '¿Podés repetir?' o 'Más despacio, por favor'. Pista en húngaro: a 'derecho' itt nem jogot jelent, hanem 'egyenesen' (menni); a 'cuadra' egy háztömbnyi távolság, sarkoktól sarkokig.",
+    examples: [
+      "Disculpe, ¿cómo llego a la estación de tren?",
+      "Perdón, ¿me podés ayudar? Estoy perdida.",
+      "Seguí derecho dos cuadras y doblá a la derecha.",
+      "¿Dónde queda la farmacia más cercana?",
+      "No entendí bien, ¿podés repetir, más despacio?"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Estás en la calle y necesitás llamar la atención de alguien que no conocés para preguntarle algo. Empezás con:", options: ["Disculpe...", "Chau..."], answer: "Disculpe...", explain: "'Disculpe' (o 'Perdón') es la forma educada de llamar la atención de un desconocido." },
+      { type: "fill", prompt: "Querés preguntar cómo llegar a la estación: \"¿Cómo ___ a la estación?\" (llegar)", accept: ["llego"], answer: "llego", explain: "'Llegar a' + lugar. Primera persona: llego." },
+      { type: "choice", prompt: "Estás caminando y no sabés dónde estás. Decís:", options: ["Estoy perdida.", "Estoy perdiendo."], answer: "Estoy perdida.", explain: "'Perdida' es el adjetivo (describe tu estado). 'Perdiendo' sería 'estoy perdiendo algo', otra cosa distinta." },
+      { type: "fill", prompt: "Necesitás una mano con las valijas. Le pedís a alguien (vos): \"¿Me podés ___?\" (ayudar)", accept: ["ayudar"], answer: "ayudar", explain: "Podés + infinitivo: ayudar." },
+      { type: "choice", prompt: "Alguien te explica el camino: \"Seguí ___ dos cuadras.\" (en línea recta, sin doblar)", options: ["derecho", "derecha"], answer: "derecho", explain: "'Derecho' acá significa 'recto, en línea recta'. 'Derecha' es el lado (a la derecha, opuesto a la izquierda)." },
+      { type: "choice", prompt: "Doblar a la derecha es lo opuesto a doblar a la ___.", options: ["izquierda", "cuadra"], answer: "izquierda", explain: "Derecha ↔ izquierda son opuestos. 'Cuadra' es una distancia, no una dirección." },
+      { type: "fill", prompt: "\"La farmacia queda a dos ___ de acá.\" (distancia entre una esquina y la siguiente)", accept: ["cuadras"], answer: "cuadras", explain: "Una 'cuadra' es la distancia de una esquina a la siguiente." },
+      { type: "choice", prompt: "No entendiste bien lo que te explicaron. Pedís que repitan:", options: ["¿Podés repetir, por favor?", "¿Podés repartir, por favor?"], answer: "¿Podés repetir, por favor?", explain: "'Repetir' = decir de nuevo. 'Repartir' es distribuir algo entre varias personas, no tiene nada que ver." },
+      { type: "fill", prompt: "Te hablan muy rápido y no llegás a entender. Pedís: \"Más ___, por favor.\" (lo opuesto de rápido)", accept: ["despacio"], answer: "despacio", explain: "'Despacio' = lentamente. Pedir que hablen más despacio es de lo más común mientras aprendés un idioma." }
+    ]
+  },
+  {
     id: "ser-estar",
     title: "Ser vs. Estar",
     explain: "SER → identidad, características esenciales, origen, profesión, hora y fecha. ESTAR → estados y situaciones que cambian, ubicación, resultado. Pista en húngaro: a magyar 'van' mindkettőt jelenti, a spanyol viszont megkülönbözteti. Ojo con el voseo: vos SOS / vos ESTÁS.",

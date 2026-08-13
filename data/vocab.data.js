@@ -173,5 +173,15 @@ window.VOCAB = [
   { id: "semaforo", term: "el semáforo", hu: "a közlekedési lámpa", example: "Cruzá cuando el semáforo esté en verde.", note: "" },
   { id: "panaderia", term: "la panadería", hu: "a pékség", example: "Pasá por la panadería y traé facturas.", note: "" },
   { id: "farmacia", term: "la farmacia", hu: "a gyógyszertár", example: "La farmacia de turno está abierta toda la noche.", note: "'De turno' = la que queda abierta cuando las demás cierran." },
-  { id: "plaza", term: "la plaza", hu: "a tér, a park", example: "Los domingos llevamos a los chicos a la plaza.", note: "En Argentina suele tener juegos para chicos y árboles." }
+  { id: "plaza", term: "la plaza", hu: "a tér, a park", example: "Los domingos llevamos a los chicos a la plaza.", note: "En Argentina suele tener juegos para chicos y árboles." },
+
+  { id: "cuadra", term: "la cuadra", hu: "egy háztömbnyi távolság (saroktól sarokig)", example: "Caminá tres cuadras y vas a ver la plaza.", note: "Unidad para dar distancias en la ciudad." },
+  { id: "derecho", term: "seguir derecho", hu: "egyenesen menni", example: "Seguí derecho hasta el semáforo.", note: "Acá 'derecho' es 'en línea recta', no confundir con 'a la derecha'." },
+  { id: "doblar", term: "doblar", hu: "befordulni, kanyarodni", example: "Doblá a la izquierda en la próxima esquina.", note: "" },
+  { id: "perdido", term: "perdido/a", hu: "eltévedt", example: "Estoy perdida, ¿me podés ayudar?", note: "" },
+  { id: "cerca", term: "cerca (de)", hu: "közel", example: "El kiosco queda cerca, a dos cuadras.", note: "" },
+  { id: "lejos", term: "lejos (de)", hu: "távol", example: "La terminal queda lejos, mejor tomate un taxi.", note: "" },
+  { id: "disculpe", term: "disculpe / perdón", hu: "elnézést", example: "Disculpe, ¿sabe dónde queda el banco?", note: "Fórmula para llamar la atención de un desconocido antes de preguntar algo." },
+  { id: "donde-queda", term: "¿dónde queda…?", hu: "hol van…?", example: "¿Dónde queda la parada del colectivo?", note: "" },
+  { id: "ayuda", term: "¿me podés ayudar?", hu: "tudnál segíteni?", example: "¿Me podés ayudar? No encuentro la calle.", note: "Con 'vos' (informal)." }
 ];
