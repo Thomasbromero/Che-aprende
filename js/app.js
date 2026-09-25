@@ -122,6 +122,19 @@ function renderUnderConstruction(host) {
   );
 }
 
+// Lectura está desactivada por ahora: el módulo (js/lectura.js y los datos de provincias)
+// queda intacto; para reactivarla, sacar el desvío de "lectura" en showView y renderHome.
+function renderComingSoon(host) {
+  clear(host);
+  host.appendChild(
+    h("div", { class: "panel center" }, [
+      h("div", { class: "big-emoji" }, "📖"),
+      h("h2", {}, I18n.t("coming_soon_title")),
+      h("p", { class: "muted" }, I18n.t("coming_soon_lectura_desc")),
+    ])
+  );
+}
+
 function renderHeader() {
   const title = document.getElementById("app-title");
   if (title) title.textContent = "Che, aprendé";
@@ -180,13 +193,14 @@ function showView(name) {
 
   const lang = Store.settings().learningLang;
   const ready = name === "home" || name === "ajustes" || (READY_MODULES[lang] || []).includes(name);
-  if (!ready) {
+  if (name === "lectura") {
+    renderComingSoon(host);
+  } else if (!ready) {
     renderUnderConstruction(host);
   } else if (name === "home") renderHome(host);
   else if (name === "gramatica") Grammar.render(host);
   else if (name === "vocabulario") Vocab.render(host);
   else if (name === "produccion") Produccion.render(host);
-  else if (name === "lectura") Lectura.render(host);
   else if (name === "ajustes") renderAjustes(host);
 
   updateHeaderStreak();
@@ -229,7 +243,7 @@ function renderHome(host) {
       h("div", { class: "home-row" }, [
         h("button", { class: "home-card home-card-navy home-card-small", onClick: () => showView("lectura") }, [
           h("div", { class: "hc-title" }, I18n.t("home_lectura_title")),
-          h("div", { class: "hc-sub" }, I18n.t("home_lectura_count", PROVINCIAS.length)),
+          h("div", { class: "hc-sub" }, I18n.t("coming_soon_title")),
         ]),
         h("button", { class: "home-card home-card-pink home-card-small", onClick: () => showView("gramatica") }, [
           h("div", { class: "hc-title hc-title-navy" }, I18n.t("home_grammar_title")),

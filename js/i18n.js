@@ -29,6 +29,9 @@ const I18N = {
     home_go_ajustes: "Ir a ajustes",
     home_streak: (n) => (n === 1 ? "1 día seguido" : `${n} días seguidos`),
 
+    coming_soon_title: "Próximamente",
+    coming_soon_lectura_desc: "La sección de Lectura todavía no está disponible. ¡Pronto vas a poder leer sobre las provincias argentinas acá!",
+
     lectura_pick_provincia: "Elegí una provincia para leer sobre ella.",
     lectura_coming_soon_desc: "Todavía estamos armando el contenido de esta provincia. ¡Pronto vas a poder leer sobre ella acá!",
     provincia_back: "← Atrás",
@@ -116,6 +119,9 @@ const I18N = {
     home_go_produccion: "Ugrás a gyakorláshoz",
     home_go_ajustes: "Ugrás a beállításokhoz",
     home_streak: (n) => `${n} napos sorozat`,
+
+    coming_soon_title: "Hamarosan",
+    coming_soon_lectura_desc: "Az Olvasás rész még nem elérhető. Hamarosan itt olvashatsz az argentin tartományokról!",
 
     lectura_pick_provincia: "Válassz egy tartományt, hogy olvass róla.",
     lectura_coming_soon_desc: "Még építjük ennek a tartománynak a tartalmát. Hamarosan olvashatsz majd róla itt!",
