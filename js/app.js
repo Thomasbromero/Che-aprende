@@ -187,7 +187,9 @@ function showView(name) {
   currentView = name;
   document.body.dataset.view = name;
   document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === "view-" + name));
-  document.querySelectorAll(".nav-btn").forEach((b) => b.classList.toggle("active", b.dataset.view === name));
+  // Las demás pantallas cuelgan de Inicio: el botón activo es Inicio, salvo en Ajustes
+  const botonActivo = name === "ajustes" ? "ajustes" : "home";
+  document.querySelectorAll(".nav-btn").forEach((b) => b.classList.toggle("active", b.dataset.view === botonActivo));
   const host = document.querySelector("#view-" + name + " .view-body");
   if (!host) return;
 
@@ -290,9 +292,6 @@ function renderHome(host) {
 
   if (modoActual() === "aventura") {
     host.appendChild(h("div", { class: "home-grid" }, [tarjetaAventura()]));
-    host.appendChild(
-      h("button", { class: "home-settings-btn", onClick: () => showView("ajustes") }, [I18n.t("home_go_ajustes"), h("span", { class: "home-cta-arrow" }, "→")])
-    );
     return;
   }
 
@@ -321,14 +320,6 @@ function renderHome(host) {
         ]),
       ]),
     ])
-  );
-
-  host.appendChild(
-    h(
-      "button",
-      { class: "home-settings-btn", onClick: () => showView("ajustes") },
-      [I18n.t("home_go_ajustes"), h("span", { class: "home-cta-arrow" }, "→")]
-    )
   );
 }
 

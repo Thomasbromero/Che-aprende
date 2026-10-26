@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=34" />
+  <link rel="stylesheet" href="css/styles.css?v=35" />
 </head>
 <body>
   <div id="onboarding-screen" class="onboarding-screen"></div>
@@ -41,39 +41,44 @@
     <section id="view-ajustes" class="view"><div class="view-body"></div></section>
   </main>
 
-  <nav class="bottom-nav">
-    <button class="nav-btn active" data-view="home"><span class="ico">🏠</span><span class="lbl" data-i18n="nav_home">Inicio</span></button>
-    <button class="nav-btn" data-view="gramatica"><span class="ico">📐</span><span class="lbl" data-i18n="nav_grammar">Gramática</span></button>
-    <button class="nav-btn" data-view="vocabulario"><span class="ico">🗂️</span><span class="lbl" data-i18n="nav_vocab">Vocab</span></button>
-    <button class="nav-btn" data-view="produccion"><span class="ico">✍️</span><span class="lbl" data-i18n="nav_production">Producción</span></button>
-    <button class="nav-btn" data-view="lectura"><span class="ico">📖</span><span class="lbl" data-i18n="nav_lectura">Lectura</span></button>
-    <button class="nav-btn" data-view="ajustes"><span class="ico">⚙️</span><span class="lbl" data-i18n="nav_settings">Ajustes</span></button>
+  <!-- Barra de abajo: igual en toda la app. Para sumar un botón, copiá uno y cambiá data-view, el ícono y el texto. -->
+  <nav class="bottom-nav" aria-label="Menú principal">
+    <div class="nav-bar">
+      <button class="nav-btn active" data-view="home" type="button">
+        <svg class="nav-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="lbl" data-i18n="nav_home">Inicio</span>
+      </button>
+      <button class="nav-btn" data-view="ajustes" type="button">
+        <svg class="nav-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span class="lbl" data-i18n="nav_settings">Ajustes</span>
+      </button>
+    </div>
   </nav>
 
   <!-- datos -->
-  <script src="data/vocab.data.js?v=34"></script>
-  <script src="data/grammar.data.js?v=34"></script>
-  <script src="data/grammar.de.data.js?v=34"></script>
-  <script src="data/produccion.data.js?v=34"></script>
-  <script src="data/provincias.data.js?v=34"></script>
-  <script src="data/verbos.data.js?v=34"></script>
-  <script src="data/camino.data.js?v=34"></script>
-  <script src="data/mapa.data.js?v=34"></script>
+  <script src="data/vocab.data.js?v=35"></script>
+  <script src="data/grammar.data.js?v=35"></script>
+  <script src="data/grammar.de.data.js?v=35"></script>
+  <script src="data/produccion.data.js?v=35"></script>
+  <script src="data/provincias.data.js?v=35"></script>
+  <script src="data/verbos.data.js?v=35"></script>
+  <script src="data/camino.data.js?v=35"></script>
+  <script src="data/mapa.data.js?v=35"></script>
   <!-- lógica -->
-  <script src="js/storage.js?v=34"></script>
-  <script src="js/i18n.js?v=34"></script>
-  <script src="js/streak.js?v=34"></script>
-  <script src="js/util.js?v=34"></script>
-  <script src="js/exercise.js?v=34"></script>
-  <script src="js/conjugador.js?v=34"></script>
-  <script src="js/formats.js?v=34"></script>
-  <script src="js/dificultad.js?v=34"></script>
-  <script src="js/mapa.js?v=34"></script>
-  <script src="js/aventura.js?v=34"></script>
-  <script src="js/vocab.js?v=34"></script>
-  <script src="js/grammar.js?v=34"></script>
-  <script src="js/produccion.js?v=34"></script>
-  <script src="js/lectura.js?v=34"></script>
-  <script src="js/app.js?v=34"></script>
+  <script src="js/storage.js?v=35"></script>
+  <script src="js/i18n.js?v=35"></script>
+  <script src="js/streak.js?v=35"></script>
+  <script src="js/util.js?v=35"></script>
+  <script src="js/exercise.js?v=35"></script>
+  <script src="js/conjugador.js?v=35"></script>
+  <script src="js/formats.js?v=35"></script>
+  <script src="js/dificultad.js?v=35"></script>
+  <script src="js/mapa.js?v=35"></script>
+  <script src="js/aventura.js?v=35"></script>
+  <script src="js/vocab.js?v=35"></script>
+  <script src="js/grammar.js?v=35"></script>
+  <script src="js/produccion.js?v=35"></script>
+  <script src="js/lectura.js?v=35"></script>
+  <script src="js/app.js?v=35"></script>
 </body>
 </html>

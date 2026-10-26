@@ -198,7 +198,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; color: v
 }
 
 /* ---- Inicio ---- */
-body[data-view="home"] .app-main { padding-bottom: 24px; }
+/* Inicio entra en una pantalla sin scroll: deja justo lugar para la barra de abajo */
+body[data-view="home"] .app-main { padding-bottom: 88px; }
 .home-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
 .home-card {
   display: block;
@@ -264,27 +265,6 @@ body[data-view="home"] .app-main { padding-bottom: 24px; }
 .home-row .home-card { flex: 1; padding: 14px 16px; }
 .home-row .hc-title { font-size: 1rem; }
 .home-row .hc-sub { font-size: 0.82rem; }
-
-.home-settings-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  background: var(--v2-cyan);
-  color: var(--v2-navy);
-  border: none;
-  border-radius: 999px;
-  padding: 16px;
-  margin-top: 16px;
-  font: inherit;
-  font-weight: 700;
-  font-size: 1.05rem;
-  cursor: pointer;
-}
-.home-settings-btn:active { transform: scale(0.98); }
-
-body[data-view="home"] .bottom-nav { display: none; }
 
 .streak-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
 /* El saludo y el selector de modo comparten fila (así Inicio no suma altura); con un nombre muy largo, el selector baja */
@@ -496,7 +476,7 @@ body[data-view="home"] .bottom-nav { display: none; }
 
 /* Hoja de abajo con el detalle del nivel tocado (por encima del menú de abajo) */
 .av-hoja {
-  position: fixed; left: 12px; right: 12px; bottom: calc(68px + env(safe-area-inset-bottom)); z-index: 11;
+  position: fixed; left: 12px; right: 12px; bottom: calc(92px + env(safe-area-inset-bottom)); z-index: 11;
   max-width: 616px; margin: 0 auto; padding: 16px 18px; border-radius: 22px;
   background: var(--v2-navy); color: var(--v2-cream);
   transform: translateY(calc(100% + 130px)); pointer-events: none; transition: transform 0.2s ease;
@@ -563,33 +543,41 @@ body[data-view="home"] .bottom-nav { display: none; }
 .field { display: block; margin: 14px 0; }
 .field-label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
 
-/* ---- Nav inferior ----
-   Solo se muestran "Inicio" y "Ajustes" en todas las pantallas, incluido Inicio. */
+/* ---- Barra de abajo ----
+   Una sola, flotante, igual en todas las pantallas y en los dos modos (solo se esconde en el onboarding
+   y en la elección de provincia). La franja de afuera es transparente y no atrapa toques: solo la píldora. */
 .bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
-  display: flex; justify-content: center; align-items: center; gap: 3px;
-  background: var(--v2-pink);
-  padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
-  overflow-x: auto;
+  display: flex; justify-content: center;
+  padding: 0 16px calc(12px + env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+.nav-bar {
+  pointer-events: auto;
+  display: flex; gap: 4px; padding: 6px;
+  background: var(--v2-navy); border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(29, 42, 68, 0.28);
 }
 .nav-btn {
-  flex: 0 0 auto; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--v2-navy); border: none; border-radius: 999px;
-  color: var(--v2-cream); font: inherit; font-weight: 600; font-size: 0.68rem;
-  padding: 9px 14px;
+  cursor: pointer; min-width: 84px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  background: transparent; border: none; border-radius: 999px;
+  color: var(--v2-cream); opacity: 0.8;
+  font: inherit; font-weight: 600; font-size: 0.7rem; line-height: 1.2;
+  padding: 8px 18px;
   white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
 }
-.nav-btn .ico { display: none; }
-.nav-btn.active { font-weight: 700; }
-.nav-btn[data-view="gramatica"],
-.nav-btn[data-view="vocabulario"],
-.nav-btn[data-view="produccion"],
-.nav-btn[data-view="lectura"] { display: none; }
+.nav-btn:active { transform: scale(0.97); }
+.nav-btn.active { background: var(--v2-cyan); color: var(--v2-navy); opacity: 1; font-weight: 700; }
+.nav-ico {
+  width: 22px; height: 22px; display: block;
+  fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
 
 /* ---- Toast ---- */
 .toast {
-  position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(10px);
+  position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(10px);
   background: var(--v2-navy); color: var(--v2-cream);
   padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
   opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; z-index: 50;
@@ -597,5 +585,5 @@ body[data-view="home"] .bottom-nav { display: none; }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 @media (min-width: 480px) {
-  .nav-btn { font-size: 0.75rem; }
+  .nav-btn { font-size: 0.78rem; }
 }
