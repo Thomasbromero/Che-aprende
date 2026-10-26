@@ -328,7 +328,7 @@ window.GRAMMAR = [
   {
     id: "imperativo-vos",
     title: "Imperativo con vos",
-    explain: "En Argentina, el imperativo afirmativo de 'vos' se forma sacando la -R final del infinitivo y poniendo tilde en la última vocal: hablar → hablá, comer → comé, venir → vení. Es distinto del imperativo de 'tú' que enseñan la mayoría de los libros (habla, come, ven) — ¡no te confundas si estudiaste con material de España o México! El imperativo negativo usa el subjuntivo de 'vos' (igual que con 'tú'): no hables, no comas, no vengas. Irregulares comunes en afirmativo: ir → andá, ser → sé, decir → decí, poner → poné, salir → salí, tener → tené, venir → vení, hacer → hacé. Pista en húngaro: gondolj rá úgy, hogy a bizalmas felszólító mód (vos) egyszerűen az infinitivo -r végződésének elhagyása + ékezet az utolsó magánhangzón — ez rioplatense sajátosság, más spanyol nyelvterületeken nem így van.",
+    explain: "En Argentina, el imperativo afirmativo de 'vos' se forma sacando la -R final del infinitivo y poniendo tilde en la última vocal: hablar → hablá, comer → comé, venir → vení. Es distinto del imperativo de 'tú' que enseñan la mayoría de los libros (habla, come, ven) — ¡no te confundas si estudiaste con un libro de español general! El imperativo negativo usa el subjuntivo de 'vos' (igual que con 'tú'): no hables, no comas, no vengas. Irregulares comunes en afirmativo: ir → andá, ser → sé, decir → decí, poner → poné, salir → salí, tener → tené, venir → vení, hacer → hacé. Pista en húngaro: gondolj rá úgy, hogy a bizalmas felszólító mód (vos) egyszerűen az infinitivo -r végződésének elhagyása + ékezet az utolsó magánhangzón — ez rioplatense sajátosság, más spanyol nyelvterületeken nem így van.",
     examples: [
       "¡Vení acá, dale!",
       "Hablá más fuerte, no te escucho.",
@@ -448,7 +448,7 @@ window.GRAMMAR = [
   {
     id: "compuesto-vs-simple",
     title: "Pretérito compuesto vs. simple (uso rioplatense)",
-    explain: "El PRETÉRITO PERFECTO COMPUESTO se forma con HABER (he, has, ha, hemos, han) + PARTICIPIO (-ado/-ido): he comido, has hablado, ha vivido. En España se usa mucho para hechos recientes ('hoy he comido asado'), pero en el español rioplatense es MUCHO MENOS COMÚN: en Argentina y Uruguay, para lo mismo se prefiere directamente el PRETÉRITO SIMPLE, incluso para cosas que acaban de pasar: 'hoy comí asado' (no 'he comido'). El compuesto se reserva más para contextos formales o escritos. Pista en húngaro: ha spanyol tanfolyamon a 'pretérito perfecto compuesto'-t tanultad mint a leggyakoribb múlt időt, itt Argentínában ne lepődj meg, hogy a hétköznapi beszédben szinte mindig az egyszerű múltat (pretérito simple) használják helyette, még a nagyon friss eseményekre is.",
+    explain: "El PRETÉRITO PERFECTO COMPUESTO se forma con HABER (he, has, ha, hemos, han) + PARTICIPIO (-ado/-ido): he comido, has hablado, ha vivido. En muchos libros de español se usa para hechos recientes ('hoy he comido asado'), pero en el español rioplatense es MUCHO MENOS COMÚN: en Argentina y Uruguay, para lo mismo se prefiere directamente el PRETÉRITO SIMPLE, incluso para cosas que acaban de pasar: 'hoy comí asado' (no 'he comido'). El compuesto se reserva más para contextos formales o escritos. Pista en húngaro: ha spanyol tanfolyamon a 'pretérito perfecto compuesto'-t tanultad mint a leggyakoribb múlt időt, itt Argentínában ne lepődj meg, hogy a hétköznapi beszédben szinte mindig az egyszerű múltat (pretérito simple) használják helyette, még a nagyon friss eseményekre is.",
     examples: [
       "Hoy comí un montón. (rioplatense, no 'he comido')",
       "¿Alguna vez estuviste en Europa? (más común que '¿has estado?')",
@@ -461,7 +461,7 @@ window.GRAMMAR = [
       { type: "fill", prompt: "Esta mañana (vos) ___ tarde, ¿no? (levantarse, pretérito simple)", accept: ["te levantaste"], answer: "te levantaste", explain: "Pretérito simple, forma habitual rioplatense (no 'te has levantado').", nivel: 55 },
       { type: "choice", prompt: "¿Alguna vez ___ mate amargo? (probar, más natural en Argentina)", options: ["probaste", "has probado"], answer: "probaste", explain: "Para experiencias de vida, en el habla rioplatense también predomina el pretérito simple.", nivel: 56 },
       { type: "choice", prompt: "Recién ___ con tu hermana por teléfono. (hablar, hecho reciente)", options: ["hablé", "he hablado"], answer: "hablé", explain: "Hecho reciente → en Argentina, pretérito simple: hablé (no 'he hablado').", nivel: 56 },
-      { type: "fill", prompt: "Todavía no ___ el informe, lo termino mañana. (terminar, uso rioplatense)", accept: ["termine"], answer: "terminé", explain: "Aunque en España se diría 'no he terminado', en Argentina es muy común 'no terminé'.", nivel: 56 }
+      { type: "fill", prompt: "Todavía no ___ el informe, lo termino mañana. (terminar, uso rioplatense)", accept: ["termine"], answer: "terminé", explain: "Aunque en un libro de español podrías ver 'no he terminado', en Argentina es muy común 'no terminé'.", nivel: 56 }
     ]
   },
   {

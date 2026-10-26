@@ -575,6 +575,15 @@ body[data-view="home"] .app-main { padding-bottom: 88px; }
   fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 
+/* ---- Zonas de toque ----
+   Algunos botones son chicos a propósito (enlaces de "Volver" y "Salir", la ✕ de la hoja, el selector de modo).
+   Les agrego un borde invisible para que el dedo los encuentre (44 px o más) sin cambiar cómo se ven. */
+.back-link, .av-salir, .av-hoja-x, .modo-btn { position: relative; }
+.back-link::after { content: ""; position: absolute; inset: -6px; }
+.av-salir::after { content: ""; position: absolute; inset: -10px -8px; }
+.av-hoja-x::after { content: ""; position: absolute; inset: -10px; }
+.modo-btn::after { content: ""; position: absolute; inset: -7px 0; }
+
 /* ---- Toast ---- */
 .toast {
   position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(10px);

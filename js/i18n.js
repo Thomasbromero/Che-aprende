@@ -4,10 +4,6 @@
 const I18N = {
   es: {
     nav_home: "Inicio",
-    nav_grammar: "Gramática",
-    nav_vocab: "Vocab",
-    nav_production: "Producción",
-    nav_lectura: "Lectura",
     nav_settings: "Ajustes",
 
     home_greet_hi: "¡Hola!",
@@ -129,10 +125,6 @@ const I18N = {
   },
   hu: {
     nav_home: "Kezdőlap",
-    nav_grammar: "Nyelvtan",
-    nav_vocab: "Szókincs",
-    nav_production: "Gyakorlás",
-    nav_lectura: "Olvasás",
     nav_settings: "Beállítások",
 
     home_greet_hi: "Szia!",
