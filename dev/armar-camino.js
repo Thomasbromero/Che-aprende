@@ -37,6 +37,7 @@ const NOMBRE_TEMA = {
   personas: "La gente", elogios: "Elogios", jerga_cosas: "Jerga: cosas", jerga_verbos: "Jerga: verbos",
   jerga_expresiones: "Jerga: expresiones", tiempo_libre: "Salidas y tiempo libre", familia: "La familia",
   restaurante: "En el restaurante", compras: "De compras", salud: "Salud y médicos",
+  trabajo: "En el trabajo", clima: "El clima y la naturaleza", ciudad: "La ciudad y el transporte",
 };
 const NOMBRE_TIEMPO = { presente: "presente", preterito: "pretérito", imperfecto: "imperfecto", futuro: "futuro", condicional: "condicional", subjuntivo: "subjuntivo" };
 

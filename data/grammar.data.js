@@ -51,6 +51,49 @@ window.GRAMMAR = [
     ]
   },
   {
+    id: "voseo-presente",
+    title: "El voseo en el presente: hablás, comés, vivís",
+    explain: "Para hablar con vos en el presente, tomamos el infinitivo, cambiamos la -r final por una -s y ponemos la tilde en la última vocal: hablar → hablás, comer → comés, vivir → vivís. Dos verbos muy comunes son especiales: vos sos (ser) y vos vas (ir). Los demás siguen la regla: vos tenés, vos querés, vos podés, vos hacés, vos decís. Además, en los verbos con cambio de raíz, vos mantiene la raíz del infinitivo: vos pensás, vos volvés, vos pedís. Pista en húngaro: A vos alak a főnévi igenévből lesz: az -r helyére -s kerül, és az utolsó magánhangzó ékezetet kap (hablar → hablás, comer → comés, vivir → vivís). A szótő nem változik: pensás, volvés.",
+    examples: [
+      "¿Vos hablás español o inglés? (verbo regular en -ar)",
+      "¿Qué querés comer esta noche? (verbo muy usado)",
+      "Vos siempre pedís empanadas de carne. (verbo sin cambio de raíz)",
+      "Che, ¿vos sos de Buenos Aires? (verbo ser con voseo)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "¿De dónde ___ (vos)?", options: ["eres", "sos"], answer: "sos", explain: "Con 'vos', la forma del verbo ser es 'sos'.", nivel: 24 },
+      { type: "choice", prompt: "Vos, ¿qué ___ hacer el fin de semana?", options: ["querés", "quieres"], answer: "querés", explain: "Con 'vos' decimos 'querés', sin cambiar la raíz.", nivel: 26 },
+      { type: "choice", prompt: "Si vos ___ tarde, me avisás.", options: ["llegás", "llegas"], answer: "llegás", explain: "La terminación -ar cambia a -ás con tilde.", nivel: 25 },
+      { type: "choice", prompt: "¿Vos ___ ir al cine hoy?", options: ["puedes", "podés"], answer: "podés", explain: "Con 'vos' decimos 'podés', sin cambiar la raíz.", nivel: 25 },
+      { type: "choice", prompt: "Vos siempre ___ la misma película para ver.", options: ["elegís", "eliges"], answer: "elegís", explain: "La terminación -ir cambia a -ís con tilde.", nivel: 26 },
+      { type: "fill", prompt: "¿Cuántos años ___ (tener) vos?", accept: ["tenes", "tenés"], answer: "tenés", explain: "El verbo tener con 'vos' es 'tenés'.", nivel: 24 },
+      { type: "fill", prompt: "Vos siempre ___ (decir) la verdad.", accept: ["decis", "decís"], answer: "decís", explain: "El verbo decir con 'vos' es 'decís'.", nivel: 25 },
+      { type: "fill", prompt: "Vos, ¿a qué hora ___ (volver) del trabajo?", accept: ["volves", "volvés"], answer: "volvés", explain: "Con 'vos' decimos 'volvés', sin cambiar la raíz.", nivel: 26 }
+    ]
+  },
+  {
+    id: "a-en-de",
+    title: "A, en y de: lugar y movimiento",
+    explain: "Usamos la preposición a para indicar movimiento y destino, como ir a o llegar a un lugar. Usamos en para indicar dónde estamos, dónde vivimos o el medio de transporte: en colectivo, en auto o en tren, pero decimos a pie. Usamos de para el origen, como venir de o salir de. Además, usamos lo de para hablar de la casa o el local de alguien: voy a lo de Marta, estoy en lo de Marta. Pista en húngaro: Az \"a\" mozgást és célt fejez ki (hová?), az \"en\" helyzetet és járművet (hol?, mivel?), a \"de\" pedig eredetet (honnan?). A \"lo de\" kifejezés valakinek a házát jelenti.",
+    examples: [
+      "Todos los días voy al centro en colectivo. (a + el centro, en colectivo)",
+      "Mis tíos viven en un departamento chico. (en para ubicación)",
+      "Hoy a la noche cenamos en lo de mi abuela. (lo de = la casa de)",
+      "El tren acaba de salir de la estación. (de para origen)",
+      "Como el kiosco está cerca, prefiero ir a pie. (a pie = caminando)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Mañana voy ___ la oficina en colectivo.", options: ["a", "en"], answer: "a", explain: "Con el verbo ir y un destino usamos 'a'.", nivel: 31 },
+      { type: "choice", prompt: "Mi primo vive ___ el barrio de San Telmo.", options: ["en", "a"], answer: "en", explain: "Para indicar dónde vive alguien usamos 'en'.", nivel: 32 },
+      { type: "choice", prompt: "¿Vamos a comer a ___ de Juan?", options: ["lo", "la"], answer: "lo", explain: "Para decir 'la casa de Juan' usamos 'lo de'.", nivel: 31 },
+      { type: "choice", prompt: "Me gusta viajar ___ subte por la ciudad.", options: ["en", "a"], answer: "en", explain: "Para medios de transporte como el subte usamos 'en'.", nivel: 32 },
+      { type: "choice", prompt: "Si vamos ___ pie llegamos en diez minutos.", options: ["en", "a"], answer: "a", explain: "La expresión correcta para caminar es 'a pie'.", nivel: 32 },
+      { type: "fill", prompt: "Salimos ___ casa muy tarde hoy.", accept: ["de"], answer: "de", explain: "Para indicar origen o punto de salida usamos 'de'.", nivel: 31 },
+      { type: "fill", prompt: "Hoy nos juntamos a estudiar en ___ de Marcos.", accept: ["lo"], answer: "lo", explain: "Usamos 'lo de' para referirnos a la casa de alguien.", nivel: 32 },
+      { type: "fill", prompt: "Mañana llegamos ___ Córdoba a la noche.", accept: ["a"], answer: "a", explain: "Con el verbo llegar y un destino usamos 'a'.", nivel: 31 }
+    ]
+  },
+  {
     id: "articulos-y-genero",
     title: "Artículos y género: trampas comunes",
     explain: "En español casi todo tiene género. La regla general es fácil: si termina en -o es masculina (el/un) y si termina en -a es femenina (la/una). Pero hay palabras tramposas que no la cumplen y conviene aprender siempre junto con su artículo. Muchas palabras que terminan en -ma son masculinas (el problema, el tema, el idioma), igual que el mapa o el planeta. Las palabras acortadas conservan el género de la palabra original: la foto (de fotografía), la moto (de motocicleta). Y la mano es femenina aunque termine en -o. Pista en húngaro: A magyarban nincs nyelvtani nem, így ezt nehéz megszokni. A legfontosabb kivételeket (például a kéz: la mano, a térkép: el mapa) érdemes egyből a névelővel együtt megtanulni.",
@@ -234,6 +277,28 @@ window.GRAMMAR = [
       { type: "choice", prompt: "___ (vos) más despacio, por favor. (venir)", options: ["Vení", "Ven"], answer: "Vení", explain: "'Ven' es de tú; en voseo rioplatense es Vení.", nivel: 49 },
       { type: "choice", prompt: "No ___ (vos) tan tarde esta noche. (salir)", options: ["salgas", "salí"], answer: "salgas", explain: "Imperativo negativo → subjuntivo: no salgas.", nivel: 50 },
       { type: "fill", prompt: "___ (vos) la mesa antes de que lleguen. (poner)", accept: ["pone"], answer: "Poné", explain: "Imperativo de vos irregular: poné.", nivel: 50 }
+    ]
+  },
+  {
+    id: "pronombres-lo-la-le",
+    title: "Lo, la, los, las, le: a quién y a qué",
+    explain: "Usamos lo, la, los y las para reemplazar cosas o personas que reciben directamente la acción, como lo que se ve, se compra o se come. Usamos le y les para reemplazar a quién recibe algo o a quién le importa la acción. Estos pronombres se ponen antes del verbo conjugado, como en 'lo veo'. También pueden ir pegados al final de un verbo en infinitivo, como en 'quiero verlo'. Pista en húngaro: A \"lo, la, los, las\" a tárgyesetet (mit? kit?), a \"le, les\" pedig a részesesetet (kinek?) helyettesíti. A ragozott ige elé vagy a főnévi igenév végéhez kapcsoljuk őket.",
+    examples: [
+      "Compré un alfajor y lo comí enseguida. (lo reemplaza al alfajor)",
+      "A mi hermana le compré un regalo. (le reemplaza a mi hermana)",
+      "Las empanadas están listas, ¿las traigo? (las reemplaza a las empanadas)",
+      "No tengo el pasaje, tengo que imprimirlo. (pronombre pegado al infinitivo)",
+      "A los chicos les gusta mucho el helado. (les reemplaza a los chicos)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "El mate está listo, ya ___ preparé.", options: ["lo", "la"], answer: "lo", explain: "El mate es masculino singular, usamos 'lo'.", nivel: 45 },
+      { type: "choice", prompt: "¿___ dijiste la verdad a tu mamá?", options: ["Lo", "Le"], answer: "Le", explain: "Es 'a quién' le dijiste algo, usamos 'le'.", nivel: 45 },
+      { type: "choice", prompt: "La computadora es nueva, ___ compré ayer.", options: ["la", "lo"], answer: "la", explain: "La computadora es femenino singular, usamos 'la'.", nivel: 45 },
+      { type: "choice", prompt: "Esos zapatos son lindos, quiero comprar___.", options: ["los", "les"], answer: "los", explain: "Reemplaza a 'esos zapatos' y va pegado al infinitivo.", nivel: 45 },
+      { type: "choice", prompt: "A mis abuelos ___ mando mensajes seguido.", options: ["los", "les"], answer: "les", explain: "Es 'a quién' mando mensajes, usamos 'les'.", nivel: 45 },
+      { type: "fill", prompt: "El jugo está en la heladera, ___ tomo en un rato.", accept: ["lo"], answer: "lo", explain: "El jugo es masculino singular, se reemplaza con 'lo'.", nivel: 47 },
+      { type: "fill", prompt: "A Martín ___ presté mi bicicleta nueva.", accept: ["le"], answer: "le", explain: "A Martín es 'a quién', usamos 'le'.", nivel: 45 },
+      { type: "fill", prompt: "Tengo tus llaves, voy a llevar___ a tu casa.", accept: ["las"], answer: "las", explain: "Reemplaza a 'tus llaves' y va pegado al infinitivo.", nivel: 46 }
     ]
   },
   {

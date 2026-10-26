@@ -22,7 +22,7 @@ const Formats = (function () {
     hotel: "ciudad", lugares: "ciudad", transporte: "ciudad", indicaciones: "ciudad",
     saludos: "jerga", personas: "jerga", familia: "jerga", elogios: "jerga", jerga_cosas: "jerga",
     jerga_verbos: "jerga", jerga_expresiones: "jerga", tiempo_libre: "jerga",
-    restaurante: "hogar", compras: "ciudad", salud: "cuerpo",
+    restaurante: "hogar", compras: "ciudad", salud: "cuerpo", trabajo: "ciudad", ciudad: "ciudad",
   };
   // Temas donde casi todas las palabras significan lo mismo ("excelente"): ahí las opciones
   // incorrectas no salen del mismo tema, para no armar preguntas con dos respuestas posibles.
