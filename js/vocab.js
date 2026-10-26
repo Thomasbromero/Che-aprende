@@ -34,17 +34,40 @@ const Vocab = (function () {
 
   function render(container) {
     host = container;
-    startSession(filter);
+    const saved = Store.vocabSession().filter;
+    startSession(saved === "all" || saved === "done" || saved === "pending" ? saved : filter);
+  }
+
+  // Cola de la pestaña: retoma la que quedó guardada (misma tarjeta, mismo orden).
+  // Si no hay nada guardado, o ya se terminó la vuelta, arma una nueva mezclada.
+  function buildQueue(f) {
+    const saved = Store.vocabSession().queues[f];
+    if (!Array.isArray(saved) || saved.length === 0) return shuffle(cardsForFilter(f));
+
+    const byId = new Map(VOCAB.map((c) => [c.id, c]));
+    const belongs = (c) => (f === "done" ? isDone(c) : f === "pending" ? !isDone(c) : true);
+    const kept = saved.map((id) => byId.get(id)).filter((c) => c && belongs(c));
+    const inQueue = new Set(kept.map((c) => c.id));
+    // Tarjetas que faltan en la cola guardada (nuevas o que cambiaron de pestaña). En "Todas"
+    // solo se suman las nunca calificadas: las demás ya pasaron en esta vuelta.
+    const extra = VOCAB.filter((c) => !inQueue.has(c.id) && belongs(c) && (f !== "all" || !Store.srs(c.id)));
+    return kept.concat(shuffle(extra));
+  }
+
+  function persist() {
+    const ids = (current ? [current] : []).concat(queue).map((c) => c.id);
+    Store.saveVocabSession(filter, ids);
   }
 
   function startSession(f) {
     filter = f;
-    queue = shuffle(cardsForFilter(f));
+    queue = buildQueue(f);
     next();
   }
 
   function next() {
     current = queue.shift() || null;
+    persist();
     draw();
   }
 

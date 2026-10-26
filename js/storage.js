@@ -10,6 +10,8 @@ const Store = (function () {
       srs: {},         // { [cardId]: { ease, interval, reps, due, last } }
       grammar: {},     // { [topicId]: { done: true } }
       produccion: {},  // { [itemId]: { done: true } }
+      // Vocabulario: pestaña elegida y, por pestaña, la cola de ids que quedan (la primera es la tarjeta actual)
+      vocabSession: { filter: null, queues: {} }, // filter: "all" | "done" | "pending"
     };
   }
 
@@ -29,6 +31,7 @@ const Store = (function () {
         srs: raw.srs || {},
         grammar: raw.grammar || {},
         produccion: raw.produccion || {},
+        vocabSession: Object.assign(d.vocabSession, raw.vocabSession || {}),
       };
     } catch (e) {
       return defaults();
@@ -50,6 +53,12 @@ const Store = (function () {
     grammarDone(id) { return !!(state.grammar[id] && state.grammar[id].done); },
     markProduccion(id) { state.produccion[id] = { done: true }; save(); },
     produccionDone(id) { return !!(state.produccion[id] && state.produccion[id].done); },
+    vocabSession() { return state.vocabSession; },
+    saveVocabSession(filter, queueIds) {
+      state.vocabSession.filter = filter;
+      state.vocabSession.queues[filter] = queueIds;
+      save();
+    },
     reset() { state = defaults(); save(); },
   };
 })();
