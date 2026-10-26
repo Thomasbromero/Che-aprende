@@ -46,6 +46,7 @@
   <script src="../js/exercise.js"></script>
   <script src="../js/conjugador.js"></script>
   <script src="../js/formats.js"></script>
+  <script src="../js/dificultad.js"></script>
   <script>
     let formato = Formats.lista()[0].id;
 
@@ -62,7 +63,7 @@
       clear(lab);
       const ex = Formats.generar(formato, c);
       document.getElementById("meta").textContent = ex
-        ? "formato: " + formato + " · " + (c.inf ? "verbo: " + c.id + " · " + ex.tiempo + " / " + ex.persona + (ex.estricto ? " · estricto (la tilde cuenta)" : "") : "palabra: " + c.id + " · tema: " + c.tema)
+        ? "puntaje " + Dificultad.puntaje(ex) + "/100 (contenido " + Dificultad.nivelDelContenido(ex) + ", esfuerzo " + Dificultad.esfuerzoDelFormato(ex) + ") · formato: " + formato + " · " + (c.inf ? "verbo: " + c.id + " · " + ex.tiempo + " / " + ex.persona + (ex.estricto ? " · estricto (la tilde cuenta)" : "") : "palabra: " + c.id + " · tema: " + c.tema)
         : "«" + c.id + "» no tiene el formato " + formato;
       if (!ex) return;
       // Oculto con style (no con la clase "hidden"): ".btn.wide" le gana en especificidad y lo mostraría igual.

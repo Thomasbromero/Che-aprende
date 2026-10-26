@@ -63,6 +63,32 @@ const Conjugador = (function () {
     return formas(v, tiempoId, personaId)[0] !== porRegla(v, tiempoId, personaId)[0];
   }
 
+  // ---------- Dificultad de una forma (0-100) ----------
+  // Cuánto cuesta aprender esa forma, sin contar si se elige o se escribe (eso lo pone el formato).
+  // Pesa el tiempo (el subjuntivo cuesta mucho más que el presente), un poco la persona, y que la
+  // forma se aparte de la regla; más todavía si casi no se parece al infinitivo (fueron, tuve, dijeron).
+  // Los verbos que más se usan (ser, estar, ir, tener, hacer) se conocen aunque sean irregulares.
+  const NIVEL_TIEMPO = { presente: 12, imperfecto: 30, futuro: 28, condicional: 34, preterito: 44, subjuntivo: 66 };
+  const NIVEL_PERSONA = { yo: 0, vos: 4, el: 0, nosotros: 3, ustedes: 3 };
+  const MUY_USADOS = ["v-ser", "v-estar", "v-ir", "v-tener", "v-hacer"];
+
+  function sinTildes(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function prefijoComun(a, b) {
+    let i = 0;
+    while (i < a.length && i < b.length && a[i] === b[i]) i++;
+    return i;
+  }
+
+  function nivel(v, tiempoId, personaId) {
+    let n = NIVEL_TIEMPO[tiempoId] + NIVEL_PERSONA[personaId];
+    if (esIrregular(v, tiempoId, personaId)) {
+      n += 16;
+      if (prefijoComun(sinTildes(formas(v, tiempoId, personaId)[0]), sinTildes(v.inf)) <= 1) n += 10;
+    }
+    if (MUY_USADOS.indexOf(v.id) >= 0) n -= 6;
+    return Math.max(3, Math.min(95, Math.round(n)));
+  }
+
   // Todas las formas (con su tiempo y persona) de un verbo
   function todas(v) {
     const out = [];
@@ -70,5 +96,5 @@ const Conjugador = (function () {
     return out;
   }
 
-  return { PERSONAS, TIEMPOS, formas, porRegla, todas, esIrregular, grupo, tiempoDe };
+  return { PERSONAS, TIEMPOS, formas, porRegla, todas, esIrregular, grupo, tiempoDe, nivel };
 })();

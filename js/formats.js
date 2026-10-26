@@ -167,11 +167,13 @@ const Formats = (function () {
   }
 
   // ---------- Los formatos ----------
+  // esfuerzo (0-100): cuánto hay que recordar o producir. Elegir entre opciones: 10-40.
+  // Armar una frase: 42-66. Escribir de memoria: 65-86. Puede ser una función del ejercicio.
   const DEFS = {
     // ¿Qué significa «la cuadra»?  ->  eligir la traducción
     significado: {
       nombre: "Significado",
-      esfuerzo: 1,
+      esfuerzo: 10,
       aplica: () => true,
       generar(c, o) {
         const rng = rngDe(o);
@@ -189,7 +191,7 @@ const Formats = (function () {
     // ¿Cómo se dice «háztömb» en español?  ->  elegir la palabra
     termino: {
       nombre: "Palabra",
-      esfuerzo: 2,
+      esfuerzo: 25,
       aplica: () => true,
       generar(c, o) {
         const rng = rngDe(o);
@@ -209,7 +211,7 @@ const Formats = (function () {
     // Lleva la traducción como pista: sin ella, dos palabras distintas podrían encajar.
     completar_opciones: {
       nombre: "Completar con opciones",
-      esfuerzo: 2,
+      esfuerzo: 35,
       aplica(c) {
         const f = fraseConHueco(c);
         // Una sola palabra: si la correcta tuviera varias y las demás no, se delataría sola.
@@ -234,7 +236,7 @@ const Formats = (function () {
     // La misma frase, pero hay que escribir la palabra (con su plural o conjugación si hace falta).
     completar_escribir: {
       nombre: "Completar escribiendo",
-      esfuerzo: 3,
+      esfuerzo: (ex) => (ex.flexionada ? 75 : 65),
       aplica: (c) => !!fraseConHueco(c),
       generar(c) {
         const f = fraseConHueco(c);
@@ -253,6 +255,7 @@ const Formats = (function () {
           accept,
           answer: f.respuesta,
           explain: explicacion(c),
+          flexionada, // hay que ponerle plural, género o conjugación: cuesta más
         };
       },
     },
@@ -260,7 +263,7 @@ const Formats = (function () {
     // Armar la frase de ejemplo tocando las palabras en orden.
     ordenar: {
       nombre: "Ordenar la frase",
-      esfuerzo: 3,
+      esfuerzo: (ex) => Math.max(42, Math.min(66, 30 + 3 * ex.words.length)),
       aplica(c) {
         const n = c.example.trim().split(/\s+/).length;
         return n >= 4 && n <= 12;
@@ -284,7 +287,7 @@ const Formats = (function () {
     // Unir 4 palabras con su traducción (la palabra elegida + 3 parecidas).
     emparejar: {
       nombre: "Emparejar",
-      esfuerzo: 2,
+      esfuerzo: 20,
       aplica: () => true,
       generar(c, o) {
         const rng = rngDe(o);
@@ -347,7 +350,7 @@ const Formats = (function () {
   DEFS.conjugar_opciones = {
     fuente: "verbo",
     nombre: "Conjugar con opciones",
-    esfuerzo: 3,
+    esfuerzo: 40,
     aplica: (v) => !!v.inf,
     generar(v, o) {
       const rng = rngDe(o);
@@ -377,7 +380,7 @@ const Formats = (function () {
   DEFS.conjugar_escribir = {
     fuente: "verbo",
     nombre: "Conjugar escribiendo",
-    esfuerzo: 4,
+    esfuerzo: (ex) => (ex.estricto ? 86 : 78),
     aplica: (v) => !!v.inf,
     generar(v, o) {
       const rng = rngDe(o);
@@ -425,8 +428,17 @@ const Formats = (function () {
   }
 
   function lista() {
-    return Object.keys(DEFS).map((id) => ({ id, nombre: DEFS[id].nombre, esfuerzo: DEFS[id].esfuerzo, fuente: DEFS[id].fuente || "vocab" }));
+    return Object.keys(DEFS).map((id) => ({ id, nombre: DEFS[id].nombre, fuente: DEFS[id].fuente || "vocab" }));
   }
 
-  return { generar, formatosPara, lista, hueco, fraseConHueco, distractores, parecidas, tipoDe, articuloDe, nucleo, confundible };
+  // Cuánto cuesta responder este ejercicio, de 0 a 100, sin contar qué palabra o verbo es:
+  // reconocer entre opciones cuesta poco; escribir de memoria, mucho. Lo usa js/dificultad.js.
+  function esfuerzo(ex) {
+    const e = DEFS[ex.format].esfuerzo;
+    return typeof e === "function" ? e(ex) : e;
+  }
+
+  function fuenteDeFormato(id) { return DEFS[id].fuente || "vocab"; }
+
+  return { generar, formatosPara, lista, esfuerzo, fuenteDeFormato, hueco, fraseConHueco, distractores, parecidas, tipoDe, articuloDe, nucleo, confundible };
 })();

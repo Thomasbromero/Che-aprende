@@ -11,8 +11,8 @@ const raiz = path.join(__dirname, "..");
 const ctx = { console };
 ctx.window = ctx;
 vm.createContext(ctx);
-["data/vocab.data.js", "data/verbos.data.js", "js/util.js", "js/conjugador.js", "js/formats.js"].forEach((f) => vm.runInContext(fs.readFileSync(path.join(raiz, f), "utf8"), ctx, { filename: f }));
-const { Formats, Conjugador, VOCAB, VERBOS, respuestaCorrecta } = vm.runInContext("({ Formats, Conjugador, VOCAB, VERBOS, respuestaCorrecta })", ctx);
+["data/vocab.data.js", "data/verbos.data.js", "data/grammar.data.js", "data/produccion.data.js", "js/util.js", "js/conjugador.js", "js/formats.js", "js/dificultad.js"].forEach((f) => vm.runInContext(fs.readFileSync(path.join(raiz, f), "utf8"), ctx, { filename: f }));
+const { Formats, Conjugador, Dificultad, VOCAB, VERBOS, GRAMMAR, PRODUCCION, respuestaCorrecta } = vm.runInContext("({ Formats, Conjugador, Dificultad, VOCAB, VERBOS, GRAMMAR, PRODUCCION, respuestaCorrecta })", ctx);
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 const detalle = process.argv.includes("--detalle");
 
@@ -134,7 +134,48 @@ VERBOS.forEach((v) => {
   });
 });
 
+// --- Dificultad ---
+const nivelOk = (n) => Number.isInteger(n) && n >= 1 && n <= 100;
+const FALTA_NIVEL = "falta el nivel (correr: node dev/puntuar.js --escribir)";
+VOCAB.forEach((c) => { if (!nivelOk(c.nivel)) fallo(c.id, "dificultad", FALTA_NIVEL); });
+GRAMMAR.forEach((t) => t.exercises.forEach((e, i) => { if (!nivelOk(e.nivel)) fallo(t.id + "#" + i, "dificultad", FALTA_NIVEL); }));
+PRODUCCION.forEach((p) => { if (!nivelOk(p.nivel)) fallo(p.id, "dificultad", FALTA_NIVEL); });
+
+const decil = new Array(10).fill(0);
+let puntuados = 0;
+const cuenta = (p, id, fid) => {
+  if (!Number.isInteger(p) || p < 1 || p > 100) { fallo(id, fid, "puntaje fuera de 1-100: " + p); return; }
+  decil[Math.min(9, Math.floor((p - 1) / 10))]++;
+  puntuados++;
+};
+if (!errores.length) {
+  VOCAB.forEach((c) => {
+    const p = {};
+    Formats.formatosPara(c).forEach((fid) => { p[fid] = Dificultad.puntaje(Formats.generar(fid, c, { rng: semilla(1) })); cuenta(p[fid], c.id, fid); });
+    // La misma palabra tiene que costar más cuanto más hay que producir
+    const mayor = (a, b) => { if (!(p[a] < p[b])) fallo(c.id, "dificultad", a + " (" + p[a] + ") deberia ser menor que " + b + " (" + p[b] + ")"); };
+    mayor("significado", "termino"); mayor("termino", "completar_escribir"); mayor("significado", "ordenar");
+    mayor("emparejar", "completar_escribir"); if (p.completar_opciones) mayor("completar_opciones", "completar_escribir");
+  });
+  VERBOS.forEach((v) => Conjugador.PERSONAS.forEach((pe) => {
+    const pt = {};
+    Conjugador.TIEMPOS.forEach((t) => {
+      const o = Dificultad.puntaje(Formats.generar("conjugar_opciones", v, { rng: semilla(1), tiempo: t.id, persona: pe.id }));
+      const e = Dificultad.puntaje(Formats.generar("conjugar_escribir", v, { rng: semilla(1), tiempo: t.id, persona: pe.id }));
+      cuenta(o, v.id + " " + t.id + "/" + pe.id, "conjugar_opciones"); cuenta(e, v.id + " " + t.id + "/" + pe.id, "conjugar_escribir");
+      if (!(o < e)) fallo(v.id + " " + t.id + "/" + pe.id, "dificultad", "conjugar_opciones (" + o + ") deberia ser menor que conjugar_escribir (" + e + ")");
+      pt[t.id] = e;
+    });
+    if (!(pt.presente < pt.subjuntivo)) fallo(v.id + "/" + pe.id, "dificultad", "presente (" + pt.presente + ") deberia ser menor que subjuntivo (" + pt.subjuntivo + ")");
+  }));
+  GRAMMAR.forEach((t) => t.exercises.forEach((e, i) => cuenta(Dificultad.puntaje(Object.assign({}, e, { format: "gramatica", source: t.id + "#" + i })), t.id + "#" + i, "gramatica")));
+  PRODUCCION.forEach((p) => cuenta(Dificultad.puntaje(Object.assign({}, p, { format: "produccion", source: p.id })), p.id, "produccion"));
+  // El camino necesita ejercicios en todos los tramos: si un tramo queda casi vacío, el mapa tendría un salto
+  decil.forEach((n, i) => { if (i < 9 && n < 20) fallo("reparto", "dificultad", "solo " + n + " ejercicios con puntaje " + (i * 10 + 1) + "-" + (i * 10 + 10)); });
+}
+
 // --- Resumen ---
+console.log("Ejercicios puntuados: " + puntuados + " | por tramo de dificultad (1-10, 11-20, ...): " + decil.join(" "));
 console.log("Palabras: " + VOCAB.length + " | verbos: " + VERBOS.length + " (" + conjugaciones + " formas) | semillas por combinacion: " + SEMILLAS);
 Formats.lista().forEach((f) => {
   if (f.fuente === "verbo") console.log("  " + f.id.padEnd(20) + String(VERBOS.length).padStart(4) + " / " + VERBOS.length + " verbos (x 30 tiempos y personas)");
