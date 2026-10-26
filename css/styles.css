@@ -411,36 +411,94 @@ body[data-view="home"] .bottom-nav { display: none; }
 .text-input.wrong { border-color: var(--v2-navy); }
 .hint { margin: 2px 0 10px; }
 
-/* ---- Aventura: camino de niveles (versión simple; el diseño final viene después) ---- */
-.av-resumen { margin: 2px 0 14px; }
-.av-lista { display: grid; gap: 10px; }
-.av-nivel {
-  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
-  font: inherit; border: none; border-radius: 20px; padding: 12px 14px; cursor: pointer;
+/* ---- Aventura: el mapa (formas simples; el arte se enchufa desde data/mapa.data.js) ---- */
+.av-info {
+  position: sticky; z-index: 9; display: flex; align-items: center; gap: 10px;
+  padding: 8px 2px; background: var(--v2-cream);
+}
+.av-info-titulo { font-weight: 700; font-size: 1.15rem; }
+.av-info-datos { flex: 1; min-width: 0; }
+.av-yo { padding: 8px 14px; font-size: 0.85rem; white-space: nowrap; }
+
+/* El lienzo mantiene la proporción del dibujo (alto = ancho x proporción), y todo adentro se ubica en % */
+/* El contenedor de afuera estira el mapa a todo el ancho de la pantalla; el alto del de adentro es un % del ancho de SU padre,
+   por eso los dos tienen que medir lo mismo */
+.av-mapa-ext { margin: 0 -16px; }
+.av-mapa { position: relative; width: 100%; height: 0; overflow: hidden; }
+.av-capa { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.av-banda.a { fill: var(--v2-pink); opacity: 0.22; }
+.av-banda.b { fill: var(--v2-cyan); opacity: 0.1; }
+.av-d-cian { fill: var(--v2-cyan); opacity: 0.3; }
+.av-d-navy { fill: var(--v2-navy); opacity: 0.09; }
+.av-d-rosa { fill: var(--v2-pink); opacity: 0.6; }
+.av-trazo { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 12px; vector-effect: non-scaling-stroke; }
+.av-trazo.base { stroke: var(--v2-pink); }
+.av-trazo.hecho { stroke: var(--v2-cyan); }
+
+.av-cartel {
+  position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 2;
+  display: grid; justify-items: center; padding: 6px 24px; border-radius: 999px; white-space: nowrap; line-height: 1.3;
   background: var(--v2-navy); color: var(--v2-cream);
 }
-.av-nivel:active { transform: scale(0.98); }
-.av-nivel:disabled { background: var(--v2-pink); color: var(--v2-navy); opacity: 0.7; cursor: default; transform: none; }
-.av-nivel.actual { box-shadow: 0 0 0 3px var(--v2-cyan); }
-.av-circulo {
-  flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
-  display: grid; place-items: center; font-weight: 700; font-size: 1.1rem;
-  background: var(--v2-cream); color: var(--v2-navy);
+.av-cartel-nombre { font-weight: 700; }
+.av-cartel-sub { font-size: 0.72rem; color: var(--v2-cyan); font-weight: 600; }
+
+/* Cada nivel: el botón mide lo mismo en cualquier celular (no se achica con el mapa) */
+.av-nodo {
+  position: absolute; z-index: 3; transform: translate(-50%, -28px); width: 112px;
+  display: flex; flex-direction: column; align-items: center;
+  background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.av-nivel.hecho .av-circulo { background: var(--v2-cyan); }
-.av-datos { display: grid; gap: 2px; min-width: 0; }
-.av-titulo { font-weight: 700; }
-.av-sub { font-size: 0.82rem; opacity: 0.8; }
+.av-punto {
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 700; font-size: 1.15rem; background: var(--v2-navy); color: var(--v2-cream);
+  box-shadow: 0 4px 0 rgba(29, 42, 68, 0.28); transition: transform 0.12s ease;
+}
+.av-nodo:active .av-punto { transform: scale(0.94); }
+.av-nodo.sel .av-punto { transform: scale(1.1); }
+.av-nodo.hecho .av-punto { background: var(--v2-cyan); color: var(--v2-navy); }
+.av-nodo.bloqueado .av-punto { background: var(--v2-pink); color: var(--v2-navy); opacity: 0.9; box-shadow: none; }
+.av-nodo.actual .av-punto {
+  box-shadow: 0 0 0 5px var(--v2-cream), 0 0 0 9px var(--v2-cyan);
+  animation: av-latido 1.8s ease-in-out infinite;
+}
+@keyframes av-latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@media (prefers-reduced-motion: reduce) { .av-nodo.actual .av-punto { animation: none; } }
+.av-pie {
+  margin-top: 6px; max-width: 112px; padding: 1px 6px; border-radius: 8px; overflow: hidden;
+  font-size: 0.72rem; line-height: 1.15; font-weight: 600; text-align: center;
+  background: rgba(255, 244, 214, 0.88);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.av-nodo.bloqueado .av-pie { opacity: 0.6; }
+
 .av-estrellas { letter-spacing: 1px; line-height: 1; }
-.av-circulo .av-estrellas { font-size: 0.7rem; }
-.panel .av-estrellas { display: block; font-size: 2.2rem; letter-spacing: 6px; margin: 6px 0 4px; }
+.av-punto .av-estrellas { font-size: 0.72rem; }
 .av-estrellas .on { color: var(--v2-cyan); }
 .av-estrellas .off { color: var(--v2-navy); opacity: 0.25; }
-.av-circulo .av-estrellas .on { color: var(--v2-navy); }
-.av-continuar {
-  display: block; width: 100%; margin: 0 0 14px; padding: 14px 18px; border: none; border-radius: 999px;
-  font: inherit; font-weight: 700; cursor: pointer; background: var(--v2-cyan); color: var(--v2-navy);
+.av-punto .av-estrellas .on { color: var(--v2-navy); }
+.av-punto .av-estrellas .off { opacity: 0.3; }
+.panel .av-estrellas { display: block; font-size: 2.2rem; letter-spacing: 6px; margin: 6px 0 4px; }
+
+/* Hoja de abajo con el detalle del nivel tocado (por encima del menú de abajo) */
+.av-hoja {
+  position: fixed; left: 12px; right: 12px; bottom: calc(68px + env(safe-area-inset-bottom)); z-index: 11;
+  max-width: 616px; margin: 0 auto; padding: 16px 18px; border-radius: 22px;
+  background: var(--v2-navy); color: var(--v2-cream);
+  transform: translateY(calc(100% + 130px)); pointer-events: none; transition: transform 0.2s ease;
 }
+.av-hoja.abierta { transform: none; pointer-events: auto; }
+.av-hoja-cab { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.av-hoja-titulo { font-weight: 700; font-size: 1.1rem; }
+.av-hoja .av-sub { font-size: 0.85rem; color: var(--v2-cyan); font-weight: 600; margin-top: 2px; }
+.av-hoja-x { background: none; border: none; color: var(--v2-cream); font-size: 1.2rem; cursor: pointer; padding: 0 2px; }
+.av-hoja .av-estrellas { display: block; margin-top: 8px; font-size: 1.4rem; letter-spacing: 4px; }
+.av-hoja .av-estrellas .off { color: var(--v2-cream); }
+.av-hoja-aviso { margin: 10px 0 0; color: var(--v2-cream); opacity: 0.85; }
+.av-hoja .btn.primary { background: var(--v2-cyan); color: var(--v2-navy); }
+.av-hoja .btn.ghost { color: var(--v2-cream); border-color: var(--v2-cream); }
+
 .av-cabecera { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .av-salir { padding: 0; white-space: nowrap; }
 .av-barra { flex: 1; height: 10px; border-radius: 999px; background: var(--v2-pink); overflow: hidden; }

@@ -10,9 +10,9 @@ const ctx = { console }; ctx.window = ctx; vm.createContext(ctx);
 // Un Store de mentira (en el navegador es el de js/storage.js) para probar el desbloqueo
 const progreso = {};
 vm.runInContext("var Store = { aventuraNodo: function (id) { return __progreso[id]; } };", Object.assign(ctx, { __progreso: progreso }));
-["data/vocab.data.js", "data/verbos.data.js", "data/grammar.data.js", "data/produccion.data.js", "data/camino.data.js", "js/util.js", "js/conjugador.js", "js/formats.js", "js/dificultad.js", "js/aventura.js"]
+["data/vocab.data.js", "data/verbos.data.js", "data/grammar.data.js", "data/produccion.data.js", "data/camino.data.js", "data/mapa.data.js", "js/util.js", "js/conjugador.js", "js/formats.js", "js/dificultad.js", "js/mapa.js", "js/aventura.js"]
   .forEach((f) => vm.runInContext(fs.readFileSync(path.join(raiz, f), "utf8"), ctx, { filename: f }));
-const { Formats, Conjugador, Dificultad, Aventura, VOCAB, VERBOS, GRAMMAR, PRODUCCION, CAMINO } = vm.runInContext("({ Formats, Conjugador, Dificultad, Aventura, VOCAB, VERBOS, GRAMMAR, PRODUCCION, CAMINO })", ctx);
+const { Formats, Conjugador, Dificultad, Aventura, Mapa, VOCAB, VERBOS, GRAMMAR, PRODUCCION, CAMINO, MAPA } = vm.runInContext("({ Formats, Conjugador, Dificultad, Aventura, Mapa, VOCAB, VERBOS, GRAMMAR, PRODUCCION, CAMINO, MAPA })", ctx);
 
 function semilla(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 const errores = [];
@@ -104,6 +104,39 @@ if (!Aventura.desbloqueado(1)) fallo("reglas", "al superar el primero se abre el
 if (Aventura.desbloqueado(2)) fallo("reglas", "el tercero sigue cerrado");
 progreso[N[0].id] = { hecho: false, estrellas: 0, intentos: 3 };
 if (Aventura.desbloqueado(1)) fallo("reglas", "intentar sin pasar no abre el siguiente");
+
+
+// --- Mapa (js/mapa.js y data/mapa.data.js) ---
+{
+  const sumaZonas = MAPA.zonas.reduce((s, z) => s + z.niveles, 0);
+  if (sumaZonas !== N.length) fallo("mapa", "las zonas suman " + sumaZonas + " niveles y el camino tiene " + N.length + " (en data/mapa.data.js)");
+  MAPA.zonas.forEach((z, k) => { if (!z.nombre) fallo("mapa", "la zona " + (k + 1) + " no tiene nombre"); });
+  const g = Mapa.calcular(N.length, MAPA);
+  if (g.puntos.length !== N.length) fallo("mapa", "hay " + g.puntos.length + " puntos para " + N.length + " niveles");
+  g.puntos.forEach((p, i) => {
+    if (!(p.x >= 50 && p.x <= g.ancho - 50)) fallo("mapa", "el nivel " + (i + 1) + " queda muy pegado al borde (x=" + p.x.toFixed(0) + ")");
+    if (!(p.y > 0 && p.y < g.alto)) fallo("mapa", "el nivel " + (i + 1) + " cae fuera del mapa (y=" + p.y.toFixed(0) + ")");
+    if (i && !(p.y < g.puntos[i - 1].y)) fallo("mapa", "el nivel " + (i + 1) + " no está arriba del anterior");
+    if (i && Math.hypot(p.x - g.puntos[i - 1].x, p.y - g.puntos[i - 1].y) < 70) fallo("mapa", "los niveles " + i + " y " + (i + 1) + " quedan demasiado juntos para tocarlos con el dedo");
+  });
+  g.zonas.forEach((z, k) => {
+    if (!(z.top < z.bottom)) fallo("mapa", "la zona " + (k + 1) + " tiene alto negativo");
+    if (k && !(z.bottom <= g.zonas[k - 1].top + 1)) fallo("mapa", "la zona " + (k + 1) + " se superpone con la de abajo");
+    for (let i = z.primero; i <= z.ultimo; i++) if (!(g.puntos[i].y > z.top && g.puntos[i].y < z.bottom)) fallo("mapa", "el nivel " + (i + 1) + " no cae dentro de su zona");
+    if (!(z.cartelY > z.top && z.cartelY < z.bottom)) fallo("mapa", "el cartel de la zona " + (k + 1) + " no cae dentro de su zona");
+    if (!(g.puntos[z.primero].y < z.cartelY)) fallo("mapa", "el cartel de la zona " + (k + 1) + " tiene que quedar debajo de su primer nivel");
+  });
+  // El trazo pasa por todos los niveles y el tramo recorrido es un pedazo del trazo completo
+  const completo = Mapa.trazo(g.puntos), parte = Mapa.trazo(g.puntos, 10);
+  if (!completo.startsWith("M")) fallo("mapa", "el trazo no empieza con M");
+  if ((completo.match(/C/g) || []).length !== N.length - 1) fallo("mapa", "el trazo tiene " + (completo.match(/C/g) || []).length + " curvas y deberia tener " + (N.length - 1));
+  if (!completo.startsWith(parte)) fallo("mapa", "el tramo recorrido no calza con el trazo completo");
+  if (Mapa.trazo(g.puntos, 0) !== "") fallo("mapa", "con un solo punto no hay trazo");
+  // Si las zonas no suman, Mapa.calcular no se rompe: agrega una zona con lo que sobra
+  const g2 = Mapa.calcular(N.length, { zonas: [{ nombre: "Sola", niveles: 10 }] });
+  if (g2.puntos.length !== N.length || g2.zonas.length !== 2 || g2.zonas[1].niveles !== N.length - 10) fallo("mapa", "no reparte bien los niveles que sobran");
+  console.log("Mapa: " + MAPA.zonas.length + " zonas, lienzo de " + g.ancho + " x " + Math.round(g.alto) + " unidades");
+}
 
 const total = N.reduce((s, n) => s + n.ejercicios.length, 0);
 console.log("Camino: " + N.length + " niveles, " + total + " ejercicios | dificultad " + niveles[0] + " a " + niveles[niveles.length - 1] + " | salto máximo " + maxSalto + " | mayor retroceso " + retroceso);

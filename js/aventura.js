@@ -7,8 +7,9 @@
    Si se cierra la app en medio de una lección, se retoma en el mismo ejercicio: la lección se arma con una
    semilla guardada, así los ejercicios son los mismos.
 
-   Esta pantalla es la versión simple (una lista de niveles). El mapa con ilustraciones viene después.
-   Para probarla antes de que tenga entrada en Inicio: abrir la app con "?aventura" al final de la dirección,
+   El camino se dibuja como un mapa que se recorre hacia arriba (js/mapa.js calcula dónde cae cada nivel y
+   data/mapa.data.js describe las zonas y deja lugar para el arte). Tocar un nivel abre una hoja con su detalle.
+   Para probarlo antes de que tenga entrada en Inicio: abrir la app con "?aventura" al final de la dirección,
    y con "?aventura=todo" quedan todos los niveles abiertos (solo para probar). */
 const Aventura = (function () {
   const APROBAR = 0.7;
@@ -90,6 +91,9 @@ const Aventura = (function () {
   function render(container) {
     host = container;
     sesion = null;
+    // El mapa es muy largo: sin esto el navegador, al recargar, devuelve la pantalla al lugar donde estaba
+    // la vez anterior y pisa el scroll que deja la pantalla en el nivel actual.
+    if (typeof history !== "undefined" && "scrollRestoration" in history) history.scrollRestoration = "manual";
     camino();
   }
 
@@ -97,53 +101,170 @@ const Aventura = (function () {
     return h("span", { class: "av-estrellas" }, [1, 2, 3].map((k) => h("span", { class: k <= n ? "on" : "off" }, "★")));
   }
 
+  // ---------- El mapa ----------
+  const SVG_NS = "http://www.w3.org/2000/svg";
+  function svg(tag, attrs, hijos) {
+    const n = document.createElementNS(SVG_NS, tag);
+    for (const k in attrs) if (attrs[k] != null) n.setAttribute(k, attrs[k]);
+    (hijos || []).forEach((c) => n.appendChild(c));
+    return n;
+  }
+  function imagenSvg(url, x, y, ancho, alto, ajuste) {
+    const n = svg("image", { x, y, width: ancho, height: alto, preserveAspectRatio: ajuste });
+    n.setAttribute("href", url);
+    n.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", url);
+    return n;
+  }
+
+  // Formas simples de relleno para una zona sin arte (colores de la paleta). Alternan de a tres tipos.
+  function relleno(z, k, g) {
+    const lado = k % 2 === 0 ? 1 : -1;
+    const cx = g.ancho / 2 + lado * 150;
+    const arriba = z.top, abajo = z.bottom;
+    const forma = (tag, attrs, clase) => svg(tag, Object.assign({ class: clase }, attrs));
+    if (k % 3 === 0) {
+      return [forma("circle", { cx, cy: arriba + 90, r: 34 }, "av-d-cian"), forma("ellipse", { cx, cy: abajo - 20, rx: 95, ry: 60 }, "av-d-navy")];
+    }
+    if (k % 3 === 1) {
+      const base = abajo - 10;
+      return [
+        forma("polygon", { points: [cx - 70, base, cx - 10, base - 120, cx + 50, base].join(" ") }, "av-d-navy"),
+        forma("polygon", { points: [cx - 10, base, cx + 45, base - 85, cx + 100, base].join(" ") }, "av-d-rosa"),
+        forma("circle", { cx: cx - lado * 10, cy: arriba + 80, r: 26 }, "av-d-cian"),
+      ];
+    }
+    const y = (arriba + abajo) / 2;
+    return [
+      forma("circle", { cx: cx - 30, cy: y, r: 28 }, "av-d-rosa"),
+      forma("circle", { cx, cy: y - 12, r: 36 }, "av-d-rosa"),
+      forma("circle", { cx: cx + 36, cy: y, r: 26 }, "av-d-rosa"),
+      forma("circle", { cx: cx - lado * 20, cy: arriba + 70, r: 22 }, "av-d-cian"),
+    ];
+  }
+
+  // Fondo y decoraciones de una zona: el arte de data/mapa.data.js si lo hay, y si no, formas simples
+  function capaZona(z, k, g) {
+    const nodos = [svg("rect", { x: 0, y: z.top, width: g.ancho, height: z.bottom - z.top, class: "av-banda " + (k % 2 ? "b" : "a") })];
+    if (z.fondo) nodos.push(imagenSvg(z.fondo, 0, z.top, g.ancho, z.bottom - z.top, "xMidYMid slice"));
+    if (z.decoraciones && z.decoraciones.length) {
+      z.decoraciones.forEach((d) => nodos.push(imagenSvg(d.img, d.x, z.top + d.y, d.ancho, d.alto || d.ancho, "xMidYMid meet")));
+    } else if (!z.fondo) {
+      relleno(z, k, g).forEach((n) => nodos.push(n));
+    }
+    return nodos;
+  }
+
+  function alturaCabecera() {
+    const c = typeof document !== "undefined" && document.querySelector(".app-header");
+    return c ? c.offsetHeight : 62;
+  }
+
   function camino() {
     clear(host);
     const lista = niveles();
     const st = stats();
-    host.appendChild(h("h2", {}, I18n.t("aventura_title")));
-    host.appendChild(h("p", { class: "muted av-resumen" }, I18n.t("aventura_resumen", st.hechos, st.total, st.estrellas)));
+    const g = Mapa.calcular(lista.length, typeof MAPA !== "undefined" ? MAPA : null);
+    const actual = indiceActual();
+    const botones = [];
+    let seleccionado = -1;
 
-    const curso = Store.aventura().enCurso;
-    const nivelCurso = curso && lista.find((n) => n.id === curso.nivel);
-    if (nivelCurso && curso.i > 0 && curso.i < nivelCurso.ejercicios.length) {
-      host.appendChild(
-        h("button", { class: "av-continuar", onClick: () => empezar(lista.indexOf(nivelCurso), true) },
-          I18n.t("aventura_continuar_card", nivelCurso.titulo, curso.i, nivelCurso.ejercicios.length))
+    // ----- Lienzo: franjas de zona, formas, y el trazo del camino -----
+    const lienzo = h("div", { class: "av-mapa", style: "padding-top:" + ((g.alto / g.ancho) * 100).toFixed(3) + "%" });
+    const capa = svg("svg", { class: "av-capa", viewBox: "0 0 " + g.ancho + " " + g.alto, preserveAspectRatio: "none", "aria-hidden": "true" });
+    g.zonas.forEach((z, k) => capaZona(z, k, g).forEach((n) => capa.appendChild(n)));
+    capa.appendChild(svg("path", { d: Mapa.trazo(g.puntos), class: "av-trazo base" }));
+    const llegado = actual < 0 ? lista.length - 1 : actual;
+    if (llegado >= 1) capa.appendChild(svg("path", { d: Mapa.trazo(g.puntos, llegado), class: "av-trazo hecho" }));
+    lienzo.appendChild(capa);
+
+    // ----- Carteles de zona -----
+    g.zonas.forEach((z) => {
+      lienzo.appendChild(
+        h("div", { class: "av-cartel", style: "top:" + ((z.cartelY / g.alto) * 100).toFixed(3) + "%" }, [
+          h("span", { class: "av-cartel-nombre" }, z.nombre),
+          h("span", { class: "av-cartel-sub" }, I18n.t("aventura_zona_niveles", z.primero + 1, z.ultimo + 1)),
+        ])
       );
+    });
+
+    // ----- Hoja de abajo: el detalle del nivel tocado -----
+    const hoja = h("div", { class: "av-hoja", role: "dialog", "aria-hidden": "true" });
+    function cerrarHoja() {
+      hoja.classList.remove("abierta");
+      hoja.setAttribute("aria-hidden", "true");
+      botones.forEach((b) => b.classList.remove("sel"));
+      seleccionado = -1;
+    }
+    function abrirHoja(i) {
+      const n = lista[i];
+      const rec = Store.aventuraNodo(n.id);
+      const abierto = desbloqueado(i);
+      const c = Store.aventura().enCurso;
+      const reanudable = !!(c && c.nivel === n.id && c.i > 0 && c.i < n.ejercicios.length);
+      seleccionado = i;
+      botones.forEach((b, k) => b.classList.toggle("sel", k === i));
+      clear(hoja);
+      hoja.appendChild(
+        h("div", { class: "av-hoja-cab" }, [
+          h("div", {}, [
+            h("div", { class: "av-hoja-titulo" }, i + 1 + ". " + n.titulo),
+            h("div", { class: "av-sub" }, I18n.t("aventura_nivel_sub", n.ejercicios.length, n.nivel)),
+          ]),
+          h("button", { class: "av-hoja-x", type: "button", "aria-label": I18n.t("aventura_cerrar"), onClick: cerrarHoja }, "✕"),
+        ])
+      );
+      if (rec && rec.hecho) hoja.appendChild(estrellasHtml(rec.estrellas || 1));
+      if (!abierto) hoja.appendChild(h("p", { class: "av-hoja-aviso" }, I18n.t("aventura_bloqueado")));
+      else if (reanudable) {
+        hoja.appendChild(h("button", { class: "btn primary wide", onClick: () => empezar(i, true) }, I18n.t("aventura_continuar_btn", c.i, n.ejercicios.length)));
+        hoja.appendChild(h("button", { class: "btn ghost wide", onClick: () => empezar(i, false) }, I18n.t("aventura_desde_principio")));
+      } else {
+        hoja.appendChild(h("button", { class: "btn primary wide", onClick: () => empezar(i, false) }, I18n.t(rec && rec.hecho ? "aventura_repetir" : "aventura_empezar")));
+      }
+      hoja.classList.add("abierta");
+      hoja.setAttribute("aria-hidden", "false");
     }
 
-    const actual = indiceActual();
-    const cont = h("div", { class: "av-lista" });
-    let nodoActual = null;
+    // ----- Niveles -----
     lista.forEach((n, i) => {
+      const p = g.puntos[i];
       const rec = Store.aventuraNodo(n.id);
       const esHecho = !!(rec && rec.hecho);
       const abierto = desbloqueado(i);
+      const estado = esHecho ? " hecho" : abierto ? "" : " bloqueado";
       const circulo = esHecho ? estrellasHtml(rec.estrellas || 1) : h("span", {}, abierto ? String(i + 1) : "🔒");
       const b = h(
         "button",
         {
-          class: "av-nivel" + (esHecho ? " hecho" : "") + (i === actual ? " actual" : ""),
+          class: "av-nodo" + estado + (i === actual ? " actual" : ""),
           type: "button",
-          title: abierto ? null : I18n.t("aventura_bloqueado"),
-          onClick: abierto ? () => empezar(i, !!(curso && curso.nivel === n.id)) : null,
+          "aria-label": i + 1 + ". " + n.titulo,
+          style: "left:" + ((p.x / g.ancho) * 100).toFixed(3) + "%;top:" + ((p.y / g.alto) * 100).toFixed(3) + "%",
+          onClick: () => (seleccionado === i ? cerrarHoja() : abrirHoja(i)),
         },
-        [
-          h("span", { class: "av-circulo" }, circulo),
-          h("span", { class: "av-datos" }, [
-            h("span", { class: "av-titulo" }, n.titulo),
-            h("span", { class: "av-sub" }, I18n.t("aventura_nivel_sub", n.ejercicios.length, n.nivel)),
-          ]),
-        ]
+        [h("span", { class: "av-punto" }, circulo), h("span", { class: "av-pie" }, n.titulo)]
       );
-      if (!abierto) b.disabled = true;
-      if (i === actual) nodoActual = b;
-      cont.appendChild(b);
+      botones.push(b);
+      lienzo.appendChild(b);
     });
-    host.appendChild(cont);
+    lienzo.addEventListener("click", (e) => { if (!e.target.closest(".av-nodo")) cerrarHoja(); });
+
+    // ----- Barra fija de arriba -----
+    const irAMiNivel = (suave) => {
+      const destino = botones[llegado];
+      if (destino) destino.scrollIntoView({ block: "center", behavior: suave ? "smooth" : "auto" });
+    };
+    host.appendChild(
+      h("div", { class: "av-info", style: "top:" + alturaCabecera() + "px" }, [
+        h("span", { class: "av-info-titulo" }, I18n.t("aventura_title")),
+        h("span", { class: "muted small av-info-datos" }, I18n.t("aventura_resumen", st.hechos, st.total, st.estrellas)),
+        h("button", { class: "btn ghost av-yo", type: "button", onClick: () => irAMiNivel(true) }, I18n.t("aventura_mi_nivel")),
+      ])
+    );
+    host.appendChild(h("div", { class: "av-mapa-ext" }, lienzo));
+    host.appendChild(hoja);
     // showView sube la pantalla al principio después de dibujar; esto la deja en el nivel actual
-    if (nodoActual) setTimeout(() => nodoActual.scrollIntoView({ block: "center" }), 0);
+    setTimeout(() => irAMiNivel(false), 0);
   }
 
   function guardarCurso() {
