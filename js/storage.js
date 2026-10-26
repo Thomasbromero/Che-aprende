@@ -6,7 +6,8 @@ const Store = (function () {
     return {
       // uiLang: null = español, o "hu". streak: null = { count, lastActiveDate }
       // learningLang: null = todavia no eligio (muestra el onboarding), o "es" / "en" / "hu" / "de"
-      settings: { name: "", uiLang: null, streak: null, learningLang: null },
+      // modo: el modo elegido en Inicio, "clasico" o "aventura" (null = todavia no eligio: Clasico)
+      settings: { name: "", uiLang: null, streak: null, learningLang: null, modo: null },
       srs: {},         // { [cardId]: { ease, interval, reps, due, last } }
       grammar: {},     // { [topicId]: { done: true } }
       produccion: {},  // { [itemId]: { done: true } }

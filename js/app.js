@@ -39,8 +39,7 @@ function enterApp() {
   }
   document.body.classList.remove("onboarding-active");
   updateHeaderStreak();
-  // Mientras Aventura no tenga entrada en Inicio, se abre con "?aventura" al final de la dirección
-  showView(/[?&]aventura\b/.test(location.search) ? "aventura" : "home");
+  showView("home");
 }
 
 let onboardingStep = "name"; // "name" | "lang"
@@ -209,6 +208,60 @@ function showView(name) {
   window.scrollTo(0, 0);
 }
 
+// Modo de práctica de Inicio. Hasta que se elija uno, es Clásico (lo de siempre); y si el idioma que se está
+// aprendiendo todavía no tiene Aventura, es Clásico aunque se haya elegido el otro.
+const MODO_POR_DEFECTO = "clasico";
+
+function aventuraDisponible() {
+  return (READY_MODULES[Store.settings().learningLang] || []).includes("aventura");
+}
+
+function modoActual() {
+  const m = Store.settings().modo || MODO_POR_DEFECTO;
+  return m === "aventura" && aventuraDisponible() ? "aventura" : "clasico";
+}
+
+// Dos botones: Clásico | Aventura. Solo se muestra si hay algo para elegir.
+function selectorDeModo(host) {
+  const actual = modoActual();
+  const boton = (modo, clave) =>
+    h(
+      "button",
+      {
+        class: "modo-btn" + (actual === modo ? " activo" : ""),
+        type: "button",
+        "aria-pressed": String(actual === modo),
+        onClick: () => { if (actual !== modo) { Store.updateSettings({ modo }); renderHome(host); } },
+      },
+      I18n.t(clave)
+    );
+  return h("div", { class: "modo-selector", role: "group", "aria-label": I18n.t("home_modo_aria") }, [
+    boton("clasico", "home_modo_clasico"),
+    boton("aventura", "home_modo_aventura"),
+  ]);
+}
+
+// La tarjeta grande del modo Aventura: en qué nivel estás, cuánto llevás y un botón para seguir el camino
+function tarjetaAventura() {
+  const r = Aventura.resumen();
+  const completo = !r.actual && !r.enCurso;
+  const pct = r.total ? Math.round((r.hechos / r.total) * 100) : 0;
+  const titulo = r.enCurso ? r.enCurso.nivel.titulo : completo ? I18n.t("home_aventura_completo") : r.actual.titulo;
+  const sub = r.enCurso
+    ? I18n.t("home_aventura_en_curso", r.enCurso.hechos, r.enCurso.total)
+    : completo
+    ? I18n.t("home_aventura_estrellas", r.estrellas, r.maxEstrellas)
+    : I18n.t("home_aventura_nivel", r.indiceActual + 1, r.total) + " · " + r.estrellas + " ★";
+  const cta = r.enCurso ? "home_aventura_cta_continuar" : r.hechos === 0 ? "home_aventura_cta_inicio" : completo ? "home_aventura_cta_ver" : "home_aventura_cta";
+  return h("button", { class: "home-card home-card-navy home-card-featured", onClick: () => showView("aventura") }, [
+    h("span", { class: "home-badge" }, I18n.t("home_aventura_badge")),
+    h("div", { class: "hc-title" }, titulo),
+    h("div", { class: "hc-sub" }, sub),
+    h("div", { class: "home-progress" }, [h("div", { class: "home-progress-fill", style: "width:" + pct + "%" })]),
+    h("span", { class: "home-cta" }, [I18n.t(cta), h("span", { class: "home-cta-arrow" }, "→")]),
+  ]);
+}
+
 function renderHome(host) {
   clear(host);
   const s = Store.settings();
@@ -217,9 +270,16 @@ function renderHome(host) {
   const pPct = p.total ? Math.round((p.completed / p.total) * 100) : 0;
   const grammarTopics = s.learningLang === "de" ? GRAMMAR_DE : GRAMMAR;
 
-  host.appendChild(h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")));
+  // El saludo y, al lado, el selector de modo: en la misma fila para que Inicio no sume altura
+  host.appendChild(
+    h("div", { class: "home-head" }, [
+      h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")),
+      aventuraDisponible() ? selectorDeModo(host) : null,
+    ])
+  );
   host.appendChild(h("p", { class: "muted home-subtitle" }, I18n.t("home_subtitle")));
 
+  // La racha es la misma en los dos modos
   const streak = Streak.status();
   host.appendChild(
     h("div", { class: "streak-row" }, [
@@ -227,6 +287,14 @@ function renderHome(host) {
       h("span", { class: "streak-text" }, I18n.t("home_streak", streak.count)),
     ])
   );
+
+  if (modoActual() === "aventura") {
+    host.appendChild(h("div", { class: "home-grid" }, [tarjetaAventura()]));
+    host.appendChild(
+      h("button", { class: "home-settings-btn", onClick: () => showView("ajustes") }, [I18n.t("home_go_ajustes"), h("span", { class: "home-cta-arrow" }, "→")])
+    );
+    return;
+  }
 
   host.appendChild(
     h("div", { class: "home-grid" }, [

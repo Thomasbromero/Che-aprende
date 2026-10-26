@@ -256,6 +256,9 @@ body[data-view="home"] .app-main { padding-bottom: 24px; }
   margin-top: 10px;
 }
 .home-progress-fill { background: var(--v2-navy); height: 100%; border-radius: 999px; }
+/* En una tarjeta navy (la de Aventura) el avance va en cian sobre una pista tenue; si no, el navy se confundiría con la tarjeta */
+.home-card-navy .home-progress { background: rgba(255, 244, 214, 0.22); }
+.home-card-navy .home-progress-fill { background: var(--v2-cyan); }
 
 .home-row { display: flex; gap: 12px; }
 .home-row .home-card { flex: 1; padding: 14px 16px; }
@@ -284,6 +287,15 @@ body[data-view="home"] .app-main { padding-bottom: 24px; }
 body[data-view="home"] .bottom-nav { display: none; }
 
 .streak-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+/* El saludo y el selector de modo comparten fila (así Inicio no suma altura); con un nombre muy largo, el selector baja */
+.home-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 6px; }
+.home-head .greet { margin-bottom: 0; }
+.modo-selector { display: flex; padding: 3px; border-radius: 999px; background: var(--v2-pink); }
+.modo-btn {
+  font: inherit; font-weight: 700; font-size: 0.8rem; padding: 6px 9px; border: none; border-radius: 999px;
+  background: transparent; color: var(--v2-navy); cursor: pointer;
+}
+.modo-btn.activo { background: var(--v2-navy); color: var(--v2-cream); }
 .streak-flame { font-size: 1.4rem; line-height: 1; filter: grayscale(1); opacity: 0.4; transition: filter 0.2s ease, opacity 0.2s ease; }
 .streak-flame.active { filter: none; opacity: 1; }
 .streak-text { font-weight: 600; }

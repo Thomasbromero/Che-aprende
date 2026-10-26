@@ -9,8 +9,8 @@
 
    El camino se dibuja como un mapa que se recorre hacia arriba (js/mapa.js calcula dónde cae cada nivel y
    data/mapa.data.js describe las zonas y deja lugar para el arte). Tocar un nivel abre una hoja con su detalle.
-   Para probarlo antes de que tenga entrada en Inicio: abrir la app con "?aventura" al final de la dirección,
-   y con "?aventura=todo" quedan todos los niveles abiertos (solo para probar). */
+   Se entra desde la tarjeta de Aventura en Inicio (modo Aventura). Para probar sin superar todos los niveles:
+   abrir la app con "?aventura=todo" al final de la dirección deja todos los niveles abiertos (SACAR antes de publicar). */
 const Aventura = (function () {
   const APROBAR = 0.7;
   let host = null;
@@ -85,6 +85,19 @@ const Aventura = (function () {
       if (r && r.hecho) { hechos++; estrellas += r.estrellas || 0; }
     });
     return { total: lista.length, hechos, estrellas, maxEstrellas: lista.length * 3 };
+  }
+
+  // Para la tarjeta de Aventura en Inicio: el nivel en el que está y si hay una lección empezada
+  function resumen() {
+    const lista = niveles();
+    const i = indiceActual();
+    const curso = Store.aventura().enCurso;
+    const nivelCurso = curso && curso.i > 0 ? lista.find((n) => n.id === curso.nivel) : null;
+    return Object.assign(stats(), {
+      indiceActual: i,
+      actual: i >= 0 ? lista[i] : null,
+      enCurso: nivelCurso && curso.i < nivelCurso.ejercicios.length ? { nivel: nivelCurso, hechos: curso.i, total: nivelCurso.ejercicios.length } : null,
+    });
   }
 
   // ---------- Pantallas ----------
@@ -347,5 +360,5 @@ const Aventura = (function () {
     );
   }
 
-  return { render, stats, aprobado, estrellasPara, expandir, armar, conSemilla, desbloqueado, APROBAR };
+  return { render, stats, resumen, aprobado, estrellasPara, expandir, armar, conSemilla, desbloqueado, APROBAR };
 })();
