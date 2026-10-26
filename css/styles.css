@@ -369,6 +369,7 @@ body[data-view="home"] .bottom-nav { display: none; }
 .flashcard .example { margin-top: 10px; font-style: italic; }
 .flashcard .note { margin-top: 10px; }
 .hidden { display: none; }
+.btn.hidden { display: none; } /* ".btn.wide" tiene más peso que ".hidden" y mostraba "Siguiente" antes de contestar */
 
 .grades { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
 .btn.grade { padding: 12px 8px; }
