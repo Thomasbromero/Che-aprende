@@ -411,6 +411,37 @@ body[data-view="home"] .bottom-nav { display: none; }
 .text-input.wrong { border-color: var(--v2-navy); }
 .hint { margin: 2px 0 10px; }
 
+/* ---- Ordenar la frase / Unir (formatos de Aventura) ---- */
+.order-answer {
+  min-height: 58px; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px;
+  padding: 10px; margin-top: 4px; border-radius: 14px;
+  background: var(--v2-pink); border: 2px solid transparent;
+}
+.order-answer.right { border-color: var(--v2-cyan); }
+.order-answer.wrong { border-color: var(--v2-navy); }
+.order-bank { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.chip {
+  font: inherit; font-weight: 600; font-size: 1rem; padding: 9px 14px;
+  border: none; border-radius: 999px; cursor: pointer;
+  background: var(--v2-navy); color: var(--v2-cream);
+}
+.chip:active { transform: scale(0.97); }
+.order-answer .chip { background: var(--v2-cyan); color: var(--v2-navy); }
+.chip:disabled { cursor: default; }
+.order-actions { display: flex; gap: 8px; margin-top: 8px; }
+.order-actions .btn { flex: 1; }
+
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+.match-col { display: grid; gap: 8px; align-content: start; }
+.match-item {
+  font: inherit; font-weight: 600; font-size: 0.95rem; padding: 12px 8px; min-height: 52px;
+  border: 2px solid transparent; border-radius: 14px; cursor: pointer; text-align: center;
+  background: var(--v2-navy); color: var(--v2-cream);
+}
+.match-item.selected { border-color: var(--v2-cyan); }
+.match-item.right { background: var(--v2-cyan); color: var(--v2-navy); cursor: default; }
+.match-item.wrong { background: var(--v2-pink); color: var(--v2-navy); }
+
 /* ---- Feedback ---- */
 .feedback { margin-top: 12px; border-radius: 14px; }
 .feedback.ok, .feedback.no { padding: 14px 16px; }

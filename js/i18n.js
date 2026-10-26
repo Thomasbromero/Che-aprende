@@ -88,6 +88,8 @@ const I18N = {
     production_finished: (correct, total) => `Terminaste: ${correct} / ${total}`,
     production_again: "De nuevo",
 
+    exercise_clear: "Borrar",
+
     back: "← Volver",
     feedback_correct: "✓ ¡Correcto!",
     feedback_wrong: (answer) => `✗ Casi… la respuesta es: ${answer}`,
@@ -178,6 +180,8 @@ const I18N = {
     production_next: "Következő",
     production_finished: (correct, total) => `Befejezted: ${correct} / ${total}`,
     production_again: "Újra",
+
+    exercise_clear: "Törlés",
 
     back: "← Vissza",
     feedback_correct: "✓ Helyes!",
