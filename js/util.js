@@ -37,6 +37,15 @@ function norm(s) {
     .replace(/[̀-ͯ]/g, "");
 }
 
+// ¿Lo escrito coincide con alguna respuesta aceptada del ejercicio? Ignora mayúsculas y espacios
+// de los costados y, salvo que el ejercicio sea "estricto", también las tildes. Los ejercicios de
+// conjugación son estrictos cuando la tilde cambia el tiempo (hablo ≠ habló).
+function respuestaCorrecta(ex, texto) {
+  const aceptadas = ex.accept || [ex.answer];
+  if (ex.estricto) return aceptadas.some((a) => a.toLowerCase() === (texto || "").trim().toLowerCase());
+  return aceptadas.map(norm).includes(norm(texto));
+}
+
 // ¿La respuesta escrita difiere de la forma correcta en algo más que las mayúsculas?
 // Sirve para avisar del acento (comi → comí) sin marcar "encantada" vs "Encantada".
 function spellingDiffers(written, answer) {

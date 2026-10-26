@@ -69,8 +69,7 @@ const Exercise = (function () {
         class: "btn primary",
         onClick: () => {
           recordActivity();
-          const accepts = (ex.accept || [ex.answer]).map(norm);
-          const ok = accepts.includes(norm(input.value));
+          const ok = respuestaCorrecta(ex, input.value);
           input.disabled = true;
           check.disabled = true;
           if (reveal) reveal.disabled = true;

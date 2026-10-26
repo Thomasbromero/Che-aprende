@@ -7,8 +7,11 @@
    - hueco: (opcional) qué parte de la frase de ejemplo se tapa en "completar la frase".
             Si falta, se detecta sola; si vale false, esa palabra no tiene "completar".
 
+   Los formatos de conjugar (conjugar_opciones / conjugar_escribir) salen de los verbos de
+   data/verbos.data.js y se arman con js/conjugador.js; aceptan opts.tiempo y opts.persona.
+
    Los ejercicios generados llevan además { format, source } para saber de qué formato
-   y de qué palabra salieron. Todo el azar sale de opts.rng (por defecto Math.random),
+   y de qué palabra o verbo salieron. Todo el azar sale de opts.rng (por defecto Math.random),
    para poder repetir el mismo ejercicio con una semilla. */
 const Formats = (function () {
   // Cada tema pertenece a un grupo más grande: si un tema no alcanza para armar opciones,
@@ -297,30 +300,133 @@ const Formats = (function () {
     },
   };
 
-  function buscar(item) {
-    return typeof item === "string" ? VOCAB.find((v) => v.id === item) : item;
+  // ---------- Conjugar (salen de data/verbos.data.js, no del vocabulario) ----------
+  function sorteo(lista, rng) { return lista[Math.floor(rng() * lista.length)]; }
+
+  // Elige tiempo y persona (los que pida opts.tiempo / opts.persona, y si no, al azar).
+  function tiempoYPersona(o, rng) {
+    return {
+      t: (o && o.tiempo) || sorteo(Conjugador.TIEMPOS, rng).id,
+      p: (o && o.persona) || sorteo(Conjugador.PERSONAS, rng).id,
+    };
   }
 
-  // Arma un ejercicio del formato `id` para la palabra `item` (objeto o id), o null si no aplica.
+  // Otra forma del mismo verbo que solo se distingue por la tilde (hablo/habló, hable/hablé).
+  function confundible(v, t, p) {
+    const propias = Conjugador.formas(v, t, p);
+    for (const x of Conjugador.todas(v)) {
+      if (x.tiempo === t && x.persona === p) continue;
+      for (const f of x.formas) {
+        const distinta = propias.every((pf) => pf.toLowerCase() !== f.toLowerCase());
+        if (distinta && propias.some((pf) => norm(pf) === norm(f))) return { forma: f, tiempo: x.tiempo, persona: x.persona };
+      }
+    }
+    return null;
+  }
+
+  function etiquetaTiempo(id) { return Conjugador.tiempoDe(id).etiqueta; }
+  function etiquetaPersona(id) { return Conjugador.PERSONAS.find((x) => x.id === id).etiqueta; }
+
+  function explicacionVerbo(v, t, p, formas, conf) {
+    const T = etiquetaTiempo(t);
+    let s;
+    if (Conjugador.esIrregular(v, t, p)) s = "«" + v.inf + "» es irregular en " + T + ": " + formas[0] + ".";
+    else {
+      s = T.charAt(0).toUpperCase() + T.slice(1) + " regular de un verbo -" + Conjugador.grupo(v).toUpperCase() + ": " + formas[0] + ".";
+      if (t === "presente" && p === "vos") s += " Con vos, la última sílaba lleva tilde.";
+    }
+    if (formas.length > 1) s += " También se usa «" + formas[1] + "».";
+    if (conf) s += " Ojo con la tilde: «" + formas[0] + "» no es lo mismo que «" + conf.forma + "» (" + etiquetaTiempo(conf.tiempo) + ", " + etiquetaPersona(conf.persona) + ").";
+    return s;
+  }
+
+  function consignaVerbo(v, t, p) {
+    return "Conjugá «" + v.inf + "» — " + etiquetaTiempo(t) + ", " + etiquetaPersona(p) + ":";
+  }
+
+  DEFS.conjugar_opciones = {
+    fuente: "verbo",
+    nombre: "Conjugar con opciones",
+    esfuerzo: 3,
+    aplica: (v) => !!v.inf,
+    generar(v, o) {
+      const rng = rngDe(o);
+      const { t, p } = tiempoYPersona(o, rng);
+      const formas = Conjugador.formas(v, t, p);
+      const propias = formas.map((f) => f.toLowerCase());
+      // Opciones incorrectas: otras formas del mismo verbo (otro tiempo u otra persona)
+      const pool = [];
+      Conjugador.todas(v).forEach((x) => {
+        const f = x.formas[0];
+        if (!(x.tiempo === t && x.persona === p) && propias.indexOf(f.toLowerCase()) < 0 && pool.indexOf(f) < 0) pool.push(f);
+      });
+      const otras = mezclar(pool, rng).slice(0, 3);
+      return {
+        type: "choice",
+        prompt: consignaVerbo(v, t, p),
+        hint: v.hu,
+        options: mezclar([formas[0]].concat(otras), rng),
+        answer: formas[0],
+        explain: explicacionVerbo(v, t, p, formas, null),
+        tiempo: t,
+        persona: p,
+      };
+    },
+  };
+
+  DEFS.conjugar_escribir = {
+    fuente: "verbo",
+    nombre: "Conjugar escribiendo",
+    esfuerzo: 4,
+    aplica: (v) => !!v.inf,
+    generar(v, o) {
+      const rng = rngDe(o);
+      const { t, p } = tiempoYPersona(o, rng);
+      const formas = Conjugador.formas(v, t, p);
+      const conf = confundible(v, t, p);
+      const ex = {
+        type: "fill",
+        prompt: consignaVerbo(v, t, p) + " ___",
+        hint: v.hu,
+        accept: formas,
+        answer: formas[0],
+        explain: explicacionVerbo(v, t, p, formas, conf),
+        tiempo: t,
+        persona: p,
+      };
+      // Si sin la tilde se obtiene otra forma válida del verbo, la tilde cuenta como parte de la respuesta
+      if (conf) ex.estricto = true;
+      return ex;
+    },
+  };
+
+  function fuenteDe(c) { return c && c.inf ? "verbo" : "vocab"; }
+
+  function buscar(item) {
+    if (typeof item !== "string") return item;
+    return VOCAB.find((v) => v.id === item) || (typeof VERBOS !== "undefined" ? VERBOS.find((v) => v.id === item) : undefined);
+  }
+
+  // Arma un ejercicio del formato `id` para la palabra o verbo `item` (objeto o id), o null si no aplica.
   function generar(id, item, opts) {
     const def = DEFS[id];
     const c = buscar(item);
-    if (!def || !c || !def.aplica(c)) return null;
+    if (!def || !c || (def.fuente || "vocab") !== fuenteDe(c) || !def.aplica(c)) return null;
     const ex = def.generar(c, opts || {});
     ex.format = id;
     ex.source = c.id;
     return ex;
   }
 
-  // Formatos que se pueden armar con esta palabra.
+  // Formatos que se pueden armar con esta palabra o verbo.
   function formatosPara(item) {
     const c = buscar(item);
-    return Object.keys(DEFS).filter((id) => DEFS[id].aplica(c));
+    return Object.keys(DEFS).filter((id) => (DEFS[id].fuente || "vocab") === fuenteDe(c) && DEFS[id].aplica(c));
   }
 
   function lista() {
-    return Object.keys(DEFS).map((id) => ({ id, nombre: DEFS[id].nombre, esfuerzo: DEFS[id].esfuerzo }));
+    return Object.keys(DEFS).map((id) => ({ id, nombre: DEFS[id].nombre, esfuerzo: DEFS[id].esfuerzo, fuente: DEFS[id].fuente || "vocab" }));
   }
 
-  return { generar, formatosPara, lista, hueco, fraseConHueco, distractores, parecidas, tipoDe, articuloDe, nucleo };
+  return { generar, formatosPara, lista, hueco, fraseConHueco, distractores, parecidas, tipoDe, articuloDe, nucleo, confundible };
 })();
