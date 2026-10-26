@@ -29,13 +29,13 @@ const MINIMO = 6;                // un nivel nunca tiene menos
 const MAX_REPASO = 3;
 const MAX_MISMO_FORMATO = 3;     // en un nivel de vocabulario, no más de 3 ejercicios del mismo formato
 const MAX_FORMATO_VERBOS = 5;    // y en uno de verbos, no más de 5 (hay solo dos formatos)
-const NIVELES_POR_TIEMPO = { presente: 3, preterito: 3, imperfecto: 2, futuro: 2, condicional: 2, subjuntivo: 3 };
+const NIVELES_POR_TIEMPO = { presente: 4, preterito: 4, imperfecto: 3, futuro: 3, condicional: 3, subjuntivo: 4 };
 const NOMBRE_TEMA = {
   cuerpo: "El cuerpo", ropa: "La ropa", accesorios: "Accesorios", comida: "Comida y bebida", cocina: "La cocina",
   limpieza: "Limpieza y baño", muebles: "Los muebles", casa: "La casa", tecnologia: "Tecnología", hotel: "Hotel y viaje",
   lugares: "Lugares de la ciudad", transporte: "Transporte", indicaciones: "Indicaciones", saludos: "Saludos",
   personas: "La gente", elogios: "Elogios", jerga_cosas: "Jerga: cosas", jerga_verbos: "Jerga: verbos",
-  jerga_expresiones: "Jerga: expresiones", tiempo_libre: "Salidas y tiempo libre",
+  jerga_expresiones: "Jerga: expresiones", tiempo_libre: "Salidas y tiempo libre", familia: "La familia",
 };
 const NOMBRE_TIEMPO = { presente: "presente", preterito: "pretérito", imperfecto: "imperfecto", futuro: "futuro", condicional: "condicional", subjuntivo: "subjuntivo" };
 
@@ -79,6 +79,7 @@ GRAMMAR.forEach((topic) => {
 
 // ---------- 2. Conjugación ----------
 const verbosUsadosPorTiempo = {};
+const usoGlobalVerbos = {}; // cuántas veces entró cada verbo en cualquier tiempo: se prefieren los que todavía no aparecieron
 const candidatosVerbo = [];
 VERBOS.forEach((v) => Conjugador.todas(v).forEach((x) => Formats.formatosPara(v).forEach((f) => {
   const sp = conPuntaje({ f, s: v.id, t: x.tiempo, p: x.persona });
@@ -89,7 +90,7 @@ function elegirFormas(tiempo, objetivo, cuantas, ya) {
   const penal = verbosUsadosPorTiempo[tiempo] = verbosUsadosPorTiempo[tiempo] || {};
   const pool = candidatosVerbo.filter((c) => c.t === tiempo && !usados.has(clave(c)) && !ya.some((x) => x.s === c.s));
   const ordenado = pool
-    .map((c) => ({ c, d: Math.abs(c._p - objetivo) + 3 * (penal[c.s] || 0) + azar() * 1.5 }))
+    .map((c) => ({ c, d: Math.abs(c._p - objetivo) + 3 * (penal[c.s] || 0) + 4 * (usoGlobalVerbos[c.s] || 0) + azar() * 1.5 }))
     .sort((a, b) => a.d - b.d);
   const out = [];
   const porPersona = {}, porFormato = {};
@@ -111,7 +112,7 @@ Object.keys(NIVELES_POR_TIEMPO).forEach((tiempo) => {
   for (let j = 0; j < k; j++) {
     const objetivo = todos[Math.floor(((j + 0.5) / k) * todos.length)];
     const elegidas = elegirFormas(tiempo, objetivo, TAMANO, []);
-    elegidas.forEach((sp) => { usados.add(clave(sp)); verbosUsadosPorTiempo[tiempo][sp.s] = (verbosUsadosPorTiempo[tiempo][sp.s] || 0) + 1; });
+    elegidas.forEach((sp) => { usados.add(clave(sp)); verbosUsadosPorTiempo[tiempo][sp.s] = (verbosUsadosPorTiempo[tiempo][sp.s] || 0) + 1; usoGlobalVerbos[sp.s] = (usoGlobalVerbos[sp.s] || 0) + 1; });
     niveles.push({ tipo: "verbos", foco: tiempo, titulo: "Verbos: " + NOMBRE_TIEMPO[tiempo] + (k > 1 ? " · " + (j + 1) : ""), ejercicios: elegidas.sort((a, b) => a._p - b._p) });
   }
 });

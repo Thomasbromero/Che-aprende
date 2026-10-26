@@ -42,6 +42,7 @@ const CLASES = {
   jerga_verbos: "laburar:J-8 morfar:J-4 chamuyar:J+8 bardear:J+8 rajar:J+2 bancar:J+2 darbola:J+4 alpedo:J+4",
   jerga_expresiones: "tranqui:J-25 re:J-15 posta:J-5 che:J-25",
   tiempo_libre: "previa:J-5 finde:J-25 feriado:S boliche:J-10 sobremesa:R+8",
+  familia: "padre:B madre:B hijo-hija:B hermano-hermana:B abuelo-abuela:B nieto-nieta:B tio-tia:B primo-prima:B sobrino-sobrina:B esposo-esposa:S papa-padre:B mama:B marido:S mujer:B pareja:S suegros:S yerno:S+3 nuera:S+3 cunado-cunada:S parientes:S padrino:S+2 madrina:S+2 ahijado-ahijada:S+4 bebe-beba:R padrastro:S madrastra:S mellizos:S hermano-mayor:B hermana-menor:B medio-hermano:S bisabuelo-bisabuela:S+4 chicos:S nene-nena:R familia-politica:S ex:S novio-novia:B casamiento:R mascota:B",
 };
 // Palabras con trampa (se confunden con otra o significan dos cosas): suman un poco
 const TRAMPAS = "lengua piso cocina plato manzana medias cartera buzo panuelo derecho saco pie pierna".split(" ");
@@ -78,7 +79,7 @@ function puntuarPalabra(c) {
 // Nivel base de cada tema (de lo más simple a lo más complejo) y un pequeño ajuste por
 // largo de la consigna. En "conjugacion-verbos" pesa el tiempo pedido.
 const TEMAS_GRAMATICA = {
-  presentarse: 5, indicaciones: 12, "ser-estar": 25, "comparativos-superlativos": 30, "por-para": 40,
+  presentarse: 5, indicaciones: 12, "articulos-y-genero": 24, "ser-estar": 25, "comparativos-superlativos": 30, "por-para": 40,
   "futuro-simple": 40, "condicional-simple": 42, "imperativo-vos": 50, "conjugacion-verbos": 52,
   "compuesto-vs-simple": 55, "preterito-imperfecto": 62, "subjuntivo-presente": 72, "pronombres-combinados": 80,
 };

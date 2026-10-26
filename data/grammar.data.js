@@ -51,6 +51,28 @@ window.GRAMMAR = [
     ]
   },
   {
+    id: "articulos-y-genero",
+    title: "Artículos y género: trampas comunes",
+    explain: "En español casi todo tiene género. La regla general es fácil: si termina en -o es masculina (el/un) y si termina en -a es femenina (la/una). Pero hay palabras tramposas que no la cumplen y conviene aprender siempre junto con su artículo. Muchas palabras que terminan en -ma son masculinas (el problema, el tema, el idioma), igual que el mapa o el planeta. Las palabras acortadas conservan el género de la palabra original: la foto (de fotografía), la moto (de motocicleta). Y la mano es femenina aunque termine en -o. Pista en húngaro: A magyarban nincs nyelvtani nem, így ezt nehéz megszokni. A legfontosabb kivételeket (például a kéz: la mano, a térkép: el mapa) érdemes egyből a névelővel együtt megtanulni.",
+    examples: [
+      "Pasame el mapa para ver dónde queda el hotel. (termina en -a pero es masculino)",
+      "Sacame una foto con las chicas en la plaza. (femenino, de la palabra fotografía)",
+      "El chabón tiene un problema grande con la guita. (termina en -ma pero es masculino)",
+      "Lavate bien la mano que está sucia. (termina en -o pero es femenino)",
+      "Mi primo se compró una moto tremenda. (femenino, de la palabra motocicleta)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Che, tengo ___ problema en el laburo y no sé cómo resolverlo.", options: ["un", "una"], answer: "un", explain: "La palabra 'problema' termina en -a, pero es masculina como muchas palabras de origen griego.", nivel: 26 },
+      { type: "choice", prompt: "Antes de morfar, por favor lavate bien ___ manos.", options: ["los", "las"], answer: "las", explain: "Aunque termina en -o, 'mano' es una palabra femenina.", nivel: 24 },
+      { type: "fill", prompt: "¿Viste ___ foto que subió Martín al grupo? Está zarpada.", accept: ["la", "esa", "una"], answer: "la", explain: "Es femenina porque es el acortamiento de 'fotografía'.", nivel: 25 },
+      { type: "choice", prompt: "Fijate en ___ mapa de la ciudad a ver si encontramos la calle.", options: ["el", "la"], answer: "el", explain: "La palabra 'mapa' termina en -a, pero es una excepción totalmente masculina.", nivel: 26 },
+      { type: "fill", prompt: "Aprender español es ___ desafío tremendo para mí.", accept: ["un"], answer: "un", explain: "Como 'desafío' termina en -o, es una palabra masculina.", nivel: 24 },
+      { type: "choice", prompt: "¿Me prestás el auto? Tengo que ir a buscar ___ moto al taller.", options: ["el", "la"], answer: "la", explain: "Lleva artículo femenino porque es el acortamiento de 'motocicleta'.", nivel: 26 },
+      { type: "choice", prompt: "No tiren basura en la calle, hay que cuidar ___ planeta.", options: ["el", "la"], answer: "el", explain: "Como 'mapa', la palabra 'planeta' termina en -a pero es una excepción masculina.", nivel: 25 },
+      { type: "fill", prompt: "El español rioplatense es ___ idioma re copado para aprender.", accept: ["un", "el"], answer: "un", explain: "La palabra 'idioma' termina en -ma, por lo tanto es masculina y lleva 'un' o 'el'.", nivel: 25 }
+    ]
+  },
+  {
     id: "ser-estar",
     title: "Ser vs. Estar",
     explain: "SER → identidad, características esenciales, origen, profesión, hora y fecha. ESTAR → estados y situaciones que cambian, ubicación, resultado. Pista en húngaro: a magyar 'van' mindkettőt jelenti, a spanyol viszont megkülönbözteti. Ojo con el voseo: vos SOS / vos ESTÁS.",

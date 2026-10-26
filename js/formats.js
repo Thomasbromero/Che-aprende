@@ -20,7 +20,7 @@ const Formats = (function () {
     cuerpo: "cuerpo", ropa: "cuerpo", accesorios: "cuerpo",
     comida: "hogar", cocina: "hogar", limpieza: "hogar", muebles: "hogar", casa: "hogar", tecnologia: "hogar",
     hotel: "ciudad", lugares: "ciudad", transporte: "ciudad", indicaciones: "ciudad",
-    saludos: "jerga", personas: "jerga", elogios: "jerga", jerga_cosas: "jerga",
+    saludos: "jerga", personas: "jerga", familia: "jerga", elogios: "jerga", jerga_cosas: "jerga",
     jerga_verbos: "jerga", jerga_expresiones: "jerga", tiempo_libre: "jerga",
   };
   // Temas donde casi todas las palabras significan lo mismo ("excelente"): ahí las opciones
@@ -67,6 +67,7 @@ const Formats = (function () {
     const out = [];
     t.split(/\s*\/\s*/).forEach((p) => {
       p = p.replace(ART_RE, "").trim();
+      if (/^(el|la|los|las|un|una)$/i.test(p)) return; // "el/la ex": la parte "el" sola no es una palabra
       if (/^[aeo]$/.test(p) && out[0]) out.push(out[0].replace(/[aeo]$/, p)); // "boludo/a"
       else if (p) out.push(p);
     });
