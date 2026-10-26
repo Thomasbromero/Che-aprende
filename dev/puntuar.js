@@ -43,6 +43,9 @@ const CLASES = {
   jerga_expresiones: "tranqui:J-25 re:J-15 posta:J-5 che:J-25",
   tiempo_libre: "previa:J-5 finde:J-25 feriado:S boliche:J-10 sobremesa:R+8",
   familia: "padre:B madre:B hijo-hija:B hermano-hermana:B abuelo-abuela:B nieto-nieta:B tio-tia:B primo-prima:B sobrino-sobrina:B esposo-esposa:S papa-padre:B mama:B marido:S mujer:B pareja:S suegros:S yerno:S+3 nuera:S+3 cunado-cunada:S parientes:S padrino:S+2 madrina:S+2 ahijado-ahijada:S+4 bebe-beba:R padrastro:S madrastra:S mellizos:S hermano-mayor:B hermana-menor:B medio-hermano:S bisabuelo-bisabuela:S+4 chicos:S nene-nena:R familia-politica:S ex:S novio-novia:B casamiento:R mascota:B",
+  restaurante: "la-carta:B la-cuenta:B el-menu:B la-cena:B el-almuerzo:B la-bebida:B la-copa:B el-postre:B la-sopa:B la-carne:B la-ensalada:S la-entrada:S el-plato-principal:S para-llevar:S el-menu-del-dia:S el-hielo:S el-vino-tinto:S el-vino-blanco:S vegetariano-vegetariana:S la-porcion:S para-compartir:S la-panera:S el-mozo-la-moza:R la-parrilla:S+6 el-choripan:R la-empanada:S+2 la-milanesa:S+2 el-bife-de-chorizo:R la-provoleta:R las-papas-fritas:R-4 la-salsa-criolla:R+4 el-chimichurri:S+4 el-flan-mixto:R+4 el-dulce-de-leche:S+4 el-cubierto:R el-bodegon:J-8 el-chori:J-6 el-morfi:J-4 picar-algo:R",
+  compras: "el-dinero:B el-precio:B caro-cara:B barato-barata:B la-tarjeta:B la-tienda:B el-mercado:B el-cliente-la-clienta:B abierto-abierta:B cerrado-cerrada:B el-descuento:S el-efectivo:S el-cajero-automatico:S el-probador:S el-talle:S el-supermercado:S la-caja:S la-fila:S el-vendedor-la-vendedora:S la-oferta:S gastar:S la-bolsa:S el-shopping:R la-garantia:S el-vuelto:R la-cuota:S+4 el-codigo-qr:S la-feria:S+6 el-super:S el-posnet:R el-ticket:S el-recargo:S+2 la-transferencia:S el-alias:R la-verduleria:S la-carniceria:S tarjetear:J+2 las-lucas:J-4 ser-rata:J-4 la-pilcha:J+4",
+  salud: "el-medico-la-medica:B el-hospital:B la-pastilla:B enfermo-enferma:B la-fiebre:B la-sangre:B la-clinica:B el-dolor:B doler:B la-salud:B el-dentista-la-dentista:S el-paciente-la-paciente:S el-enfermero-la-enfermera:S la-ambulancia:S la-tos:S el-resfrio:S la-vacuna:S la-alergia:S la-receta:S el-termometro:S la-inyeccion:S respirar:S mareado-mareada:S el-analgesico:S+3 el-sintoma:S la-herida:S curar:S el-virus:S la-guardia:R la-obra-social:R el-turno:S+6 el-remedio:S el-barbijo:R la-prepaga:R la-curita:R sacar-turno:R descompuesto-descompuesta:R el-certificado-medico:S la-palida:J+2 el-patatus:J+6",
 };
 // Palabras con trampa (se confunden con otra o significan dos cosas): suman un poco
 const TRAMPAS = "lengua piso cocina plato manzana medias cartera buzo panuelo derecho saco pie pierna".split(" ");
@@ -79,7 +82,7 @@ function puntuarPalabra(c) {
 // Nivel base de cada tema (de lo más simple a lo más complejo) y un pequeño ajuste por
 // largo de la consigna. En "conjugacion-verbos" pesa el tiempo pedido.
 const TEMAS_GRAMATICA = {
-  presentarse: 5, indicaciones: 12, "articulos-y-genero": 24, "ser-estar": 25, "comparativos-superlativos": 30, "por-para": 40,
+  presentarse: 5, indicaciones: 12, "articulos-y-genero": 24, "ser-estar": 25, "hay-y-estar": 22, "gustar-y-similares": 28, "pedir-y-comprar": 30, "comparativos-superlativos": 30, "por-para": 40,
   "futuro-simple": 40, "condicional-simple": 42, "imperativo-vos": 50, "conjugacion-verbos": 52,
   "compuesto-vs-simple": 55, "preterito-imperfecto": 62, "subjuntivo-presente": 72, "pronombres-combinados": 80,
 };

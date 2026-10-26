@@ -92,6 +92,72 @@ window.GRAMMAR = [
     ]
   },
   {
+    id: "hay-y-estar",
+    title: "Hay vs. Estar",
+    explain: "Usamos 'hay' para hablar de la existencia de algo en general, cuando no es específico. Por ejemplo, 'hay un banco' o 'no hay azúcar'. Usamos 'estar' para ubicar en el espacio cosas o personas específicas que ya conocemos. Por eso decimos 'el banco está en la esquina' o 'mis llaves están en la mesa'. Con 'hay' no usamos el artículo definido (el, la, los, las). Pista en húngaro: A magyarban mindkettő 'van', ezért könnyű összekeverni. A 'hay' a létezést fejezi ki (van egy, vannak), az 'estar' pedig konkrét, már ismert dolgok helyét mondja meg (valami valahol van).",
+    examples: [
+      "Hay un supermercado en la otra cuadra. (no específico)",
+      "El supermercado está en la otra cuadra. (específico)",
+      "¿Hay sillas libres en esta mesa? (no específico, plural)",
+      "Las sillas están ocupadas. (específico, plural)",
+      "En mi barrio no hay subte. (existencia)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Disculpá, ¿___ una farmacia por acá?", options: ["hay", "está"], answer: "hay", explain: "Buscamos una farmacia cualquiera, no una específica, así que usamos 'hay'.", nivel: 21 },
+      { type: "choice", prompt: "La farmacia de mi barrio ___ en la esquina.", options: ["hay", "está"], answer: "está", explain: "Hablamos de una farmacia específica (la farmacia), por lo que usamos 'está'.", nivel: 22 },
+      { type: "choice", prompt: "En la heladera no ___ leche.", options: ["hay", "está"], answer: "hay", explain: "Hablamos de la existencia (o falta) del producto en general.", nivel: 21 },
+      { type: "choice", prompt: "Mis zapatillas ___ debajo de la cama.", options: ["hay", "están"], answer: "están", explain: "Son mis zapatillas específicas, usamos 'están' por ser plural.", nivel: 21 },
+      { type: "choice", prompt: "¿___ muchos autos en la calle hoy?", options: ["Hay", "Están"], answer: "Hay", explain: "Preguntamos por la existencia de cantidad (muchos autos) sin ser específicos.", nivel: 21 },
+      { type: "fill", prompt: "El baño ___ al final del pasillo. (estar)", accept: ["está", "esta"], answer: "está", explain: "Hablamos de un baño específico (el baño) en singular.", nivel: 22 },
+      { type: "fill", prompt: "En esta ciudad ___ muchos parques muy lindos. (haber)", accept: ["hay"], answer: "hay", explain: "Para hablar de existencia general usamos siempre 'hay', aunque sea plural.", nivel: 22 },
+      { type: "fill", prompt: "¿Dónde ___ las llaves del departamento? (estar)", accept: ["están", "estan"], answer: "están", explain: "Las llaves son algo específico y plural, usamos 'están'.", nivel: 21 }
+    ]
+  },
+  {
+    id: "gustar-y-similares",
+    title: "Gustar y verbos parecidos",
+    explain: "Con estos verbos, el verbo concuerda con la cosa que gusta, no con quien la siente. Antes del verbo va un pronombre: a mí me, a vos te, a él o ella le, a nosotros nos, a ustedes les. Si la cosa es singular o es una acción (salir, bailar), usamos 'gusta', 'encanta' o 'duele'. Si son varias cosas, usamos 'gustan', 'encantan' o 'duelen'. Pista en húngaro: Ezek az igék a magyar 'tetszik' igéhez hasonlítanak: az ige ahhoz a dologhoz igazodik, ami tetszik vagy fáj (gusta / gustan, duele / duelen).",
+    examples: [
+      "Me gusta mucho el mate amargo. (singular)",
+      "¿A vos te gustan las empanadas? (plural)",
+      "A mi hermano le encanta jugar al fútbol. (acción)",
+      "Me duele la cabeza por el ruido. (doler, singular)",
+      "Nos duelen las piernas de tanto caminar. (doler, plural)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "A mí ___ gusta esta canción.", options: ["me", "te"], answer: "me", explain: "Usamos 'me' para hablar de la primera persona (a mí).", nivel: 27 },
+      { type: "choice", prompt: "¿A vos ___ duelen los pies?", options: ["te", "le"], answer: "te", explain: "Para 'a vos' siempre usamos 'te'.", nivel: 27 },
+      { type: "choice", prompt: "A Juan le ___ la pizza.", options: ["gusta", "gustan"], answer: "gusta", explain: "Como 'la pizza' es singular, el verbo va en singular.", nivel: 27 },
+      { type: "choice", prompt: "Me ___ mucho los alfajores de maicena.", options: ["encanta", "encantan"], answer: "encantan", explain: "Como 'los alfajores' está en plural, usamos 'encantan'.", nivel: 27 },
+      { type: "choice", prompt: "Nos ___ los ojos por mirar la pantalla.", options: ["duele", "duelen"], answer: "duelen", explain: "Como 'los ojos' son varios, el verbo va en plural.", nivel: 28 },
+      { type: "fill", prompt: "A mí ___ duele mucho la espalda.", accept: ["me"], answer: "me", explain: "Con 'a mí' siempre usamos 'me'.", nivel: 27 },
+      { type: "fill", prompt: "¿A vos te ___ las películas de terror? (gustar)", accept: ["gustan"], answer: "gustan", explain: "Como 'películas' es plural, el verbo 'gustar' va con 'n' al final.", nivel: 28 },
+      { type: "fill", prompt: "A ella le ___ salir a bailar los sábados. (encantar)", accept: ["encanta"], answer: "encanta", explain: "Cuando sigue un verbo en infinitivo (salir), se usa la forma en singular.", nivel: 29 }
+    ]
+  },
+  {
+    id: "pedir-y-comprar",
+    title: "Pedir y comprar con cortesía",
+    explain: "Para pedir en un restaurante o preguntar en un negocio hay frases fijas muy útiles. Para pedir algo con cortesía: 'quisiera…' o 'para mí…'. Al mozo se le dice '¿me traés…?' (con voseo). Para saber el precio: '¿cuánto sale?' o '¿cuánto cuesta?'. Para pagar: 'la cuenta, por favor', '¿me cobrás?' y '¿aceptan tarjeta?'. Pista en húngaro: Ezek rögzített, udvarias kérdések és kérések: 'quisiera' (szeretnék), '¿me traés…?' (hoznál nekem…?), '¿cuánto sale?' (mennyibe kerül?).",
+    examples: [
+      "Quisiera un café con leche, por favor. (para pedir algo)",
+      "Mozo, ¿me traés la cuenta? (pedido con voseo)",
+      "Para mí, una milanesa con papas fritas. (para elegir tu plato)",
+      "Disculpá, ¿cuánto sale este pantalón? (para preguntar el precio)",
+      "¿Aceptan tarjeta o es solo en efectivo? (formas de pago)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Hola, ___ una mesa para tres, por favor.", options: ["quisiera", "quisieras"], answer: "quisiera", explain: "Para pedir algo con cortesía hablás de vos mismo: 'quisiera' (yo). 'Quisieras' sería para otra persona.", nivel: 30 },
+      { type: "choice", prompt: "Disculpá, ¿cuánto ___ estas zapatillas?", options: ["sale", "salen"], answer: "salen", explain: "Como 'las zapatillas' es plural, usamos 'salen'.", nivel: 28 },
+      { type: "choice", prompt: "Mozo, ¿nos traés la ___, por favor?", options: ["cuenta", "plata"], answer: "cuenta", explain: "En el restaurante pedimos la cuenta para pagar.", nivel: 29 },
+      { type: "choice", prompt: "___ mí, unos fideos con salsa.", options: ["Para", "Por"], answer: "Para", explain: "La expresión correcta para elegir tu plato es 'para mí'.", nivel: 29 },
+      { type: "choice", prompt: "Todo muy rico. ¿Me ___, por favor?", options: ["cobrás", "pagás"], answer: "cobrás", explain: "Le pedís al empleado que te cobre a vos.", nivel: 29 },
+      { type: "fill", prompt: "¿Me ___ otra botella de agua, por favor? (traer)", accept: ["traés", "traes"], answer: "traés", explain: "Es la forma del voseo para el verbo traer.", nivel: 30 },
+      { type: "fill", prompt: "Disculpá, ¿___ tarjeta de crédito acá? (aceptar)", accept: ["aceptan"], answer: "aceptan", explain: "El verbo va en plural (ustedes / ellos) para preguntar si en el local aceptan esa forma de pago.", nivel: 29 },
+      { type: "fill", prompt: "Hola, ¿cuánto ___ el kilo de pan? (salir)", accept: ["sale"], answer: "sale", explain: "Usamos el verbo salir en singular para preguntar el precio de una cosa.", nivel: 30 }
+    ]
+  },
+  {
     id: "por-para",
     title: "Por vs. Para",
     explain: "POR → causa, motivo, medio, 'a través de', duración, 'a cambio de'. PARA → destino, finalidad (para + infinitivo), plazo, destinatario. Pista en húngaro: PARA ≈ cél/cím ('-nak/-nek', '-ért' mint cél), POR ≈ ok/eszköz ('miatt', 'által', csere).",

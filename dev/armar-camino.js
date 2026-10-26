@@ -36,6 +36,7 @@ const NOMBRE_TEMA = {
   lugares: "Lugares de la ciudad", transporte: "Transporte", indicaciones: "Indicaciones", saludos: "Saludos",
   personas: "La gente", elogios: "Elogios", jerga_cosas: "Jerga: cosas", jerga_verbos: "Jerga: verbos",
   jerga_expresiones: "Jerga: expresiones", tiempo_libre: "Salidas y tiempo libre", familia: "La familia",
+  restaurante: "En el restaurante", compras: "De compras", salud: "Salud y médicos",
 };
 const NOMBRE_TIEMPO = { presente: "presente", preterito: "pretérito", imperfecto: "imperfecto", futuro: "futuro", condicional: "condicional", subjuntivo: "subjuntivo" };
 
@@ -198,7 +199,15 @@ temas.forEach((tema) => {
     // repaso de palabras de niveles anteriores del mismo tema, en formatos más exigentes
     if (anteriores.length) {
       const nRep = Math.max(0, Math.min(MAX_REPASO, TAMANO - ejercicios.length));
-      const candidatas = anteriores.slice().sort((a, b) => (aparicionesPalabra[a.id] || 0) - (aparicionesPalabra[b.id] || 0) || a.nivel - b.nivel);
+      // Se prefieren las que menos aparecieron, pero también las que todavía tienen un formato que cae cerca del
+      // objetivo (si a una palabra solo le queda el formato más fácil, el nivel queda desparejo)
+      const cercania = (c) => {
+        const usadosC = formatosDePalabra[c.id] || new Set();
+        const libres = infoVocab[c.id].filter((x) => !usadosC.has(x.f) && (cuenta[x.f] || 0) < MAX_MISMO_FORMATO);
+        return libres.length ? Math.min(...libres.map((x) => Math.abs(x._p - (T + 6)))) : 99;
+      };
+      const costo = (c) => cercania(c) + 8 * (aparicionesPalabra[c.id] || 0);
+      const candidatas = anteriores.slice().sort((a, b) => costo(a) - costo(b) || a.nivel - b.nivel);
       for (const c of candidatas) {
         if (ejercicios.length >= TAMANO || ejercicios.filter((x) => !nuevas.some((n) => n.id === x.s)).length >= nRep) break;
         const sp = elegirFormato(c, T + 6, cuenta);

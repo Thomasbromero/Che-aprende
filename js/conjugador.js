@@ -30,7 +30,7 @@ const Conjugador = (function () {
   // Segunda forma de "vos" en el subjuntivo (voseo): hablés, comás, vivás
   const VOS_SUBJ = { ar: "és", er: "ás", ir: "ás" };
 
-  function grupo(v) { return v.inf.slice(-2); }
+  function grupo(v) { return v.inf.slice(-2).replace("í", "i"); } // "oír" termina en "ír": mismo grupo que "ir"
   function raizDe(v) { return v.inf.slice(0, -2); }
   function indice(personaId) { return PERSONAS.findIndex((p) => p.id === personaId); }
   function tiempoDe(id) { return TIEMPOS.find((t) => t.id === id); }
