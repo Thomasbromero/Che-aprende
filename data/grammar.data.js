@@ -94,6 +94,50 @@ window.GRAMMAR = [
     ]
   },
   {
+    id: "ir-a-tener-que",
+    title: "Voy a, tengo que, hay que, quiero",
+    explain: "Para hablar de planes o el futuro usamos ir a más un verbo sin conjugar. Si es una obligación tuya, usamos tener que. Si es una regla para todos, usamos hay que. También usamos querer y poder para deseos o posibilidades. Siempre el segundo verbo queda igual, en infinitivo. Pista en húngaro: A jövőbeli terveket az ir a + főnévi igenévvel fejezzük ki. Személyes kötelezettségre a tener que, általánosra a hay que szerkezetet használjuk.",
+    examples: [
+      "Mañana a la tarde voy a comprar facturas. (plan para el futuro)",
+      "Vos tenés que estudiar más para el examen. (obligación personal)",
+      "Hay que pagar el pasaje acá en la estación. (obligación general)",
+      "El domingo yo quiero comer un asado rico. (deseo)",
+      "¿Vos me podés ayudar con esto ahora mismo? (posibilidad)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "El finde que viene ___ a descansar mucho.", options: ["voy", "tengo"], answer: "voy", explain: "Es un plan para el futuro, se usa el verbo ir.", nivel: 22 },
+      { type: "choice", prompt: "Para aprobar el parcial, ___ estudiar mucho.", options: ["hay que", "hay"], answer: "hay que", explain: "Es una obligación general para todos los estudiantes.", nivel: 21 },
+      { type: "choice", prompt: "Vos ___ que llegar temprano al laburo hoy.", options: ["tenés", "vas"], answer: "tenés", explain: "La obligación personal se forma con tener que más infinitivo.", nivel: 22 },
+      { type: "choice", prompt: "¿Vos ___ ir al cine esta noche conmigo?", options: ["querés", "tenés"], answer: "querés", explain: "Con el verbo querer, el siguiente verbo va directo en infinitivo.", nivel: 22 },
+      { type: "choice", prompt: "Nosotros ___ a viajar a Córdoba en verano.", options: ["vamos", "tenemos"], answer: "vamos", explain: "Es un plan futuro para nosotros (vamos a viajar).", nivel: 22 },
+      { type: "fill", prompt: "Mañana yo voy ___ cocinar fideos con salsa. (preposición)", accept: ["a"], answer: "a", explain: "Para el futuro siempre usamos la preposición a después de ir.", nivel: 22 },
+      { type: "fill", prompt: "Vos ___ que llamar a tu mamá hoy. (tener)", accept: ["tenes", "tenés"], answer: "tenés", explain: "La conjugación correcta del verbo tener con vos es tenés.", nivel: 22 },
+      { type: "fill", prompt: "Hoy yo no ___ salir de casa porque llueve. (poder)", accept: ["puedo"], answer: "puedo", explain: "La forma correcta para yo en el presente es puedo.", nivel: 23 }
+    ]
+  },
+  {
+    id: "negacion",
+    title: "Decir que no: no, nunca, nadie, nada, tampoco",
+    explain: "Para negar algo ponemos no antes del verbo. Si usamos palabras como nunca, nadie, nada o tampoco después del verbo, es obligatorio poner también un no antes. Pero si esas palabras van antes del verbo, el no desaparece. Para negar dos cosas al mismo tiempo usamos ni… ni. Pista en húngaro: Ha a tagadószó (pl. nunca, nada, nadie) az ige után áll, az ige elé is ki kell tenni a no szócskát. Ha az ige előtt áll, a no elmarad.",
+    examples: [
+      "Hoy yo no tengo plata para el colectivo. (negación simple)",
+      "No vino nadie a la fiesta de anoche. (doble negación)",
+      "Nadie vino a la fiesta que armamos ayer. (negación antes del verbo)",
+      "Vos no comés nunca verduras en el almuerzo. (doble negación con vos)",
+      "No me gusta ni el té ni el mate. (doble opción negada)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Yo ___ quiero comer ahora porque es tarde.", options: ["no", "nada"], answer: "no", explain: "Es una negación simple y directa antes del verbo.", nivel: 28 },
+      { type: "choice", prompt: "Acá en el barrio no hay ___ para hacer.", options: ["nada", "nadie"], answer: "nada", explain: "La palabra nada se usa para referirse a cosas.", nivel: 28 },
+      { type: "choice", prompt: "___ me llamó por teléfono en toda la mañana.", options: ["Nadie", "Nada"], answer: "Nadie", explain: "Como nadie está antes del verbo, no hace falta el no.", nivel: 28 },
+      { type: "choice", prompt: "A mí no me gusta el fútbol y a él ___.", options: ["tampoco", "nada"], answer: "tampoco", explain: "Usamos tampoco para coincidir con otra persona en algo negativo.", nivel: 29 },
+      { type: "choice", prompt: "No quiero ir ni al parque ___ al cine.", options: ["ni", "no"], answer: "ni", explain: "Para unir dos elementos en una negación se usa ni.", nivel: 28 },
+      { type: "fill", prompt: "Vos no me escuchás ___ cuando te hablo. (palabra negativa de tiempo)", accept: ["nunca", "jamas", "jamás"], answer: "nunca", explain: "Para decir que algo no pasa en ningún momento usamos nunca.", nivel: 30 },
+      { type: "fill", prompt: "No vi a ___ en la fiesta. (palabra negativa para personas)", accept: ["nadie"], answer: "nadie", explain: "La palabra nadie se refiere siempre a personas.", nivel: 29 },
+      { type: "fill", prompt: "Hoy ___ tengo ganas de salir con este frío. (la negación más simple)", accept: ["no"], answer: "no", explain: "Usamos el no antes del verbo para hacer una negación simple.", nivel: 30 }
+    ]
+  },
+  {
     id: "articulos-y-genero",
     title: "Artículos y género: trampas comunes",
     explain: "En español casi todo tiene género. La regla general es fácil: si termina en -o es masculina (el/un) y si termina en -a es femenina (la/una). Pero hay palabras tramposas que no la cumplen y conviene aprender siempre junto con su artículo. Muchas palabras que terminan en -ma son masculinas (el problema, el tema, el idioma), igual que el mapa o el planeta. Las palabras acortadas conservan el género de la palabra original: la foto (de fotografía), la moto (de motocicleta). Y la mano es femenina aunque termine en -o. Pista en húngaro: A magyarban nincs nyelvtani nem, így ezt nehéz megszokni. A legfontosabb kivételeket (például a kéz: la mano, a térkép: el mapa) érdemes egyből a névelővel együtt megtanulni.",
@@ -217,6 +261,28 @@ window.GRAMMAR = [
       { type: "choice", prompt: "Te llamo ___ teléfono más tarde.", options: ["por", "para"], answer: "por", explain: "Medio → por.", nivel: 39 },
       { type: "choice", prompt: "Necesito el informe ___ el lunes.", options: ["por", "para"], answer: "para", explain: "Plazo / fecha límite → para.", nivel: 39 },
       { type: "choice", prompt: "Gracias ___ todo lo que hiciste.", options: ["por", "para"], answer: "por", explain: "Motivo → por.", nivel: 39 }
+    ]
+  },
+  {
+    id: "preterito-formas",
+    title: "El pretérito: hablé, comí, viví",
+    explain: "Usamos el pretérito para acciones terminadas en el pasado. Es muy importante decir cuándo pasó, por ejemplo: ayer, anoche, o el año pasado. Con vos, las terminaciones regulares son -aste e -iste, siempre sin una s al final. También hay verbos muy irregulares que cambian bastante y tenés que memorizarlos, como ir, hacer o tener. Pista en húngaro: A befejezett múlt időt (pretérito) olyan lezárt cselekvésekre használjuk, amelyeknél egyértelmű, mikor történtek a múltban.",
+    examples: [
+      "Ayer a la mañana hablé con mi jefe. (verbo regular)",
+      "Vos comiste muchas empanadas en la cena anoche. (forma con vos)",
+      "El lunes pasado yo fui al médico temprano. (verbo irregular ir)",
+      "El año pasado tuve un problema con eso. (verbo irregular tener)",
+      "Anoche yo no hice la tarea de matemáticas. (verbo irregular hacer)"
+    ],
+    exercises: [
+      { type: "choice", prompt: "Ayer yo ___ unas zapatillas nuevas en el shopping.", options: ["compré", "compró"], answer: "compré", explain: "La terminación para yo en los verbos regulares lleva tilde.", nivel: 40 },
+      { type: "choice", prompt: "Vos ___ muy tarde anoche a tu casa.", options: ["llegaste", "llegó"], answer: "llegaste", explain: "Con vos se usa la terminación -aste, siempre sin s final.", nivel: 40 },
+      { type: "choice", prompt: "El fin de semana nosotros ___ al cine juntos.", options: ["fuimos", "fueron"], answer: "fuimos", explain: "Es la conjugación de nosotros del verbo irregular ir.", nivel: 40 },
+      { type: "choice", prompt: "Ayer a la tarde ella ___ que trabajar mucho.", options: ["tuvo", "tuve"], answer: "tuvo", explain: "El verbo tener es irregular en el pasado (tuvo).", nivel: 40 },
+      { type: "choice", prompt: "El viernes pasado yo no ___ ir al partido.", options: ["pude", "pudo"], answer: "pude", explain: "El verbo poder es irregular en el pretérito (pude).", nivel: 40 },
+      { type: "fill", prompt: "Ayer vos ___ una película muy buena en casa. (ver)", accept: ["viste"], answer: "viste", explain: "La forma de vos del verbo ver en pasado es viste.", nivel: 41 },
+      { type: "fill", prompt: "Anoche yo ___ una porción de pizza muy rica. (comer)", accept: ["comi", "comí"], answer: "comí", explain: "Para yo con un verbo regular terminado en -er usamos -í.", nivel: 41 },
+      { type: "fill", prompt: "Una sola vez en mi vida yo ___ a Bariloche. (ir)", accept: ["fui"], answer: "fui", explain: "El verbo ir es irregular y para la persona yo es fui.", nivel: 41 }
     ]
   },
   {

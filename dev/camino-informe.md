@@ -2,10 +2,10 @@
 
 Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa de niveles, de más fácil a más difícil; cada nivel es una mini-lección.
 
-- **140 niveles** y **1039 ejercicios** (entre 5 y 9 por nivel).
+- **164 niveles** y **1222 ejercicios** (entre 5 y 9 por nivel).
 - Dificultad de **15** (primer nivel) a **79** (último). El salto más grande entre dos niveles seguidos es de 6 puntos.
-- Las **503 de 503 palabras** del vocabulario aparecen al menos una vez (194 también como repaso en un nivel posterior).
-- Por tipo: 95 de vocabulario, 21 de verbos, 21 de gramática, 3 de producción.
+- Las **621 de 621 palabras** del vocabulario aparecen al menos una vez (235 también como repaso en un nivel posterior).
+- Por tipo: 116 de vocabulario, 21 de verbos, 24 de gramática, 3 de producción.
 
 ## Resumen
 
@@ -14,143 +14,167 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 | 1 | n01 | Saludos | Vocabulario | 15 | 8 |
 | 2 | n02 | Presentarte | Gramática | 18 | 8 |
 | 3 | n03 | La ropa · 1 | Vocabulario | 14 | 6 |
-| 4 | n04 | Comida y bebida · 1 | Vocabulario | 15 | 6 |
-| 5 | n05 | El cuerpo · 1 | Vocabulario | 15 | 6 |
-| 6 | n06 | La familia · 1 | Vocabulario | 15 | 6 |
-| 7 | n07 | En el restaurante · 1 | Vocabulario | 15 | 6 |
-| 8 | n08 | De compras · 1 | Vocabulario | 15 | 6 |
-| 9 | n09 | Salud y médicos · 1 | Vocabulario | 15 | 6 |
-| 10 | n10 | En el trabajo · 1 | Vocabulario | 15 | 6 |
-| 11 | n11 | El clima y la naturaleza · 1 | Vocabulario | 15 | 6 |
-| 12 | n12 | La ciudad y el transporte · 1 | Vocabulario | 15 | 6 |
-| 13 | n13 | Los muebles · 1 | Vocabulario | 16 | 6 |
-| 14 | n14 | La familia · 2 | Vocabulario | 16 | 8 |
-| 15 | n15 | Hotel y viaje · 1 | Vocabulario | 17 | 8 |
-| 16 | n16 | La cocina · 1 | Vocabulario | 17 | 8 |
-| 17 | n17 | La casa · 1 | Vocabulario | 17 | 8 |
-| 18 | n18 | Lugares de la ciudad · 1 | Vocabulario | 18 | 8 |
-| 19 | n19 | Tecnología · 1 | Vocabulario | 18 | 6 |
-| 20 | n20 | Indicaciones · 1 | Vocabulario | 19 | 8 |
-| 21 | n21 | Accesorios · 1 | Vocabulario | 20 | 6 |
-| 22 | n22 | El cuerpo · 2 | Vocabulario | 20 | 8 |
-| 23 | n23 | De compras · 2 | Vocabulario | 20 | 8 |
-| 24 | n24 | En el restaurante · 2 | Vocabulario | 21 | 8 |
-| 25 | n25 | El clima y la naturaleza · 2 | Vocabulario | 21 | 8 |
-| 26 | n26 | La ciudad y el transporte · 2 | Vocabulario | 22 | 8 |
-| 27 | n27 | Limpieza y baño · 1 | Vocabulario | 23 | 8 |
-| 28 | n28 | Salud y médicos · 2 | Vocabulario | 23 | 8 |
-| 29 | n29 | En el trabajo · 2 | Vocabulario | 23 | 8 |
-| 30 | n30 | La familia · 3 | Vocabulario | 24 | 8 |
-| 31 | n31 | Pedir indicaciones y pedir ayuda | Gramática | 25 | 9 |
-| 32 | n32 | Ser vs. Estar | Gramática | 26 | 6 |
-| 33 | n33 | Hay vs. Estar | Gramática | 27 | 8 |
-| 34 | n34 | Accesorios · 2 | Vocabulario | 27 | 8 |
-| 35 | n35 | De compras · 3 | Vocabulario | 27 | 8 |
-| 36 | n36 | Salud y médicos · 3 | Vocabulario | 27 | 8 |
-| 37 | n37 | En el trabajo · 3 | Vocabulario | 27 | 8 |
-| 38 | n38 | El clima y la naturaleza · 3 | Vocabulario | 27 | 8 |
-| 39 | n39 | La ciudad y el transporte · 3 | Vocabulario | 27 | 8 |
-| 40 | n40 | La ropa · 2 | Vocabulario | 28 | 8 |
-| 41 | n41 | Hotel y viaje · 2 | Vocabulario | 28 | 8 |
-| 42 | n42 | En el restaurante · 3 | Vocabulario | 28 | 8 |
-| 43 | n43 | Verbos: presente · 1 | Verbos | 28 | 8 |
-| 44 | n44 | El voseo en el presente: hablás, comés, vivís | Gramática | 30 | 8 |
-| 45 | n45 | Artículos y género: trampas comunes | Gramática | 30 | 8 |
-| 46 | n46 | Producción: frases útiles | Producción | 30 | 6 |
-| 47 | n47 | Comida y bebida · 2 | Vocabulario | 30 | 8 |
-| 48 | n48 | La cocina · 2 | Vocabulario | 30 | 8 |
-| 49 | n49 | Verbos: presente · 2 | Verbos | 30 | 8 |
-| 50 | n50 | Gustar y verbos parecidos | Gramática | 31 | 8 |
-| 51 | n51 | El cuerpo · 3 | Vocabulario | 31 | 8 |
-| 52 | n52 | Salud y médicos · 4 | Vocabulario | 31 | 8 |
-| 53 | n53 | El clima y la naturaleza · 4 | Vocabulario | 31 | 8 |
-| 54 | n54 | Pedir y comprar con cortesía | Gramática | 32 | 8 |
-| 55 | n55 | Por vs. Para | Gramática | 32 | 6 |
-| 56 | n56 | Comparativos y superlativos | Gramática | 32 | 6 |
-| 57 | n57 | De compras · 4 | Vocabulario | 32 | 8 |
-| 58 | n58 | La familia · 4 | Vocabulario | 33 | 8 |
-| 59 | n59 | En el trabajo · 4 | Vocabulario | 33 | 8 |
-| 60 | n60 | A, en y de: lugar y movimiento | Gramática | 34 | 8 |
-| 61 | n61 | Hotel y viaje · 3 | Vocabulario | 34 | 8 |
-| 62 | n62 | Los muebles · 2 | Vocabulario | 34 | 8 |
-| 63 | n63 | En el restaurante · 4 | Vocabulario | 34 | 8 |
-| 64 | n64 | La ciudad y el transporte · 4 | Vocabulario | 34 | 8 |
-| 65 | n65 | La casa · 2 | Vocabulario | 35 | 8 |
-| 66 | n66 | El cuerpo · 4 | Vocabulario | 35 | 8 |
-| 67 | n67 | La familia · 5 | Vocabulario | 36 | 8 |
-| 68 | n68 | El clima y la naturaleza · 5 | Vocabulario | 36 | 8 |
-| 69 | n69 | Indicaciones · 2 | Vocabulario | 37 | 7 |
-| 70 | n70 | De compras · 5 | Vocabulario | 37 | 8 |
-| 71 | n71 | Futuro simple | Gramática | 38 | 6 |
-| 72 | n72 | La cocina · 3 | Vocabulario | 38 | 8 |
-| 73 | n73 | Lugares de la ciudad · 2 | Vocabulario | 38 | 7 |
-| 74 | n74 | Tecnología · 2 | Vocabulario | 38 | 8 |
-| 75 | n75 | La familia · 6 | Vocabulario | 38 | 8 |
-| 76 | n76 | La gente · 1 | Vocabulario | 39 | 8 |
-| 77 | n77 | Accesorios · 3 | Vocabulario | 39 | 8 |
-| 78 | n78 | El cuerpo · 5 | Vocabulario | 39 | 6 |
-| 79 | n79 | Salud y médicos · 5 | Vocabulario | 39 | 8 |
-| 80 | n80 | Verbos: futuro · 1 | Verbos | 39 | 8 |
-| 81 | n81 | Condicional simple | Gramática | 40 | 6 |
-| 82 | n82 | La ciudad y el transporte · 5 | Vocabulario | 40 | 8 |
-| 83 | n83 | Verbos: presente · 3 | Verbos | 40 | 8 |
-| 84 | n84 | Verbos: imperfecto · 1 | Verbos | 40 | 8 |
-| 85 | n85 | Hotel y viaje · 4 | Vocabulario | 41 | 7 |
-| 86 | n86 | Limpieza y baño · 2 | Vocabulario | 41 | 7 |
-| 87 | n87 | El clima y la naturaleza · 6 | Vocabulario | 41 | 8 |
-| 88 | n88 | Verbos: presente · 4 | Verbos | 41 | 8 |
-| 89 | n89 | Lo, la, los, las, le: a quién y a qué | Gramática | 42 | 8 |
-| 90 | n90 | Comida y bebida · 3 | Vocabulario | 42 | 8 |
-| 91 | n91 | Salidas y tiempo libre | Vocabulario | 42 | 8 |
-| 92 | n92 | En el restaurante · 5 | Vocabulario | 42 | 8 |
-| 93 | n93 | En el trabajo · 5 | Vocabulario | 42 | 8 |
-| 94 | n94 | Verbos: condicional · 1 | Verbos | 42 | 8 |
-| 95 | n95 | Conjugación de verbos (1/2) | Gramática | 43 | 5 |
-| 96 | n96 | Jerga: expresiones | Vocabulario | 43 | 8 |
-| 97 | n97 | La ropa · 3 | Vocabulario | 43 | 8 |
-| 98 | n98 | De compras · 6 | Vocabulario | 43 | 8 |
-| 99 | n99 | Imperativo con vos | Gramática | 44 | 6 |
-| 100 | n100 | Transporte | Vocabulario | 44 | 8 |
-| 101 | n101 | Salud y médicos · 6 | Vocabulario | 44 | 8 |
-| 102 | n102 | La familia · 7 | Vocabulario | 45 | 7 |
-| 103 | n103 | La ciudad y el transporte · 6 | Vocabulario | 45 | 8 |
-| 104 | n104 | Jerga: cosas · 1 | Vocabulario | 46 | 8 |
-| 105 | n105 | Elogios | Vocabulario | 46 | 6 |
-| 106 | n106 | Pretérito compuesto vs. simple (uso rioplatense) | Gramática | 47 | 6 |
-| 107 | n107 | En el restaurante · 6 | Vocabulario | 47 | 8 |
-| 108 | n108 | Verbos: futuro · 2 | Verbos | 47 | 8 |
-| 109 | n109 | Accesorios · 4 | Vocabulario | 48 | 6 |
-| 110 | n110 | En el trabajo · 6 | Vocabulario | 48 | 8 |
-| 111 | n111 | Verbos: pretérito · 1 | Verbos | 48 | 8 |
-| 112 | n112 | Verbos: imperfecto · 2 | Verbos | 48 | 8 |
-| 113 | n113 | Pretérito vs. Imperfecto | Gramática | 49 | 6 |
-| 114 | n114 | La ropa · 4 | Vocabulario | 49 | 7 |
-| 115 | n115 | El clima y la naturaleza · 7 | Vocabulario | 49 | 6 |
-| 116 | n116 | Verbos: imperfecto · 3 | Verbos | 49 | 8 |
-| 117 | n117 | Verbos: futuro · 3 | Verbos | 49 | 8 |
-| 118 | n118 | Producción: pasado y condicional | Producción | 50 | 6 |
-| 119 | n119 | Jerga: verbos · 1 | Vocabulario | 50 | 8 |
-| 120 | n120 | Verbos: pretérito · 2 | Verbos | 50 | 8 |
-| 121 | n121 | Verbos: condicional · 2 | Verbos | 50 | 8 |
-| 122 | n122 | Verbos: condicional · 3 | Verbos | 51 | 8 |
-| 123 | n123 | En el restaurante · 7 | Vocabulario | 52 | 6 |
-| 124 | n124 | Salud y médicos · 7 | Vocabulario | 52 | 7 |
-| 125 | n125 | De compras · 7 | Vocabulario | 54 | 7 |
-| 126 | n126 | Conjugación de verbos (2/2) | Gramática | 55 | 5 |
-| 127 | n127 | En el trabajo · 7 | Vocabulario | 55 | 6 |
-| 128 | n128 | La ciudad y el transporte · 7 | Vocabulario | 56 | 6 |
-| 129 | n129 | La gente · 2 | Vocabulario | 57 | 7 |
-| 130 | n130 | Subjuntivo presente | Gramática | 58 | 6 |
-| 131 | n131 | Verbos: pretérito · 3 | Verbos | 59 | 8 |
-| 132 | n132 | Jerga: cosas · 2 | Vocabulario | 60 | 8 |
-| 133 | n133 | Verbos: pretérito · 4 | Verbos | 61 | 8 |
-| 134 | n134 | Verbos: subjuntivo · 1 | Verbos | 62 | 8 |
-| 135 | n135 | Pronombres combinados (se lo, te la...) | Gramática | 65 | 6 |
-| 136 | n136 | Jerga: verbos · 2 | Vocabulario | 66 | 7 |
-| 137 | n137 | Producción: subjuntivo | Producción | 69 | 6 |
-| 138 | n138 | Verbos: subjuntivo · 2 | Verbos | 69 | 8 |
-| 139 | n139 | Verbos: subjuntivo · 3 | Verbos | 73 | 8 |
-| 140 | n140 | Verbos: subjuntivo · 4 | Verbos | 79 | 8 |
+| 4 | n04 | Estudios · 1 | Vocabulario | 14 | 6 |
+| 5 | n05 | Comida y bebida · 1 | Vocabulario | 15 | 6 |
+| 6 | n06 | El cuerpo · 1 | Vocabulario | 15 | 6 |
+| 7 | n07 | La familia · 1 | Vocabulario | 15 | 6 |
+| 8 | n08 | En el restaurante · 1 | Vocabulario | 15 | 6 |
+| 9 | n09 | De compras · 1 | Vocabulario | 15 | 6 |
+| 10 | n10 | Salud y médicos · 1 | Vocabulario | 15 | 6 |
+| 11 | n11 | En el trabajo · 1 | Vocabulario | 15 | 6 |
+| 12 | n12 | El clima y la naturaleza · 1 | Vocabulario | 15 | 6 |
+| 13 | n13 | La ciudad y el transporte · 1 | Vocabulario | 15 | 6 |
+| 14 | n14 | Ocio y deportes · 1 | Vocabulario | 15 | 6 |
+| 15 | n15 | Emociones y carácter · 1 | Vocabulario | 15 | 6 |
+| 16 | n16 | Los muebles · 1 | Vocabulario | 16 | 6 |
+| 17 | n17 | La familia · 2 | Vocabulario | 16 | 8 |
+| 18 | n18 | Hotel y viaje · 1 | Vocabulario | 17 | 8 |
+| 19 | n19 | La cocina · 1 | Vocabulario | 17 | 8 |
+| 20 | n20 | La casa · 1 | Vocabulario | 17 | 8 |
+| 21 | n21 | Lugares de la ciudad · 1 | Vocabulario | 18 | 8 |
+| 22 | n22 | Tecnología · 1 | Vocabulario | 18 | 6 |
+| 23 | n23 | Indicaciones · 1 | Vocabulario | 19 | 8 |
+| 24 | n24 | Emociones y carácter · 2 | Vocabulario | 19 | 8 |
+| 25 | n25 | Accesorios · 1 | Vocabulario | 20 | 6 |
+| 26 | n26 | El cuerpo · 2 | Vocabulario | 20 | 8 |
+| 27 | n27 | De compras · 2 | Vocabulario | 20 | 8 |
+| 28 | n28 | En el restaurante · 2 | Vocabulario | 21 | 8 |
+| 29 | n29 | El clima y la naturaleza · 2 | Vocabulario | 21 | 8 |
+| 30 | n30 | La ciudad y el transporte · 2 | Vocabulario | 22 | 8 |
+| 31 | n31 | Ocio y deportes · 2 | Vocabulario | 22 | 8 |
+| 32 | n32 | Limpieza y baño · 1 | Vocabulario | 23 | 8 |
+| 33 | n33 | Salud y médicos · 2 | Vocabulario | 23 | 8 |
+| 34 | n34 | En el trabajo · 2 | Vocabulario | 23 | 8 |
+| 35 | n35 | Estudios · 2 | Vocabulario | 23 | 8 |
+| 36 | n36 | La familia · 3 | Vocabulario | 24 | 8 |
+| 37 | n37 | Pedir indicaciones y pedir ayuda | Gramática | 25 | 9 |
+| 38 | n38 | Ser vs. Estar | Gramática | 26 | 6 |
+| 39 | n39 | Hay vs. Estar | Gramática | 27 | 8 |
+| 40 | n40 | Accesorios · 2 | Vocabulario | 27 | 8 |
+| 41 | n41 | De compras · 3 | Vocabulario | 27 | 8 |
+| 42 | n42 | Salud y médicos · 3 | Vocabulario | 27 | 8 |
+| 43 | n43 | En el trabajo · 3 | Vocabulario | 27 | 8 |
+| 44 | n44 | El clima y la naturaleza · 3 | Vocabulario | 27 | 8 |
+| 45 | n45 | La ciudad y el transporte · 3 | Vocabulario | 27 | 8 |
+| 46 | n46 | Ocio y deportes · 3 | Vocabulario | 27 | 8 |
+| 47 | n47 | Estudios · 3 | Vocabulario | 27 | 8 |
+| 48 | n48 | Emociones y carácter · 3 | Vocabulario | 27 | 8 |
+| 49 | n49 | Voy a, tengo que, hay que, quiero | Gramática | 28 | 8 |
+| 50 | n50 | La ropa · 2 | Vocabulario | 28 | 8 |
+| 51 | n51 | Hotel y viaje · 2 | Vocabulario | 28 | 8 |
+| 52 | n52 | En el restaurante · 3 | Vocabulario | 28 | 8 |
+| 53 | n53 | Verbos: presente · 1 | Verbos | 29 | 8 |
+| 54 | n54 | El voseo en el presente: hablás, comés, vivís | Gramática | 30 | 8 |
+| 55 | n55 | Artículos y género: trampas comunes | Gramática | 30 | 8 |
+| 56 | n56 | Producción: frases útiles | Producción | 30 | 6 |
+| 57 | n57 | Comida y bebida · 2 | Vocabulario | 30 | 8 |
+| 58 | n58 | La cocina · 2 | Vocabulario | 30 | 8 |
+| 59 | n59 | Verbos: presente · 2 | Verbos | 30 | 8 |
+| 60 | n60 | Gustar y verbos parecidos | Gramática | 31 | 8 |
+| 61 | n61 | El cuerpo · 3 | Vocabulario | 31 | 8 |
+| 62 | n62 | Salud y médicos · 4 | Vocabulario | 31 | 8 |
+| 63 | n63 | El clima y la naturaleza · 4 | Vocabulario | 31 | 8 |
+| 64 | n64 | Decir que no: no, nunca, nadie, nada, tampoco | Gramática | 32 | 8 |
+| 65 | n65 | Pedir y comprar con cortesía | Gramática | 32 | 8 |
+| 66 | n66 | Por vs. Para | Gramática | 32 | 6 |
+| 67 | n67 | Comparativos y superlativos | Gramática | 32 | 6 |
+| 68 | n68 | De compras · 4 | Vocabulario | 32 | 8 |
+| 69 | n69 | La familia · 4 | Vocabulario | 33 | 8 |
+| 70 | n70 | En el trabajo · 4 | Vocabulario | 33 | 8 |
+| 71 | n71 | Estudios · 4 | Vocabulario | 33 | 8 |
+| 72 | n72 | Emociones y carácter · 4 | Vocabulario | 33 | 8 |
+| 73 | n73 | A, en y de: lugar y movimiento | Gramática | 34 | 8 |
+| 74 | n74 | Hotel y viaje · 3 | Vocabulario | 34 | 8 |
+| 75 | n75 | Los muebles · 2 | Vocabulario | 34 | 8 |
+| 76 | n76 | En el restaurante · 4 | Vocabulario | 34 | 8 |
+| 77 | n77 | La ciudad y el transporte · 4 | Vocabulario | 34 | 8 |
+| 78 | n78 | Ocio y deportes · 4 | Vocabulario | 34 | 8 |
+| 79 | n79 | La casa · 2 | Vocabulario | 35 | 8 |
+| 80 | n80 | El cuerpo · 4 | Vocabulario | 35 | 8 |
+| 81 | n81 | La familia · 5 | Vocabulario | 36 | 8 |
+| 82 | n82 | El clima y la naturaleza · 5 | Vocabulario | 36 | 8 |
+| 83 | n83 | Indicaciones · 2 | Vocabulario | 37 | 7 |
+| 84 | n84 | De compras · 5 | Vocabulario | 37 | 8 |
+| 85 | n85 | Futuro simple | Gramática | 38 | 6 |
+| 86 | n86 | La cocina · 3 | Vocabulario | 38 | 8 |
+| 87 | n87 | Lugares de la ciudad · 2 | Vocabulario | 38 | 7 |
+| 88 | n88 | Tecnología · 2 | Vocabulario | 38 | 8 |
+| 89 | n89 | La familia · 6 | Vocabulario | 38 | 8 |
+| 90 | n90 | Ocio y deportes · 5 | Vocabulario | 38 | 8 |
+| 91 | n91 | Estudios · 5 | Vocabulario | 38 | 8 |
+| 92 | n92 | El pretérito: hablé, comí, viví | Gramática | 39 | 8 |
+| 93 | n93 | La gente · 1 | Vocabulario | 39 | 8 |
+| 94 | n94 | Accesorios · 3 | Vocabulario | 39 | 8 |
+| 95 | n95 | El cuerpo · 5 | Vocabulario | 39 | 6 |
+| 96 | n96 | Salud y médicos · 5 | Vocabulario | 39 | 8 |
+| 97 | n97 | Verbos: futuro · 1 | Verbos | 39 | 8 |
+| 98 | n98 | Condicional simple | Gramática | 40 | 6 |
+| 99 | n99 | La ciudad y el transporte · 5 | Vocabulario | 40 | 8 |
+| 100 | n100 | Emociones y carácter · 5 | Vocabulario | 40 | 8 |
+| 101 | n101 | Verbos: presente · 3 | Verbos | 40 | 8 |
+| 102 | n102 | Verbos: imperfecto · 1 | Verbos | 40 | 8 |
+| 103 | n103 | Hotel y viaje · 4 | Vocabulario | 41 | 7 |
+| 104 | n104 | Limpieza y baño · 2 | Vocabulario | 41 | 7 |
+| 105 | n105 | El clima y la naturaleza · 6 | Vocabulario | 41 | 8 |
+| 106 | n106 | Verbos: presente · 4 | Verbos | 41 | 8 |
+| 107 | n107 | Lo, la, los, las, le: a quién y a qué | Gramática | 42 | 8 |
+| 108 | n108 | Comida y bebida · 3 | Vocabulario | 42 | 8 |
+| 109 | n109 | Salidas y tiempo libre | Vocabulario | 42 | 8 |
+| 110 | n110 | En el restaurante · 5 | Vocabulario | 42 | 8 |
+| 111 | n111 | En el trabajo · 5 | Vocabulario | 42 | 8 |
+| 112 | n112 | Verbos: condicional · 1 | Verbos | 42 | 8 |
+| 113 | n113 | Conjugación de verbos (1/2) | Gramática | 43 | 5 |
+| 114 | n114 | Jerga: expresiones | Vocabulario | 43 | 8 |
+| 115 | n115 | La ropa · 3 | Vocabulario | 43 | 8 |
+| 116 | n116 | De compras · 6 | Vocabulario | 43 | 8 |
+| 117 | n117 | Imperativo con vos | Gramática | 44 | 6 |
+| 118 | n118 | Transporte | Vocabulario | 44 | 8 |
+| 119 | n119 | Salud y médicos · 6 | Vocabulario | 44 | 8 |
+| 120 | n120 | La familia · 7 | Vocabulario | 45 | 7 |
+| 121 | n121 | La ciudad y el transporte · 6 | Vocabulario | 45 | 8 |
+| 122 | n122 | Ocio y deportes · 6 | Vocabulario | 45 | 8 |
+| 123 | n123 | Estudios · 6 | Vocabulario | 45 | 8 |
+| 124 | n124 | Jerga: cosas · 1 | Vocabulario | 46 | 8 |
+| 125 | n125 | Elogios | Vocabulario | 46 | 6 |
+| 126 | n126 | Pretérito compuesto vs. simple (uso rioplatense) | Gramática | 47 | 6 |
+| 127 | n127 | En el restaurante · 6 | Vocabulario | 47 | 8 |
+| 128 | n128 | Verbos: futuro · 2 | Verbos | 47 | 8 |
+| 129 | n129 | Accesorios · 4 | Vocabulario | 48 | 6 |
+| 130 | n130 | En el trabajo · 6 | Vocabulario | 48 | 8 |
+| 131 | n131 | Emociones y carácter · 6 | Vocabulario | 48 | 8 |
+| 132 | n132 | Verbos: pretérito · 1 | Verbos | 48 | 8 |
+| 133 | n133 | Verbos: imperfecto · 2 | Verbos | 48 | 8 |
+| 134 | n134 | Pretérito vs. Imperfecto | Gramática | 49 | 6 |
+| 135 | n135 | Producción: pasado y condicional | Producción | 49 | 6 |
+| 136 | n136 | La ropa · 4 | Vocabulario | 49 | 7 |
+| 137 | n137 | El clima y la naturaleza · 7 | Vocabulario | 49 | 6 |
+| 138 | n138 | Verbos: futuro · 3 | Verbos | 49 | 8 |
+| 139 | n139 | Jerga: verbos · 1 | Vocabulario | 50 | 8 |
+| 140 | n140 | Verbos: pretérito · 2 | Verbos | 50 | 8 |
+| 141 | n141 | Verbos: imperfecto · 3 | Verbos | 50 | 8 |
+| 142 | n142 | Verbos: condicional · 2 | Verbos | 50 | 8 |
+| 143 | n143 | En el restaurante · 7 | Vocabulario | 52 | 6 |
+| 144 | n144 | Salud y médicos · 7 | Vocabulario | 52 | 7 |
+| 145 | n145 | Verbos: condicional · 3 | Verbos | 52 | 8 |
+| 146 | n146 | Estudios · 7 | Vocabulario | 53 | 7 |
+| 147 | n147 | De compras · 7 | Vocabulario | 54 | 7 |
+| 148 | n148 | Conjugación de verbos (2/2) | Gramática | 55 | 5 |
+| 149 | n149 | En el trabajo · 7 | Vocabulario | 55 | 6 |
+| 150 | n150 | Ocio y deportes · 7 | Vocabulario | 55 | 7 |
+| 151 | n151 | Emociones y carácter · 7 | Vocabulario | 55 | 7 |
+| 152 | n152 | La ciudad y el transporte · 7 | Vocabulario | 56 | 6 |
+| 153 | n153 | La gente · 2 | Vocabulario | 57 | 7 |
+| 154 | n154 | Subjuntivo presente | Gramática | 58 | 6 |
+| 155 | n155 | Verbos: pretérito · 3 | Verbos | 59 | 8 |
+| 156 | n156 | Jerga: cosas · 2 | Vocabulario | 60 | 8 |
+| 157 | n157 | Verbos: pretérito · 4 | Verbos | 61 | 8 |
+| 158 | n158 | Verbos: subjuntivo · 1 | Verbos | 62 | 8 |
+| 159 | n159 | Pronombres combinados (se lo, te la...) | Gramática | 65 | 6 |
+| 160 | n160 | Jerga: verbos · 2 | Vocabulario | 66 | 7 |
+| 161 | n161 | Producción: subjuntivo | Producción | 69 | 6 |
+| 162 | n162 | Verbos: subjuntivo · 2 | Verbos | 69 | 8 |
+| 163 | n163 | Verbos: subjuntivo · 3 | Verbos | 73 | 8 |
+| 164 | n164 | Verbos: subjuntivo · 4 | Verbos | 79 | 8 |
 
 ## Qué hay en cada nivel
 
@@ -185,7 +209,16 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (17) Palabra · el pantalón
 - (14) Emparejar · los zapatos
 
-### 4. Comida y bebida · 1 — dificultad 15
+### 4. Estudios · 1 — dificultad 14
+
+- (11) Significado · el pizarrón
+- (14) Emparejar · el cuaderno
+- (16) Palabra · la clase
+- (14) Emparejar · el libro
+- (16) Palabra · la escuela
+- (14) Emparejar · el examen
+
+### 5. Comida y bebida · 1 — dificultad 15
 
 - (14) Emparejar · el arroz
 - (16) Palabra · la leche
@@ -194,7 +227,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el desayuno
 - (16) Palabra · el pollo
 
-### 5. El cuerpo · 1 — dificultad 15
+### 6. El cuerpo · 1 — dificultad 15
 
 - (14) Emparejar · la boca
 - (16) Palabra · la cara
@@ -203,7 +236,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el brazo
 - (16) Palabra · el diente
 
-### 6. La familia · 1 — dificultad 15
+### 7. La familia · 1 — dificultad 15
 
 - (14) Emparejar · el abuelo / la abuela
 - (16) Palabra · la madre
@@ -212,7 +245,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el hermano / la hermana
 - (16) Palabra · la mujer
 
-### 7. En el restaurante · 1 — dificultad 15
+### 8. En el restaurante · 1 — dificultad 15
 
 - (14) Emparejar · el almuerzo
 - (16) Palabra · la carne
@@ -221,7 +254,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el postre
 - (16) Palabra · la cena
 
-### 8. De compras · 1 — dificultad 15
+### 9. De compras · 1 — dificultad 15
 
 - (14) Emparejar · abierto / abierta
 - (16) Palabra · cerrado / cerrada
@@ -230,7 +263,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · barato / barata
 - (16) Palabra · el dinero
 
-### 9. Salud y médicos · 1 — dificultad 15
+### 10. Salud y médicos · 1 — dificultad 15
 
 - (14) Emparejar · el dolor
 - (16) Palabra · la fiebre
@@ -239,7 +272,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el hospital
 - (16) Palabra · la salud
 
-### 10. En el trabajo · 1 — dificultad 15
+### 11. En el trabajo · 1 — dificultad 15
 
 - (14) Emparejar · el descanso
 - (16) Palabra · el negocio
@@ -248,7 +281,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el jefe / la jefa
 - (16) Palabra · la empresa
 
-### 11. El clima y la naturaleza · 1 — dificultad 15
+### 12. El clima y la naturaleza · 1 — dificultad 15
 
 - (14) Emparejar · el clima
 - (16) Palabra · el verano
@@ -257,7 +290,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el invierno
 - (16) Palabra · la lluvia
 
-### 12. La ciudad y el transporte · 1 — dificultad 15
+### 13. La ciudad y el transporte · 1 — dificultad 15
 
 - (14) Emparejar · el banco
 - (16) Palabra · el parque
@@ -266,7 +299,25 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (14) Emparejar · el barrio
 - (16) Palabra · el taxi
 
-### 13. Los muebles · 1 — dificultad 16
+### 14. Ocio y deportes · 1 — dificultad 15
+
+- (14) Emparejar · el cine
+- (16) Palabra · el gol
+- (14) Emparejar · el estadio
+- (16) Palabra · el partido
+- (14) Emparejar · el equipo
+- (16) Palabra · el teatro
+
+### 15. Emociones y carácter · 1 — dificultad 15
+
+- (14) Emparejar · aburrido / aburrida
+- (16) Palabra · el miedo
+- (14) Emparejar · contento / contenta
+- (16) Palabra · enojado / enojada
+- (14) Emparejar · cansado / cansada
+- (16) Palabra · nervioso / nerviosa
+
+### 16. Los muebles · 1 — dificultad 16
 
 - (14) Significado · la lámpara
 - (16) Palabra · la cama
@@ -275,7 +326,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (17) Significado · la alfombra
 - (16) Palabra · la silla
 
-### 14. La familia · 2 — dificultad 16
+### 17. La familia · 2 — dificultad 16
 
 - (14) Emparejar · el primo / la prima
 - (16) Palabra · el nieto / la nieta
@@ -286,7 +337,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (20) Completar con opciones · el hermano / la hermana
 - (20) Completar con opciones · la madre
 
-### 15. Hotel y viaje · 1 — dificultad 17
+### 18. Hotel y viaje · 1 — dificultad 17
 
 - (14) Significado · el pasaporte
 - (16) Palabra · la llave
@@ -297,7 +348,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (16) Emparejar · el check-out
 - (20) Completar con opciones · la llave
 
-### 16. La cocina · 1 — dificultad 17
+### 19. La cocina · 1 — dificultad 17
 
 - (14) Emparejar · la cuchara
 - (14) Significado · el microondas
@@ -308,7 +359,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (20) Completar con opciones · el cuchillo
 - (20) Completar con opciones · el tenedor
 
-### 17. La casa · 1 — dificultad 17
+### 20. La casa · 1 — dificultad 17
 
 - (14) Emparejar · la pared
 - (14) Significado · la cocina
@@ -319,7 +370,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (20) Completar con opciones · la puerta
 - (20) Completar con opciones · la ventana
 
-### 18. Lugares de la ciudad · 1 — dificultad 18
+### 21. Lugares de la ciudad · 1 — dificultad 18
 
 - (16) Palabra · la calle
 - (16) Significado · el semáforo
@@ -330,7 +381,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (20) Completar con opciones · la plaza
 - (25) Ordenar la frase · la calle
 
-### 19. Tecnología · 1 — dificultad 18
+### 22. Tecnología · 1 — dificultad 18
 
 - (17) Significado · el cargador
 - (18) Palabra · el monitor
@@ -339,7 +390,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (17) Significado · el enchufe
 - (21) Emparejar · el teclado
 
-### 20. Indicaciones · 1 — dificultad 19
+### 23. Indicaciones · 1 — dificultad 19
 
 - (14) Emparejar · cerca (de)
 - (16) Palabra · perdido/a
@@ -350,7 +401,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (26) Ordenar la frase · cerca (de)
 - (28) Ordenar la frase · lejos (de)
 
-### 21. Accesorios · 1 — dificultad 20
+### 24. Emociones y carácter · 2 — dificultad 19
+
+- (15) Emparejar · tímido / tímida
+- (16) Palabra · triste
+- (16) Emparejar · preocupado / preocupada
+- (17) Palabra · divertido / divertida
+- (16) Emparejar · simpático / simpática
+- (17) Palabra · la alegría
+- (26) Ordenar la frase · aburrido / aburrida
+- (26) Ordenar la frase · cansado / cansada
+
+### 25. Accesorios · 1 — dificultad 20
 
 - (17) Significado · el collar
 - (20) Completar con opciones · el reloj
@@ -359,7 +421,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (21) Emparejar · el bolso
 - (21) Emparejar · la bufanda
 
-### 22. El cuerpo · 2 — dificultad 20
+### 26. El cuerpo · 2 — dificultad 20
 
 - (16) Palabra · la mano
 - (20) Completar con opciones · la nariz
@@ -370,7 +432,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (25) Ordenar la frase · la boca
 - (25) Ordenar la frase · la cabeza
 
-### 23. De compras · 2 — dificultad 20
+### 27. De compras · 2 — dificultad 20
 
 - (16) Palabra · la tienda
 - (17) Significado · el efectivo
@@ -381,7 +443,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (25) Ordenar la frase · cerrado / cerrada
 - (26) Ordenar la frase · abierto / abierta
 
-### 24. En el restaurante · 2 — dificultad 21
+### 28. En el restaurante · 2 — dificultad 21
 
 - (17) Palabra · el menú
 - (20) Completar con opciones · la copa
@@ -392,7 +454,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (25) Ordenar la frase · el almuerzo
 - (25) Ordenar la frase · el postre
 
-### 25. El clima y la naturaleza · 2 — dificultad 21
+### 29. El clima y la naturaleza · 2 — dificultad 21
 
 - (17) Palabra · el otoño
 - (18) Emparejar · hace calor
@@ -403,7 +465,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (28) Ordenar la frase · el sol
 - (28) Ordenar la frase · el viento
 
-### 26. La ciudad y el transporte · 2 — dificultad 22
+### 30. La ciudad y el transporte · 2 — dificultad 22
 
 - (18) Palabra · el aeropuerto
 - (20) Completar con opciones · el tren
@@ -414,7 +476,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (28) Ordenar la frase · el centro
 - (29) Ordenar la frase · el puente
 
-### 27. Limpieza y baño · 1 — dificultad 23
+### 31. Ocio y deportes · 2 — dificultad 22
+
+- (17) Palabra · la película
+- (20) Completar con opciones · el tenis
+- (21) Emparejar · el ajedrez
+- (21) Completar con opciones · la música
+- (21) Emparejar · el club
+- (21) Completar con opciones · el fútbol
+- (28) Ordenar la frase · el cine
+- (28) Ordenar la frase · el equipo
+
+### 32. Limpieza y baño · 1 — dificultad 23
 
 - (18) Significado · el jabón
 - (21) Emparejar · la ducha
@@ -425,7 +498,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (27) Completar con opciones · la escoba
 - (27) Completar con opciones · la toalla
 
-### 28. Salud y médicos · 2 — dificultad 23
+### 33. Salud y médicos · 2 — dificultad 23
 
 - (20) Completar con opciones · la sangre
 - (20) Palabra · doler
@@ -436,7 +509,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (28) Ordenar la frase · el hospital
 - (28) Ordenar la frase · enfermo / enferma
 
-### 29. En el trabajo · 2 — dificultad 23
+### 34. En el trabajo · 2 — dificultad 23
 
 - (20) Completar con opciones · la oficina
 - (21) Emparejar · el aumento
@@ -447,7 +520,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (28) Ordenar la frase · el descanso
 - (28) Ordenar la frase · la empresa
 
-### 30. La familia · 3 — dificultad 24
+### 35. Estudios · 2 — dificultad 23
+
+- (21) Emparejar · el aula
+- (22) Completar con opciones · la biblioteca
+- (21) Emparejar · el diploma
+- (23) Completar con opciones · la universidad
+- (21) Emparejar · el borrador
+- (23) Palabra · el error
+- (26) Ordenar la frase · el cuaderno
+- (28) Ordenar la frase · el pizarrón
+
+### 36. La familia · 3 — dificultad 24
 
 - (20) Palabra · la hermana menor
 - (21) Completar con opciones · el papá
@@ -458,7 +542,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (29) Ordenar la frase · la mujer
 - (30) Ordenar la frase · la mamá
 
-### 31. Pedir indicaciones y pedir ayuda — dificultad 25
+### 37. Pedir indicaciones y pedir ayuda — dificultad 25
 
 - (16) Gramática · Estás caminando y no sabés dónde estás. Decís:
 - (17) Gramática · Doblar a la derecha es lo opuesto a doblar a la ___.
@@ -470,7 +554,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (34) Gramática · "La farmacia queda a dos ___ de acá." (distancia entre una esquina y l
 - (34) Gramática · Te hablan muy rápido y no llegás a entender. Pedís: "Más ___, por favo
 
-### 32. Ser vs. Estar — dificultad 26
+### 38. Ser vs. Estar — dificultad 26
 
 - (22) Gramática · Hoy ___ martes.
 - (23) Gramática · Buenos Aires ___ en Argentina.
@@ -479,7 +563,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (24) Gramática · El café ya ___ frío, no lo tomo.
 - (39) Gramática · ¿De dónde ___ vos? (ser)
 
-### 33. Hay vs. Estar — dificultad 27
+### 39. Hay vs. Estar — dificultad 27
 
 - (21) Gramática · Disculpá, ¿___ una farmacia por acá?
 - (21) Gramática · En la heladera no ___ leche.
@@ -490,7 +574,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (38) Gramática · El baño ___ al final del pasillo. (estar)
 - (38) Gramática · En esta ciudad ___ muchos parques muy lindos. (haber)
 
-### 34. Accesorios · 2 — dificultad 27
+### 40. Accesorios · 2 — dificultad 27
 
 - (23) Palabra · la mochila
 - (27) Completar con opciones · la gorra
@@ -501,7 +585,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · el reloj
 - (32) Ordenar la frase · el collar
 
-### 35. De compras · 3 — dificultad 27
+### 41. De compras · 3 — dificultad 27
 
 - (23) Palabra · el vendedor / la vendedora
 - (27) Completar con opciones · el talle
@@ -512,7 +596,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · barato / barata
 - (32) Completar escribiendo · caro / cara
 
-### 36. Salud y médicos · 3 — dificultad 27
+### 42. Salud y médicos · 3 — dificultad 27
 
 - (23) Palabra · el remedio
 - (27) Completar con opciones · el virus
@@ -523,7 +607,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (33) Completar escribiendo · el médico / la médica
 - (33) Completar escribiendo · la clínica
 
-### 37. En el trabajo · 3 — dificultad 27
+### 43. En el trabajo · 3 — dificultad 27
 
 - (23) Palabra · el sueldo
 - (27) Completar con opciones · el despido
@@ -534,7 +618,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · el mensaje
 - (33) Completar escribiendo · la reunión
 
-### 38. El clima y la naturaleza · 3 — dificultad 27
+### 44. El clima y la naturaleza · 3 — dificultad 27
 
 - (23) Palabra · el grado
 - (27) Completar con opciones · el campo
@@ -545,7 +629,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (33) Completar escribiendo · el otoño
 - (33) Completar escribiendo · la primavera
 
-### 39. La ciudad y el transporte · 3 — dificultad 27
+### 45. La ciudad y el transporte · 3 — dificultad 27
 
 - (23) Palabra · la avenida
 - (27) Completar con opciones · el museo
@@ -556,7 +640,51 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · el banco
 - (33) Completar escribiendo · la bicicleta
 
-### 40. La ropa · 2 — dificultad 28
+### 46. Ocio y deportes · 3 — dificultad 27
+
+- (23) Palabra · la serie
+- (27) Completar con opciones · el gimnasio
+- (24) Palabra · el árbitro
+- (27) Completar con opciones · el rugby
+- (23) Palabra · las cartas
+- (27) Completar con opciones · el torneo
+- (33) Completar escribiendo · el fútbol
+- (33) Completar escribiendo · la música
+
+### 47. Estudios · 3 — dificultad 27
+
+- (23) Palabra · la carrera
+- (27) Completar con opciones · el recreo
+- (23) Palabra · la materia
+- (27) Completar con opciones · el resumen
+- (23) Palabra · la goma
+- (27) Completar con opciones · la beca
+- (32) Completar escribiendo · el examen
+- (32) Completar escribiendo · el libro
+
+### 48. Emociones y carácter · 3 — dificultad 27
+
+- (23) Palabra · asustado / asustada
+- (27) Completar con opciones · el orgullo
+- (23) Palabra · seguro / segura
+- (27) Completar con opciones · la sorpresa
+- (23) Palabra · celoso / celosa
+- (27) Completar con opciones · la tristeza
+- (33) Completar escribiendo · divertido / divertida
+- (33) Completar escribiendo · la alegría
+
+### 49. Voy a, tengo que, hay que, quiero — dificultad 28
+
+- (21) Gramática · Para aprobar el parcial, ___ estudiar mucho.
+- (22) Gramática · El finde que viene ___ a descansar mucho.
+- (22) Gramática · Vos ___ que llegar temprano al laburo hoy.
+- (22) Gramática · ¿Vos ___ ir al cine esta noche conmigo?
+- (22) Gramática · Nosotros ___ a viajar a Córdoba en verano.
+- (38) Gramática · Mañana yo voy ___ cocinar fideos con salsa. (preposición)
+- (38) Gramática · Vos ___ que llamar a tu mamá hoy. (tener)
+- (39) Gramática · Hoy yo no ___ salir de casa porque llueve. (poder)
+
+### 50. La ropa · 2 — dificultad 28
 
 - (24) Completar con opciones · las sandalias
 - (24) Palabra · el pulóver
@@ -567,7 +695,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · la camisa
 - (32) Completar escribiendo · el vestido
 
-### 41. Hotel y viaje · 2 — dificultad 28
+### 51. Hotel y viaje · 2 — dificultad 28
 
 - (23) Palabra · el botones
 - (25) Completar con opciones · la reserva
@@ -578,7 +706,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · la llave
 - (34) Completar escribiendo · el minibar
 
-### 42. En el restaurante · 3 — dificultad 28
+### 52. En el restaurante · 3 — dificultad 28
 
 - (24) Palabra · la milanesa
 - (27) Completar con opciones · la entrada
@@ -589,18 +717,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (34) Ordenar la frase · el hielo
 - (34) Ordenar la frase · la ensalada
 
-### 43. Verbos: presente · 1 — dificultad 28
+### 53. Verbos: presente · 1 — dificultad 29
 
-- (23) Conjugar con opciones · recibir (presente, yo)
-- (23) Conjugar con opciones · subir (presente, el)
-- (23) Conjugar con opciones · cocinar (presente, el)
-- (23) Conjugar con opciones · cantar (presente, el)
-- (23) Conjugar con opciones · lavar (presente, yo)
-- (37) Conjugar escribiendo · estar (presente, nosotros)
-- (37) Conjugar escribiendo · tener (presente, nosotros)
-- (37) Conjugar escribiendo · hacer (presente, nosotros)
+- (25) Conjugar con opciones · estacionar (presente, nosotros)
+- (25) Conjugar con opciones · visitar (presente, ustedes)
+- (25) Conjugar con opciones · cuidar (presente, nosotros)
+- (25) Conjugar con opciones · preguntar (presente, ustedes)
+- (25) Conjugar con opciones · entrar (presente, nosotros)
+- (35) Conjugar escribiendo · hacer (presente, el)
+- (37) Conjugar escribiendo · tener (presente, vos)
+- (37) Conjugar escribiendo · estar (presente, vos)
 
-### 44. El voseo en el presente: hablás, comés, vivís — dificultad 30
+### 54. El voseo en el presente: hablás, comés, vivís — dificultad 30
 
 - (23) Gramática · ¿De dónde ___ (vos)?
 - (24) Gramática · Vos, ¿qué ___ hacer el fin de semana?
@@ -611,7 +739,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (40) Gramática · Vos siempre ___ (decir) la verdad.
 - (40) Gramática · Vos, ¿a qué hora ___ (volver) del trabajo?
 
-### 45. Artículos y género: trampas comunes — dificultad 30
+### 55. Artículos y género: trampas comunes — dificultad 30
 
 - (23) Gramática · Antes de morfar, por favor lavate bien ___ manos.
 - (24) Gramática · Che, tengo ___ problema en el laburo y no sé cómo resolverlo.
@@ -622,7 +750,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (40) Gramática · ¿Viste ___ foto que subió Martín al grupo? Está zarpada.
 - (40) Gramática · El español rioplatense es ___ idioma re copado para aprender.
 
-### 46. Producción: frases útiles — dificultad 30
+### 56. Producción: frases útiles — dificultad 30
 
 - (27) Producción · Te preguntan tu nombre en una fiesta: "Me llamo Vivi. ___."
 - (27) Producción · Te presentan a un grupo de gente nueva. Los saludás con: "___."
@@ -631,7 +759,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Producción · Estás perdida y le pedís ayuda a alguien en la calle: "¿Me podés ___?"
 - (34) Producción · Alguien te explica el camino: "Seguí ___ dos cuadras y doblá a la dere
 
-### 47. Comida y bebida · 2 — dificultad 30
+### 57. Comida y bebida · 2 — dificultad 30
 
 - (27) Completar con opciones · los fideos
 - (28) Significado · el asado
@@ -642,7 +770,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · el arroz
 - (36) Completar escribiendo · el huevo
 
-### 48. La cocina · 2 — dificultad 30
+### 58. La cocina · 2 — dificultad 30
 
 - (23) Palabra · el termo
 - (27) Completar con opciones · el horno
@@ -653,18 +781,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Completar escribiendo · la cuchara
 - (36) Completar escribiendo · el microondas
 
-### 49. Verbos: presente · 2 — dificultad 30
+### 59. Verbos: presente · 2 — dificultad 30
 
-- (25) Conjugar con opciones · terminar (presente, ustedes)
-- (25) Conjugar con opciones · llevar (presente, ustedes)
-- (26) Conjugar con opciones · repetir (presente, vos)
-- (26) Conjugar con opciones · practicar (presente, vos)
-- (26) Conjugar con opciones · salir (presente, vos)
-- (38) Conjugar escribiendo · esperar (presente, el)
-- (38) Conjugar escribiendo · correr (presente, el)
-- (38) Conjugar escribiendo · creer (presente, el)
+- (25) Conjugar con opciones · morir (presente, nosotros)
+- (25) Conjugar con opciones · mantener (presente, nosotros)
+- (26) Conjugar con opciones · trabajar (presente, vos)
+- (26) Conjugar con opciones · sentir (presente, vos)
+- (26) Conjugar con opciones · corregir (presente, vos)
+- (38) Conjugar escribiendo · aprender (presente, el)
+- (38) Conjugar escribiendo · creer (presente, yo)
+- (38) Conjugar escribiendo · cambiar (presente, el)
 
-### 50. Gustar y verbos parecidos — dificultad 31
+### 60. Gustar y verbos parecidos — dificultad 31
 
 - (25) Gramática · A mí ___ gusta esta canción.
 - (25) Gramática · ¿A vos ___ duelen los pies?
@@ -675,7 +803,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (42) Gramática · ¿A vos te ___ las películas de terror? (gustar)
 - (42) Gramática · A ella le ___ salir a bailar los sábados. (encantar)
 
-### 51. El cuerpo · 3 — dificultad 31
+### 61. El cuerpo · 3 — dificultad 31
 
 - (25) Palabra · el codo
 - (27) Completar con opciones · el cuello
@@ -686,7 +814,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (34) Ordenar la frase · la uña
 - (36) Completar escribiendo · la mano
 
-### 52. Salud y médicos · 4 — dificultad 31
+### 62. Salud y médicos · 4 — dificultad 31
 
 - (25) Palabra · la ambulancia
 - (27) Completar con opciones · la vacuna
@@ -697,7 +825,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (36) Ordenar la frase · el enfermero / la enfermera
 - (36) Ordenar la frase · el paciente / la paciente
 
-### 53. El clima y la naturaleza · 4 — dificultad 31
+### 63. El clima y la naturaleza · 4 — dificultad 31
 
 - (24) Palabra · despejado / despejada
 - (27) Completar con opciones · la humedad
@@ -708,7 +836,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (36) Ordenar la frase · la tormenta
 - (36) Ordenar la frase · el trueno
 
-### 54. Pedir y comprar con cortesía — dificultad 32
+### 64. Decir que no: no, nunca, nadie, nada, tampoco — dificultad 32
+
+- (26) Gramática · Yo ___ quiero comer ahora porque es tarde.
+- (26) Gramática · Acá en el barrio no hay ___ para hacer.
+- (26) Gramática · ___ me llamó por teléfono en toda la mañana.
+- (26) Gramática · A mí no me gusta el fútbol y a él ___.
+- (26) Gramática · No quiero ir ni al parque ___ al cine.
+- (42) Gramática · No vi a ___ en la fiesta. (palabra negativa para personas)
+- (43) Gramática · Vos no me escuchás ___ cuando te hablo. (palabra negativa de tiempo)
+- (43) Gramática · Hoy ___ tengo ganas de salir con este frío. (la negación más simple)
+
+### 65. Pedir y comprar con cortesía — dificultad 32
 
 - (26) Gramática · Disculpá, ¿cuánto ___ estas zapatillas?
 - (26) Gramática · Mozo, ¿nos traés la ___, por favor?
@@ -719,7 +858,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (43) Gramática · ¿Me ___ otra botella de agua, por favor? (traer)
 - (43) Gramática · Hola, ¿cuánto ___ el kilo de pan? (salir)
 
-### 55. Por vs. Para — dificultad 32
+### 66. Por vs. Para — dificultad 32
 
 - (32) Gramática · Este mate es ___ vos.
 - (32) Gramática · Caminamos ___ el parque hasta el río.
@@ -728,7 +867,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (32) Gramática · Necesito el informe ___ el lunes.
 - (32) Gramática · Gracias ___ todo lo que hiciste.
 
-### 56. Comparativos y superlativos — dificultad 32
+### 67. Comparativos y superlativos — dificultad 32
 
 - (27) Gramática · Este ejercicio es ___ difícil que el anterior.
 - (27) Gramática · Mi hermano es ___ que yo. (bueno, comparativo irregular)
@@ -737,7 +876,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (42) Gramática · Ella es tan alta ___ vos.
 - (43) Gramática · Este flan está ___. (rico, superlativo con -ísimo)
 
-### 57. De compras · 4 — dificultad 32
+### 68. De compras · 4 — dificultad 32
 
 - (26) Palabra · la cuota
 - (27) Completar con opciones · la oferta
@@ -748,7 +887,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (37) Ordenar la frase · la garantía
 - (37) Ordenar la frase · el súper
 
-### 58. La familia · 4 — dificultad 33
+### 69. La familia · 4 — dificultad 33
 
 - (27) Completar con opciones · el marido
 - (27) Completar con opciones · los mellizos / las mellizas
@@ -759,7 +898,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (36) Completar escribiendo · el hijo / la hija
 - (36) Ordenar la frase · los suegros
 
-### 59. En el trabajo · 4 — dificultad 33
+### 70. En el trabajo · 4 — dificultad 33
 
 - (26) Palabra · el currículum
 - (29) Completar con opciones · la entrevista
@@ -770,7 +909,29 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (38) Ordenar la frase · la experiencia
 - (39) Completar escribiendo · el contrato
 
-### 60. A, en y de: lugar y movimiento — dificultad 34
+### 71. Estudios · 4 — dificultad 33
+
+- (28) Completar con opciones · el lápiz
+- (28) Completar con opciones · el título
+- (34) Ordenar la frase · la nota
+- (30) Completar con opciones · el colegio
+- (34) Ordenar la frase · la regla
+- (35) Completar escribiendo · la universidad
+- (34) Ordenar la frase · la tarea
+- (39) Completar escribiendo · el aula
+
+### 72. Emociones y carácter · 4 — dificultad 33
+
+- (28) Completar con opciones · el carácter
+- (28) Completar con opciones · el estrés
+- (28) Completar con opciones · la confianza
+- (35) Ordenar la frase · estresado / estresada
+- (36) Completar escribiendo · contento / contenta
+- (35) Ordenar la frase · la vergüenza
+- (38) Completar escribiendo · preocupado / preocupada
+- (35) Ordenar la frase · orgulloso / orgullosa
+
+### 73. A, en y de: lugar y movimiento — dificultad 34
 
 - (27) Gramática · Mañana voy ___ la oficina en colectivo.
 - (27) Gramática · ¿Vamos a comer a ___ de Juan?
@@ -781,7 +942,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (43) Gramática · Mañana llegamos ___ Córdoba a la noche.
 - (44) Gramática · Hoy nos juntamos a estudiar en ___ de Marcos.
 
-### 61. Hotel y viaje · 3 — dificultad 34
+### 74. Hotel y viaje · 3 — dificultad 34
 
 - (24) Palabra · el huésped
 - (27) Completar con opciones · el botones
@@ -792,7 +953,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (39) Completar escribiendo · la recepción
 - (39) Completar escribiendo · el ascensor
 
-### 62. Los muebles · 2 — dificultad 34
+### 75. Los muebles · 2 — dificultad 34
 
 - (24) Completar con opciones · el sofá
 - (24) Completar con opciones · la lámpara
@@ -803,7 +964,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (39) Completar escribiendo · el espejo
 - (39) Completar escribiendo · el estante
 
-### 63. En el restaurante · 4 — dificultad 34
+### 76. En el restaurante · 4 — dificultad 34
 
 - (27) Palabra · para llevar
 - (28) Palabra · el plato principal
@@ -814,7 +975,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (40) Completar escribiendo · la milanesa
 - (36) Ordenar la frase · la parrilla
 
-### 64. La ciudad y el transporte · 4 — dificultad 34
+### 77. La ciudad y el transporte · 4 — dificultad 34
 
 - (28) Completar con opciones · el monumento
 - (28) Completar con opciones · el peaje
@@ -825,7 +986,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (39) Completar escribiendo · el edificio
 - (38) Ordenar la frase · el tránsito
 
-### 65. La casa · 2 — dificultad 35
+### 78. Ocio y deportes · 4 — dificultad 34
+
+- (28) Completar con opciones · el básquet
+- (28) Completar con opciones · el escenario
+- (28) Completar con opciones · la función
+- (37) Ordenar la frase · el campeonato
+- (39) Completar escribiendo · el ajedrez
+- (37) Ordenar la frase · el recital
+- (39) Completar escribiendo · el club
+- (37) Ordenar la frase · el pasatiempo
+
+### 79. La casa · 2 — dificultad 35
 
 - (16) Palabra · la puerta
 - (31) Ordenar la frase · el baño
@@ -836,7 +1008,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (39) Completar escribiendo · el pasillo
 - (47) Ordenar la frase · el living
 
-### 66. El cuerpo · 4 — dificultad 35
+### 80. El cuerpo · 4 — dificultad 35
 
 - (24) Palabra · la uña
 - (25) Palabra · la cintura
@@ -847,7 +1019,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (41) Completar escribiendo · el pecho
 - (41) Completar escribiendo · la rodilla
 
-### 67. La familia · 5 — dificultad 36
+### 81. La familia · 5 — dificultad 36
 
 - (27) Completar con opciones · los chicos
 - (29) Completar con opciones · la nuera
@@ -858,7 +1030,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (37) Ordenar la frase · la madrina
 - (40) Completar escribiendo · el cuñado / la cuñada
 
-### 68. El clima y la naturaleza · 5 — dificultad 36
+### 82. El clima y la naturaleza · 5 — dificultad 36
 
 - (30) Completar con opciones · el temporal
 - (30) Completar con opciones · el pronóstico
@@ -869,7 +1041,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (43) Completar escribiendo · el grado
 - (39) Ordenar la frase · el relámpago
 
-### 69. Indicaciones · 2 — dificultad 37
+### 83. Indicaciones · 2 — dificultad 37
 
 - (16) Palabra · cerca (de)
 - (24) Ordenar la frase · perdido/a
@@ -879,7 +1051,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (47) Completar escribiendo · seguir derecho
 - (48) Completar escribiendo · ¿dónde queda…?
 
-### 70. De compras · 5 — dificultad 37
+### 84. De compras · 5 — dificultad 37
 
 - (24) Palabra · el descuento
 - (31) Completar con opciones · la feria
@@ -890,7 +1062,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (43) Completar escribiendo · el vendedor / la vendedora
 - (44) Completar escribiendo · el código QR
 
-### 71. Futuro simple — dificultad 38
+### 85. Futuro simple — dificultad 38
 
 - (33) Gramática · Mañana (yo) ___ con vos sobre el proyecto. (hablar)
 - (33) Gramática · El año que viene (nosotros) ___ más plata. (tener)
@@ -899,7 +1071,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (48) Gramática · ¿A qué hora ___ (vos) mañana? (venir)
 - (48) Gramática · Ella ___ el examen sin problemas. (aprobar)
 
-### 72. La cocina · 3 — dificultad 38
+### 86. La cocina · 3 — dificultad 38
 
 - (23) Palabra · el horno
 - (23) Palabra · la olla
@@ -910,7 +1082,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (45) Ordenar la frase · la bombilla
 - (50) Completar escribiendo · la canilla
 
-### 73. Lugares de la ciudad · 2 — dificultad 38
+### 87. Lugares de la ciudad · 2 — dificultad 38
 
 - (20) Completar con opciones · la calle
 - (32) Ordenar la frase · el semáforo
@@ -920,7 +1092,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (41) Completar escribiendo · la panadería
 - (50) Ordenar la frase · el changuito
 
-### 74. Tecnología · 2 — dificultad 38
+### 88. Tecnología · 2 — dificultad 38
 
 - (27) Completar con opciones · el enchufe
 - (27) Completar con opciones · la pantalla
@@ -931,7 +1103,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (42) Completar escribiendo · los auriculares
 - (47) Ordenar la frase · el celular
 
-### 75. La familia · 6 — dificultad 38
+### 89. La familia · 6 — dificultad 38
 
 - (28) Completar con opciones · la madrastra
 - (34) Palabra · el nene / la nena
@@ -942,7 +1114,40 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (41) Ordenar la frase · la familia política
 - (42) Completar escribiendo · el ahijado / la ahijada
 
-### 76. La gente · 1 — dificultad 39
+### 90. Ocio y deportes · 5 — dificultad 38
+
+- (33) Completar con opciones · el hincha / la hincha
+- (38) Ordenar la frase · el pádel
+- (34) Completar con opciones · la selección
+- (38) Ordenar la frase · empatar
+- (41) Completar escribiendo · el campeonato
+- (38) Ordenar la frase · entrenar
+- (42) Completar escribiendo · el recital
+- (43) Completar escribiendo · la cancha
+
+### 91. Estudios · 5 — dificultad 38
+
+- (33) Completar con opciones · la facultad
+- (37) Ordenar la frase · el diccionario
+- (34) Completar con opciones · el apunte
+- (37) Ordenar la frase · aprobar
+- (40) Completar escribiendo · el lápiz
+- (38) Ordenar la frase · el primario
+- (42) Completar escribiendo · el colegio
+- (46) Completar escribiendo · cursar
+
+### 92. El pretérito: hablé, comí, viví — dificultad 39
+
+- (33) Gramática · Ayer yo ___ unas zapatillas nuevas en el shopping.
+- (33) Gramática · Vos ___ muy tarde anoche a tu casa.
+- (33) Gramática · El fin de semana nosotros ___ al cine juntos.
+- (33) Gramática · Ayer a la tarde ella ___ que trabajar mucho.
+- (33) Gramática · El viernes pasado yo no ___ ir al partido.
+- (49) Gramática · Ayer vos ___ una película muy buena en casa. (ver)
+- (49) Gramática · Anoche yo ___ una porción de pizza muy rica. (comer)
+- (49) Gramática · Una sola vez en mi vida yo ___ a Bariloche. (ir)
+
+### 93. La gente · 1 — dificultad 39
 
 - (35) Emparejar · los viejos
 - (36) Ordenar la frase · el tipo
@@ -953,7 +1158,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (42) Emparejar · el pibe / la piba
 - (44) Emparejar · gil/a
 
-### 77. Accesorios · 3 — dificultad 39
+### 94. Accesorios · 3 — dificultad 39
 
 - (37) Ordenar la frase · la gorra
 - (38) Completar con opciones · los anteojos
@@ -964,7 +1169,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (40) Completar escribiendo · la billetera
 - (40) Completar escribiendo · el cinturón
 
-### 78. El cuerpo · 5 — dificultad 39
+### 95. El cuerpo · 5 — dificultad 39
 
 - (29) Completar con opciones · la espalda
 - (29) Completar con opciones · la frente
@@ -973,7 +1178,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (45) Completar escribiendo · el codo
 - (43) Completar escribiendo · la lengua
 
-### 79. Salud y médicos · 5 — dificultad 39
+### 96. Salud y médicos · 5 — dificultad 39
 
 - (31) Completar con opciones · el turno
 - (32) Completar con opciones · el analgésico
@@ -984,18 +1189,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (43) Completar escribiendo · el remedio
 - (43) Completar escribiendo · mareado / mareada
 
-### 80. Verbos: futuro · 1 — dificultad 39
+### 97. Verbos: futuro · 1 — dificultad 39
 
-- (33) Conjugar con opciones · hablar (futuro, el)
-- (33) Conjugar con opciones · encender (futuro, yo)
-- (33) Conjugar con opciones · encontrar (futuro, el)
-- (33) Conjugar con opciones · jugar (futuro, yo)
-- (33) Conjugar con opciones · cerrar (futuro, yo)
-- (46) Conjugar escribiendo · estar (futuro, ustedes)
-- (48) Conjugar escribiendo · preguntar (futuro, el)
-- (50) Conjugar escribiendo · preferir (futuro, vos)
+- (33) Conjugar con opciones · terminar (futuro, yo)
+- (33) Conjugar con opciones · parar (futuro, yo)
+- (33) Conjugar con opciones · escribir (futuro, yo)
+- (33) Conjugar con opciones · cantar (futuro, el)
+- (33) Conjugar con opciones · pasar (futuro, el)
+- (48) Conjugar escribiendo · encender (futuro, el)
+- (50) Conjugar escribiendo · caer (futuro, vos)
+- (50) Conjugar escribiendo · subir (futuro, nosotros)
 
-### 81. Condicional simple — dificultad 40
+### 98. Condicional simple — dificultad 40
 
 - (34) Gramática · ¿___ (vos) cerrar la ventana, por favor? (poder)
 - (34) Gramática · Con más tiempo, (nosotros) ___ el proyecto mejor. (hacer)
@@ -1004,7 +1209,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (49) Gramática · ¿___ (vos) ayudarme con las valijas? (poder)
 - (50) Gramática · Yo que vos, le ___ la verdad. (decir)
 
-### 82. La ciudad y el transporte · 5 — dificultad 40
+### 99. La ciudad y el transporte · 5 — dificultad 40
 
 - (34) Completar con opciones · el embotellamiento
 - (34) Completar con opciones · el boleto
@@ -1015,29 +1220,40 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (45) Completar escribiendo · la estación de servicio
 - (43) Ordenar la frase · estacionar
 
-### 83. Verbos: presente · 3 — dificultad 40
+### 100. Emociones y carácter · 5 — dificultad 40
 
-- (39) Conjugar con opciones · volar (presente, yo)
-- (40) Conjugar escribiendo · invitar (presente, ustedes)
-- (39) Conjugar con opciones · mover (presente, el)
-- (40) Conjugar escribiendo · viajar (presente, nosotros)
-- (39) Conjugar con opciones · venir (presente, el)
-- (40) Conjugar escribiendo · compartir (presente, ustedes)
+- (21) Emparejar · seguro / segura
+- (34) Palabra · amargo / amarga
+- (42) Ordenar la frase · tener ganas de
+- (44) Completar escribiendo · orgulloso / orgullosa
+- (44) Ordenar la frase · estar de buen humor
+- (46) Completar escribiendo · sorprendido / sorprendida
+- (42) Ordenar la frase · tener paciencia
+- (49) Completar escribiendo · estar de mal humor
+
+### 101. Verbos: presente · 3 — dificultad 40
+
+- (39) Conjugar con opciones · volver (presente, yo)
 - (40) Conjugar escribiendo · conocer (presente, nosotros)
-- (40) Conjugar escribiendo · cobrar (presente, ustedes)
+- (39) Conjugar con opciones · caber (presente, yo)
+- (40) Conjugar escribiendo · limpiar (presente, ustedes)
+- (41) Conjugar con opciones · mover (presente, ustedes)
+- (40) Conjugar escribiendo · seguir (presente, nosotros)
+- (40) Conjugar escribiendo · practicar (presente, ustedes)
+- (40) Conjugar escribiendo · reservar (presente, nosotros)
 
-### 84. Verbos: imperfecto · 1 — dificultad 40
+### 102. Verbos: imperfecto · 1 — dificultad 40
 
-- (34) Conjugar con opciones · contar (imperfecto, el)
-- (34) Conjugar con opciones · limpiar (imperfecto, el)
-- (34) Conjugar con opciones · conducir (imperfecto, el)
-- (34) Conjugar con opciones · caminar (imperfecto, yo)
-- (34) Conjugar con opciones · cambiar (imperfecto, yo)
-- (49) Conjugar escribiendo · tocar (imperfecto, yo)
-- (51) Conjugar escribiendo · llamar (imperfecto, nosotros)
-- (51) Conjugar escribiendo · aprender (imperfecto, ustedes)
+- (34) Conjugar con opciones · alquilar (imperfecto, yo)
+- (34) Conjugar con opciones · andar (imperfecto, yo)
+- (34) Conjugar con opciones · devolver (imperfecto, yo)
+- (34) Conjugar con opciones · cruzar (imperfecto, el)
+- (34) Conjugar con opciones · traer (imperfecto, el)
+- (49) Conjugar escribiendo · construir (imperfecto, el)
+- (51) Conjugar escribiendo · recoger (imperfecto, ustedes)
+- (51) Conjugar escribiendo · repetir (imperfecto, nosotros)
 
-### 85. Hotel y viaje · 4 — dificultad 41
+### 103. Hotel y viaje · 4 — dificultad 41
 
 - (27) Completar con opciones · el equipaje
 - (36) Ordenar la frase · el/la conserje
@@ -1047,7 +1263,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (48) Ordenar la frase · la pileta
 - (44) Completar escribiendo · el huésped
 
-### 86. Limpieza y baño · 2 — dificultad 41
+### 104. Limpieza y baño · 2 — dificultad 41
 
 - (23) Palabra · la escoba
 - (34) Ordenar la frase · el jabón
@@ -1057,7 +1273,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (50) Ordenar la frase · el tacho de basura
 - (52) Completar escribiendo · el lavarropas
 
-### 87. El clima y la naturaleza · 6 — dificultad 41
+### 105. El clima y la naturaleza · 6 — dificultad 41
 
 - (29) Completar con opciones · el relámpago
 - (30) Completar con opciones · el granizo
@@ -1068,18 +1284,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (44) Completar escribiendo · la costa
 - (48) Ordenar la frase · pesado / pesada
 
-### 88. Verbos: presente · 4 — dificultad 41
+### 106. Verbos: presente · 4 — dificultad 41
 
-- (41) Conjugar escribiendo · parecer (presente, vos)
+- (41) Conjugar escribiendo · decidir (presente, vos)
+- (41) Conjugar con opciones · contar (presente, ustedes)
+- (41) Conjugar escribiendo · organizar (presente, vos)
 - (41) Conjugar con opciones · mostrar (presente, ustedes)
-- (41) Conjugar escribiendo · probar (presente, vos)
-- (41) Conjugar con opciones · poder (presente, ustedes)
-- (42) Conjugar escribiendo · bajar (presente, yo)
-- (41) Conjugar con opciones · seguir (presente, ustedes)
-- (42) Conjugar escribiendo · sacar (presente, yo)
-- (42) Conjugar escribiendo · escuchar (presente, yo)
+- (42) Conjugar escribiendo · usar (presente, yo)
+- (41) Conjugar con opciones · oír (presente, ustedes)
+- (42) Conjugar escribiendo · explicar (presente, yo)
+- (42) Conjugar escribiendo · necesitar (presente, yo)
 
-### 89. Lo, la, los, las, le: a quién y a qué — dificultad 42
+### 107. Lo, la, los, las, le: a quién y a qué — dificultad 42
 
 - (36) Gramática · El mate está listo, ya ___ preparé.
 - (36) Gramática · ¿___ dijiste la verdad a tu mamá?
@@ -1090,7 +1306,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (52) Gramática · Tengo tus llaves, voy a llevar___ a tu casa.
 - (53) Gramática · El jugo está en la heladera, ___ tomo en un rato.
 
-### 90. Comida y bebida · 3 — dificultad 42
+### 108. Comida y bebida · 3 — dificultad 42
 
 - (23) Palabra · los fideos
 - (24) Palabra · el azúcar
@@ -1101,7 +1317,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (46) Ordenar la frase · una birra
 - (54) Completar escribiendo · el mate
 
-### 91. Salidas y tiempo libre — dificultad 42
+### 109. Salidas y tiempo libre — dificultad 42
 
 - (34) Ordenar la frase · el feriado
 - (39) Completar escribiendo · el feriado
@@ -1112,7 +1328,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (47) Completar escribiendo · el finde
 - (52) Ordenar la frase · el boliche
 
-### 92. En el restaurante · 5 — dificultad 42
+### 110. En el restaurante · 5 — dificultad 42
 
 - (38) Completar con opciones · el mozo / la moza
 - (40) Ordenar la frase · el menú del día
@@ -1123,7 +1339,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (45) Completar escribiendo · el chimichurri
 - (46) Completar escribiendo · vegetariano / vegetariana
 
-### 93. En el trabajo · 5 — dificultad 42
+### 111. En el trabajo · 5 — dificultad 42
 
 - (38) Completar con opciones · el franco
 - (41) Ordenar la frase · el home office
@@ -1134,18 +1350,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (42) Completar escribiendo · la experiencia
 - (48) Completar escribiendo · hacer horas extras
 
-### 94. Verbos: condicional · 1 — dificultad 42
+### 112. Verbos: condicional · 1 — dificultad 42
 
-- (36) Conjugar con opciones · almorzar (condicional, el)
-- (36) Conjugar con opciones · comprar (condicional, el)
-- (36) Conjugar con opciones · bailar (condicional, el)
-- (36) Conjugar con opciones · leer (condicional, yo)
-- (36) Conjugar con opciones · atender (condicional, yo)
-- (52) Conjugar escribiendo · estacionar (condicional, yo)
-- (53) Conjugar escribiendo · conseguir (condicional, ustedes)
-- (53) Conjugar escribiendo · responder (condicional, nosotros)
+- (36) Conjugar con opciones · colgar (condicional, yo)
+- (36) Conjugar con opciones · responder (condicional, yo)
+- (36) Conjugar con opciones · bajar (condicional, yo)
+- (36) Conjugar con opciones · volar (condicional, el)
+- (36) Conjugar con opciones · dar (condicional, el)
+- (48) Conjugar escribiendo · estar (condicional, el)
+- (53) Conjugar escribiendo · enviar (condicional, ustedes)
+- (53) Conjugar escribiendo · cocinar (condicional, nosotros)
 
-### 95. Conjugación de verbos (1/2) — dificultad 43
+### 113. Conjugación de verbos (1/2) — dificultad 43
 
 - (34) Gramática · Conjugá 'poder' — futuro, vos:
 - (39) Gramática · Conjugá 'ir' — pretérito indefinido, ustedes:
@@ -1153,7 +1369,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (46) Gramática · Conjugá 'tener' — presente, vos: ___
 - (52) Gramática · Conjugá 'ser' — imperfecto, nosotros: ___
 
-### 96. Jerga: expresiones — dificultad 43
+### 114. Jerga: expresiones — dificultad 43
 
 - (37) Palabra · re (+ adjetivo)
 - (39) Ordenar la frase · che
@@ -1164,7 +1380,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (49) Ordenar la frase · re (+ adjetivo)
 - (47) Completar escribiendo · tranqui
 
-### 97. La ropa · 3 — dificultad 43
+### 115. La ropa · 3 — dificultad 43
 
 - (25) Emparejar · la ropa interior
 - (28) Completar con opciones · el pulóver
@@ -1175,7 +1391,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (46) Ordenar la frase · la campera
 - (50) Completar escribiendo · la remera
 
-### 98. De compras · 6 — dificultad 43
+### 116. De compras · 6 — dificultad 43
 
 - (30) Completar con opciones · la carnicería
 - (31) Completar con opciones · el supermercado
@@ -1186,7 +1402,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (50) Completar escribiendo · el vuelto
 - (47) Ordenar la frase · el posnet
 
-### 99. Imperativo con vos — dificultad 44
+### 117. Imperativo con vos — dificultad 44
 
 - (38) Gramática · ___ (vos) la puerta, por favor. (cerrar)
 - (38) Gramática · ___ (vos) más despacio, por favor. (venir)
@@ -1195,7 +1411,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (55) Gramática · ___ (vos) a Fede que llegamos tarde. (avisarle)
 - (55) Gramática · ___ (vos) la mesa antes de que lleguen. (poner)
 
-### 100. Transporte — dificultad 44
+### 118. Transporte — dificultad 44
 
 - (38) Completar con opciones · el subte
 - (41) Emparejar · el bondi
@@ -1206,7 +1422,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (50) Completar escribiendo · el subte
 - (51) Completar escribiendo · el colectivo
 
-### 101. Salud y médicos · 6 — dificultad 44
+### 119. Salud y médicos · 6 — dificultad 44
 
 - (29) Completar con opciones · la ambulancia
 - (30) Completar con opciones · el termómetro
@@ -1217,7 +1433,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (47) Ordenar la frase · el barbijo
 - (54) Completar escribiendo · descompuesto / descompuesta
 
-### 102. La familia · 7 — dificultad 45
+### 120. La familia · 7 — dificultad 45
 
 - (28) Palabra · la familia política
 - (31) Completar con opciones · el bisabuelo / la bisabuela
@@ -1227,7 +1443,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (54) Completar escribiendo · el nene / la nena
 - (55) Completar escribiendo · el bebé / la beba
 
-### 103. La ciudad y el transporte · 6 — dificultad 45
+### 121. La ciudad y el transporte · 6 — dificultad 45
 
 - (30) Palabra · el embotellamiento
 - (30) Palabra · el boleto
@@ -1238,7 +1454,29 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (55) Completar escribiendo · cargar la SUBE
 - (52) Ordenar la frase · la tarjeta SUBE
 
-### 104. Jerga: cosas · 1 — dificultad 46
+### 122. Ocio y deportes · 6 — dificultad 45
+
+- (31) Completar con opciones · el pádel
+- (31) Completar con opciones · la cancha
+- (50) Completar escribiendo · el metegol
+- (50) Ordenar la frase · el potrero
+- (50) Completar escribiendo · la hinchada
+- (50) Ordenar la frase · el superclásico
+- (50) Completar escribiendo · el truco
+- (50) Ordenar la frase · la juntada con amigos
+
+### 123. Estudios · 6 — dificultad 45
+
+- (30) Completar con opciones · el diccionario
+- (33) Completar con opciones · el primario
+- (47) Completar escribiendo · el secundario
+- (48) Ordenar la frase · el cuatrimestre
+- (48) Completar escribiendo · el parcial
+- (48) Ordenar la frase · rendir
+- (50) Completar escribiendo · el final
+- (52) Ordenar la frase · el machete
+
+### 124. Jerga: cosas · 1 — dificultad 46
 
 - (41) Significado · una changa
 - (43) Emparejar · la guita
@@ -1249,7 +1487,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (53) Ordenar la frase · el laburo
 - (50) Completar con opciones · un pucho
 
-### 105. Elogios — dificultad 46
+### 125. Elogios — dificultad 46
 
 - (39) Completar escribiendo · tremendo/a
 - (45) Palabra · copado/a
@@ -1258,7 +1496,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (48) Emparejar · zarpado/a
 - (50) Emparejar · ser un capo
 
-### 106. Pretérito compuesto vs. simple (uso rioplatense) — dificultad 47
+### 126. Pretérito compuesto vs. simple (uso rioplatense) — dificultad 47
 
 - (42) Gramática · ¿Cuál suena más natural en una charla cotidiana en Argentina?
 - (42) Gramática · ___ (yo) toda la tarde estudiando. (pasar, forma típica rioplatense)
@@ -1267,7 +1505,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (58) Gramática · Esta mañana (vos) ___ tarde, ¿no? (levantarse, pretérito simple)
 - (58) Gramática · Todavía no ___ el informe, lo termino mañana. (terminar, uso rioplaten
 
-### 107. En el restaurante · 6 — dificultad 47
+### 127. En el restaurante · 6 — dificultad 47
 
 - (35) Palabra · el choripán
 - (38) Completar con opciones · el cubierto
@@ -1278,18 +1516,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (49) Ordenar la frase · la salsa criolla
 - (54) Completar escribiendo · picar algo
 
-### 108. Verbos: futuro · 2 — dificultad 47
+### 128. Verbos: futuro · 2 — dificultad 47
 
-- (44) Conjugar con opciones · querer (futuro, nosotros)
-- (48) Conjugar escribiendo · parar (futuro, yo)
+- (45) Conjugar con opciones · querer (futuro, vos)
+- (48) Conjugar escribiendo · recibir (futuro, el)
+- (45) Conjugar con opciones · poder (futuro, vos)
+- (48) Conjugar escribiendo · ahorrar (futuro, yo)
 - (45) Conjugar con opciones · proponer (futuro, vos)
-- (48) Conjugar escribiendo · andar (futuro, yo)
-- (48) Conjugar con opciones · decir (futuro, el)
-- (48) Conjugar escribiendo · ahorrar (futuro, el)
-- (48) Conjugar escribiendo · ofrecer (futuro, yo)
-- (48) Conjugar escribiendo · necesitar (futuro, el)
+- (48) Conjugar escribiendo · beber (futuro, yo)
+- (48) Conjugar escribiendo · pensar (futuro, yo)
+- (48) Conjugar escribiendo · aparecer (futuro, el)
 
-### 109. Accesorios · 4 — dificultad 48
+### 129. Accesorios · 4 — dificultad 48
 
 - (33) Completar con opciones · el pañuelo
 - (43) Ordenar la frase · los aros
@@ -1298,7 +1536,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (54) Completar escribiendo · la cartera
 - (51) Completar escribiendo · la riñonera
 
-### 110. En el trabajo · 6 — dificultad 48
+### 130. En el trabajo · 6 — dificultad 48
 
 - (34) Palabra · el franco
 - (35) Palabra · el aguinaldo
@@ -1309,29 +1547,40 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (51) Ordenar la frase · el monotributo
 - (55) Completar escribiendo · trabajar en negro
 
-### 111. Verbos: pretérito · 1 — dificultad 48
+### 131. Emociones y carácter · 6 — dificultad 48
 
-- (42) Conjugar con opciones · vender (preterito, yo)
-- (42) Conjugar con opciones · enviar (preterito, yo)
-- (42) Conjugar con opciones · buscar (preterito, el)
-- (42) Conjugar con opciones · tomar (preterito, el)
-- (42) Conjugar con opciones · organizar (preterito, el)
-- (58) Conjugar escribiendo · volver (preterito, yo)
-- (59) Conjugar escribiendo · olvidar (preterito, nosotros)
-- (59) Conjugar escribiendo · alquilar (preterito, ustedes)
+- (33) Palabra · estar de buen humor
+- (33) Palabra · estar de mal humor
+- (48) Ordenar la frase · ser mala onda
+- (52) Completar escribiendo · la bronca
+- (52) Ordenar la frase · el bajón
+- (54) Completar escribiendo · ser buena onda
+- (56) Ordenar la frase · sacado / sacada
+- (55) Completar escribiendo · bajoneado / bajoneada
 
-### 112. Verbos: imperfecto · 2 — dificultad 48
+### 132. Verbos: pretérito · 1 — dificultad 48
+
+- (42) Conjugar con opciones · comer (preterito, el)
+- (42) Conjugar con opciones · vivir (preterito, yo)
+- (42) Conjugar con opciones · compartir (preterito, yo)
+- (42) Conjugar con opciones · perder (preterito, el)
+- (42) Conjugar con opciones · esperar (preterito, yo)
+- (58) Conjugar escribiendo · jugar (preterito, el)
+- (59) Conjugar escribiendo · dirigir (preterito, ustedes)
+- (59) Conjugar escribiendo · mirar (preterito, nosotros)
+
+### 133. Verbos: imperfecto · 2 — dificultad 48
 
 - (46) Conjugar con opciones · ver (imperfecto, vos)
-- (49) Conjugar escribiendo · empezar (imperfecto, yo)
-- (48) Conjugar con opciones · ser (imperfecto, vos)
-- (49) Conjugar escribiendo · ganar (imperfecto, el)
-- (48) Conjugar con opciones · ir (imperfecto, vos)
-- (49) Conjugar escribiendo · entender (imperfecto, yo)
-- (49) Conjugar escribiendo · soñar (imperfecto, yo)
-- (49) Conjugar escribiendo · cenar (imperfecto, el)
+- (49) Conjugar escribiendo · servir (imperfecto, el)
+- (48) Conjugar con opciones · ir (imperfecto, nosotros)
+- (49) Conjugar escribiendo · nacer (imperfecto, yo)
+- (48) Conjugar con opciones · ser (imperfecto, nosotros)
+- (49) Conjugar escribiendo · lograr (imperfecto, el)
+- (49) Conjugar escribiendo · convertir (imperfecto, yo)
+- (49) Conjugar escribiendo · escuchar (imperfecto, yo)
 
-### 113. Pretérito vs. Imperfecto — dificultad 49
+### 134. Pretérito vs. Imperfecto — dificultad 49
 
 - (45) Gramática · Anoche (nosotros) ___ una película buenísima. (ver)
 - (47) Gramática · De chica, (yo) ___ al ballet todos los sábados. (ir)
@@ -1340,7 +1589,16 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (48) Gramática · Ya ___ a tu prima de antes, por eso no me sorprendió verla. (conocer)
 - (62) Gramática · Mientras vos ___ (hablar), yo preparaba el mate.
 
-### 114. La ropa · 4 — dificultad 49
+### 135. Producción: pasado y condicional — dificultad 49
+
+- (46) Producción · Ayer (yo) ___ un asado con la familia. (comer)
+- (49) Conjugar escribiendo · estudiar (imperfecto, el)
+- (49) Producción · Cuando era chica, (yo) ___ en la plaza todos los días. (jugar)
+- (49) Conjugar escribiendo · buscar (imperfecto, yo)
+- (52) Producción · Si tuviera plata, (yo) ___ por todo el país. (viajar)
+- (49) Conjugar escribiendo · terminar (imperfecto, el)
+
+### 136. La ropa · 4 — dificultad 49
 
 - (38) Completar con opciones · la remera
 - (46) Ordenar la frase · la pollera
@@ -1350,7 +1608,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (54) Completar escribiendo · el buzo
 - (54) Completar escribiendo · las medias
 
-### 115. El clima y la naturaleza · 7 — dificultad 49
+### 137. El clima y la naturaleza · 7 — dificultad 49
 
 - (41) Ordenar la frase · el temporal
 - (41) Ordenar la frase · la ola de calor
@@ -1359,38 +1617,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (56) Completar escribiendo · la sudestada
 - (57) Completar escribiendo · el chiflete
 
-### 116. Verbos: imperfecto · 3 — dificultad 49
+### 138. Verbos: futuro · 3 — dificultad 49
 
-- (44) Conjugar con opciones · ver (imperfecto, el)
-- (46) Conjugar con opciones · ser (imperfecto, el)
-- (51) Conjugar escribiendo · perder (imperfecto, nosotros)
-- (48) Conjugar con opciones · ir (imperfecto, nosotros)
-- (51) Conjugar escribiendo · elegir (imperfecto, ustedes)
-- (51) Conjugar escribiendo · beber (imperfecto, nosotros)
-- (51) Conjugar escribiendo · sentir (imperfecto, ustedes)
-- (51) Conjugar escribiendo · manejar (imperfecto, ustedes)
+- (44) Conjugar con opciones · reír (futuro, nosotros)
+- (44) Conjugar con opciones · poner (futuro, ustedes)
+- (50) Conjugar escribiendo · incluir (futuro, nosotros)
+- (50) Conjugar con opciones · decir (futuro, ustedes)
+- (50) Conjugar escribiendo · apagar (futuro, nosotros)
+- (50) Conjugar escribiendo · recordar (futuro, vos)
+- (50) Conjugar escribiendo · probar (futuro, vos)
+- (50) Conjugar escribiendo · encontrar (futuro, vos)
 
-### 117. Verbos: futuro · 3 — dificultad 49
-
-- (44) Conjugar con opciones · saber (futuro, ustedes)
-- (44) Conjugar con opciones · venir (futuro, ustedes)
-- (50) Conjugar escribiendo · llegar (futuro, nosotros)
-- (50) Conjugar con opciones · decir (futuro, nosotros)
-- (50) Conjugar escribiendo · pedir (futuro, vos)
-- (50) Conjugar escribiendo · trabajar (futuro, vos)
-- (50) Conjugar escribiendo · devolver (futuro, nosotros)
-- (50) Conjugar escribiendo · traer (futuro, vos)
-
-### 118. Producción: pasado y condicional — dificultad 50
-
-- (46) Producción · Ayer (yo) ___ un asado con la familia. (comer)
-- (49) Conjugar escribiendo · llegar (imperfecto, el)
-- (49) Producción · Cuando era chica, (yo) ___ en la plaza todos los días. (jugar)
-- (49) Conjugar escribiendo · proponer (imperfecto, yo)
-- (52) Producción · Si tuviera plata, (yo) ___ por todo el país. (viajar)
-- (52) Conjugar escribiendo · enviar (condicional, yo)
-
-### 119. Jerga: verbos · 1 — dificultad 50
+### 139. Jerga: verbos · 1 — dificultad 50
 
 - (45) Palabra · laburar
 - (45) Emparejar · morfar
@@ -1401,40 +1639,40 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (58) Ordenar la frase · laburar
 - (59) Ordenar la frase · morfar
 
-### 120. Verbos: pretérito · 2 — dificultad 50
+### 140. Verbos: pretérito · 2 — dificultad 50
 
-- (44) Conjugar con opciones · explicar (preterito, nosotros)
-- (44) Conjugar con opciones · mirar (preterito, ustedes)
-- (45) Conjugar con opciones · recordar (preterito, vos)
-- (45) Conjugar con opciones · apagar (preterito, vos)
-- (45) Conjugar con opciones · pensar (preterito, vos)
-- (58) Conjugar escribiendo · decidir (preterito, yo)
-- (58) Conjugar escribiendo · comer (preterito, yo)
-- (58) Conjugar escribiendo · abrir (preterito, el)
+- (44) Conjugar con opciones · tomar (preterito, nosotros)
+- (44) Conjugar con opciones · estudiar (preterito, nosotros)
+- (45) Conjugar con opciones · cenar (preterito, vos)
+- (45) Conjugar con opciones · llamar (preterito, vos)
+- (45) Conjugar con opciones · dormir (preterito, vos)
+- (58) Conjugar escribiendo · crecer (preterito, el)
+- (58) Conjugar escribiendo · reír (preterito, yo)
+- (58) Conjugar escribiendo · salir (preterito, el)
 
-### 121. Verbos: condicional · 2 — dificultad 50
+### 141. Verbos: imperfecto · 3 — dificultad 50
 
-- (48) Conjugar con opciones · poner (condicional, nosotros)
-- (52) Conjugar escribiendo · construir (condicional, el)
-- (48) Conjugar con opciones · proponer (condicional, ustedes)
-- (52) Conjugar escribiendo · caer (condicional, yo)
-- (48) Conjugar con opciones · salir (condicional, ustedes)
-- (52) Conjugar escribiendo · usar (condicional, yo)
-- (48) Conjugar con opciones · poder (condicional, nosotros)
+- (45) Conjugar con opciones · ver (imperfecto, nosotros)
+- (51) Conjugar escribiendo · buscar (imperfecto, nosotros)
+- (48) Conjugar con opciones · ser (imperfecto, vos)
+- (51) Conjugar escribiendo · ofrecer (imperfecto, nosotros)
+- (48) Conjugar con opciones · ir (imperfecto, vos)
+- (51) Conjugar escribiendo · pagar (imperfecto, ustedes)
+- (51) Conjugar escribiendo · agradecer (imperfecto, ustedes)
+- (51) Conjugar escribiendo · olvidar (imperfecto, ustedes)
+
+### 142. Verbos: condicional · 2 — dificultad 50
+
 - (48) Conjugar con opciones · oír (condicional, ustedes)
+- (52) Conjugar escribiendo · pegar (condicional, el)
+- (48) Conjugar con opciones · valer (condicional, ustedes)
+- (52) Conjugar escribiendo · preferir (condicional, yo)
+- (48) Conjugar con opciones · mantener (condicional, nosotros)
+- (52) Conjugar escribiendo · dejar (condicional, el)
+- (48) Conjugar con opciones · proponer (condicional, ustedes)
+- (52) Conjugar escribiendo · alcanzar (condicional, yo)
 
-### 122. Verbos: condicional · 3 — dificultad 51
-
-- (45) Conjugar con opciones · tener (condicional, vos)
-- (48) Conjugar con opciones · querer (condicional, nosotros)
-- (53) Conjugar escribiendo · vivir (condicional, ustedes)
-- (52) Conjugar con opciones · decir (condicional, yo)
-- (53) Conjugar escribiendo · cantar (condicional, nosotros)
-- (53) Conjugar escribiendo · limpiar (condicional, ustedes)
-- (53) Conjugar escribiendo · dormir (condicional, ustedes)
-- (53) Conjugar escribiendo · mostrar (condicional, nosotros)
-
-### 123. En el restaurante · 7 — dificultad 52
+### 143. En el restaurante · 7 — dificultad 52
 
 - (44) Ordenar la frase · las papas fritas
 - (46) Ordenar la frase · la provoleta
@@ -1443,7 +1681,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (58) Completar escribiendo · el chori
 - (60) Completar escribiendo · el morfi
 
-### 124. Salud y médicos · 7 — dificultad 52
+### 144. Salud y médicos · 7 — dificultad 52
 
 - (30) Palabra · el certificado médico
 - (48) Ordenar la frase · la prepaga
@@ -1453,7 +1691,28 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (64) Ordenar la frase · el patatús
 - (64) Completar escribiendo · la pálida
 
-### 125. De compras · 7 — dificultad 54
+### 145. Verbos: condicional · 3 — dificultad 52
+
+- (48) Conjugar con opciones · poder (condicional, vos)
+- (48) Conjugar con opciones · saber (condicional, ustedes)
+- (53) Conjugar escribiendo · atender (condicional, nosotros)
+- (54) Conjugar con opciones · decir (condicional, vos)
+- (53) Conjugar escribiendo · conseguir (condicional, nosotros)
+- (53) Conjugar escribiendo · empezar (condicional, nosotros)
+- (53) Conjugar escribiendo · abrazar (condicional, ustedes)
+- (53) Conjugar escribiendo · almorzar (condicional, ustedes)
+
+### 146. Estudios · 7 — dificultad 53
+
+- (38) Palabra · rendir
+- (42) Completar con opciones · el cuatrimestre
+- (55) Ordenar la frase · bochar
+- (57) Completar escribiendo · el machete
+- (56) Ordenar la frase · ratearse
+- (61) Completar escribiendo · bochar
+- (62) Completar escribiendo · ratearse
+
+### 147. De compras · 7 — dificultad 54
 
 - (38) Completar con opciones · el posnet
 - (38) Completar con opciones · el shopping
@@ -1463,7 +1722,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (65) Ordenar la frase · tarjetear
 - (64) Completar escribiendo · la pilcha
 
-### 126. Conjugación de verbos (2/2) — dificultad 55
+### 148. Conjugación de verbos (2/2) — dificultad 55
 
 - (52) Gramática · Conjugá 'vivir' — imperfecto, ella: ___
 - (52) Gramática · Conjugá 'estudiar' — condicional, yo: ___
@@ -1471,7 +1730,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (55) Gramática · Conjugá 'hacer' — pretérito indefinido, yo: ___
 - (64) Gramática · Conjugá 'escribir' — subjuntivo presente, vos: ___
 
-### 127. En el trabajo · 7 — dificultad 55
+### 149. En el trabajo · 7 — dificultad 55
 
 - (41) Completar con opciones · el presentismo
 - (53) Completar escribiendo · el monotributo
@@ -1480,7 +1739,27 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (60) Ordenar la frase · ponerse la camiseta
 - (64) Completar escribiendo · el chupamedias
 
-### 128. La ciudad y el transporte · 7 — dificultad 56
+### 150. Ocio y deportes · 7 — dificultad 55
+
+- (39) Palabra · la juntada con amigos
+- (43) Completar con opciones · el superclásico
+- (55) Completar escribiendo · el potrero
+- (56) Completar escribiendo · la joda
+- (58) Completar escribiendo · un picadito
+- (65) Ordenar la frase · cancherear
+- (67) Ordenar la frase · hacer el aguante
+
+### 151. Emociones y carácter · 7 — dificultad 55
+
+- (40) Completar con opciones · la bronca
+- (47) Ordenar la frase · bajoneado / bajoneada
+- (48) Ordenar la frase · ser buena onda
+- (63) Completar escribiendo · hacerse la cabeza
+- (62) Ordenar la frase · ser mala leche
+- (64) Completar escribiendo · manija
+- (64) Completar escribiendo · ortiva
+
+### 152. La ciudad y el transporte · 7 — dificultad 56
 
 - (51) Completar escribiendo · la bicisenda
 - (53) Ordenar la frase · cargar la SUBE
@@ -1489,7 +1768,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (57) Completar escribiendo · el tachero / la tachera
 - (61) Ordenar la frase · patear
 
-### 129. La gente · 2 — dificultad 57
+### 153. La gente · 2 — dificultad 57
 
 - (37) Palabra · los viejos
 - (53) Ordenar la frase · el pibe / la piba
@@ -1499,7 +1778,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (64) Completar escribiendo · el chabón / la chabona
 - (66) Completar escribiendo · atorrante
 
-### 130. Subjuntivo presente — dificultad 58
+### 154. Subjuntivo presente — dificultad 58
 
 - (51) Gramática · Espero que (vos) ___ pronto. (mejorar)
 - (51) Gramática · Dudo que ellos ___ la verdad. (decir)
@@ -1508,18 +1787,18 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (69) Gramática · Ojalá que (nosotros) ___ tiempo para viajar este verano. (tener)
 - (69) Gramática · Es una lástima que no ___ (ellos) venir a la fiesta. (poder)
 
-### 131. Verbos: pretérito · 3 — dificultad 59
+### 155. Verbos: pretérito · 3 — dificultad 59
 
-- (58) Conjugar con opciones · dar (preterito, yo)
-- (59) Conjugar escribiendo · cruzar (preterito, nosotros)
-- (58) Conjugar con opciones · dormir (preterito, el)
-- (59) Conjugar escribiendo · pagar (preterito, nosotros)
-- (60) Conjugar con opciones · saber (preterito, ustedes)
-- (59) Conjugar escribiendo · vivir (preterito, ustedes)
-- (59) Conjugar escribiendo · estudiar (preterito, ustedes)
-- (59) Conjugar escribiendo · escribir (preterito, nosotros)
+- (58) Conjugar con opciones · mentir (preterito, el)
+- (59) Conjugar escribiendo · sacar (preterito, ustedes)
+- (58) Conjugar con opciones · pedir (preterito, el)
+- (59) Conjugar escribiendo · llevar (preterito, ustedes)
+- (60) Conjugar con opciones · saber (preterito, vos)
+- (59) Conjugar escribiendo · comenzar (preterito, nosotros)
+- (59) Conjugar escribiendo · valer (preterito, nosotros)
+- (59) Conjugar escribiendo · ganar (preterito, ustedes)
 
-### 132. Jerga: cosas · 2 — dificultad 60
+### 156. Jerga: cosas · 2 — dificultad 60
 
 - (45) Palabra · la guita
 - (47) Palabra · una changa
@@ -1530,29 +1809,29 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (66) Ordenar la frase · un curro
 - (66) Completar escribiendo · un mango
 
-### 133. Verbos: pretérito · 4 — dificultad 61
+### 157. Verbos: pretérito · 4 — dificultad 61
 
-- (60) Conjugar con opciones · servir (preterito, ustedes)
-- (61) Conjugar escribiendo · reservar (preterito, el)
-- (60) Conjugar con opciones · oír (preterito, ustedes)
-- (61) Conjugar escribiendo · ayudar (preterito, el)
 - (60) Conjugar con opciones · poner (preterito, ustedes)
+- (61) Conjugar escribiendo · invitar (preterito, yo)
+- (60) Conjugar con opciones · venir (preterito, ustedes)
+- (61) Conjugar escribiendo · bailar (preterito, yo)
+- (60) Conjugar con opciones · decir (preterito, nosotros)
 - (61) Conjugar escribiendo · mandar (preterito, el)
-- (61) Conjugar escribiendo · visitar (preterito, yo)
-- (61) Conjugar escribiendo · entrar (preterito, yo)
+- (61) Conjugar escribiendo · lavar (preterito, yo)
+- (61) Conjugar escribiendo · gritar (preterito, el)
 
-### 134. Verbos: subjuntivo · 1 — dificultad 62
+### 158. Verbos: subjuntivo · 1 — dificultad 62
 
-- (57) Conjugar con opciones · mirar (subjuntivo, ustedes)
-- (57) Conjugar con opciones · invitar (subjuntivo, ustedes)
-- (57) Conjugar con opciones · decidir (subjuntivo, ustedes)
-- (57) Conjugar con opciones · usar (subjuntivo, nosotros)
-- (57) Conjugar con opciones · compartir (subjuntivo, nosotros)
-- (71) Conjugar escribiendo · creer (subjuntivo, yo)
-- (71) Conjugar escribiendo · abrir (subjuntivo, el)
-- (71) Conjugar escribiendo · vender (subjuntivo, el)
+- (57) Conjugar con opciones · entender (subjuntivo, nosotros)
+- (57) Conjugar con opciones · cobrar (subjuntivo, ustedes)
+- (57) Conjugar con opciones · ayudar (subjuntivo, nosotros)
+- (57) Conjugar con opciones · correr (subjuntivo, nosotros)
+- (57) Conjugar con opciones · viajar (subjuntivo, ustedes)
+- (71) Conjugar escribiendo · leer (subjuntivo, el)
+- (71) Conjugar escribiendo · abrir (subjuntivo, yo)
+- (71) Conjugar escribiendo · vender (subjuntivo, yo)
 
-### 135. Pronombres combinados (se lo, te la...) — dificultad 65
+### 159. Pronombres combinados (se lo, te la...) — dificultad 65
 
 - (56) Gramática · Dale, ___ prestás la campera a ella.
 - (57) Gramática · ¿Le diste las llaves a Juan? —Sí, ___ di esta mañana.
@@ -1561,7 +1840,7 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (72) Gramática · ¡Contámelo! Quiero que ___ cuentes ya. (contar)
 - (73) Gramática · ¿Me pasás la sal? —Sí, ahora ___ paso. (pasar)
 
-### 136. Jerga: verbos · 2 — dificultad 66
+### 160. Jerga: verbos · 2 — dificultad 66
 
 - (47) Palabra · morfar
 - (61) Ordenar la frase · bancar
@@ -1571,44 +1850,44 @@ Informe generado con `node dev/armar-camino.js --escribir`. Es la lista completa
 - (74) Completar escribiendo · chamuyar
 - (76) Completar escribiendo · dar bola
 
-### 137. Producción: subjuntivo — dificultad 69
+### 161. Producción: subjuntivo — dificultad 69
 
 - (66) Producción · Ojalá que ___ buen tiempo el finde. (hacer)
 - (69) Conjugar escribiendo · estar (subjuntivo, nosotros)
 - (68) Producción · No creo que vos ___ razón esta vez. (tener)
-- (71) Conjugar escribiendo · aprender (subjuntivo, el)
+- (71) Conjugar escribiendo · correr (subjuntivo, el)
 - (67) Producción · Espero que vos ___ mañana. (venir)
-- (71) Conjugar escribiendo · andar (subjuntivo, el)
+- (71) Conjugar escribiendo · comer (subjuntivo, yo)
 
-### 138. Verbos: subjuntivo · 2 — dificultad 69
+### 162. Verbos: subjuntivo · 2 — dificultad 69
 
-- (67) Conjugar con opciones · repetir (subjuntivo, nosotros)
-- (71) Conjugar escribiendo · responder (subjuntivo, yo)
-- (67) Conjugar con opciones · caer (subjuntivo, ustedes)
-- (71) Conjugar escribiendo · leer (subjuntivo, el)
-- (67) Conjugar con opciones · sacar (subjuntivo, nosotros)
-- (71) Conjugar escribiendo · andar (subjuntivo, yo)
-- (67) Conjugar con opciones · practicar (subjuntivo, ustedes)
-- (67) Conjugar con opciones · conocer (subjuntivo, ustedes)
+- (67) Conjugar con opciones · elegir (subjuntivo, nosotros)
+- (67) Conjugar con opciones · parecer (subjuntivo, ustedes)
+- (67) Conjugar con opciones · conducir (subjuntivo, ustedes)
+- (67) Conjugar con opciones · publicar (subjuntivo, nosotros)
+- (67) Conjugar con opciones · negar (subjuntivo, nosotros)
+- (73) Conjugar escribiendo · festejar (subjuntivo, vos)
+- (73) Conjugar escribiendo · caminar (subjuntivo, ustedes)
+- (73) Conjugar escribiendo · hablar (subjuntivo, vos)
 
-### 139. Verbos: subjuntivo · 3 — dificultad 73
+### 163. Verbos: subjuntivo · 3 — dificultad 73
 
-- (73) Conjugar con opciones · seguir (subjuntivo, ustedes)
-- (73) Conjugar escribiendo · preguntar (subjuntivo, vos)
-- (73) Conjugar con opciones · sentir (subjuntivo, vos)
-- (73) Conjugar escribiendo · llevar (subjuntivo, ustedes)
-- (73) Conjugar con opciones · perder (subjuntivo, vos)
-- (73) Conjugar escribiendo · viajar (subjuntivo, nosotros)
-- (73) Conjugar escribiendo · contar (subjuntivo, nosotros)
-- (73) Conjugar escribiendo · alquilar (subjuntivo, ustedes)
-
-### 140. Verbos: subjuntivo · 4 — dificultad 79
-
+- (73) Conjugar escribiendo · soñar (subjuntivo, nosotros)
 - (73) Conjugar con opciones · cerrar (subjuntivo, vos)
-- (73) Conjugar con opciones · pensar (subjuntivo, ustedes)
-- (73) Conjugar con opciones · servir (subjuntivo, vos)
-- (82) Conjugar escribiendo · ofrecer (subjuntivo, nosotros)
-- (82) Conjugar escribiendo · probar (subjuntivo, ustedes)
-- (82) Conjugar escribiendo · organizar (subjuntivo, nosotros)
-- (82) Conjugar escribiendo · traer (subjuntivo, nosotros)
-- (82) Conjugar escribiendo · encender (subjuntivo, ustedes)
+- (73) Conjugar escribiendo · quedar (subjuntivo, ustedes)
+- (73) Conjugar con opciones · perder (subjuntivo, vos)
+- (73) Conjugar escribiendo · manejar (subjuntivo, nosotros)
+- (73) Conjugar con opciones · contar (subjuntivo, ustedes)
+- (73) Conjugar escribiendo · tratar (subjuntivo, ustedes)
+- (73) Conjugar escribiendo · comprar (subjuntivo, nosotros)
+
+### 164. Verbos: subjuntivo · 4 — dificultad 79
+
+- (73) Conjugar con opciones · dormir (subjuntivo, ustedes)
+- (73) Conjugar con opciones · morir (subjuntivo, ustedes)
+- (73) Conjugar con opciones · mentir (subjuntivo, nosotros)
+- (82) Conjugar escribiendo · alcanzar (subjuntivo, nosotros)
+- (82) Conjugar escribiendo · construir (subjuntivo, ustedes)
+- (83) Conjugar escribiendo · llegar (subjuntivo, vos)
+- (83) Conjugar escribiendo · tocar (subjuntivo, vos)
+- (83) Conjugar escribiendo · empezar (subjuntivo, vos)

@@ -26,7 +26,7 @@ const Formats = (function () {
   };
   // Temas donde casi todas las palabras significan lo mismo ("excelente"): ahí las opciones
   // incorrectas no salen del mismo tema, para no armar preguntas con dos respuestas posibles.
-  const SINONIMOS = { elogios: true };
+  const SINONIMOS = { elogios: true, emociones: true };
 
   const ART_RE = /^(el|la|los|las|un|una|unos|unas)\s+/i;
   const ART_BASE = { un: "el", una: "la", unos: "los", unas: "las" };

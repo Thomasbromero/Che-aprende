@@ -38,6 +38,7 @@ const NOMBRE_TEMA = {
   jerga_expresiones: "Jerga: expresiones", tiempo_libre: "Salidas y tiempo libre", familia: "La familia",
   restaurante: "En el restaurante", compras: "De compras", salud: "Salud y médicos",
   trabajo: "En el trabajo", clima: "El clima y la naturaleza", ciudad: "La ciudad y el transporte",
+  ocio: "Ocio y deportes", estudios: "Estudios", emociones: "Emociones y carácter",
 };
 const NOMBRE_TIEMPO = { presente: "presente", preterito: "pretérito", imperfecto: "imperfecto", futuro: "futuro", condicional: "condicional", subjuntivo: "subjuntivo" };
 
