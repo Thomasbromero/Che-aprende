@@ -411,6 +411,41 @@ body[data-view="home"] .bottom-nav { display: none; }
 .text-input.wrong { border-color: var(--v2-navy); }
 .hint { margin: 2px 0 10px; }
 
+/* ---- Aventura: camino de niveles (versión simple; el diseño final viene después) ---- */
+.av-resumen { margin: 2px 0 14px; }
+.av-lista { display: grid; gap: 10px; }
+.av-nivel {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+  font: inherit; border: none; border-radius: 20px; padding: 12px 14px; cursor: pointer;
+  background: var(--v2-navy); color: var(--v2-cream);
+}
+.av-nivel:active { transform: scale(0.98); }
+.av-nivel:disabled { background: var(--v2-pink); color: var(--v2-navy); opacity: 0.7; cursor: default; transform: none; }
+.av-nivel.actual { box-shadow: 0 0 0 3px var(--v2-cyan); }
+.av-circulo {
+  flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 700; font-size: 1.1rem;
+  background: var(--v2-cream); color: var(--v2-navy);
+}
+.av-nivel.hecho .av-circulo { background: var(--v2-cyan); }
+.av-datos { display: grid; gap: 2px; min-width: 0; }
+.av-titulo { font-weight: 700; }
+.av-sub { font-size: 0.82rem; opacity: 0.8; }
+.av-estrellas { letter-spacing: 1px; line-height: 1; }
+.av-circulo .av-estrellas { font-size: 0.7rem; }
+.panel .av-estrellas { display: block; font-size: 2.2rem; letter-spacing: 6px; margin: 6px 0 4px; }
+.av-estrellas .on { color: var(--v2-cyan); }
+.av-estrellas .off { color: var(--v2-navy); opacity: 0.25; }
+.av-circulo .av-estrellas .on { color: var(--v2-navy); }
+.av-continuar {
+  display: block; width: 100%; margin: 0 0 14px; padding: 14px 18px; border: none; border-radius: 999px;
+  font: inherit; font-weight: 700; cursor: pointer; background: var(--v2-cyan); color: var(--v2-navy);
+}
+.av-cabecera { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.av-salir { padding: 0; white-space: nowrap; }
+.av-barra { flex: 1; height: 10px; border-radius: 999px; background: var(--v2-pink); overflow: hidden; }
+.av-barra-relleno { height: 100%; background: var(--v2-cyan); border-radius: 999px; transition: width 0.2s ease; }
+
 /* ---- Ordenar la frase / Unir (formatos de Aventura) ---- */
 .order-answer {
   min-height: 58px; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px;

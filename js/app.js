@@ -13,7 +13,7 @@ const LANGS = [
 // Para cada idioma que se está aprendiendo, qué módulos ya tienen contenido cargado.
 // Home y Ajustes siempre están disponibles sin importar el idioma.
 const READY_MODULES = {
-  es: ["gramatica", "vocabulario", "produccion", "lectura"],
+  es: ["gramatica", "vocabulario", "produccion", "lectura", "aventura"],
   de: ["gramatica"],
 };
 
@@ -39,7 +39,8 @@ function enterApp() {
   }
   document.body.classList.remove("onboarding-active");
   updateHeaderStreak();
-  showView("home");
+  // Mientras Aventura no tenga entrada en Inicio, se abre con "?aventura" al final de la dirección
+  showView(/[?&]aventura\b/.test(location.search) ? "aventura" : "home");
 }
 
 let onboardingStep = "name"; // "name" | "lang"
@@ -201,6 +202,7 @@ function showView(name) {
   else if (name === "gramatica") Grammar.render(host);
   else if (name === "vocabulario") Vocab.render(host);
   else if (name === "produccion") Produccion.render(host);
+  else if (name === "aventura") Aventura.render(host);
   else if (name === "ajustes") renderAjustes(host);
 
   updateHeaderStreak();

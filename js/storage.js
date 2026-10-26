@@ -12,6 +12,10 @@ const Store = (function () {
       produccion: {},  // { [itemId]: { done: true } }
       // Vocabulario: pestaña elegida y, por pestaña, la cola de ids que quedan (la primera es la tarjeta actual)
       vocabSession: { filter: null, queues: {} }, // filter: "all" | "done" | "pending"
+      // Modo Aventura (progreso propio, aparte del modo Clásico; la racha sí es la misma).
+      // nodos: { [idDeNivel]: { hecho, estrellas, mejor (0 a 1), intentos } }
+      // enCurso: la lección empezada y sin terminar { nivel, semilla, i, aciertos } o null
+      aventura: { nodos: {}, enCurso: null },
     };
   }
 
@@ -32,6 +36,10 @@ const Store = (function () {
         grammar: raw.grammar || {},
         produccion: raw.produccion || {},
         vocabSession: Object.assign(d.vocabSession, raw.vocabSession || {}),
+        aventura: {
+          nodos: (raw.aventura && raw.aventura.nodos) || {},
+          enCurso: (raw.aventura && raw.aventura.enCurso) || null,
+        },
       };
     } catch (e) {
       return defaults();
@@ -59,6 +67,10 @@ const Store = (function () {
       state.vocabSession.queues[filter] = queueIds;
       save();
     },
+    aventura() { return state.aventura; },
+    aventuraNodo(id) { return state.aventura.nodos[id]; },
+    setAventuraNodo(id, datos) { state.aventura.nodos[id] = datos; save(); },
+    setAventuraEnCurso(datos) { state.aventura.enCurso = datos; save(); },
     reset() { state = defaults(); save(); },
   };
 })();
