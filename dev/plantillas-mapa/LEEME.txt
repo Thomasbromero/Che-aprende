@@ -1,0 +1,47 @@
+MEDIDAS DE LOS FONDOS DEL CAMINO (modo Aventura)
+
+Cada zona tiene su propia imagen de fondo. Todas miden 400 unidades de ancho; el alto depende de cuántos niveles tiene la zona:
+  - zona de 6 niveles: 400 x 832 unidades  -> 800 x 1664 px (2x)  o  1200 x 2496 px (3x)
+  - zona de 7 niveles: 400 x 948 unidades  -> 800 x 1896 px (2x)  o  1200 x 2844 px (3x)
+
+Tienen que respetar esa proporción exacta. Si la imagen tiene otra proporción, la app la recorta (no la deforma).
+
+Cada archivo .svg de esta carpeta es la plantilla de UNA zona, con el tamaño real: importala a Canva o Figma, ponela abajo de tu dibujo
+y apagala/borrala al exportar. Muestra donde van los niveles (circulos), sus nombres (rectangulos punteados), el cartel de la zona y el camino.
+
+Reglas:
+  - La zona 1 es la de abajo del mapa (nivel 1) y la ultima es la de arriba: el borde de ARRIBA de una zona se pega con el borde de ABAJO de la zona siguiente.
+    Conviene que coincidan (mismo cielo, mismo color de suelo) para que no se note el corte.
+  - El camino y los niveles se mueven en el centro (entre x=95 y x=305 de 400): ahi poco detalle y colores suaves.
+    El detalle fuerte va en las franjas de los costados (los 60 de cada lado, sombreados en la plantilla).
+  - El cartel de la zona (texto "Zona N") va abajo del todo de la imagen, centrado: dejar tranquilo ese lugar (unos 200 x 56 unidades).
+  - La app pinta arriba del fondo: el camino rosa, los niveles (circulos navy de unos 60 unidades) y sus nombres.
+  - Formato: PNG o WebP (con o sin transparencia); idealmente menos de 300 KB por zona (en total son 27 imagenes).
+
+Zona  1  niveles   1-  6  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-01-6niveles.svg
+Zona  2  niveles   7- 12  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-02-6niveles.svg
+Zona  3  niveles  13- 18  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-03-6niveles.svg
+Zona  4  niveles  19- 24  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-04-6niveles.svg
+Zona  5  niveles  25- 30  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-05-6niveles.svg
+Zona  6  niveles  31- 36  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-06-6niveles.svg
+Zona  7  niveles  37- 43  7 niveles   400 x 948 unidades   =   800 x 1896 px (2x)   /   1200 x 2844 px (3x)   zona-07-7niveles.svg
+Zona  8  niveles  44- 49  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-08-6niveles.svg
+Zona  9  niveles  50- 55  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-09-6niveles.svg
+Zona 10  niveles  56- 61  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-10-6niveles.svg
+Zona 11  niveles  62- 67  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-11-6niveles.svg
+Zona 12  niveles  68- 73  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-12-6niveles.svg
+Zona 13  niveles  74- 79  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-13-6niveles.svg
+Zona 14  niveles  80- 85  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-14-6niveles.svg
+Zona 15  niveles  86- 91  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-15-6niveles.svg
+Zona 16  niveles  92- 97  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-16-6niveles.svg
+Zona 17  niveles  98-103  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-17-6niveles.svg
+Zona 18  niveles 104-109  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-18-6niveles.svg
+Zona 19  niveles 110-115  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-19-6niveles.svg
+Zona 20  niveles 116-121  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-20-6niveles.svg
+Zona 21  niveles 122-128  7 niveles   400 x 948 unidades   =   800 x 1896 px (2x)   /   1200 x 2844 px (3x)   zona-21-7niveles.svg
+Zona 22  niveles 129-134  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-22-6niveles.svg
+Zona 23  niveles 135-140  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-23-6niveles.svg
+Zona 24  niveles 141-146  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-24-6niveles.svg
+Zona 25  niveles 147-152  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-25-6niveles.svg
+Zona 26  niveles 153-158  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-26-6niveles.svg
+Zona 27  niveles 159-164  6 niveles   400 x 832 unidades   =   800 x 1664 px (2x)   /   1200 x 2496 px (3x)   zona-27-6niveles.svg
