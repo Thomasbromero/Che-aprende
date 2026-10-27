@@ -734,6 +734,8 @@ body.estilo-vidrio .av-hoja {
 body.estilo-vidrio .av-hoja .btn.primary { background: rgba(31, 182, 181, 0.96); }
 body.estilo-vidrio .av-hoja .btn.ghost { background: transparent; border-color: rgba(255, 244, 214, 0.7); }
 body.estilo-vidrio .av-barra { background: rgba(255, 255, 255, 0.6); }
+/* El camino que todavía no se recorrió: blanco translúcido con una sombrita, así se lee sobre cualquier fondo ilustrado */
+body.estilo-vidrio .av-trazo.base { stroke: rgba(255, 255, 255, 0.88); filter: drop-shadow(0 1px 1.5px rgba(29, 42, 68, 0.28)); }
 
 /* Aviso que aparece un momento ("Guardado") */
 body.estilo-vidrio .toast {

@@ -157,7 +157,8 @@ const Aventura = (function () {
 
   // Fondo y decoraciones de una zona: el arte de data/mapa.data.js si lo hay, y si no, formas simples
   function capaZona(z, k, g) {
-    const nodos = [svg("rect", { x: 0, y: z.top, width: g.ancho, height: z.bottom - z.top, class: "av-banda " + (k % 2 ? "b" : "a") })];
+    // Con arte de fondo no hace falta la franja de color de la zona (el arte ya pinta todo y se funde con el de las zonas vecinas)
+    const nodos = z.fondo ? [] : [svg("rect", { x: 0, y: z.top, width: g.ancho, height: z.bottom - z.top, class: "av-banda " + (k % 2 ? "b" : "a") })];
     if (z.fondo) nodos.push(imagenSvg(z.fondo, 0, z.top, g.ancho, z.bottom - z.top, "xMidYMid slice"));
     if (z.decoraciones && z.decoraciones.length) {
       z.decoraciones.forEach((d) => nodos.push(imagenSvg(d.img, d.x, z.top + d.y, d.ancho, d.alto || d.ancho, "xMidYMid meet")));
