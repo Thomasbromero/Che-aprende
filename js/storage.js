@@ -17,6 +17,9 @@ const Store = (function () {
       // nodos: { [idDeNivel]: { hecho, estrellas, mejor (0 a 1), intentos } }
       // enCurso: la lección empezada y sin terminar { nivel, semilla, i, aciertos } o null
       aventura: { nodos: {}, enCurso: null },
+      // El progreso de Aventura de los demás idiomas (alemán...), con la misma forma: { [codigo]: { nodos, enCurso } }.
+      // El del español sigue en `aventura`, así lo que ya está guardado no cambia.
+      aventuras: {},
     };
   }
 
@@ -41,6 +44,7 @@ const Store = (function () {
           nodos: (raw.aventura && raw.aventura.nodos) || {},
           enCurso: (raw.aventura && raw.aventura.enCurso) || null,
         },
+        aventuras: raw.aventuras && typeof raw.aventuras === "object" ? raw.aventuras : {},
       };
     } catch (e) {
       return defaults();
@@ -49,6 +53,12 @@ const Store = (function () {
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function bolsaAventura() {
+    const lang = state.settings.learningLang;
+    if (!lang || lang === "es") return state.aventura;
+    return state.aventuras[lang] || (state.aventuras[lang] = { nodos: {}, enCurso: null });
   }
 
   return {
@@ -68,10 +78,11 @@ const Store = (function () {
       state.vocabSession.queues[filter] = queueIds;
       save();
     },
-    aventura() { return state.aventura; },
-    aventuraNodo(id) { return state.aventura.nodos[id]; },
-    setAventuraNodo(id, datos) { state.aventura.nodos[id] = datos; save(); },
-    setAventuraEnCurso(datos) { state.aventura.enCurso = datos; save(); },
+    // Progreso de Aventura del idioma que se está aprendiendo (español en `aventura`, el resto en `aventuras`)
+    aventura() { return bolsaAventura(); },
+    aventuraNodo(id) { return bolsaAventura().nodos[id]; },
+    setAventuraNodo(id, datos) { bolsaAventura().nodos[id] = datos; save(); },
+    setAventuraEnCurso(datos) { bolsaAventura().enCurso = datos; save(); },
     reset() { state = defaults(); save(); },
   };
 })();

@@ -38,16 +38,18 @@ const Aventura = (function () {
   }
 
   // Convierte una receta del camino en un ejercicio listo para Exercise.mount
+  // Usa los datos del idioma que se está aprendiendo (js/idioma.js)
   function expandir(sp, rng) {
+    const P = Idioma.actual();
     if (sp.f === "gramatica") {
-      const t = GRAMMAR.find((x) => x.id === sp.s);
+      const t = P.grammar().find((x) => x.id === sp.s);
       return t && t.exercises[sp.i] ? Object.assign({}, t.exercises[sp.i], { format: "gramatica", source: sp.s + "#" + sp.i }) : null;
     }
     if (sp.f === "produccion") {
-      const p = PRODUCCION.find((x) => x.id === sp.s);
+      const p = P.produccion().find((x) => x.id === sp.s);
       return p ? Object.assign({}, p, { format: "produccion", source: sp.s }) : null;
     }
-    return Formats.generar(sp.f, sp.s, { rng, tiempo: sp.t, persona: sp.p });
+    return P.formats.generar(sp.f, sp.s, { rng, tiempo: sp.t, persona: sp.p });
   }
 
   function armar(nivel, semilla) {
@@ -55,7 +57,8 @@ const Aventura = (function () {
     return nivel.ejercicios.map((sp) => expandir(sp, rng));
   }
 
-  function niveles() { return CAMINO.niveles; }
+  function niveles() { return Idioma.actual().camino().niveles; }
+  function mapaActual() { return Idioma.actual().mapa(); }
 
   function hecho(id) {
     const r = Store.aventuraNodo(id);
@@ -171,7 +174,8 @@ const Aventura = (function () {
     clear(host);
     const lista = niveles();
     const st = stats();
-    const g = Mapa.calcular(lista.length, typeof MAPA !== "undefined" ? MAPA : null);
+    const mapa = mapaActual();
+    const g = Mapa.calcular(lista.length, mapa);
     const actual = indiceActual();
     const botones = [];
     let seleccionado = -1;
@@ -180,7 +184,7 @@ const Aventura = (function () {
     const lienzo = h("div", { class: "av-mapa", style: "padding-top:" + ((g.alto / g.ancho) * 100).toFixed(3) + "%" });
     const capa = svg("svg", { class: "av-capa", viewBox: "0 0 " + g.ancho + " " + g.alto, preserveAspectRatio: "none", "aria-hidden": "true" });
     // Abajo de la primera zona el suelo sigue hasta el final del mapa (y, con el relleno de .av-suelo, hasta el final de la pantalla)
-    if (typeof MAPA !== "undefined" && MAPA && MAPA.pie && g.zonas.length) capa.appendChild(svg("rect", { x: 0, y: g.zonas[0].bottom - 1, width: g.ancho, height: g.alto - g.zonas[0].bottom + 2, fill: MAPA.pie }));
+    if (mapa && mapa.pie && g.zonas.length) capa.appendChild(svg("rect", { x: 0, y: g.zonas[0].bottom - 1, width: g.ancho, height: g.alto - g.zonas[0].bottom + 2, fill: mapa.pie }));
     g.zonas.forEach((z, k) => capaZona(z, k, g).forEach((n) => capa.appendChild(n)));
     capa.appendChild(svg("path", { d: Mapa.trazo(g.puntos), class: "av-trazo base" }));
     const llegado = actual < 0 ? lista.length - 1 : actual;
@@ -272,7 +276,7 @@ const Aventura = (function () {
       ])
     );
     host.appendChild(h("div", { class: "av-mapa-ext" }, lienzo));
-    if (typeof MAPA !== "undefined" && MAPA && MAPA.pie) host.appendChild(h("div", { class: "av-suelo", style: "background-color:" + MAPA.pie }));
+    if (mapa && mapa.pie) host.appendChild(h("div", { class: "av-suelo", style: "background-color:" + mapa.pie }));
     host.appendChild(hoja);
     // showView sube la pantalla al principio después de dibujar; esto la deja en el nivel actual
     setTimeout(() => irAMiNivel(false), 0);

@@ -286,7 +286,7 @@ function crearFormats(cfg) {
           prompt: "Unir cada palabra con su significado.",
           pairs: grupo.map((d) => ({ left: d.term, right: glosa(d) })),
           answer: grupo.map((d) => d.term + " = " + glosa(d)).join(" · "),
-          explain: "Ejemplo: " + c.example,
+          explain: "Ejemplo: " + (cfg.ejemplo ? cfg.ejemplo(c) : c.example),
         };
       },
     },
@@ -374,6 +374,9 @@ function crearFormats(cfg) {
       return ex;
     },
   };
+
+  // Formatos propios de un idioma (en alemán: elegir el artículo, escribir el plural)
+  if (cfg.formatosExtra) Object.assign(DEFS, cfg.formatosExtra({ rngDe, mezclar, glosa, articuloDe, nucleo, explicacion, conAlternativas }));
 
   function fuenteDe(c) { return c && c.inf ? "verbo" : "vocab"; }
 

@@ -14,7 +14,7 @@ const LANGS = [
 // Home y Ajustes siempre están disponibles sin importar el idioma.
 const READY_MODULES = {
   es: ["gramatica", "vocabulario", "produccion", "lectura", "aventura"],
-  de: ["gramatica"],
+  de: ["aventura"],
 };
 
 function langName(code) {
@@ -194,7 +194,7 @@ function showView(name) {
   if (!host) return;
 
   const lang = Store.settings().learningLang;
-  const ready = name === "home" || name === "ajustes" || (READY_MODULES[lang] || []).includes(name);
+  const ready = name === "home" || name === "ajustes" || (name === "aventura" ? aventuraDisponible() : (READY_MODULES[lang] || []).includes(name));
   if (name === "lectura") {
     renderComingSoon(host);
   } else if (!ready) {
@@ -215,10 +215,17 @@ function showView(name) {
 const MODO_POR_DEFECTO = "clasico";
 
 function aventuraDisponible() {
-  return (READY_MODULES[Store.settings().learningLang] || []).includes("aventura");
+  const lang = Store.settings().learningLang;
+  return (READY_MODULES[lang] || []).includes("aventura") && Idioma.tieneAventura(lang);
+}
+
+// Clásico son los módulos de siempre (vocabulario, producción...): hoy solo existen en español
+function clasicoDisponible() {
+  return (READY_MODULES[Store.settings().learningLang] || []).includes("vocabulario");
 }
 
 function modoActual() {
+  if (!clasicoDisponible()) return "aventura";
   const m = Store.settings().modo || MODO_POR_DEFECTO;
   return m === "aventura" && aventuraDisponible() ? "aventura" : "clasico";
 }
@@ -267,16 +274,18 @@ function tarjetaAventura() {
 function renderHome(host) {
   clear(host);
   const s = Store.settings();
+  // Un idioma sin ningún modo listo (alemán sin camino cargado) muestra "en construcción"
+  if (!clasicoDisponible() && !aventuraDisponible()) { renderUnderConstruction(host); return; }
   const v = Vocab.stats();
   const p = Produccion.stats();
   const pPct = p.total ? Math.round((p.completed / p.total) * 100) : 0;
-  const grammarTopics = s.learningLang === "de" ? GRAMMAR_DE : GRAMMAR;
+  const grammarTopics = GRAMMAR;
 
   // El saludo y, al lado, el selector de modo: en la misma fila para que Inicio no sume altura
   host.appendChild(
     h("div", { class: "home-head" }, [
       h("h2", { class: "greet" }, s.name ? I18n.t("home_greet_hi_name", s.name) : I18n.t("home_greet_hi")),
-      aventuraDisponible() ? selectorDeModo(host) : null,
+      aventuraDisponible() && clasicoDisponible() ? selectorDeModo(host) : null,
     ])
   );
   host.appendChild(h("p", { class: "muted home-subtitle" }, I18n.t("home_subtitle")));
