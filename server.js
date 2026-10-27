@@ -38,7 +38,8 @@ const server = http.createServer((req, res) => {
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { "Content-Type": TYPES[ext] || "application/octet-stream" });
+    // Sin caché: en desarrollo siempre tiene que verse la última versión de los archivos
+    res.writeHead(200, { "Content-Type": TYPES[ext] || "application/octet-stream", "Cache-Control": "no-store, max-age=0" });
     res.end(data);
   });
 });
