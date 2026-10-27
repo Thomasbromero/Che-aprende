@@ -581,6 +581,10 @@ body[data-view="home"] .app-main { padding-bottom: 88px; }
    El desenfoque (backdrop-filter) solo va en pocos elementos grandes (encabezado, barra, tarjetas de Inicio, tarjetas
    de contenido, hoja del nivel): en las listas largas y en los 164 niveles del mapa sería pesado para celulares viejos.
    Si el celular no soporta el desenfoque, o se pidió menos transparencia, cae a colores sólidos (final de la sección). */
+/* Color de la franja de arriba del navegador del celular (hora, isla dinámica): el celeste verdoso del degradado, no el crema de base.
+   Va junto con el <meta name="theme-color"> de index.html (el mismo color). */
+html:has(body.estilo-vidrio) { background-color: #bfe2dc; }
+body.estilo-vidrio { background: transparent; } /* si el body pintara su fondo, taparía el degradado de ::before */
 body.estilo-vidrio::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
@@ -713,7 +717,9 @@ body.estilo-vidrio .match-item.right { background: rgba(31, 182, 181, 0.94); bor
 body.estilo-vidrio .match-item.wrong { background: rgba(212, 205, 206, 0.9); border-color: rgba(255, 255, 255, 0.5); }
 
 /* Aventura: mapa, niveles, cartel, hoja del nivel, barra de avance */
+/* La barra de arriba del mapa ocupa todo el ancho de la pantalla (el mapa es de borde a borde: si no, parecía cortada en los costados) */
 body.estilo-vidrio .av-info {
+  margin: 0 -16px; padding: 8px 18px; border-radius: 0 0 22px 22px;
   background: rgba(255, 255, 255, 0.46); border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
 }
