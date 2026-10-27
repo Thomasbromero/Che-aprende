@@ -575,10 +575,12 @@ body[data-view="home"] .app-main { padding-bottom: 88px; }
   fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 
-/* ---- Estilo "vidrio" (prueba: Inicio del modo Clásico) ----
-   Se activa con body.estilo-vidrio (lo pone renderHome en app.js). Mismos colores de la paleta, pero con fondo degradado,
-   tarjetas y barra de vidrio (translúcidas con desenfoque). Si el celular no soporta el desenfoque, o se pidió menos
-   transparencia, cae a colores sólidos (ver el final de esta sección). */
+/* ---- Estilo "vidrio" (toda la app) ----
+   Se activa con la clase estilo-vidrio del <body> (en index.html; sacándola vuelve el estilo plano de antes). Mismos
+   colores de la paleta, pero con fondo degradado y tarjetas, botones y barra de vidrio (translúcidos).
+   El desenfoque (backdrop-filter) solo va en pocos elementos grandes (encabezado, barra, tarjetas de Inicio, tarjetas
+   de contenido, hoja del nivel): en las listas largas y en los 164 niveles del mapa sería pesado para celulares viejos.
+   Si el celular no soporta el desenfoque, o se pidió menos transparencia, cae a colores sólidos (final de la sección). */
 body.estilo-vidrio::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
@@ -637,12 +639,107 @@ body.estilo-vidrio .home-cta .home-cta-arrow { color: #fff; }
 body.estilo-vidrio .home-cta-navy .home-cta-arrow { color: var(--v2-cyan); }
 
 body.estilo-vidrio .nav-bar {
-  background: rgba(255, 255, 255, 0.5); border: 1.5px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 10px 30px rgba(29, 42, 68, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.76); border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(29, 42, 68, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.5); backdrop-filter: blur(20px) saturate(1.5);
 }
 body.estilo-vidrio .nav-btn { color: var(--v2-navy); opacity: 0.85; }
 body.estilo-vidrio .nav-btn.active { background: rgba(31, 182, 181, 0.88); color: var(--v2-navy); opacity: 1; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45); }
+
+/* ----- El resto de la app ----- */
+/* Pantalla de bienvenida: sin el fondo crema plano, así se ve el degradado */
+body.estilo-vidrio.onboarding-active #onboarding-screen { background: transparent; }
+body.estilo-vidrio .onboarding-input { background: rgba(255, 255, 255, 0.58); border: 1.5px solid rgba(255, 255, 255, 0.8); }
+body.estilo-vidrio .onboarding-continue-btn, body.estilo-vidrio .onboarding-option {
+  background: rgba(29, 42, 68, 0.88); border: 1.5px solid rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 6px 16px rgba(29, 42, 68, 0.16);
+}
+
+/* Tarjetas de contenido (pregunta, tarjeta de vocabulario, paneles) */
+body.estilo-vidrio .card {
+  background: rgba(255, 255, 255, 0.52); border: 1.5px solid rgba(255, 255, 255, 0.75); border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(29, 42, 68, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+}
+body.estilo-vidrio .flashcard .back { border-top-color: rgba(29, 42, 68, 0.3); }
+body.estilo-vidrio .lesson {
+  background: rgba(255, 255, 255, 0.5); border: 1.5px solid rgba(255, 255, 255, 0.75); border-left: 4px solid var(--v2-cyan);
+  border-radius: 16px; box-shadow: 0 6px 18px rgba(29, 42, 68, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Botones: azul oscuro de vidrio (los "ghost" son de vidrio claro con borde) */
+body.estilo-vidrio .btn {
+  background: rgba(29, 42, 68, 0.88); border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 12px rgba(29, 42, 68, 0.16);
+}
+body.estilo-vidrio .btn.primary { background: rgba(29, 42, 68, 0.88); }
+body.estilo-vidrio .btn.ghost, body.estilo-vidrio .btn.danger {
+  background: rgba(255, 255, 255, 0.38); border: 1.5px solid rgba(29, 42, 68, 0.55); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+body.estilo-vidrio .btn.option.right { background: rgba(31, 182, 181, 0.94); color: var(--v2-navy); }
+body.estilo-vidrio .btn.option.wrong { background: rgba(212, 205, 206, 0.82); color: var(--v2-navy); opacity: 0.8; }
+body.estilo-vidrio .btn:disabled { opacity: 0.55; }
+
+/* Campos de texto */
+body.estilo-vidrio .text-input { background: rgba(255, 255, 255, 0.62); border: 1.5px solid rgba(255, 255, 255, 0.85); box-shadow: inset 0 1px 3px rgba(29, 42, 68, 0.08); }
+body.estilo-vidrio .text-input:focus { border-color: var(--v2-cyan); }
+body.estilo-vidrio .text-input.right { border-color: var(--v2-cyan); }
+body.estilo-vidrio .text-input.wrong { border-color: var(--v2-navy); }
+
+/* Aviso de acierto / error */
+body.estilo-vidrio .feedback { border-radius: 18px; }
+body.estilo-vidrio .feedback.ok {
+  background: rgba(255, 255, 255, 0.62); border: 1.5px solid rgba(255, 255, 255, 0.85); border-left: 5px solid var(--v2-cyan);
+  box-shadow: 0 6px 16px rgba(29, 42, 68, 0.1);
+}
+body.estilo-vidrio .feedback.no { background: rgba(29, 42, 68, 0.88); border: 1.5px solid rgba(255, 255, 255, 0.3); }
+
+/* Filtros, listas de temas, fichas */
+body.estilo-vidrio .filter-tab { background: rgba(255, 255, 255, 0.42); border: 1.5px solid rgba(255, 255, 255, 0.75); }
+body.estilo-vidrio .filter-tab.active { background: rgba(31, 182, 181, 0.9); border-color: rgba(255, 255, 255, 0.5); }
+body.estilo-vidrio .topic-card {
+  background: rgba(29, 42, 68, 0.8); border: 1.5px solid rgba(255, 255, 255, 0.35); border-radius: 24px;
+  box-shadow: 0 8px 22px rgba(29, 42, 68, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+body.estilo-vidrio .topic-card.done { border: 2px solid var(--v2-cyan); }
+body.estilo-vidrio .order-answer { background: rgba(255, 255, 255, 0.5); border: 2px solid rgba(255, 255, 255, 0.8); }
+body.estilo-vidrio .order-answer.right { border-color: var(--v2-cyan); }
+body.estilo-vidrio .order-answer.wrong { border-color: var(--v2-navy); }
+body.estilo-vidrio .chip { background: rgba(29, 42, 68, 0.88); border: 1.5px solid rgba(255, 255, 255, 0.3); }
+body.estilo-vidrio .order-answer .chip { background: rgba(31, 182, 181, 0.94); }
+body.estilo-vidrio .match-item { background: rgba(29, 42, 68, 0.88); border: 2px solid rgba(255, 255, 255, 0.3); }
+body.estilo-vidrio .match-item.selected { border-color: var(--v2-cyan); }
+body.estilo-vidrio .match-item.right { background: rgba(31, 182, 181, 0.94); border-color: rgba(255, 255, 255, 0.4); }
+body.estilo-vidrio .match-item.wrong { background: rgba(212, 205, 206, 0.9); border-color: rgba(255, 255, 255, 0.5); }
+
+/* Aventura: mapa, niveles, cartel, hoja del nivel, barra de avance */
+body.estilo-vidrio .av-info {
+  background: rgba(255, 255, 255, 0.46); border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+body.estilo-vidrio .av-cartel { background: rgba(29, 42, 68, 0.86); border: 1.5px solid rgba(255, 255, 255, 0.4); box-shadow: 0 6px 16px rgba(29, 42, 68, 0.2); }
+body.estilo-vidrio .av-punto {
+  background: rgba(29, 42, 68, 0.92); border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 5px 12px rgba(29, 42, 68, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+body.estilo-vidrio .av-nodo.hecho .av-punto { background: rgba(31, 182, 181, 0.96); }
+body.estilo-vidrio .av-nodo.bloqueado .av-punto { background: rgba(255, 255, 255, 0.62); border-color: rgba(255, 255, 255, 0.85); box-shadow: none; }
+body.estilo-vidrio .av-nodo.actual .av-punto { box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.85), 0 0 0 9px var(--v2-cyan); }
+body.estilo-vidrio .av-pie { background: rgba(255, 255, 255, 0.72); }
+body.estilo-vidrio .av-hoja {
+  background: rgba(29, 42, 68, 0.88); border: 1.5px solid rgba(255, 255, 255, 0.35); border-radius: 26px;
+  box-shadow: 0 14px 36px rgba(29, 42, 68, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3); backdrop-filter: blur(16px) saturate(1.3);
+}
+body.estilo-vidrio .av-hoja .btn.primary { background: rgba(31, 182, 181, 0.96); }
+body.estilo-vidrio .av-hoja .btn.ghost { background: transparent; border-color: rgba(255, 244, 214, 0.7); }
+body.estilo-vidrio .av-barra { background: rgba(255, 255, 255, 0.6); }
+
+/* Aviso que aparece un momento ("Guardado") */
+body.estilo-vidrio .toast {
+  background: rgba(29, 42, 68, 0.9); border: 1.5px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
 
 /* Sin soporte de desenfoque, o si se pidió menos transparencia: colores sólidos (se ve parecido, sin vidrio) */
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
@@ -650,13 +747,20 @@ body.estilo-vidrio .nav-btn.active { background: rgba(31, 182, 181, 0.88); color
   body.estilo-vidrio .home-card-cyan { background: #d9f1e6; }
   body.estilo-vidrio .home-card-pink { background: #e1dbd5; }
   body.estilo-vidrio .nav-bar, body.estilo-vidrio .modo-selector { background: #f2ece0; }
+  body.estilo-vidrio .app-header { background: #f6efdc; }
+  body.estilo-vidrio .card, body.estilo-vidrio .av-info { background: #f4eee3; }
+  body.estilo-vidrio .av-hoja, body.estilo-vidrio .toast { background: #1d2a44; }
 }
 @media (prefers-reduced-transparency: reduce) {
   body.estilo-vidrio .home-card-navy { background: #2f3a52; }
   body.estilo-vidrio .home-card-cyan { background: #d9f1e6; }
   body.estilo-vidrio .home-card-pink { background: #e1dbd5; }
   body.estilo-vidrio .nav-bar, body.estilo-vidrio .modo-selector { background: #f2ece0; }
-  body.estilo-vidrio .home-card, body.estilo-vidrio .nav-bar, body.estilo-vidrio .app-header, body.estilo-vidrio .lang-badge, body.estilo-vidrio .modo-selector {
+  body.estilo-vidrio .app-header { background: #f6efdc; }
+  body.estilo-vidrio .card, body.estilo-vidrio .av-info { background: #f4eee3; }
+  body.estilo-vidrio .av-hoja, body.estilo-vidrio .toast { background: #1d2a44; }
+  body.estilo-vidrio .home-card, body.estilo-vidrio .nav-bar, body.estilo-vidrio .app-header, body.estilo-vidrio .lang-badge, body.estilo-vidrio .modo-selector,
+  body.estilo-vidrio .card, body.estilo-vidrio .av-info, body.estilo-vidrio .av-hoja, body.estilo-vidrio .toast {
     -webkit-backdrop-filter: none; backdrop-filter: none;
   }
 }

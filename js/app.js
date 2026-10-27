@@ -186,7 +186,6 @@ function setupNav() {
 function showView(name) {
   currentView = name;
   document.body.dataset.view = name;
-  document.body.classList.remove("estilo-vidrio"); // lo vuelve a poner renderHome si corresponde
   document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === "view-" + name));
   // Las demás pantallas cuelgan de Inicio: el botón activo es Inicio, salvo en Ajustes
   const botonActivo = name === "ajustes" ? "ajustes" : "home";
@@ -267,8 +266,6 @@ function tarjetaAventura() {
 
 function renderHome(host) {
   clear(host);
-  // Prueba de diseño: Inicio del modo Clásico con el estilo "vidrio" (ver css/styles.css)
-  document.body.classList.toggle("estilo-vidrio", modoActual() === "clasico");
   const s = Store.settings();
   const v = Vocab.stats();
   const p = Produccion.stats();
