@@ -9,8 +9,7 @@
 
    El camino se dibuja como un mapa que se recorre hacia arriba (js/mapa.js calcula dónde cae cada nivel y
    data/mapa.data.js describe las zonas y deja lugar para el arte). Tocar un nivel abre una hoja con su detalle.
-   Se entra desde la tarjeta de Aventura en Inicio (modo Aventura). Para probar sin superar todos los niveles:
-   abrir la app con "?aventura=todo" al final de la dirección deja todos los niveles abiertos (SACAR antes de publicar). */
+   Se entra desde la tarjeta de Aventura en Inicio (modo Aventura). */
 const Aventura = (function () {
   const APROBAR = 0.7;
   let host = null;
@@ -63,13 +62,8 @@ const Aventura = (function () {
     return !!(r && r.hecho);
   }
 
-  // Para probar: con ?aventura=todo no hace falta superar un nivel para abrir el siguiente
-  function todoAbierto() {
-    return typeof location !== "undefined" && /[?&]aventura=todo\b/.test(location.search);
-  }
-
   function desbloqueado(i) {
-    return todoAbierto() || i === 0 || hecho(niveles()[i - 1].id);
+    return i === 0 || hecho(niveles()[i - 1].id);
   }
 
   // Primer nivel sin superar (-1 si ya están todos)
