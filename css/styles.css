@@ -418,6 +418,8 @@ body[data-view="home"] .app-main { padding-bottom: 88px; }
    por eso los dos tienen que medir lo mismo */
 .av-mapa-ext { margin: 0 -16px; }
 .av-mapa { position: relative; width: 100%; height: 0; overflow: hidden; }
+/* Suelo de abajo del mapa: cubre el espacio que la pantalla deja debajo (detrás de la barra), con el color del suelo de la primera zona */
+.av-suelo { height: 110px; margin: 0 -16px -110px; background-image: linear-gradient(rgba(29, 42, 68, 0), rgba(29, 42, 68, 0.1)); }
 .av-capa { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .av-banda.a { fill: var(--v2-pink); opacity: 0.22; }
 .av-banda.b { fill: var(--v2-cyan); opacity: 0.1; }

@@ -17,7 +17,7 @@ const geo = vm.runInContext("Mapa.calcular(CAMINO.niveles.length, MAPA)", ctxApp
 const ALTOS = geo.zonas.map((z) => Math.round(z.bottom - z.top));
 
 const { f, at, claro, oscuro, NAVY, CREMA } = K;
-const VERSION_ARTE = 1; // subirla cada vez que se cambie el arte, así los celulares bajan los dibujos nuevos
+const VERSION_ARTE = 2; // subirla cada vez que se cambie el arte, así los celulares bajan los dibujos nuevos
 
 // ---------- Piezas por nombre: [función que dibuja, opciones por defecto] ----------
 const PIEZAS = {
@@ -128,7 +128,8 @@ function componer(numero, z, alto) {
   const hor = alto * (z.hor || 0.46), P = z.P;
   const partes = [];
   // 1. lavado de color de toda la zona: crema en los bordes (así las zonas se pegan sin costura), el cielo arriba y el suelo abajo
-  const lavado = K.degradado(c, 0, 0, 0, alto, [[0, CREMA], [0.1, P.top], [0.42, P.bot], [(hor / alto) + 0.01, P.s1], [0.9, P.s2], [1, CREMA]]);
+  const sinFundido = z.fadeBottom === 0; // la primera zona termina en suelo (sigue hacia abajo con el color de data/mapa.data.js: pie)
+  const lavado = K.degradado(c, 0, 0, 0, alto, [[0, CREMA], [0.1, P.top], [0.42, P.bot], [(hor / alto) + 0.01, P.s1], [0.9, P.s2], [1, sinFundido ? P.s2 : CREMA]]);
   partes.push(`<rect width="400" height="${alto}" fill="${lavado}"/>`);
   // 2. cielo y fondo lejano
   partes.push(cielo(c, z.cielo || {}));
@@ -142,7 +143,14 @@ function componer(numero, z, alto) {
   partes.push(poner(c, z.items || []));
   // 5. velo del centro: baja el contraste donde van el camino y los niveles
   const velo = K.degradado(c, 70, 0, 330, 0, [[0, "#ffffff", 0], [0.3, "#ffffff", 0.2], [0.7, "#ffffff", 0.2], [1, "#ffffff", 0]]);
-  partes.push(`<rect x="70" y="${f(hor - 60)}" width="260" height="${f(alto - hor + 60)}" fill="${velo}"/>`);
+  if (sinFundido) {
+    const mid = c.p + "m";
+    const vert = K.degradado(c, 0, alto - 150, 0, alto, [[0, "#ffffff"], [1, "#000000"]]);
+    c.defs.push(`<mask id="${mid}" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="${alto}"><rect y="0" width="400" height="${alto - 150}" fill="#ffffff"/><rect y="${alto - 150}" width="400" height="150" fill="${vert}"/></mask>`);
+    partes.push(`<rect x="70" y="${f(hor - 60)}" width="260" height="${f(alto - hor + 60)}" fill="${velo}" mask="url(#${mid})"/>`);
+  } else {
+    partes.push(`<rect x="70" y="${f(hor - 60)}" width="260" height="${f(alto - hor + 60)}" fill="${velo}"/>`);
+  }
   // 6. motitas de textura en el suelo
   let tex = "";
   for (let i = 0; i < 70; i++) tex += `<circle cx="${f(c.rng() * 400)}" cy="${f(hor + 20 + c.rng() * (alto - hor - 20))}" r="${f(0.8 + c.rng() * 1.6)}" fill="${z.tex || oscuro(P.s2, 0.25)}" opacity="${f(0.1 + c.rng() * 0.16)}"/>`;
@@ -151,7 +159,7 @@ function componer(numero, z, alto) {
   const ft = z.fadeTop || 80;
   const arriba = K.degradado(c, 0, 0, 0, ft, [[0, CREMA, 1], [1, CREMA, 0]]);
   const abajo = K.degradado(c, 0, alto - 100, 0, alto, [[0, CREMA, 0], [1, CREMA, 1]]);
-  partes.push(`<rect width="400" height="${ft}" fill="${arriba}"/><rect y="${alto - 100}" width="400" height="100" fill="${abajo}"/>`);
+  partes.push(`<rect width="400" height="${ft}" fill="${arriba}"/>` + (sinFundido ? "" : `<rect y="${alto - 100}" width="400" height="100" fill="${abajo}"/>`));
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="${alto}" viewBox="0 0 400 ${alto}">\n<title>${z.nombre}</title>\n<defs>${c.defs.join("")}</defs>\n${partes.join("\n")}\n</svg>\n`;
 }

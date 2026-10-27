@@ -185,6 +185,8 @@ const Aventura = (function () {
     // ----- Lienzo: franjas de zona, formas, y el trazo del camino -----
     const lienzo = h("div", { class: "av-mapa", style: "padding-top:" + ((g.alto / g.ancho) * 100).toFixed(3) + "%" });
     const capa = svg("svg", { class: "av-capa", viewBox: "0 0 " + g.ancho + " " + g.alto, preserveAspectRatio: "none", "aria-hidden": "true" });
+    // Abajo de la primera zona el suelo sigue hasta el final del mapa (y, con el relleno de .av-suelo, hasta el final de la pantalla)
+    if (typeof MAPA !== "undefined" && MAPA && MAPA.pie && g.zonas.length) capa.appendChild(svg("rect", { x: 0, y: g.zonas[0].bottom - 1, width: g.ancho, height: g.alto - g.zonas[0].bottom + 2, fill: MAPA.pie }));
     g.zonas.forEach((z, k) => capaZona(z, k, g).forEach((n) => capa.appendChild(n)));
     capa.appendChild(svg("path", { d: Mapa.trazo(g.puntos), class: "av-trazo base" }));
     const llegado = actual < 0 ? lista.length - 1 : actual;
@@ -276,6 +278,7 @@ const Aventura = (function () {
       ])
     );
     host.appendChild(h("div", { class: "av-mapa-ext" }, lienzo));
+    if (typeof MAPA !== "undefined" && MAPA && MAPA.pie) host.appendChild(h("div", { class: "av-suelo", style: "background-color:" + MAPA.pie }));
     host.appendChild(hoja);
     // showView sube la pantalla al principio después de dibujar; esto la deja en el nivel actual
     setTimeout(() => irAMiNivel(false), 0);

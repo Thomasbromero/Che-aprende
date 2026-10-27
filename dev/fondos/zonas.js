@@ -30,7 +30,7 @@ module.exports = function (K, PIEZAS) {
   return [
     // 1
     {
-      nombre: "Buenos Aires", sem: 1, P: { top: "#9ed3e2", bot: "#ffd0ad", s1: "#dccfd0", s2: "#eadbd2" },
+      nombre: "Buenos Aires", sem: 1, fadeBottom: 0, P: { top: "#9ed3e2", bot: "#ffd0ad", s1: "#dccfd0", s2: "#eadbd2" },
       cielo: { sol: [250, 0.3, 26, "#ffb86b"], nubes: 5, pajaros: [[60, 0.17, 1, 3], [270, 0.12, 0.8, 2]] },
       lejos: (c, hor) => ciudadLejos(c, 62, hor, 1.1, 5) + ciudadLejos(c, 338, hor, 1.2, 5) + ciudadLejos(c, 200, hor, 0.8, 4, ["#dcc9b4", "#cfbba5"]),
       capas: [{ y: 0.46, amp: 5, color: "#e2d3cf", abajo: "#ecdcd2" }],
