@@ -13,20 +13,22 @@
 
    Los ejercicios a mano se anotan con format "gramatica" o "produccion" para poder puntuarlos igual.
    La rúbrica completa, con el motivo de cada número, está en dev/dificultad-informe.md. */
-const Dificultad = (function () {
+// Un Dificultad por idioma: crearDificultad(() => ({ formats, conjugador, vocab, verbos })) con las piezas de ese idioma.
+function crearDificultad(piezas) {
   const PESO_CONTENIDO = 0.6;
   const PESO_FORMATO = 0.4;
 
   function nivelDelContenido(ex) {
     if (ex.format === "gramatica" || ex.format === "produccion") return ex.nivel;
-    if (Formats.fuenteDeFormato(ex.format) === "verbo") return Conjugador.nivel(VERBOS.find((v) => v.id === ex.source), ex.tiempo, ex.persona);
-    return VOCAB.find((c) => c.id === ex.source).nivel;
+    const P = piezas();
+    if (P.formats.fuenteDeFormato(ex.format) === "verbo") return P.conjugador.nivel(P.verbos.find((v) => v.id === ex.source), ex.tiempo, ex.persona);
+    return P.vocab.find((c) => c.id === ex.source).nivel;
   }
 
   function esfuerzoDelFormato(ex) {
     if (ex.format === "gramatica") return ex.type === "choice" ? 22 + 5 * Math.min(2, ex.options.length - 2) : 62;
     if (ex.format === "produccion") return 62;
-    return Formats.esfuerzo(ex);
+    return piezas().formats.esfuerzo(ex);
   }
 
   function puntaje(ex) {
@@ -35,4 +37,7 @@ const Dificultad = (function () {
   }
 
   return { puntaje, nivelDelContenido, esfuerzoDelFormato };
-})();
+}
+
+// Español
+const Dificultad = crearDificultad(() => ({ formats: Formats, conjugador: Conjugador, vocab: VOCAB, verbos: VERBOS }));

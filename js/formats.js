@@ -12,27 +12,16 @@
 
    Los ejercicios generados llevan además { format, source } para saber de qué formato
    y de qué palabra o verbo salieron. Todo el azar sale de opts.rng (por defecto Math.random),
-   para poder repetir el mismo ejercicio con una semilla. */
-const Formats = (function () {
-  // Cada tema pertenece a un grupo más grande: si un tema no alcanza para armar opciones,
-  // se completa con palabras del mismo grupo y después con cualquiera.
-  const GRUPOS = {
-    cuerpo: "cuerpo", ropa: "cuerpo", accesorios: "cuerpo",
-    comida: "hogar", cocina: "hogar", limpieza: "hogar", muebles: "hogar", casa: "hogar", tecnologia: "hogar",
-    hotel: "ciudad", lugares: "ciudad", transporte: "ciudad", indicaciones: "ciudad",
-    saludos: "jerga", personas: "jerga", familia: "jerga", elogios: "jerga", jerga_cosas: "jerga",
-    jerga_verbos: "jerga", jerga_expresiones: "jerga", tiempo_libre: "jerga",
-    restaurante: "hogar", compras: "ciudad", salud: "cuerpo", trabajo: "ciudad", ciudad: "ciudad",
-  };
-  // Temas donde casi todas las palabras significan lo mismo ("excelente"): ahí las opciones
-  // incorrectas no salen del mismo tema, para no armar preguntas con dos respuestas posibles.
-  const SINONIMOS = { elogios: true, emociones: true };
+   para poder repetir el mismo ejercicio con una semilla.
 
-  const ART_RE = /^(el|la|los|las|un|una|unos|unas)\s+/i;
-  const ART_BASE = { un: "el", una: "la", unos: "los", unas: "las" };
-  // Palabras que solo marcan el registro ("szlengben", "szállodai"...): no cuentan para decir
-  // que dos traducciones se parecen.
-  const HU_SUELTAS = ["bizalmasan", "szlengben", "hivatalos", "szállodai", "sértésként", "egyenesen"];
+   Hay un juego de formatos por idioma: crearFormats(cfg) arma uno con la configuración de ese idioma
+   (de dónde salen las palabras y los verbos, cómo se llama la traducción, qué artículos hay, qué se
+   le dice a quien aprende). Formats es el del español; el alemán está en js/formats.de.js. */
+function crearFormats(cfg) {
+  const GRUPOS = cfg.grupos, SINONIMOS = cfg.sinonimos;
+  const ART_RE = cfg.artRe, ART_BASE = cfg.artBase;
+  const glosa = cfg.glosa;
+  const Conjugador = cfg.conjugador;
 
   // ---------- Azar ----------
   function rngDe(o) { return (o && o.rng) || Math.random; }
@@ -58,7 +47,7 @@ const Formats = (function () {
 
   function tipoDe(c) {
     if (articuloDe(c)) return "sust";
-    if (/^(hacer|dar|estar|tener|ser|seguir)\s/.test(c.term) || /^[\p{L}]+(ar|er|ir)(\(se\))?$/u.test(c.term)) return "verbo";
+    if (cfg.esVerbo(c.term)) return "verbo";
     return "otro";
   }
 
@@ -68,8 +57,8 @@ const Formats = (function () {
     const out = [];
     t.split(/\s*\/\s*/).forEach((p) => {
       p = p.replace(ART_RE, "").trim();
-      if (/^(el|la|los|las|un|una)$/i.test(p)) return; // "el/la ex": la parte "el" sola no es una palabra
-      if (/^[aeo]$/.test(p) && out[0]) out.push(out[0].replace(/[aeo]$/, p)); // "boludo/a"
+      if (cfg.soloArticulo.test(p)) return; // "el/la ex": la parte "el" sola no es una palabra
+      if (cfg.generoAO && /^[aeo]$/.test(p) && out[0]) out.push(out[0].replace(/[aeo]$/, p)); // "boludo/a"
       else if (p) out.push(p);
     });
     return out;
@@ -78,19 +67,20 @@ const Formats = (function () {
   function nucleo(c) { return variantes(c.term)[0] || c.term; }
 
   // ---------- "Se parecen en el significado" ----------
-  function tokensHu(hu) {
-    const palabras = hu.toLowerCase().match(/\p{L}{4,}/gu) || [];
-    return palabras.filter((w) => HU_SUELTAS.indexOf(w) < 0).map((w) => w.slice(0, 4));
+  function tokensGlosa(g) {
+    const palabras = g.toLowerCase().match(/\p{L}{4,}/gu) || [];
+    return palabras.filter((w) => cfg.glosasSueltas.indexOf(w) < 0).map((w) => w.slice(0, 4));
   }
   function parecidas(a, b) {
-    const ta = tokensHu(a.hu);
-    return tokensHu(b.hu).some((t) => ta.indexOf(t) >= 0);
+    const ta = tokensGlosa(glosa(a));
+    return tokensGlosa(glosa(b)).some((t) => ta.indexOf(t) >= 0);
   }
 
   // Elige n palabras para usar como opciones incorrectas de c.
   // Orden de preferencia: mismo tema, mismo grupo, cualquiera; y dentro de cada uno, del mismo tipo.
   // Nunca elige una que se parezca en el significado a c ni a otra ya elegida.
   function distractores(c, n, rng, filtro) {
+    const VOCAB = cfg.vocab();
     const elegidas = [];
     const sirve = (d) =>
       d.id !== c.id &&
@@ -112,14 +102,6 @@ const Formats = (function () {
   }
 
   // ---------- Hueco de "completar la frase" ----------
-  function raiz(v) {
-    const n = norm(v);
-    if (/\s/.test(n)) return n;
-    if (/(ar|er|ir)$/.test(n)) return n.slice(0, -2);
-    if (n.length > 4 && /[aeiou]s?$/.test(n)) return n.replace(/[aeiou]s?$/, "");
-    return n;
-  }
-
   // Devuelve el texto exacto de la frase que se tapa, o null si no hay forma segura.
   function hueco(c) {
     if (c.hueco === false) return null;
@@ -131,7 +113,7 @@ const Formats = (function () {
       if (exacta) return exacta;
     }
     for (const v of vars) {
-      const r = raiz(v);
+      const r = cfg.raiz(v);
       const w = palabras.find((p) => {
         const np = norm(p);
         return np.startsWith(r) && np.length >= r.length && np.length <= norm(v).length + 4;
@@ -165,8 +147,11 @@ const Formats = (function () {
   }
 
   function explicacion(c) {
-    return "«" + c.term + "» = " + c.hu + ". " + c.example;
+    return cfg.explicacion ? cfg.explicacion(c) : "«" + c.term + "» = " + glosa(c) + ". " + c.example;
   }
+
+  // Formas escritas que se aceptan: las que pide el idioma (en alemán, ä = ae, ß = ss...)
+  function conAlternativas(accept) { return cfg.alternativas ? cfg.alternativas(accept) : accept; }
 
   // ---------- Los formatos ----------
   // esfuerzo (0-100): cuánto hay que recordar o producir. Elegir entre opciones: 10-40.
@@ -183,8 +168,8 @@ const Formats = (function () {
         return {
           type: "choice",
           prompt: "¿Qué significa «" + c.term + "»?",
-          options: mezclar([c.hu].concat(otras.map((d) => d.hu)), rng),
-          answer: c.hu,
+          options: mezclar([glosa(c)].concat(otras.map((d) => glosa(d))), rng),
+          answer: glosa(c),
           explain: explicacion(c),
         };
       },
@@ -200,7 +185,7 @@ const Formats = (function () {
         const otras = distractores(c, 3, rng);
         return {
           type: "choice",
-          prompt: "¿Cómo se dice «" + c.hu + "» en español?",
+          prompt: "¿Cómo se dice «" + glosa(c) + "» en " + cfg.idioma + "?",
           options: mezclar([c.term].concat(otras.map((d) => d.term)), rng),
           answer: c.term,
           explain: explicacion(c),
@@ -217,17 +202,17 @@ const Formats = (function () {
       aplica(c) {
         const f = fraseConHueco(c);
         // Una sola palabra: si la correcta tuviera varias y las demás no, se delataría sola.
-        return !!(f && articuloDe(c) && f.respuesta === nucleo(c) && /^\p{L}+$/u.test(f.respuesta) && f.respuesta === f.respuesta.toLowerCase());
+        return !!(f && articuloDe(c) && f.respuesta === nucleo(c) && /^\p{L}+$/u.test(f.respuesta) && cfg.formaDeHueco(f.respuesta));
       },
       generar(c, o) {
         const rng = rngDe(o);
         const f = fraseConHueco(c);
         const art = articuloDe(c);
-        const otras = distractores(c, 3, rng, (d) => articuloDe(d) === art && /^[\p{L}]+$/u.test(nucleo(d)) && nucleo(d) === nucleo(d).toLowerCase());
+        const otras = distractores(c, 3, rng, (d) => articuloDe(d) === art && /^[\p{L}]+$/u.test(nucleo(d)) && cfg.formaDeHueco(nucleo(d)));
         return {
           type: "choice",
           prompt: f.prompt,
-          hint: c.hu,
+          hint: glosa(c),
           options: mezclar([f.respuesta].concat(otras.map((d) => nucleo(d))), rng),
           answer: f.respuesta,
           explain: explicacion(c),
@@ -246,19 +231,21 @@ const Formats = (function () {
         const accept = [f.respuesta];
         if (/-/.test(f.respuesta)) accept.push(f.respuesta.replace(/-/g, ""), f.respuesta.replace(/-/g, " "));
         // "perdido/a", "copado/a"...: sirve la forma de varón o de mujer
-        if (/\p{L}\/a$/u.test(c.term)) {
+        if (cfg.generoAO && /\p{L}\/a$/u.test(c.term)) {
           if (/o$/.test(f.respuesta)) accept.push(f.respuesta.slice(0, -1) + "a");
           else if (/a$/.test(f.respuesta)) accept.push(f.respuesta.slice(0, -1) + "o");
         }
-        return {
+        const ex = {
           type: "fill",
           prompt: f.prompt,
-          hint: flexionada ? c.hu + " (forma de «" + c.term + "»)" : c.hu,
-          accept,
+          hint: flexionada ? glosa(c) + " (forma de «" + c.term + "»)" : glosa(c),
+          accept: conAlternativas(accept),
           answer: f.respuesta,
           explain: explicacion(c),
           flexionada, // hay que ponerle plural, género o conjugación: cuesta más
         };
+        if (cfg.estrictoSiempre) ex.estricto = true;
+        return ex;
       },
     },
 
@@ -278,7 +265,7 @@ const Formats = (function () {
         return {
           type: "order",
           prompt: "Ordená las palabras para armar la frase.",
-          hint: c.term + " = " + c.hu,
+          hint: cfg.pistaOrdenar ? cfg.pistaOrdenar(c) : c.term + " = " + glosa(c),
           words,
           answer: orden.join(" "),
           explain: explicacion(c),
@@ -297,8 +284,8 @@ const Formats = (function () {
         return {
           type: "match",
           prompt: "Unir cada palabra con su significado.",
-          pairs: grupo.map((d) => ({ left: d.term, right: d.hu })),
-          answer: grupo.map((d) => d.term + " = " + d.hu).join(" · "),
+          pairs: grupo.map((d) => ({ left: d.term, right: glosa(d) })),
+          answer: grupo.map((d) => d.term + " = " + glosa(d)).join(" · "),
           explain: "Ejemplo: " + c.example,
         };
       },
@@ -309,14 +296,15 @@ const Formats = (function () {
   function sorteo(lista, rng) { return lista[Math.floor(rng() * lista.length)]; }
 
   // Elige tiempo y persona (los que pida opts.tiempo / opts.persona, y si no, al azar).
-  function tiempoYPersona(o, rng) {
+  function tiempoYPersona(o, rng, v) {
+    const tiempos = Conjugador.tiemposDe ? Conjugador.tiemposDe(v) : Conjugador.TIEMPOS;
     return {
-      t: (o && o.tiempo) || sorteo(Conjugador.TIEMPOS, rng).id,
+      t: (o && o.tiempo) || sorteo(tiempos, rng).id,
       p: (o && o.persona) || sorteo(Conjugador.PERSONAS, rng).id,
     };
   }
 
-  // Otra forma del mismo verbo que solo se distingue por la tilde (hablo/habló, hable/hablé).
+  // Otra forma del mismo verbo que solo se distingue por la tilde (hablo/habló, hable/hablé; en alemán, fährt/fahrt).
   function confundible(v, t, p) {
     const propias = Conjugador.formas(v, t, p);
     for (const x of Conjugador.todas(v)) {
@@ -329,25 +317,7 @@ const Formats = (function () {
     return null;
   }
 
-  function etiquetaTiempo(id) { return Conjugador.tiempoDe(id).etiqueta; }
-  function etiquetaPersona(id) { return Conjugador.PERSONAS.find((x) => x.id === id).etiqueta; }
-
-  function explicacionVerbo(v, t, p, formas, conf) {
-    const T = etiquetaTiempo(t);
-    let s;
-    if (Conjugador.esIrregular(v, t, p)) s = "«" + v.inf + "» es irregular en " + T + ": " + formas[0] + ".";
-    else {
-      s = T.charAt(0).toUpperCase() + T.slice(1) + " regular de un verbo -" + Conjugador.grupo(v).toUpperCase() + ": " + formas[0] + ".";
-      if (t === "presente" && p === "vos") s += " Con vos, la última sílaba lleva tilde.";
-    }
-    if (formas.length > 1) s += " También se usa «" + formas[1] + "».";
-    if (conf) s += " Ojo con la tilde: «" + formas[0] + "» no es lo mismo que «" + conf.forma + "» (" + etiquetaTiempo(conf.tiempo) + ", " + etiquetaPersona(conf.persona) + ").";
-    return s;
-  }
-
-  function consignaVerbo(v, t, p) {
-    return "Conjugá «" + v.inf + "» — " + etiquetaTiempo(t) + ", " + etiquetaPersona(p) + ":";
-  }
+  const verbosTxt = cfg.verbosTxt(Conjugador, confundible);
 
   DEFS.conjugar_opciones = {
     fuente: "verbo",
@@ -356,7 +326,7 @@ const Formats = (function () {
     aplica: (v) => !!v.inf,
     generar(v, o) {
       const rng = rngDe(o);
-      const { t, p } = tiempoYPersona(o, rng);
+      const { t, p } = tiempoYPersona(o, rng, v);
       const formas = Conjugador.formas(v, t, p);
       const propias = formas.map((f) => f.toLowerCase());
       // Opciones incorrectas: otras formas del mismo verbo (otro tiempo u otra persona)
@@ -368,11 +338,11 @@ const Formats = (function () {
       const otras = mezclar(pool, rng).slice(0, 3);
       return {
         type: "choice",
-        prompt: consignaVerbo(v, t, p),
-        hint: v.hu,
+        prompt: verbosTxt.consigna(v, t, p),
+        hint: glosa(v),
         options: mezclar([formas[0]].concat(otras), rng),
         answer: formas[0],
-        explain: explicacionVerbo(v, t, p, formas, null),
+        explain: verbosTxt.explicacion(v, t, p, formas, null),
         tiempo: t,
         persona: p,
       };
@@ -386,21 +356,21 @@ const Formats = (function () {
     aplica: (v) => !!v.inf,
     generar(v, o) {
       const rng = rngDe(o);
-      const { t, p } = tiempoYPersona(o, rng);
+      const { t, p } = tiempoYPersona(o, rng, v);
       const formas = Conjugador.formas(v, t, p);
       const conf = confundible(v, t, p);
       const ex = {
         type: "fill",
-        prompt: consignaVerbo(v, t, p) + " ___",
-        hint: v.hu,
-        accept: formas,
+        prompt: verbosTxt.consigna(v, t, p) + " ___",
+        hint: glosa(v),
+        accept: conAlternativas(formas),
         answer: formas[0],
-        explain: explicacionVerbo(v, t, p, formas, conf),
+        explain: verbosTxt.explicacion(v, t, p, formas, conf),
         tiempo: t,
         persona: p,
       };
       // Si sin la tilde se obtiene otra forma válida del verbo, la tilde cuenta como parte de la respuesta
-      if (conf) ex.estricto = true;
+      if (conf || cfg.estrictoSiempre) ex.estricto = true;
       return ex;
     },
   };
@@ -409,7 +379,7 @@ const Formats = (function () {
 
   function buscar(item) {
     if (typeof item !== "string") return item;
-    return VOCAB.find((v) => v.id === item) || (typeof VERBOS !== "undefined" ? VERBOS.find((v) => v.id === item) : undefined);
+    return cfg.vocab().find((v) => v.id === item) || cfg.verbos().find((v) => v.id === item);
   }
 
   // Arma un ejercicio del formato `id` para la palabra o verbo `item` (objeto o id), o null si no aplica.
@@ -443,4 +413,61 @@ const Formats = (function () {
   function fuenteDeFormato(id) { return DEFS[id].fuente || "vocab"; }
 
   return { generar, formatosPara, lista, esfuerzo, fuenteDeFormato, hueco, fraseConHueco, distractores, parecidas, tipoDe, articuloDe, nucleo, confundible };
-})();
+}
+
+// ---------- Español (rioplatense): la configuración de siempre ----------
+const Formats = crearFormats({
+  idioma: "español",
+  vocab: () => VOCAB,
+  verbos: () => (typeof VERBOS !== "undefined" ? VERBOS : []),
+  conjugador: Conjugador,
+  glosa: (c) => c.hu,
+  // Cada tema pertenece a un grupo más grande: si un tema no alcanza para armar opciones,
+  // se completa con palabras del mismo grupo y después con cualquiera.
+  grupos: {
+    cuerpo: "cuerpo", ropa: "cuerpo", accesorios: "cuerpo",
+    comida: "hogar", cocina: "hogar", limpieza: "hogar", muebles: "hogar", casa: "hogar", tecnologia: "hogar",
+    hotel: "ciudad", lugares: "ciudad", transporte: "ciudad", indicaciones: "ciudad",
+    saludos: "jerga", personas: "jerga", familia: "jerga", elogios: "jerga", jerga_cosas: "jerga",
+    jerga_verbos: "jerga", jerga_expresiones: "jerga", tiempo_libre: "jerga",
+    restaurante: "hogar", compras: "ciudad", salud: "cuerpo", trabajo: "ciudad", ciudad: "ciudad",
+  },
+  // Temas donde casi todas las palabras significan lo mismo ("excelente"): ahí las opciones
+  // incorrectas no salen del mismo tema, para no armar preguntas con dos respuestas posibles.
+  sinonimos: { elogios: true, emociones: true },
+  artRe: /^(el|la|los|las|un|una|unos|unas)\s+/i,
+  artBase: { un: "el", una: "la", unos: "los", unas: "las" },
+  soloArticulo: /^(el|la|los|las|un|una)$/i,
+  // Palabras que solo marcan el registro ("szlengben", "szállodai"...): no cuentan para decir
+  // que dos traducciones se parecen.
+  glosasSueltas: ["bizalmasan", "szlengben", "hivatalos", "szállodai", "sértésként", "egyenesen"],
+  generoAO: true,
+  esVerbo: (term) => /^(hacer|dar|estar|tener|ser|seguir)\s/.test(term) || /^[\p{L}]+(ar|er|ir)(\(se\))?$/u.test(term),
+  raiz(v) {
+    const n = norm(v);
+    if (/\s/.test(n)) return n;
+    if (/(ar|er|ir)$/.test(n)) return n.slice(0, -2);
+    if (n.length > 4 && /[aeiou]s?$/.test(n)) return n.replace(/[aeiou]s?$/, "");
+    return n;
+  },
+  formaDeHueco: (s) => s === s.toLowerCase(),
+  verbosTxt(Conjugador, confundible) {
+    function etiquetaTiempo(id) { return Conjugador.tiempoDe(id).etiqueta; }
+    function etiquetaPersona(id) { return Conjugador.PERSONAS.find((x) => x.id === id).etiqueta; }
+    return {
+      consigna: (v, t, p) => "Conjugá «" + v.inf + "» — " + etiquetaTiempo(t) + ", " + etiquetaPersona(p) + ":",
+      explicacion(v, t, p, formas, conf) {
+        const T = etiquetaTiempo(t);
+        let s;
+        if (Conjugador.esIrregular(v, t, p)) s = "«" + v.inf + "» es irregular en " + T + ": " + formas[0] + ".";
+        else {
+          s = T.charAt(0).toUpperCase() + T.slice(1) + " regular de un verbo -" + Conjugador.grupo(v).toUpperCase() + ": " + formas[0] + ".";
+          if (t === "presente" && p === "vos") s += " Con vos, la última sílaba lleva tilde.";
+        }
+        if (formas.length > 1) s += " También se usa «" + formas[1] + "».";
+        if (conf) s += " Ojo con la tilde: «" + formas[0] + "» no es lo mismo que «" + conf.forma + "» (" + etiquetaTiempo(conf.tiempo) + ", " + etiquetaPersona(conf.persona) + ").";
+        return s;
+      },
+    };
+  },
+});
