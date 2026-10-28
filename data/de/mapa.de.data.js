@@ -9,14 +9,14 @@ window.MAPA_DE = {
   amplitud: 105,
   pie: "#e8ded5", // color de abajo de todo del mapa: sigue el suelo de la primera zona (Hamburgo) hasta el final de la pantalla
   zonas: [
-    { nombre: "Hamburgo", niveles: 6, fondo: "assets/mapa-de/zona-01.svg?v=1", decoraciones: [] },
-    { nombre: "Berlín", niveles: 6, fondo: "assets/mapa-de/zona-02.svg?v=1", decoraciones: [] },
-    { nombre: "Dresde", niveles: 5, fondo: "assets/mapa-de/zona-03.svg?v=1", decoraciones: [] },
-    { nombre: "Colonia y el Rin", niveles: 6, fondo: "assets/mapa-de/zona-04.svg?v=1", decoraciones: [] },
-    { nombre: "Selva Negra", niveles: 6, fondo: "assets/mapa-de/zona-05.svg?v=1", decoraciones: [] },
-    { nombre: "Alpes suizos", niveles: 6, fondo: "assets/mapa-de/zona-06.svg?v=1", decoraciones: [] },
-    { nombre: "Múnich", niveles: 5, fondo: "assets/mapa-de/zona-07.svg?v=1", decoraciones: [] },
-    { nombre: "Salzburgo", niveles: 6, fondo: "assets/mapa-de/zona-08.svg?v=1", decoraciones: [] },
-    { nombre: "Viena", niveles: 6, fondo: "assets/mapa-de/zona-09.svg?v=1", decoraciones: [] },
+    { nombre: "Hamburgo", niveles: 6, fondo: "assets/mapa-de/zona-01.svg?v=2", decoraciones: [] },
+    { nombre: "Berlín", niveles: 6, fondo: "assets/mapa-de/zona-02.svg?v=2", decoraciones: [] },
+    { nombre: "Dresde", niveles: 5, fondo: "assets/mapa-de/zona-03.svg?v=2", decoraciones: [] },
+    { nombre: "Colonia y el Rin", niveles: 6, fondo: "assets/mapa-de/zona-04.svg?v=2", decoraciones: [] },
+    { nombre: "Selva Negra", niveles: 6, fondo: "assets/mapa-de/zona-05.svg?v=2", decoraciones: [] },
+    { nombre: "Alpes suizos", niveles: 6, fondo: "assets/mapa-de/zona-06.svg?v=2", decoraciones: [] },
+    { nombre: "Múnich", niveles: 5, fondo: "assets/mapa-de/zona-07.svg?v=2", decoraciones: [] },
+    { nombre: "Salzburgo", niveles: 6, fondo: "assets/mapa-de/zona-08.svg?v=2", decoraciones: [] },
+    { nombre: "Viena", niveles: 6, fondo: "assets/mapa-de/zona-09.svg?v=2", decoraciones: [] },
   ],
 };
