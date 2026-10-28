@@ -12,9 +12,10 @@ window.MAPA_DE = {
     { nombre: "Berlín", niveles: 6, fondo: null, decoraciones: [] },
     { nombre: "Dresde", niveles: 5, fondo: null, decoraciones: [] },
     { nombre: "Colonia y el Rin", niveles: 6, fondo: null, decoraciones: [] },
-    { nombre: "Heidelberg", niveles: 6, fondo: null, decoraciones: [] },
     { nombre: "Selva Negra", niveles: 6, fondo: null, decoraciones: [] },
+    { nombre: "Alpes suizos", niveles: 6, fondo: null, decoraciones: [] },
     { nombre: "Múnich", niveles: 5, fondo: null, decoraciones: [] },
     { nombre: "Salzburgo", niveles: 6, fondo: null, decoraciones: [] },
+    { nombre: "Viena", niveles: 6, fondo: null, decoraciones: [] },
   ],
 };
