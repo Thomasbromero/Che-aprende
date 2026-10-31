@@ -32,6 +32,7 @@ function crearDificultad(piezas) {
   }
 
   function puntaje(ex) {
+    if (ex.format === "leccion") return 0; // una lección no se responde
     const n = Math.round(PESO_CONTENIDO * nivelDelContenido(ex) + PESO_FORMATO * esfuerzoDelFormato(ex));
     return Math.max(1, Math.min(100, n));
   }

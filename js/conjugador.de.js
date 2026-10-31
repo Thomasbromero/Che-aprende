@@ -7,12 +7,12 @@
    (pres y pret son opcionales: si faltan se usa la regla regular; perf, si falta, ese verbo no se conjuga en Perfekt). */
 const ConjugadorDE = (function () {
   const PERSONAS = [
-    { id: "ich", etiqueta: "ich" },
-    { id: "du", etiqueta: "du" },
-    { id: "er", etiqueta: "er / sie / es" },
-    { id: "wir", etiqueta: "wir" },
-    { id: "ihr", etiqueta: "ihr" },
-    { id: "sie", etiqueta: "sie / Sie" },
+    { id: "ich", etiqueta: "ich (yo)", corta: "ich" },
+    { id: "du", etiqueta: "du (vos)", corta: "du" },
+    { id: "er", etiqueta: "er / sie / es (él / ella)", corta: "er/sie/es" },
+    { id: "wir", etiqueta: "wir (nosotros)", corta: "wir" },
+    { id: "ihr", etiqueta: "ihr (ustedes)", corta: "ihr" },
+    { id: "sie", etiqueta: "sie / Sie (ellos / usted)", corta: "sie/Sie" },
   ];
   const TIEMPOS = [
     { id: "presente", etiqueta: "Präsens", campo: "pres" },

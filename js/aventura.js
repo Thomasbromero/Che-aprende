@@ -41,6 +41,7 @@ const Aventura = (function () {
   // Usa los datos del idioma que se está aprendiendo (js/idioma.js)
   function expandir(sp, rng) {
     const P = Idioma.actual();
+    if (sp.f === "leccion") return armarLeccion(P, sp);
     if (sp.f === "gramatica") {
       const t = P.grammar().find((x) => x.id === sp.s);
       return t && t.exercises[sp.i] ? Object.assign({}, t.exercises[sp.i], { format: "gramatica", source: sp.s + "#" + sp.i }) : null;
@@ -50,6 +51,56 @@ const Aventura = (function () {
       return p ? Object.assign({}, p, { format: "produccion", source: sp.s }) : null;
     }
     return P.formats.generar(sp.f, sp.s, { rng, tiempo: sp.t, persona: sp.p });
+  }
+
+  // ---------- Lecciones: una pantalla para LEER antes de los ejercicios (no se responde y no cuenta para aprobar) ----------
+  // sp: { f: "leccion", s: <id de un tema de Gramática> | "palabras:id,id,..." | "verbos:id,id,...", t: <tiempo, solo verbos> }
+  // Un tema trae sus `bloques`: { p: "párrafo" } { nota: "recuadro" } { tabla: [[a, b, sub?]...] } { ejemplos: [[de, es]...] } { verbosRef: [ids], t: tiempo }
+  function tablaVerbos(P, ids, tiempo) {
+    const C = P.conjugador;
+    const verbos = ids.map((id) => P.verbos().find((v) => v.id === id));
+    if (verbos.some((v) => !v)) return null;
+    const T = C.tiempoDe(tiempo);
+    return { verbos: verbos.map((v) => ({ inf: v.inf, es: v.es, tiempo: T.etiqueta, filas: C.PERSONAS.map((pe) => [pe.corta || pe.etiqueta, C.formas(v, tiempo, pe.id)[0]]) })) };
+  }
+  function armarLeccion(P, sp) {
+    const s = sp.s;
+    const base = { type: "leccion", format: "leccion", source: s };
+    if (s.indexOf("palabras:") === 0) {
+      const vocab = P.vocab();
+      const lista = s.slice(9).split(",").map((id) => vocab.find((c) => c.id === id));
+      if (lista.some((c) => !c)) return null;
+      return Object.assign(base, {
+        titulo: "Palabras nuevas",
+        bloques: [{ tabla: lista.map((c) => [c.term, c.es, [c.plural && c.plural !== c.term ? "Plural: " + c.plural + "." : "", c.example + " = " + c.ejemploEs, c.note].filter(Boolean).join(" ")]) }],
+      });
+    }
+    if (s.indexOf("verbos:") === 0) {
+      const tabla = tablaVerbos(P, s.slice(7).split(","), sp.t || "presente");
+      if (!tabla) return null;
+      return Object.assign(base, { titulo: "Verbos: " + tabla.verbos.map((v) => v.inf).join(", "), bloques: [tabla] });
+    }
+    const t = P.grammar().find((x) => x.id === s);
+    if (!t) return null;
+    const bloques = (t.bloques || [{ p: t.explain }].concat(t.examples ? [{ ejemplos: t.examples.map((e) => e.split(" = ")) }] : [])).map((b) => (b.verbosRef ? tablaVerbos(P, b.verbosRef, b.t || "presente") : b));
+    if (bloques.some((b) => !b)) return null;
+    return Object.assign(base, { titulo: t.title, bloques });
+  }
+  const esLeccion = (ex) => !!ex && ex.type === "leccion";
+  const cuantosEjercicios = (lista) => lista.filter((e) => e.f !== "leccion" && !esLeccion(e)).length;
+
+  // **negrita** dentro de un texto
+  function conNegrita(txt) { return String(txt).split("**").map((x, i) => (i % 2 ? h("strong", {}, x) : x)); }
+  function dibujarBloque(b) {
+    if (b.p) return h("p", { class: "lec-p" }, conNegrita(b.p));
+    if (b.nota) return h("div", { class: "lec-nota" }, conNegrita(b.nota));
+    if (b.ejemplos) return h("div", { class: "lec-ejs" }, b.ejemplos.map(([de, es]) => h("div", { class: "lec-ej" }, [h("div", { class: "lec-de" }, de), h("div", { class: "lec-es" }, es)])));
+    if (b.tabla) return h("div", { class: "lec-tabla" }, b.tabla.map(([a, c, sub]) => h("div", { class: "lec-fila" }, [h("span", { class: "lec-a" }, a), h("span", { class: "lec-b" }, c), sub ? h("span", { class: "lec-sub" }, sub) : null])));
+    if (b.verbos) return h("div", { class: "lec-verbos" }, b.verbos.map((v) => h("div", { class: "lec-verbo" }, [h("div", { class: "lec-verbo-t" }, [h("strong", {}, v.inf), " · " + v.es]), h("div", { class: "lec-verbo-tiempo" }, v.tiempo)].concat(v.filas.map(([pr, fo]) => h("div", { class: "lec-vf" }, [h("span", { class: "lec-pr" }, pr), h("span", { class: "lec-fo" }, fo)]))))));
+    return null;
+  }
+  function dibujarLeccion(ex) {
+    return h("div", { class: "card leccion" }, [h("div", { class: "lec-tag" }, I18n.t("aventura_leccion_tag")), h("h2", { class: "lec-titulo" }, ex.titulo)].concat(ex.bloques.map(dibujarBloque)));
   }
 
   function armar(nivel, semilla) {
@@ -222,7 +273,7 @@ const Aventura = (function () {
         h("div", { class: "av-hoja-cab" }, [
           h("div", {}, [
             h("div", { class: "av-hoja-titulo" }, i + 1 + ". " + n.titulo),
-            h("div", { class: "av-sub" }, I18n.t("aventura_nivel_sub", n.ejercicios.length, n.nivel)),
+            h("div", { class: "av-sub" }, I18n.t("aventura_nivel_sub", cuantosEjercicios(n.ejercicios), n.nivel)),
           ]),
           h("button", { class: "av-hoja-x", type: "button", "aria-label": I18n.t("aventura_cerrar"), onClick: cerrarHoja }, "✕"),
         ])
@@ -314,6 +365,11 @@ const Aventura = (function () {
     if (sesion.hechos >= sesion.ejercicios.length) { resultado(); return; }
     host.appendChild(cabecera());
     const ex = sesion.ejercicios[sesion.hechos];
+    if (esLeccion(ex)) {
+      host.appendChild(dibujarLeccion(ex));
+      host.appendChild(h("button", { class: "btn primary wide", onClick: () => { sesion.hechos++; guardarCurso(); pregunta(); } }, I18n.t("aventura_leccion_ok")));
+      return;
+    }
     // Se oculta con style y no con la clase "hidden": ".btn.wide" le gana en especificidad y lo mostraría igual
     const seguir = h("button", { class: "btn primary wide", style: "display:none", onClick: () => pregunta() }, I18n.t("aventura_continue"));
     Exercise.mount(host, ex, {
@@ -330,7 +386,7 @@ const Aventura = (function () {
   }
 
   function resultado() {
-    const total = sesion.ejercicios.length;
+    const total = sesion.ejercicios.filter((e) => !esLeccion(e)).length;
     const aciertos = sesion.aciertos;
     const paso = aprobado(aciertos, total);
     const est = estrellasPara(aciertos, total);
@@ -362,5 +418,5 @@ const Aventura = (function () {
     );
   }
 
-  return { render, stats, resumen, aprobado, estrellasPara, expandir, armar, conSemilla, desbloqueado, APROBAR };
+  return { render, stats, resumen, aprobado, estrellasPara, expandir, armar, conSemilla, desbloqueado, dibujarLeccion, APROBAR };
 })();
