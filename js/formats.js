@@ -432,7 +432,7 @@ const Formats = crearFormats({
     comida: "hogar", cocina: "hogar", limpieza: "hogar", muebles: "hogar", casa: "hogar", tecnologia: "hogar",
     hotel: "ciudad", lugares: "ciudad", transporte: "ciudad", indicaciones: "ciudad",
     saludos: "jerga", personas: "jerga", familia: "jerga", elogios: "jerga", jerga_cosas: "jerga",
-    jerga_verbos: "jerga", jerga_expresiones: "jerga", tiempo_libre: "jerga",
+    jerga_verbos: "jerga", jerga_expresiones: "jerga", tiempo_libre: "jerga", musica_baile: "jerga", comida_arg: "hogar",
     restaurante: "hogar", compras: "ciudad", salud: "cuerpo", trabajo: "ciudad", ciudad: "ciudad",
   },
   // Temas donde casi todas las palabras significan lo mismo ("excelente"): ahí las opciones
