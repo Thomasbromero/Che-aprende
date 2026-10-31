@@ -11,7 +11,7 @@ const FormatsDE = crearFormats({
   verbos: () => (typeof VERBOS_DE !== "undefined" ? VERBOS_DE : []),
   conjugador: ConjugadorDE,
   glosa: (c) => c.es,
-  grupos: { saludos: "saludos", familia: "gente", comida: "mundo", casa_ciudad: "mundo", tiempo_numeros: "tiempo", colores: "descripcion", adjetivos: "descripcion", meses: "tiempo", clima: "tiempo", ropa: "mundo", dinero: "mundo", cuerpo: "gente", profesiones: "gente", viaje: "mundo" },
+  grupos: { saludos: "saludos", familia: "gente", comida: "mundo", casa_ciudad: "mundo", tiempo_numeros: "tiempo", colores: "descripcion", adjetivos: "descripcion", meses: "tiempo", clima: "tiempo", ropa: "mundo", dinero: "mundo", cuerpo: "gente", profesiones: "gente", viaje: "mundo", cocina_mesa: "mundo", hogar: "mundo", fruta_verdura: "mundo", platos: "mundo", animales: "mundo", naturaleza: "mundo", lugares: "mundo", trabajo: "gente", escuela: "mundo", ocio: "mundo", estacion: "mundo", caracter: "descripcion", frecuencia: "tiempo" },
   sinonimos: {},
   artRe: /^(der|die|das)\s+/i,
   artBase: {},

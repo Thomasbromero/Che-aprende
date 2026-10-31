@@ -5754,5 +5754,4620 @@ window.GRAMMAR_DE = [
     "nivel": 21
    }
   ]
+ },
+ {
+  "id": "u31",
+  "title": "Unir frases: und, oder, aber, denn",
+  "nivel": 10,
+  "bloques": [
+   {
+    "p": "Con estas cuatro palabritas unís dos frases, y lo bueno es que **no cambian el orden**: el verbo sigue en segunda posición en cada parte, igual que en español."
+   },
+   {
+    "tabla": [
+     [
+      "und",
+      "y"
+     ],
+     [
+      "oder",
+      "o"
+     ],
+     [
+      "aber",
+      "pero"
+     ],
+     [
+      "denn",
+      "porque (explica un motivo)"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich trinke Kaffee und du trinkst Tee.",
+      "Yo tomo café y vos tomás té."
+     ],
+     [
+      "Möchtest du Tee oder Kaffee?",
+      "¿Querés té o café?"
+     ],
+     [
+      "Ich bin müde, aber ich arbeite.",
+      "Estoy cansado, pero trabajo."
+     ],
+     [
+      "Ich bleibe zu Hause, denn ich bin krank.",
+      "Me quedo en casa porque estoy enfermo."
+     ]
+    ]
+   },
+   {
+    "nota": "Antes de **aber** y **denn** va una coma. Y fijate que después de **denn** el orden sigue siendo el normal («ich bin krank»); en el próximo tema vas a ver que **weil** (también «porque») se comporta distinto."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«Tee ___ Kaffee?» (¿té o café?)",
+    "options": [
+     "oder",
+     "und",
+     "aber"
+    ],
+    "answer": "oder",
+    "explain": "«oder» = o.",
+    "nivel": 10
+   },
+   {
+    "type": "choice",
+    "prompt": "«Ich bin müde, ___ ich arbeite.» (pero)",
+    "options": [
+     "aber",
+     "und",
+     "oder"
+    ],
+    "answer": "aber",
+    "explain": "«aber» = pero.",
+    "nivel": 10
+   },
+   {
+    "type": "choice",
+    "prompt": "«denn» significa…",
+    "options": [
+     "porque",
+     "pero",
+     "entonces"
+    ],
+    "answer": "porque",
+    "explain": "«denn» = porque.",
+    "nivel": 10
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich esse Brot ___ ich trinke Milch. (y)",
+    "answer": "und",
+    "accept": [
+     "und"
+    ],
+    "explain": "«und» = y.",
+    "nivel": 10
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Estoy cansado, pero trabajo».",
+    "answer": "Ich bin müde, aber ich arbeite.",
+    "words": [
+     "ich",
+     "bin",
+     "Ich",
+     "arbeite.",
+     "aber",
+     "müde,"
+    ],
+    "explain": "«Ich bin müde, aber ich arbeite.»",
+    "nivel": 10
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado.",
+    "pairs": [
+     {
+      "left": "und",
+      "right": "y"
+     },
+     {
+      "left": "oder",
+      "right": "o"
+     },
+     {
+      "left": "aber",
+      "right": "pero"
+     },
+     {
+      "left": "denn",
+      "right": "porque"
+     }
+    ],
+    "answer": "und = y · oder = o · aber = pero · denn = porque",
+    "explain": "und = y · oder = o · aber = pero · denn = porque",
+    "nivel": 10
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cuál es correcta?",
+    "options": [
+     "Ich bleibe zu Hause, denn ich bin krank.",
+     "Ich bleibe zu Hause, denn ich krank bin.",
+     "Ich bleibe zu Hause, denn bin ich krank."
+    ],
+    "answer": "Ich bleibe zu Hause, denn ich bin krank.",
+    "explain": "Después de «denn» el orden es normal: «ich bin krank».",
+    "nivel": 10
+   }
+  ]
+ },
+ {
+  "id": "u32",
+  "title": "Porque: weil (el verbo se va al final)",
+  "nivel": 20,
+  "bloques": [
+   {
+    "p": "**weil** también significa «porque», pero tiene un truco: manda al verbo conjugado **al final** de su parte de la frase."
+   },
+   {
+    "tabla": [
+     [
+      "Warum lernst du Deutsch?",
+      "¿Por qué estudiás alemán?"
+     ],
+     [
+      "Weil ich in Wien arbeite.",
+      "Porque trabajo en Viena."
+     ],
+     [
+      "Ich bleibe hier, weil ich müde bin.",
+      "Me quedo acá porque estoy cansado."
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich esse, weil ich Hunger habe.",
+      "Como porque tengo hambre."
+     ],
+     [
+      "Er lernt Deutsch, weil er in Wien wohnt.",
+      "Él estudia alemán porque vive en Viena."
+     ]
+    ]
+   },
+   {
+    "nota": "Siempre hay una **coma** antes de «weil». Comparalo con **denn**: «..., denn ich bin müde» (orden normal) contra «..., weil ich müde **bin**» (verbo al final). Para responder un «Warum?» (¿por qué?) empezás con «Weil…»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "¿Cuál es correcta?",
+    "options": [
+     "Ich bleibe hier, weil ich müde bin.",
+     "Ich bleibe hier, weil ich bin müde.",
+     "Ich bleibe hier, weil bin ich müde."
+    ],
+    "answer": "Ich bleibe hier, weil ich müde bin.",
+    "explain": "Con «weil» el verbo va al final: «ich müde bin».",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "«Warum lernst du Deutsch?» significa…",
+    "options": [
+     "¿Por qué estudiás alemán?",
+     "¿Cuándo estudiás alemán?",
+     "¿Dónde estudiás alemán?"
+    ],
+    "answer": "¿Por qué estudiás alemán?",
+    "explain": "«warum» = por qué.",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich esse, weil ich Hunger ___. (haben)",
+    "answer": "habe",
+    "accept": [
+     "habe"
+    ],
+    "explain": "El verbo conjugado va al final: «habe».",
+    "nivel": 20
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Me quedo en casa porque estoy enfermo».",
+    "answer": "Ich bleibe zu Hause, weil ich krank bin.",
+    "words": [
+     "Hause,",
+     "krank",
+     "weil",
+     "Ich",
+     "bin.",
+     "ich",
+     "zu",
+     "bleibe"
+    ],
+    "explain": "El verbo «bin» queda al final.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "Después de «weil», ¿dónde va el verbo conjugado?",
+    "options": [
+     "Al final",
+     "En segunda posición",
+     "Al principio"
+    ],
+    "answer": "Al final",
+    "explain": "Con «weil» el verbo se va al final de su parte.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "Te preguntan «Warum bist du müde?». Respondés:",
+    "options": [
+     "Weil ich nicht schlafe.",
+     "Weil ich schlafe nicht.",
+     "Denn schlafe ich nicht."
+    ],
+    "answer": "Weil ich nicht schlafe.",
+    "explain": "«Weil ich nicht schlafe»: el verbo al final.",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Er lernt Deutsch, weil er in Wien ___. (wohnen)",
+    "answer": "wohnt",
+    "accept": [
+     "wohnt"
+    ],
+    "explain": "Con «er»: «wohnt», al final.",
+    "nivel": 20
+   }
+  ]
+ },
+ {
+  "id": "u33",
+  "title": "Preguntas con W: wer, was, wo, wann…",
+  "nivel": 11,
+  "bloques": [
+   {
+    "p": "Las preguntas empiezan con una palabra que arranca con **W** (por eso se llaman «W-Fragen»). Después viene el **verbo**, en segunda posición:"
+   },
+   {
+    "tabla": [
+     [
+      "Wer",
+      "quién",
+      "Wer ist das?"
+     ],
+     [
+      "Was",
+      "qué",
+      "Was ist das?"
+     ],
+     [
+      "Wo",
+      "dónde",
+      "Wo wohnst du?"
+     ],
+     [
+      "Woher",
+      "de dónde",
+      "Woher kommst du?"
+     ],
+     [
+      "Wohin",
+      "adónde",
+      "Wohin gehst du?"
+     ],
+     [
+      "Wann",
+      "cuándo",
+      "Wann kommst du?"
+     ],
+     [
+      "Warum",
+      "por qué",
+      "Warum lernst du Deutsch?"
+     ],
+     [
+      "Wie",
+      "cómo",
+      "Wie heißt du?"
+     ]
+    ]
+   },
+   {
+    "nota": "Fijate en la diferencia entre **wo** (dónde, un lugar fijo), **woher** (de dónde viene) y **wohin** (adónde va). Y «wie viel» es «cuánto»: «Wie viel kostet das?»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado (1).",
+    "pairs": [
+     {
+      "left": "Wer",
+      "right": "quién"
+     },
+     {
+      "left": "Was",
+      "right": "qué"
+     },
+     {
+      "left": "Wo",
+      "right": "dónde"
+     },
+     {
+      "left": "Wann",
+      "right": "cuándo"
+     }
+    ],
+    "answer": "Wer = quién · Was = qué · Wo = dónde · Wann = cuándo",
+    "explain": "Wer = quién · Was = qué · Wo = dónde · Wann = cuándo",
+    "nivel": 11
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado (2).",
+    "pairs": [
+     {
+      "left": "Warum",
+      "right": "por qué"
+     },
+     {
+      "left": "Wie",
+      "right": "cómo"
+     },
+     {
+      "left": "Woher",
+      "right": "de dónde"
+     },
+     {
+      "left": "Wohin",
+      "right": "adónde"
+     }
+    ],
+    "answer": "Warum = por qué · Wie = cómo · Woher = de dónde · Wohin = adónde",
+    "explain": "Warum = por qué · Wie = cómo · Woher = de dónde · Wohin = adónde",
+    "nivel": 11
+   },
+   {
+    "type": "fill",
+    "prompt": "___ wohnst du? (¿dónde?)",
+    "answer": "Wo",
+    "accept": [
+     "Wo"
+    ],
+    "explain": "«wo» = dónde.",
+    "nivel": 11
+   },
+   {
+    "type": "choice",
+    "prompt": "«Wer ist das?» significa…",
+    "options": [
+     "¿Quién es?",
+     "¿Qué es?",
+     "¿Dónde está?"
+    ],
+    "answer": "¿Quién es?",
+    "explain": "«wer» = quién.",
+    "nivel": 11
+   },
+   {
+    "type": "choice",
+    "prompt": "___ kommst du? (¿de dónde?)",
+    "options": [
+     "Woher",
+     "Wohin",
+     "Wo"
+    ],
+    "answer": "Woher",
+    "explain": "«woher» = de dónde.",
+    "nivel": 11
+   },
+   {
+    "type": "choice",
+    "prompt": "___ gehst du? (¿adónde?)",
+    "options": [
+     "Wohin",
+     "Woher",
+     "Wo"
+    ],
+    "answer": "Wohin",
+    "explain": "«wohin» = adónde.",
+    "nivel": 11
+   },
+   {
+    "type": "fill",
+    "prompt": "___ ist das? (¿qué?)",
+    "answer": "Was",
+    "accept": [
+     "Was"
+    ],
+    "explain": "«was» = qué.",
+    "nivel": 11
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Warum»): «¿Por qué estudiás alemán?»",
+    "answer": "Warum lernst du Deutsch?",
+    "words": [
+     "du",
+     "lernst",
+     "Deutsch?",
+     "Warum"
+    ],
+    "explain": "«Warum lernst du Deutsch?»",
+    "nivel": 11
+   }
+  ]
+ },
+ {
+  "id": "u34",
+  "title": "Preguntas de sí o no",
+  "nivel": 11,
+  "bloques": [
+   {
+    "p": "Para las preguntas que se contestan con «sí» o «no», el **verbo pasa al principio**:"
+   },
+   {
+    "tabla": [
+     [
+      "Du hast Hunger.",
+      "Tenés hambre."
+     ],
+     [
+      "Hast du Hunger?",
+      "¿Tenés hambre?"
+     ],
+     [
+      "Du sprichst Deutsch.",
+      "Hablás alemán."
+     ],
+     [
+      "Sprichst du Deutsch?",
+      "¿Hablás alemán?"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Kommst du morgen?",
+      "¿Venís mañana?"
+     ],
+     [
+      "Trinkst du Kaffee?",
+      "¿Tomás café?"
+     ]
+    ]
+   },
+   {
+    "nota": "Se responde con **Ja** (sí) o **Nein** (no). Hay una tercera: **Doch**, que se usa para decir «sí» cuando la pregunta es negativa. «Hast du keinen Hunger? – **Doch**, ich habe Hunger!» (¿No tenés hambre? – ¡Sí, tengo!)."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Convertí en pregunta «Du hast Hunger»:",
+    "options": [
+     "Hast du Hunger?",
+     "Hast Hunger du?",
+     "Du Hunger hast?"
+    ],
+    "answer": "Hast du Hunger?",
+    "explain": "El verbo va primero.",
+    "nivel": 11
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Sprichst»): «¿Hablás alemán?»",
+    "answer": "Sprichst du Deutsch?",
+    "words": [
+     "Deutsch?",
+     "du",
+     "Sprichst"
+    ],
+    "explain": "«Sprichst du Deutsch?»",
+    "nivel": 11
+   },
+   {
+    "type": "fill",
+    "prompt": "___ du Kaffee? (trinken)",
+    "answer": "Trinkst",
+    "accept": [
+     "Trinkst"
+    ],
+    "explain": "Con «du»: «trinkst», al principio.",
+    "nivel": 11
+   },
+   {
+    "type": "choice",
+    "prompt": "«Doch» se usa para…",
+    "options": [
+     "contestar «sí» a una pregunta negativa",
+     "decir «no» con cortesía",
+     "decir «tal vez»"
+    ],
+    "answer": "contestar «sí» a una pregunta negativa",
+    "explain": "«Doch» contradice una pregunta negativa.",
+    "nivel": 11
+   },
+   {
+    "type": "choice",
+    "prompt": "«Kommst du morgen?» significa…",
+    "options": [
+     "¿Venís mañana?",
+     "¿Cuándo venís?",
+     "¿Quién viene mañana?"
+    ],
+    "answer": "¿Venís mañana?",
+    "explain": "Pregunta de sí o no.",
+    "nivel": 11
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado.",
+    "pairs": [
+     {
+      "left": "Ja",
+      "right": "sí"
+     },
+     {
+      "left": "Nein",
+      "right": "no"
+     },
+     {
+      "left": "Doch",
+      "right": "sí (a una pregunta negativa)"
+     },
+     {
+      "left": "Vielleicht",
+      "right": "tal vez"
+     }
+    ],
+    "answer": "Ja = sí · Nein = no · Doch = sí (a una pregunta negativa) · Vielleicht = tal vez",
+    "explain": "Ja = sí · Nein = no · Doch = sí (a una pregunta negativa) · Vielleicht = tal vez",
+    "nivel": 11
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Hast»): «¿Tenés hambre?»",
+    "answer": "Hast du Hunger?",
+    "words": [
+     "Hast",
+     "Hunger?",
+     "du"
+    ],
+    "explain": "«Hast du Hunger?»",
+    "nivel": 11
+   }
+  ]
+ },
+ {
+  "id": "u35",
+  "title": "Me, te, lo: mich, dich, ihn…",
+  "nivel": 16,
+  "bloques": [
+   {
+    "p": "Cuando algo o alguien **recibe la acción** del verbo (el «lo / la / me / te» del español), el pronombre cambia. Es el **acusativo**:"
+   },
+   {
+    "tabla": [
+     [
+      "ich",
+      "mich",
+      "me"
+     ],
+     [
+      "du",
+      "dich",
+      "te"
+     ],
+     [
+      "er",
+      "ihn",
+      "lo"
+     ],
+     [
+      "sie (ella)",
+      "sie",
+      "la"
+     ],
+     [
+      "es",
+      "es",
+      "lo (neutro)"
+     ],
+     [
+      "wir",
+      "uns",
+      "nos"
+     ],
+     [
+      "ihr",
+      "euch",
+      "los / las (ustedes)"
+     ],
+     [
+      "sie (ellos)",
+      "sie",
+      "los / las"
+     ],
+     [
+      "Sie (usted)",
+      "Sie",
+      "lo / la (usted)"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich liebe dich.",
+      "Te amo."
+     ],
+     [
+      "Er sieht mich.",
+      "Él me ve."
+     ],
+     [
+      "Kennst du ihn?",
+      "¿Lo conocés?"
+     ],
+     [
+      "Wir besuchen euch.",
+      "Los visitamos (a ustedes)."
+     ]
+    ]
+   },
+   {
+    "nota": "Solo cambian **ich, du, er, wir, ihr**. Las demás formas (sie, es, Sie) quedan iguales. Y fijate que «ihn» es para «er» (un hombre o una cosa «der»): «Der Hund? Ich sehe **ihn**»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Ich sehe ___. (a vos)",
+    "options": [
+     "dich",
+     "du",
+     "dir"
+    ],
+    "answer": "dich",
+    "explain": "«du» → «dich» en acusativo.",
+    "nivel": 16
+   },
+   {
+    "type": "choice",
+    "prompt": "Anna kennt ___. (a mí)",
+    "options": [
+     "mich",
+     "ich",
+     "mir"
+    ],
+    "answer": "mich",
+    "explain": "«ich» → «mich» en acusativo.",
+    "nivel": 16
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich liebe ___. (a él)",
+    "answer": "ihn",
+    "accept": [
+     "ihn"
+    ],
+    "explain": "«er» → «ihn» en acusativo.",
+    "nivel": 16
+   },
+   {
+    "type": "fill",
+    "prompt": "Kennst du ___? (a nosotros)",
+    "answer": "uns",
+    "accept": [
+     "uns"
+    ],
+    "explain": "«wir» → «uns».",
+    "nivel": 16
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada pronombre con su acusativo.",
+    "pairs": [
+     {
+      "left": "ich",
+      "right": "mich"
+     },
+     {
+      "left": "du",
+      "right": "dich"
+     },
+     {
+      "left": "er",
+      "right": "ihn"
+     },
+     {
+      "left": "wir",
+      "right": "uns"
+     }
+    ],
+    "answer": "ich = mich · du = dich · er = ihn · wir = uns",
+    "explain": "ich = mich · du = dich · er = ihn · wir = uns",
+    "nivel": 16
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Te amo».",
+    "answer": "Ich liebe dich.",
+    "words": [
+     "liebe",
+     "dich.",
+     "Ich"
+    ],
+    "explain": "«Ich liebe dich.» = Te amo.",
+    "nivel": 16
+   },
+   {
+    "type": "choice",
+    "prompt": "«Er sieht mich» significa…",
+    "options": [
+     "Él me ve.",
+     "Yo lo veo.",
+     "Él te ve."
+    ],
+    "answer": "Él me ve.",
+    "explain": "«mich» = me.",
+    "nivel": 16
+   },
+   {
+    "type": "choice",
+    "prompt": "Visitamos a ustedes:",
+    "options": [
+     "Wir besuchen euch.",
+     "Wir besuchen ihr.",
+     "Wir besuchen du."
+    ],
+    "answer": "Wir besuchen euch.",
+    "explain": "«ihr» → «euch» en acusativo.",
+    "nivel": 16
+   }
+  ]
+ },
+ {
+  "id": "u36",
+  "title": "A mí, a vos: mir, dir, ihm…",
+  "nivel": 19,
+  "bloques": [
+   {
+    "p": "Cuando algo es **para alguien** (el «le / me / te» de «le doy», «me gusta»), se usa el **dativo**. Los pronombres cambian así:"
+   },
+   {
+    "tabla": [
+     [
+      "ich",
+      "mir",
+      "a mí"
+     ],
+     [
+      "du",
+      "dir",
+      "a vos"
+     ],
+     [
+      "er",
+      "ihm",
+      "a él"
+     ],
+     [
+      "sie (ella)",
+      "ihr",
+      "a ella"
+     ],
+     [
+      "es",
+      "ihm",
+      "a eso"
+     ],
+     [
+      "wir",
+      "uns",
+      "a nosotros"
+     ],
+     [
+      "ihr",
+      "euch",
+      "a ustedes"
+     ],
+     [
+      "sie (ellos)",
+      "ihnen",
+      "a ellos"
+     ],
+     [
+      "Sie (usted)",
+      "Ihnen",
+      "a usted"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Wie geht es dir?",
+      "¿Cómo te va? (a vos)"
+     ],
+     [
+      "Ich helfe dir.",
+      "Te ayudo."
+     ],
+     [
+      "Er gibt mir das Buch.",
+      "Él me da el libro."
+     ],
+     [
+      "Das Buch gefällt mir.",
+      "Me gusta el libro."
+     ]
+    ]
+   },
+   {
+    "nota": "Algunos verbos piden dativo: **helfen** (ayudar), **geben** (dar), **gefallen** (gustar). «Ich helfe **dir**» (no «dich»). Y **gefallen** funciona como «gustar» en español: lo que te gusta es el sujeto, y vos sos el «mir»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Ich helfe ___. (a vos)",
+    "options": [
+     "dir",
+     "dich",
+     "du"
+    ],
+    "answer": "dir",
+    "explain": "«helfen» pide dativo: «dir».",
+    "nivel": 19
+   },
+   {
+    "type": "choice",
+    "prompt": "Das Buch gefällt ___. (a mí)",
+    "options": [
+     "mir",
+     "mich",
+     "ich"
+    ],
+    "answer": "mir",
+    "explain": "«gefallen» pide dativo: «mir».",
+    "nivel": 19
+   },
+   {
+    "type": "fill",
+    "prompt": "Er gibt ___ das Buch. (a mí)",
+    "answer": "mir",
+    "accept": [
+     "mir"
+    ],
+    "explain": "«geben» pide dativo: «mir».",
+    "nivel": 19
+   },
+   {
+    "type": "fill",
+    "prompt": "Wie geht es ___? (a vos)",
+    "answer": "dir",
+    "accept": [
+     "dir"
+    ],
+    "explain": "«Wie geht es dir?» = ¿Cómo te va?",
+    "nivel": 19
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada pronombre con su dativo.",
+    "pairs": [
+     {
+      "left": "ich",
+      "right": "mir"
+     },
+     {
+      "left": "du",
+      "right": "dir"
+     },
+     {
+      "left": "er",
+      "right": "ihm"
+     },
+     {
+      "left": "sie (ella)",
+      "right": "ihr"
+     }
+    ],
+    "answer": "ich = mir · du = dir · er = ihm · sie (ella) = ihr",
+    "explain": "ich = mir · du = dir · er = ihm · sie (ella) = ihr",
+    "nivel": 19
+   },
+   {
+    "type": "choice",
+    "prompt": "«Das gefällt mir» significa…",
+    "options": [
+     "Me gusta eso.",
+     "Eso me ve.",
+     "Eso me llama."
+    ],
+    "answer": "Me gusta eso.",
+    "explain": "«gefallen» = gustar.",
+    "nivel": 19
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Te ayudo».",
+    "answer": "Ich helfe dir.",
+    "words": [
+     "Ich",
+     "dir.",
+     "helfe"
+    ],
+    "explain": "«Ich helfe dir.» = Te ayudo.",
+    "nivel": 19
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Por qué «Ich kenne dich» pero «Ich helfe dir»?",
+    "options": [
+     "«kennen» lleva acusativo y «helfen» lleva dativo",
+     "Es lo mismo",
+     "Depende de la persona"
+    ],
+    "answer": "«kennen» lleva acusativo y «helfen» lleva dativo",
+    "explain": "Cada verbo pide su caso: hay que aprenderlo con el verbo.",
+    "nivel": 19
+   }
+  ]
+ },
+ {
+  "id": "u37",
+  "title": "El dativo con sustantivos: dem, der, den",
+  "nivel": 22,
+  "bloques": [
+   {
+    "p": "El dativo también cambia el **artículo** de los sustantivos. Responde a la pregunta **«¿a quién?»** y va después de ciertas palabritas:"
+   },
+   {
+    "tabla": [
+     [
+      "der Mann",
+      "dem Mann",
+      "al hombre"
+     ],
+     [
+      "die Frau",
+      "der Frau",
+      "a la mujer"
+     ],
+     [
+      "das Kind",
+      "dem Kind",
+      "al niño"
+     ],
+     [
+      "die Kinder",
+      "den Kindern",
+      "a los niños (¡y se le suma una -n!)"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich gebe dem Mann das Buch.",
+      "Le doy el libro al hombre."
+     ],
+     [
+      "Ich helfe der Frau.",
+      "Ayudo a la mujer."
+     ],
+     [
+      "Ich wohne bei meiner Oma.",
+      "Vivo con mi abuela."
+     ],
+     [
+      "Ich gehe zur Schule.",
+      "Voy a la escuela."
+     ]
+    ]
+   },
+   {
+    "nota": "Estas palabras **siempre** piden dativo: **mit** (con), **bei** (en casa de / cerca de), **nach** (a / después de), **von** (de), **zu** (a), **aus** (de / desde). Y se contraen: **zu + dem = zum** («zum Arzt»), **zu + der = zur** («zur Schule»), **bei + dem = beim**, **von + dem = vom**."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Ich gebe ___ Frau das Buch. (a la)",
+    "options": [
+     "der",
+     "die",
+     "dem"
+    ],
+    "answer": "der",
+    "explain": "«die Frau» → «der Frau» en dativo.",
+    "nivel": 22
+   },
+   {
+    "type": "choice",
+    "prompt": "Ich helfe ___ Mann. (al)",
+    "options": [
+     "dem",
+     "der",
+     "den"
+    ],
+    "answer": "dem",
+    "explain": "«der Mann» → «dem Mann» en dativo.",
+    "nivel": 22
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich gehe ___ Schule. (zu + der)",
+    "answer": "zur",
+    "accept": [
+     "zur"
+    ],
+    "explain": "«zu» + «der» = «zur».",
+    "nivel": 22
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich gehe ___ Arzt. (zu + dem)",
+    "answer": "zum",
+    "accept": [
+     "zum"
+    ],
+    "explain": "«zu» + «dem» = «zum».",
+    "nivel": 22
+   },
+   {
+    "type": "choice",
+    "prompt": "Ich wohne bei ___ Oma. (mi)",
+    "options": [
+     "meiner",
+     "meine",
+     "meinem"
+    ],
+    "answer": "meiner",
+    "explain": "«die Oma» → dativo «meiner Oma».",
+    "nivel": 22
+   },
+   {
+    "type": "choice",
+    "prompt": "El dativo responde a la pregunta…",
+    "options": [
+     "¿A quién?",
+     "¿Quién?",
+     "¿Qué?"
+    ],
+    "answer": "¿A quién?",
+    "explain": "Dativo = a quién (el que recibe).",
+    "nivel": 22
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada sustantivo con su dativo.",
+    "pairs": [
+     {
+      "left": "der Mann",
+      "right": "dem Mann"
+     },
+     {
+      "left": "die Frau",
+      "right": "der Frau"
+     },
+     {
+      "left": "das Kind",
+      "right": "dem Kind"
+     },
+     {
+      "left": "die Kinder",
+      "right": "den Kindern"
+     }
+    ],
+    "answer": "der Mann = dem Mann · die Frau = der Frau · das Kind = dem Kind · die Kinder = den Kindern",
+    "explain": "der Mann = dem Mann · die Frau = der Frau · das Kind = dem Kind · die Kinder = den Kindern",
+    "nivel": 22
+   },
+   {
+    "type": "choice",
+    "prompt": "«aus» siempre lleva…",
+    "options": [
+     "dativo",
+     "acusativo",
+     "nominativo"
+    ],
+    "answer": "dativo",
+    "explain": "Con «aus, bei, mit, nach, von, zu» siempre va dativo.",
+    "nivel": 22
+   }
+  ]
+ },
+ {
+  "id": "u38",
+  "title": "Verbos reflexivos: sich freuen, sich waschen",
+  "nivel": 20,
+  "bloques": [
+   {
+    "p": "Un verbo es **reflexivo** cuando la acción vuelve sobre quien la hace («me lavo», «se sienta»). En alemán lleva un pronombre extra:"
+   },
+   {
+    "tabla": [
+     [
+      "ich",
+      "mich",
+      "Ich freue mich."
+     ],
+     [
+      "du",
+      "dich",
+      "Du freust dich."
+     ],
+     [
+      "er / sie / es",
+      "sich",
+      "Er freut sich."
+     ],
+     [
+      "wir",
+      "uns",
+      "Wir freuen uns."
+     ],
+     [
+      "ihr",
+      "euch",
+      "Ihr freut euch."
+     ],
+     [
+      "sie / Sie",
+      "sich",
+      "Sie freuen sich."
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich wasche mich.",
+      "Me lavo."
+     ],
+     [
+      "Er setzt sich.",
+      "Él se sienta."
+     ],
+     [
+      "Ich fühle mich gut.",
+      "Me siento bien."
+     ],
+     [
+      "Ich freue mich auf das Wochenende.",
+      "Tengo ganas de que llegue el fin de semana."
+     ]
+    ]
+   },
+   {
+    "nota": "Los más usados: **sich freuen** (alegrarse), **sich waschen** (lavarse), **sich setzen** (sentarse), **sich fühlen** (sentirse), **sich treffen** (encontrarse), **sich entschuldigen** (disculparse). El pronombre cambia según la persona, menos con **er / sie / es / sie / Sie**, que siempre es **sich**."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "fill",
+    "prompt": "Ich freue ___. (me)",
+    "answer": "mich",
+    "accept": [
+     "mich"
+    ],
+    "explain": "Con «ich»: «mich».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Du wäschst ___. (te)",
+    "answer": "dich",
+    "accept": [
+     "dich"
+    ],
+    "explain": "Con «du»: «dich».",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "Er setzt ___. (se)",
+    "options": [
+     "sich",
+     "ihn",
+     "mich"
+    ],
+    "answer": "sich",
+    "explain": "Con «er / sie / es»: «sich».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Wir freuen ___. (nos)",
+    "answer": "uns",
+    "accept": [
+     "uns"
+    ],
+    "explain": "Con «wir»: «uns».",
+    "nivel": 20
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada persona con su pronombre reflexivo.",
+    "pairs": [
+     {
+      "left": "ich",
+      "right": "mich"
+     },
+     {
+      "left": "du",
+      "right": "dich"
+     },
+     {
+      "left": "er / sie",
+      "right": "sich"
+     },
+     {
+      "left": "wir",
+      "right": "uns"
+     }
+    ],
+    "answer": "ich = mich · du = dich · er / sie = sich · wir = uns",
+    "explain": "ich = mich · du = dich · er / sie = sich · wir = uns",
+    "nivel": 20
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Me siento bien».",
+    "answer": "Ich fühle mich gut.",
+    "words": [
+     "Ich",
+     "gut.",
+     "mich",
+     "fühle"
+    ],
+    "explain": "«Ich fühle mich gut.» = Me siento bien.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "«Ich fühle mich gut» significa…",
+    "options": [
+     "Me siento bien.",
+     "Lo siento mucho.",
+     "Me gusta."
+    ],
+    "answer": "Me siento bien.",
+    "explain": "«sich fühlen» = sentirse.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "Con «ihr» el pronombre reflexivo es…",
+    "options": [
+     "euch",
+     "sich",
+     "dich"
+    ],
+    "answer": "euch",
+    "explain": "«ihr» → «euch».",
+    "nivel": 20
+   }
+  ]
+ },
+ {
+  "id": "u39",
+  "title": "Comparar: größer als, so schön wie",
+  "nivel": 18,
+  "bloques": [
+   {
+    "p": "Para comparar agregás **-er** al adjetivo y usás **als** (que): «Berlin ist **größer als** Hamburg». Muchos adjetivos cortos, además, le ponen **diéresis** a la vocal (a → ä, o → ö, u → ü):"
+   },
+   {
+    "tabla": [
+     [
+      "klein",
+      "kleiner",
+      "más chico"
+     ],
+     [
+      "schnell",
+      "schneller",
+      "más rápido"
+     ],
+     [
+      "alt",
+      "älter",
+      "más viejo"
+     ],
+     [
+      "jung",
+      "jünger",
+      "más joven"
+     ],
+     [
+      "groß",
+      "größer",
+      "más grande"
+     ],
+     [
+      "warm",
+      "wärmer",
+      "más cálido"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Berlin ist größer als Hamburg.",
+      "Berlín es más grande que Hamburgo."
+     ],
+     [
+      "Mein Bruder ist älter als ich.",
+      "Mi hermano es mayor que yo."
+     ],
+     [
+      "Der Zug ist so schnell wie das Auto.",
+      "El tren es tan rápido como el auto."
+     ]
+    ]
+   },
+   {
+    "nota": "Tres comparativos son **irregulares** y conviene aprenderlos de memoria: **gut → besser** (mejor), **viel → mehr** (más), **gern → lieber** (preferir). Y para «tan… como» se usa **so… wie**."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "fill",
+    "prompt": "klein → ___ (más chico)",
+    "answer": "kleiner",
+    "accept": [
+     "kleiner"
+    ],
+    "explain": "klein + er = kleiner.",
+    "nivel": 18
+   },
+   {
+    "type": "fill",
+    "prompt": "alt → ___ (más viejo)",
+    "answer": "älter",
+    "accept": [
+     "älter",
+     "aelter"
+    ],
+    "explain": "alt → älter (la «a» pasa a «ä»).",
+    "estricto": true,
+    "nivel": 18
+   },
+   {
+    "type": "choice",
+    "prompt": "Berlin ist größer ___ Hamburg.",
+    "options": [
+     "als",
+     "wie",
+     "und"
+    ],
+    "answer": "als",
+    "explain": "Para comparar: «größer als».",
+    "nivel": 18
+   },
+   {
+    "type": "choice",
+    "prompt": "Der Zug ist so schnell ___ das Auto. (tan… como)",
+    "options": [
+     "wie",
+     "als",
+     "aber"
+    ],
+    "answer": "wie",
+    "explain": "«so… wie» = tan… como.",
+    "nivel": 18
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada adjetivo con su comparativo.",
+    "pairs": [
+     {
+      "left": "gut",
+      "right": "besser"
+     },
+     {
+      "left": "viel",
+      "right": "mehr"
+     },
+     {
+      "left": "groß",
+      "right": "größer"
+     },
+     {
+      "left": "jung",
+      "right": "jünger"
+     }
+    ],
+    "answer": "gut = besser · viel = mehr · groß = größer · jung = jünger",
+    "explain": "gut = besser · viel = mehr · groß = größer · jung = jünger",
+    "nivel": 18
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Mein»): «Mi hermano es mayor que yo».",
+    "answer": "Mein Bruder ist älter als ich.",
+    "words": [
+     "Mein",
+     "Bruder",
+     "älter",
+     "als",
+     "ist",
+     "ich."
+    ],
+    "explain": "«Mein Bruder ist älter als ich.»",
+    "nivel": 18
+   },
+   {
+    "type": "choice",
+    "prompt": "«schneller» significa…",
+    "options": [
+     "más rápido",
+     "muy rápido",
+     "el más rápido"
+    ],
+    "answer": "más rápido",
+    "explain": "schnell + er = más rápido.",
+    "nivel": 18
+   }
+  ]
+ },
+ {
+  "id": "u40",
+  "title": "El más…: el superlativo",
+  "nivel": 20,
+  "bloques": [
+   {
+    "p": "Para decir «el más…» usás **am** + el adjetivo con **-sten**: «Er ist **am schnellsten**» (él es el más rápido)."
+   },
+   {
+    "tabla": [
+     [
+      "schnell",
+      "am schnellsten",
+      "el más rápido"
+     ],
+     [
+      "groß",
+      "am größten",
+      "el más grande"
+     ],
+     [
+      "klein",
+      "am kleinsten",
+      "el más chico"
+     ],
+     [
+      "alt",
+      "am ältesten",
+      "el más viejo"
+     ],
+     [
+      "jung",
+      "am jüngsten",
+      "el más joven"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Er läuft am schnellsten.",
+      "Él corre más rápido que todos."
+     ],
+     [
+      "Mein Bruder ist am jüngsten.",
+      "Mi hermano es el más joven."
+     ],
+     [
+      "Das ist am schönsten.",
+      "Eso es lo más lindo."
+     ]
+    ]
+   },
+   {
+    "nota": "Los irregulares: **gut → am besten** (el mejor), **viel → am meisten** (el que más), **gern → am liebsten** (lo que más me gusta). Y los adjetivos que terminan en -d, -t o -ß agregan una **e** para poder pronunciarse: **alt → am ältesten**, **heiß → am heißesten**."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "fill",
+    "prompt": "schnell → am ___ (el más rápido)",
+    "answer": "schnellsten",
+    "accept": [
+     "schnellsten"
+    ],
+    "explain": "schnell + sten.",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "alt → am ___ (el más viejo)",
+    "answer": "ältesten",
+    "accept": [
+     "ältesten",
+     "aeltesten"
+    ],
+    "explain": "alt → ältesten (con «e» y diéresis).",
+    "estricto": true,
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "gut → am ___ (el mejor)",
+    "answer": "besten",
+    "accept": [
+     "besten"
+    ],
+    "explain": "gut → besser → am besten.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "«Er läuft am schnellsten» significa…",
+    "options": [
+     "Él corre más rápido que todos.",
+     "Él corre lento.",
+     "Él corre más rápido que antes."
+    ],
+    "answer": "Él corre más rápido que todos.",
+    "explain": "«am schnellsten» = el más rápido.",
+    "nivel": 20
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada adjetivo con su superlativo.",
+    "pairs": [
+     {
+      "left": "groß",
+      "right": "am größten"
+     },
+     {
+      "left": "klein",
+      "right": "am kleinsten"
+     },
+     {
+      "left": "gut",
+      "right": "am besten"
+     },
+     {
+      "left": "viel",
+      "right": "am meisten"
+     }
+    ],
+    "answer": "groß = am größten · klein = am kleinsten · gut = am besten · viel = am meisten",
+    "explain": "groß = am größten · klein = am kleinsten · gut = am besten · viel = am meisten",
+    "nivel": 20
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Mein»): «Mi hermano es el más joven».",
+    "answer": "Mein Bruder ist am jüngsten.",
+    "words": [
+     "jüngsten.",
+     "am",
+     "ist",
+     "Bruder",
+     "Mein"
+    ],
+    "explain": "«am jüngsten» = el más joven.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cuál es el superlativo de «viel»?",
+    "options": [
+     "am meisten",
+     "am vielsten",
+     "mehr"
+    ],
+    "answer": "am meisten",
+    "explain": "viel → mehr → am meisten.",
+    "nivel": 20
+   }
+  ]
+ },
+ {
+  "id": "u41",
+  "title": "Gern, lieber, am liebsten",
+  "nivel": 12,
+  "bloques": [
+   {
+    "p": "Para decir qué te **gusta hacer** no usás un verbo: usás la palabrita **gern** después del verbo. Y tiene dos hermanos para comparar:"
+   },
+   {
+    "tabla": [
+     [
+      "gern",
+      "con gusto / me gusta",
+      "Ich spiele gern Fußball."
+     ],
+     [
+      "lieber",
+      "preferir",
+      "Ich trinke lieber Tee."
+     ],
+     [
+      "am liebsten",
+      "lo que más me gusta",
+      "Am liebsten schlafe ich."
+     ],
+     [
+      "nicht gern",
+      "no me gusta",
+      "Ich esse nicht gern Fisch."
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich lese gern.",
+      "Me gusta leer."
+     ],
+     [
+      "Er isst lieber Brot.",
+      "Él prefiere comer pan."
+     ],
+     [
+      "Sie singt am liebsten.",
+      "Lo que más le gusta a ella es cantar."
+     ]
+    ]
+   },
+   {
+    "nota": "**gern** va **después del verbo conjugado**: «Ich spiele **gern** Fußball» (literalmente «juego con gusto»). Para negar: **nicht gern**. Es una de las formas más fáciles de contar tus gustos."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Ich spiele ___ Fußball. (me gusta jugar)",
+    "options": [
+     "gern",
+     "lieber",
+     "am liebsten"
+    ],
+    "answer": "gern",
+    "explain": "«gern» = con gusto.",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "Ich trinke ___ Tee als Kaffee. (prefiero)",
+    "options": [
+     "lieber",
+     "gern",
+     "am liebsten"
+    ],
+    "answer": "lieber",
+    "explain": "«lieber» = preferir.",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich schlafe am ___. (lo que más me gusta)",
+    "answer": "liebsten",
+    "accept": [
+     "liebsten"
+    ],
+    "explain": "«am liebsten» = lo que más me gusta.",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "«Ich esse nicht gern Fisch» significa…",
+    "options": [
+     "No me gusta comer pescado.",
+     "Me gusta mucho el pescado.",
+     "Nunca como pescado."
+    ],
+    "answer": "No me gusta comer pescado.",
+    "explain": "«nicht gern» = no me gusta.",
+    "nivel": 12
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Me gusta leer».",
+    "answer": "Ich lese gern.",
+    "words": [
+     "gern.",
+     "Ich",
+     "lese"
+    ],
+    "explain": "«Ich lese gern.» = Me gusta leer.",
+    "nivel": 12
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada expresión con su significado.",
+    "pairs": [
+     {
+      "left": "gern",
+      "right": "con gusto"
+     },
+     {
+      "left": "lieber",
+      "right": "preferir"
+     },
+     {
+      "left": "am liebsten",
+      "right": "lo que más me gusta"
+     },
+     {
+      "left": "nicht gern",
+      "right": "no me gusta"
+     }
+    ],
+    "answer": "gern = con gusto · lieber = preferir · am liebsten = lo que más me gusta · nicht gern = no me gusta",
+    "explain": "gern = con gusto · lieber = preferir · am liebsten = lo que más me gusta · nicht gern = no me gusta",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "«gern» va…",
+    "options": [
+     "después del verbo",
+     "al final de la frase siempre",
+     "antes del sujeto"
+    ],
+    "answer": "después del verbo",
+    "explain": "«Ich spiele gern Fußball»: después del verbo.",
+    "nivel": 12
+   }
+  ]
+ },
+ {
+  "id": "u42",
+  "title": "La hora: halb y Viertel",
+  "nivel": 15,
+  "bloques": [
+   {
+    "p": "Además de «Es ist drei Uhr» (son las tres), en alemán se dice la hora con **Viertel** (cuarto) y **halb** (medio):"
+   },
+   {
+    "tabla": [
+     [
+      "Es ist Viertel nach drei.",
+      "Son las tres y cuarto. (3:15)"
+     ],
+     [
+      "Es ist halb vier.",
+      "Son las tres y media. (3:30)"
+     ],
+     [
+      "Es ist Viertel vor vier.",
+      "Son las cuatro menos cuarto. (3:45)"
+     ],
+     [
+      "Es ist zehn nach drei.",
+      "Son las tres y diez. (3:10)"
+     ],
+     [
+      "Es ist fünf vor vier.",
+      "Son las cuatro menos cinco. (3:55)"
+     ]
+    ]
+   },
+   {
+    "nota": "**Ojo con «halb»**: significa «medio camino hacia la hora que viene». «Es ist **halb vier**» son las **tres y media** (3:30), no las 4:30. Para pensarlo: «halb vier» = «media hora antes de las cuatro»."
+   },
+   {
+    "nota": "En Austria y en el sur de Alemania también vas a escuchar «Viertel vier» para las 3:15 («un cuarto hacia las cuatro»). Si lo escuchás, no te asustes: es lo mismo que «Viertel nach drei»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«Es ist halb drei» son las…",
+    "options": [
+     "2:30",
+     "3:30",
+     "3:00"
+    ],
+    "answer": "2:30",
+    "explain": "«halb drei» = media hora antes de las tres: 2:30.",
+    "nivel": 15
+   },
+   {
+    "type": "choice",
+    "prompt": "«Viertel nach vier» es…",
+    "options": [
+     "4:15",
+     "3:45",
+     "4:45"
+    ],
+    "answer": "4:15",
+    "explain": "«nach» = y: 4:15.",
+    "nivel": 15
+   },
+   {
+    "type": "choice",
+    "prompt": "«Viertel vor fünf» es…",
+    "options": [
+     "4:45",
+     "5:15",
+     "4:15"
+    ],
+    "answer": "4:45",
+    "explain": "«vor» = menos: 4:45.",
+    "nivel": 15
+   },
+   {
+    "type": "fill",
+    "prompt": "Es ist ___ acht. (7:30)",
+    "answer": "halb",
+    "accept": [
+     "halb"
+    ],
+    "explain": "7:30 = «halb acht».",
+    "nivel": 15
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada expresión con su significado.",
+    "pairs": [
+     {
+      "left": "Viertel nach",
+      "right": "y cuarto"
+     },
+     {
+      "left": "Viertel vor",
+      "right": "menos cuarto"
+     },
+     {
+      "left": "halb",
+      "right": "y media (de la hora anterior)"
+     },
+     {
+      "left": "Uhr",
+      "right": "en punto"
+     }
+    ],
+    "answer": "Viertel nach = y cuarto · Viertel vor = menos cuarto · halb = y media (de la hora anterior) · Uhr = en punto",
+    "explain": "Viertel nach = y cuarto · Viertel vor = menos cuarto · halb = y media (de la hora anterior) · Uhr = en punto",
+    "nivel": 15
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Es»): «Son las seis y cuarto».",
+    "answer": "Es ist Viertel nach sechs.",
+    "words": [
+     "ist",
+     "sechs.",
+     "Es",
+     "nach",
+     "Viertel"
+    ],
+    "explain": "«Viertel nach sechs» = 6:15.",
+    "nivel": 15
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cómo decís 9:30?",
+    "options": [
+     "halb zehn",
+     "halb neun",
+     "neun halb"
+    ],
+    "answer": "halb zehn",
+    "explain": "9:30 = «halb zehn» (media hora antes de las diez).",
+    "nivel": 15
+   }
+  ]
+ },
+ {
+  "id": "u43",
+  "title": "El primero, el segundo: ordinales y fechas",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Los ordinales (primero, segundo, tercero…) terminan en **-te** hasta el 19 y en **-ste** desde el 20. Se escriben con un **punto**: «1.» se lee «der erste»."
+   },
+   {
+    "tabla": [
+     [
+      "1.",
+      "der erste"
+     ],
+     [
+      "2.",
+      "der zweite"
+     ],
+     [
+      "3.",
+      "der dritte"
+     ],
+     [
+      "4.",
+      "der vierte"
+     ],
+     [
+      "5.",
+      "der fünfte"
+     ],
+     [
+      "7.",
+      "der siebte"
+     ],
+     [
+      "10.",
+      "der zehnte"
+     ],
+     [
+      "20.",
+      "der zwanzigste"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Heute ist der fünfte Juli.",
+      "Hoy es cinco de julio."
+     ],
+     [
+      "Mein Geburtstag ist am dritten März.",
+      "Mi cumpleaños es el tres de marzo."
+     ],
+     [
+      "Welches Datum ist heute?",
+      "¿Qué fecha es hoy?"
+     ]
+    ]
+   },
+   {
+    "nota": "Con «am» el ordinal lleva **-n** al final: «am ersten Mai» (el primero de mayo). Primero, tercero y séptimo son especiales: **erste, dritte, siebte**. Y para preguntar la fecha: **«Welches Datum ist heute?»** o **«Der Wievielte ist heute?»**."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«der dritte» es…",
+    "options": [
+     "el tercero",
+     "el cuarto",
+     "el primero"
+    ],
+    "answer": "el tercero",
+    "explain": "dritte = tercero.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "1. = der ___",
+    "answer": "erste",
+    "accept": [
+     "erste"
+    ],
+    "explain": "1. = der erste.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Mein Geburtstag ist am ___ Mai. (1.)",
+    "answer": "ersten",
+    "accept": [
+     "ersten"
+    ],
+    "explain": "«am ersten Mai» = el primero de mayo.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "Heute ist der ___ Juli. (5.)",
+    "options": [
+     "fünfte",
+     "fünf",
+     "fünfzehn"
+    ],
+    "answer": "fünfte",
+    "explain": "5. = der fünfte.",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada ordinal con su número.",
+    "pairs": [
+     {
+      "left": "der erste",
+      "right": "1."
+     },
+     {
+      "left": "der zweite",
+      "right": "2."
+     },
+     {
+      "left": "der dritte",
+      "right": "3."
+     },
+     {
+      "left": "der siebte",
+      "right": "7."
+     }
+    ],
+    "answer": "der erste = 1. · der zweite = 2. · der dritte = 3. · der siebte = 7.",
+    "explain": "der erste = 1. · der zweite = 2. · der dritte = 3. · der siebte = 7.",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Mein»): «Mi cumpleaños es el tres de marzo».",
+    "answer": "Mein Geburtstag ist am dritten März.",
+    "words": [
+     "Geburtstag",
+     "dritten",
+     "ist",
+     "März.",
+     "am",
+     "Mein"
+    ],
+    "explain": "«am dritten März» = el tres de marzo.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cómo preguntás qué fecha es hoy?",
+    "options": [
+     "Welches Datum ist heute?",
+     "Wie spät ist es?",
+     "Wie alt bist du?"
+    ],
+    "answer": "Welches Datum ist heute?",
+    "explain": "«Datum» = fecha.",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "u44",
+  "title": "Números grandes: 100, 1000 y años",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Desde el cien los números se arman pegando palabras, **todo junto**: «dreihundert» (3 × 100), «zweitausend» (2 × 1000)."
+   },
+   {
+    "tabla": [
+     [
+      "100",
+      "hundert"
+     ],
+     [
+      "200",
+      "zweihundert"
+     ],
+     [
+      "350",
+      "dreihundertfünfzig"
+     ],
+     [
+      "1000",
+      "tausend"
+     ],
+     [
+      "2000",
+      "zweitausend"
+     ],
+     [
+      "20 000",
+      "zwanzigtausend"
+     ],
+     [
+      "1 000 000",
+      "eine Million"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Das kostet dreihundert Euro.",
+      "Esto cuesta trescientos euros."
+     ],
+     [
+      "Das Auto kostet zwanzigtausend Euro.",
+      "El auto cuesta veinte mil euros."
+     ]
+    ]
+   },
+   {
+    "nota": "Los **años** hasta el 1999 se dicen en «cienes»: 1990 = **neunzehnhundertneunzig** (diecinueve-cien-noventa). Desde el 2000 se dicen como número normal: 2025 = **zweitausendfünfundzwanzig**. Y no hace falta decir «Jahr» ni «en»: «Ich bin 1990 geboren» (nací en 1990)."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "hundert =",
+    "options": [
+     "100",
+     "1000",
+     "10"
+    ],
+    "answer": "100",
+    "explain": "hundert = 100.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "1000 = ___",
+    "answer": "tausend",
+    "accept": [
+     "tausend"
+    ],
+    "explain": "tausend = 1000.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "zweihundert =",
+    "options": [
+     "200",
+     "20",
+     "2000"
+    ],
+    "answer": "200",
+    "explain": "zwei + hundert = 200.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cómo se escribe 350?",
+    "options": [
+     "dreihundertfünfzig",
+     "dreihundertfünf",
+     "dreißighundertfünf"
+    ],
+    "answer": "dreihundertfünfzig",
+    "explain": "drei + hundert + fünfzig.",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada número con su cifra.",
+    "pairs": [
+     {
+      "left": "hundert",
+      "right": "100"
+     },
+     {
+      "left": "zweihundert",
+      "right": "200"
+     },
+     {
+      "left": "tausend",
+      "right": "1000"
+     },
+     {
+      "left": "eine Million",
+      "right": "1 000 000"
+     }
+    ],
+    "answer": "hundert = 100 · zweihundert = 200 · tausend = 1000 · eine Million = 1 000 000",
+    "explain": "hundert = 100 · zweihundert = 200 · tausend = 1000 · eine Million = 1 000 000",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Das Auto kostet zwanzig___ Euro. (20 000)",
+    "answer": "tausend",
+    "accept": [
+     "tausend"
+    ],
+    "explain": "zwanzig + tausend = 20 000.",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Das»): «Esto cuesta trescientos euros».",
+    "answer": "Das kostet dreihundert Euro.",
+    "words": [
+     "kostet",
+     "Das",
+     "dreihundert",
+     "Euro."
+    ],
+    "explain": "«Das kostet dreihundert Euro.»",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "El año 1990 se dice…",
+    "options": [
+     "neunzehnhundertneunzig",
+     "neuntausendneunzig",
+     "neunzigneunzehnhundert"
+    ],
+    "answer": "neunzehnhundertneunzig",
+    "explain": "Los años del siglo XX se dicen en «cienes».",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "u45",
+  "title": "Su, nuestro, de ustedes: sein, ihr, unser, euer",
+  "nivel": 12,
+  "bloques": [
+   {
+    "p": "Ya conocés **mein** (mi) y **dein** (tu). Faltan los demás «mi / tu / su» de las otras personas:"
+   },
+   {
+    "tabla": [
+     [
+      "ich",
+      "mein",
+      "mi"
+     ],
+     [
+      "du",
+      "dein",
+      "tu (de vos)"
+     ],
+     [
+      "er / es",
+      "sein",
+      "su (de él)"
+     ],
+     [
+      "sie (ella)",
+      "ihr",
+      "su (de ella)"
+     ],
+     [
+      "wir",
+      "unser",
+      "nuestro"
+     ],
+     [
+      "ihr",
+      "euer",
+      "de ustedes"
+     ],
+     [
+      "sie (ellos)",
+      "ihr",
+      "su (de ellos)"
+     ],
+     [
+      "Sie (usted)",
+      "Ihr",
+      "su (de usted)"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Das ist sein Auto.",
+      "Este es su auto (de él)."
+     ],
+     [
+      "Das ist ihre Tasche.",
+      "Esta es su cartera (de ella)."
+     ],
+     [
+      "Unser Haus ist groß.",
+      "Nuestra casa es grande."
+     ],
+     [
+      "Wo ist eure Katze?",
+      "¿Dónde está la gata de ustedes?"
+     ]
+    ]
+   },
+   {
+    "nota": "Funcionan igual que **ein / eine**: con palabras «die» (femeninas) y con plurales se agrega **-e** («ihre Tasche», «unsere Kinder»). Y **euer** pierde una «e» al agregar la terminación: **eure** (no «euere»)."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Das ist ___ Auto. (de él)",
+    "options": [
+     "sein",
+     "seine",
+     "ihre"
+    ],
+    "answer": "sein",
+    "explain": "«das Auto» es neutro: «sein» sin terminación.",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "Das ist ___ Tasche. (de ella)",
+    "options": [
+     "ihre",
+     "ihr",
+     "seine"
+    ],
+    "answer": "ihre",
+    "explain": "«die Tasche» es femenina: «ihre».",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "___ Haus ist groß. (nuestro)",
+    "answer": "Unser",
+    "accept": [
+     "Unser"
+    ],
+    "explain": "«unser» = nuestro.",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "Wo ist ___ Katze? (la de ustedes)",
+    "answer": "eure",
+    "accept": [
+     "eure"
+    ],
+    "explain": "«die Katze» es femenina: «eure».",
+    "nivel": 12
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada posesivo con su significado.",
+    "pairs": [
+     {
+      "left": "mein",
+      "right": "mi"
+     },
+     {
+      "left": "dein",
+      "right": "tu (de vos)"
+     },
+     {
+      "left": "sein",
+      "right": "su (de él)"
+     },
+     {
+      "left": "ihr",
+      "right": "su (de ella)"
+     }
+    ],
+    "answer": "mein = mi · dein = tu (de vos) · sein = su (de él) · ihr = su (de ella)",
+    "explain": "mein = mi · dein = tu (de vos) · sein = su (de él) · ihr = su (de ella)",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "«Unsere Kinder» significa…",
+    "options": [
+     "Nuestros hijos",
+     "Sus hijos",
+     "Mis hijos"
+    ],
+    "answer": "Nuestros hijos",
+    "explain": "«unser» = nuestro.",
+    "nivel": 12
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Das»): «Esta es nuestra casa».",
+    "answer": "Das ist unser Haus.",
+    "words": [
+     "unser",
+     "Das",
+     "Haus.",
+     "ist"
+    ],
+    "explain": "«Das ist unser Haus.»",
+    "nivel": 12
+   }
+  ]
+ },
+ {
+  "id": "u46",
+  "title": "Ayer: war y hatte",
+  "nivel": 20,
+  "bloques": [
+   {
+    "p": "Para hablar del pasado con **sein** y **haben** no se usa el Perfekt: se usan formas propias, más cortas, que son muy comunes:"
+   },
+   {
+    "verbosRef": [
+     "v-sein",
+     "v-haben"
+    ],
+    "t": "preterito"
+   },
+   {
+    "ejemplos": [
+     [
+      "Gestern war ich müde.",
+      "Ayer estaba cansado."
+     ],
+     [
+      "Wo warst du?",
+      "¿Dónde estabas?"
+     ],
+     [
+      "Wir waren im Kino.",
+      "Estuvimos en el cine."
+     ],
+     [
+      "Ich hatte Hunger.",
+      "Tenía hambre."
+     ]
+    ]
+   },
+   {
+    "nota": "**war** y **hatte** son el pasado de **sein** y **haben**. Con los demás verbos, en la conversación de todos los días se usa el Perfekt (ya lo viste con «ich habe gemacht»)."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "fill",
+    "prompt": "Gestern ___ ich müde. (sein)",
+    "answer": "war",
+    "accept": [
+     "war"
+    ],
+    "explain": "Con «ich»: «war».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Wo ___ du gestern? (sein)",
+    "answer": "warst",
+    "accept": [
+     "warst"
+    ],
+    "explain": "Con «du»: «warst».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Gestern ___ wir im Kino. (sein)",
+    "answer": "waren",
+    "accept": [
+     "waren"
+    ],
+    "explain": "Con «wir»: «waren».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich ___ Hunger. (haben, ayer)",
+    "answer": "hatte",
+    "accept": [
+     "hatte"
+    ],
+    "explain": "Con «ich»: «hatte».",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "«Ich hatte Hunger» significa…",
+    "options": [
+     "Tenía hambre.",
+     "Tengo hambre.",
+     "Tendré hambre."
+    ],
+    "answer": "Tenía hambre.",
+    "explain": "«hatte» es el pasado de «haben».",
+    "nivel": 20
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada forma con su significado.",
+    "pairs": [
+     {
+      "left": "ich war",
+      "right": "yo estaba / estuve"
+     },
+     {
+      "left": "du warst",
+      "right": "vos estabas / estuviste"
+     },
+     {
+      "left": "wir waren",
+      "right": "nosotros estábamos / estuvimos"
+     },
+     {
+      "left": "ihr wart",
+      "right": "ustedes estaban / estuvieron"
+     }
+    ],
+    "answer": "ich war = yo estaba / estuve · du warst = vos estabas / estuviste · wir waren = nosotros estábamos / estuvimos · ihr wart = ustedes estaban / estuvieron",
+    "explain": "ich war = yo estaba / estuve · du warst = vos estabas / estuviste · wir waren = nosotros estábamos / estuvimos · ihr wart = ustedes estaban / estuvieron",
+    "nivel": 20
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Gestern»): «Ayer estuve en casa».",
+    "answer": "Gestern war ich zu Hause.",
+    "words": [
+     "zu",
+     "ich",
+     "Gestern",
+     "Hause.",
+     "war"
+    ],
+    "explain": "«Gestern war ich zu Hause.»",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "«War» es el pasado de…",
+    "options": [
+     "sein",
+     "haben",
+     "werden"
+    ],
+    "answer": "sein",
+    "explain": "ich bin → ich war.",
+    "nivel": 20
+   }
+  ]
+ },
+ {
+  "id": "u47",
+  "title": "Perfekt con sein",
+  "nivel": 22,
+  "bloques": [
+   {
+    "p": "Ya viste el Perfekt con **haben** («ich habe gemacht»). Pero los verbos que expresan **movimiento** o **cambio de lugar o de estado** usan **sein**:"
+   },
+   {
+    "tabla": [
+     [
+      "gehen",
+      "ist gegangen",
+      "ir"
+     ],
+     [
+      "kommen",
+      "ist gekommen",
+      "venir"
+     ],
+     [
+      "fahren",
+      "ist gefahren",
+      "ir en vehículo"
+     ],
+     [
+      "bleiben",
+      "ist geblieben",
+      "quedarse"
+     ],
+     [
+      "schwimmen",
+      "ist geschwommen",
+      "nadar"
+     ],
+     [
+      "fliegen",
+      "ist geflogen",
+      "volar"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich bin nach Hause gegangen.",
+      "Me fui a casa."
+     ],
+     [
+      "Er ist nach Berlin gefahren.",
+      "Él fue a Berlín."
+     ],
+     [
+      "Wir sind zu Hause geblieben.",
+      "Nos quedamos en casa."
+     ]
+    ]
+   },
+   {
+    "nota": "Una regla práctica: si el verbo dice **ir, venir, quedarse, volar, nadar, caerse o levantarse**, probablemente lleva **sein**. Todos los demás («machen, lernen, kaufen, essen…») llevan **haben**. Lo mejor es aprender cada verbo con su auxiliar."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "fill",
+    "prompt": "Ich ___ nach Hause gegangen. (sein)",
+    "answer": "bin",
+    "accept": [
+     "bin"
+    ],
+    "explain": "Con «ich»: «bin».",
+    "nivel": 22
+   },
+   {
+    "type": "fill",
+    "prompt": "Er ___ nach Berlin gefahren. (sein)",
+    "answer": "ist",
+    "accept": [
+     "ist"
+    ],
+    "explain": "Con «er»: «ist».",
+    "nivel": 22
+   },
+   {
+    "type": "fill",
+    "prompt": "Wir ___ zu Hause geblieben. (sein)",
+    "answer": "sind",
+    "accept": [
+     "sind"
+    ],
+    "explain": "Con «wir»: «sind».",
+    "nivel": 22
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cuál es correcta?",
+    "options": [
+     "Ich bin gekommen.",
+     "Ich habe gekommen.",
+     "Ich bin gekommt."
+    ],
+    "answer": "Ich bin gekommen.",
+    "explain": "«kommen» usa «sein»: «ich bin gekommen».",
+    "nivel": 22
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada verbo con su Perfekt.",
+    "pairs": [
+     {
+      "left": "gehen",
+      "right": "ist gegangen"
+     },
+     {
+      "left": "fahren",
+      "right": "ist gefahren"
+     },
+     {
+      "left": "bleiben",
+      "right": "ist geblieben"
+     },
+     {
+      "left": "schwimmen",
+      "right": "ist geschwommen"
+     }
+    ],
+    "answer": "gehen = ist gegangen · fahren = ist gefahren · bleiben = ist geblieben · schwimmen = ist geschwommen",
+    "explain": "gehen = ist gegangen · fahren = ist gefahren · bleiben = ist geblieben · schwimmen = ist geschwommen",
+    "nivel": 22
+   },
+   {
+    "type": "choice",
+    "prompt": "Con «machen» se usa…",
+    "options": [
+     "haben (ich habe gemacht)",
+     "sein (ich bin gemacht)",
+     "werden"
+    ],
+    "answer": "haben (ich habe gemacht)",
+    "explain": "«machen» no expresa movimiento: lleva «haben».",
+    "nivel": 22
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Fui a Berlín en tren».",
+    "answer": "Ich bin mit dem Zug nach Berlin gefahren.",
+    "words": [
+     "Berlin",
+     "bin",
+     "nach",
+     "dem",
+     "Zug",
+     "gefahren.",
+     "Ich",
+     "mit"
+    ],
+    "explain": "«gefahren» queda al final.",
+    "nivel": 22
+   }
+  ]
+ },
+ {
+  "id": "u48",
+  "title": "El futuro: werden",
+  "nivel": 20,
+  "bloques": [
+   {
+    "p": "Para decir lo que **vas a hacer** podés usar **werden** + el verbo en infinitivo **al final**:"
+   },
+   {
+    "verbosRef": [
+     "v-werden"
+    ],
+    "t": "presente"
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich werde morgen arbeiten.",
+      "Mañana voy a trabajar."
+     ],
+     [
+      "Er wird nach Wien fahren.",
+      "Él va a ir a Viena."
+     ],
+     [
+      "Wir werden Deutsch lernen.",
+      "Vamos a aprender alemán."
+     ]
+    ]
+   },
+   {
+    "nota": "En la vida real casi siempre se usa el **presente con una palabra de tiempo**: «Morgen **arbeite** ich» (mañana trabajo) suena más natural que «Ich werde morgen arbeiten». El futuro con **werden** se usa para promesas, predicciones y planes más lejanos."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "fill",
+    "prompt": "Ich ___ morgen kommen. (werden)",
+    "answer": "werde",
+    "accept": [
+     "werde"
+    ],
+    "explain": "Con «ich»: «werde».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Du ___ müde sein. (werden)",
+    "answer": "wirst",
+    "accept": [
+     "wirst"
+    ],
+    "explain": "Con «du»: «wirst».",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Er ___ nach Wien fahren. (werden)",
+    "answer": "wird",
+    "accept": [
+     "wird"
+    ],
+    "explain": "Con «er»: «wird».",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "«Wir werden lernen» significa…",
+    "options": [
+     "Vamos a aprender.",
+     "Aprendimos.",
+     "Aprendemos siempre."
+    ],
+    "answer": "Vamos a aprender.",
+    "explain": "«werden» + infinitivo = futuro.",
+    "nivel": 20
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Mañana voy a trabajar».",
+    "answer": "Ich werde morgen arbeiten.",
+    "words": [
+     "werde",
+     "arbeiten.",
+     "Ich",
+     "morgen"
+    ],
+    "explain": "El infinitivo «arbeiten» va al final.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "En alemán, para el futuro también se puede usar…",
+    "options": [
+     "el presente + una palabra de tiempo",
+     "solo el verbo werden",
+     "el Perfekt"
+    ],
+    "answer": "el presente + una palabra de tiempo",
+    "explain": "«Morgen komme ich» = mañana vengo.",
+    "nivel": 20
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada forma con su significado.",
+    "pairs": [
+     {
+      "left": "ich werde",
+      "right": "yo voy a"
+     },
+     {
+      "left": "du wirst",
+      "right": "vos vas a"
+     },
+     {
+      "left": "er wird",
+      "right": "él va a"
+     },
+     {
+      "left": "wir werden",
+      "right": "vamos a"
+     }
+    ],
+    "answer": "ich werde = yo voy a · du wirst = vos vas a · er wird = él va a · wir werden = vamos a",
+    "explain": "ich werde = yo voy a · du wirst = vos vas a · er wird = él va a · wir werden = vamos a",
+    "nivel": 20
+   }
+  ]
+ },
+ {
+  "id": "u49",
+  "title": "¿Dónde está? auf, unter, neben, vor, hinter",
+  "nivel": 20,
+  "bloques": [
+   {
+    "p": "Para decir **dónde está** algo respecto de otra cosa usás estas palabritas, seguidas del artículo en **dativo** (**dem** para «der» y «das», **der** para «die», **den** para plurales):"
+   },
+   {
+    "tabla": [
+     [
+      "auf",
+      "sobre",
+      "auf dem Tisch"
+     ],
+     [
+      "unter",
+      "debajo de",
+      "unter dem Tisch"
+     ],
+     [
+      "neben",
+      "al lado de",
+      "neben dem Sofa"
+     ],
+     [
+      "vor",
+      "delante de",
+      "vor dem Haus"
+     ],
+     [
+      "hinter",
+      "detrás de",
+      "hinter dem Haus"
+     ],
+     [
+      "in",
+      "en / dentro de",
+      "im Zimmer (in dem)"
+     ],
+     [
+      "an",
+      "contra / junto a",
+      "an der Wand"
+     ],
+     [
+      "zwischen",
+      "entre",
+      "zwischen den Stühlen"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Das Buch liegt auf dem Tisch.",
+      "El libro está sobre la mesa."
+     ],
+     [
+      "Die Katze sitzt unter dem Tisch.",
+      "La gata está debajo de la mesa."
+     ],
+     [
+      "Das Auto steht vor dem Haus.",
+      "El auto está delante de la casa."
+     ]
+    ]
+   },
+   {
+    "nota": "Para decir **dónde está** algo se usan **stehen** (de pie), **sitzen** (sentado) y **liegen** (acostado): los libros «liegen», los autos «stehen». Y **in + dem = im**, **an + dem = am**."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Das Buch liegt ___ dem Tisch. (sobre)",
+    "options": [
+     "auf",
+     "unter",
+     "neben"
+    ],
+    "answer": "auf",
+    "explain": "«auf» = sobre.",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "Die Katze sitzt ___ dem Tisch. (debajo)",
+    "options": [
+     "unter",
+     "auf",
+     "vor"
+    ],
+    "answer": "unter",
+    "explain": "«unter» = debajo de.",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Das Auto steht ___ dem Haus. (delante)",
+    "answer": "vor",
+    "accept": [
+     "vor"
+    ],
+    "explain": "«vor» = delante de.",
+    "nivel": 20
+   },
+   {
+    "type": "fill",
+    "prompt": "Die Lampe steht ___ dem Sofa. (al lado)",
+    "answer": "neben",
+    "accept": [
+     "neben"
+    ],
+    "explain": "«neben» = al lado de.",
+    "nivel": 20
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada preposición con su significado.",
+    "pairs": [
+     {
+      "left": "auf",
+      "right": "sobre"
+     },
+     {
+      "left": "unter",
+      "right": "debajo de"
+     },
+     {
+      "left": "neben",
+      "right": "al lado de"
+     },
+     {
+      "left": "hinter",
+      "right": "detrás de"
+     }
+    ],
+    "answer": "auf = sobre · unter = debajo de · neben = al lado de · hinter = detrás de",
+    "explain": "auf = sobre · unter = debajo de · neben = al lado de · hinter = detrás de",
+    "nivel": 20
+   },
+   {
+    "type": "choice",
+    "prompt": "Der Hund liegt ___ Bett. (en el)",
+    "options": [
+     "im",
+     "in",
+     "ins"
+    ],
+    "answer": "im",
+    "explain": "«in dem» = «im».",
+    "nivel": 20
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Der»): «El perro está debajo de la mesa».",
+    "answer": "Der Hund liegt unter dem Tisch.",
+    "words": [
+     "Der",
+     "Tisch.",
+     "Hund",
+     "liegt",
+     "dem",
+     "unter"
+    ],
+    "explain": "«Der Hund liegt unter dem Tisch.»",
+    "nivel": 20
+   }
+  ]
+ },
+ {
+  "id": "u50",
+  "title": "Hay: es gibt, y man",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Para decir que **hay** algo se usa **es gibt** (literalmente «ello da»), seguido de lo que hay en **acusativo**:"
+   },
+   {
+    "tabla": [
+     [
+      "Es gibt einen Park.",
+      "Hay un parque."
+     ],
+     [
+      "Es gibt eine Bank.",
+      "Hay un banco."
+     ],
+     [
+      "Es gibt ein Café.",
+      "Hay un café."
+     ],
+     [
+      "Gibt es hier ein Café?",
+      "¿Hay un café por acá?"
+     ]
+    ]
+   },
+   {
+    "p": "Y **man** es el «se / uno» impersonal del español: se usa para hablar de lo que se hace en general:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Man spricht hier Deutsch.",
+      "Acá se habla alemán."
+     ],
+     [
+      "Wie sagt man das auf Deutsch?",
+      "¿Cómo se dice eso en alemán?"
+     ],
+     [
+      "Hier darf man nicht rauchen.",
+      "Acá no se puede fumar."
+     ]
+    ]
+   },
+   {
+    "nota": "Con **es gibt** el artículo masculino cambia (**ein → einen**), porque lo que hay es el «objeto» de la frase. Los otros géneros quedan iguales. Y **man** siempre lleva el verbo como si fuera «er» («man spricht»)."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«Es gibt einen Park» significa…",
+    "options": [
+     "Hay un parque.",
+     "Él da un parque.",
+     "Es un parque."
+    ],
+    "answer": "Hay un parque.",
+    "explain": "«es gibt» = hay.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "Preguntás si hay un café cerca:",
+    "options": [
+     "Gibt es hier ein Café?",
+     "Ist es hier ein Café?",
+     "Gibt hier Café?"
+    ],
+    "answer": "Gibt es hier ein Café?",
+    "explain": "«Gibt es …?» = ¿Hay …?",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Wie sagt man das?» significa…",
+    "options": [
+     "¿Cómo se dice eso?",
+     "¿Quién dice eso?",
+     "¿Cuándo lo digo?"
+    ],
+    "answer": "¿Cómo se dice eso?",
+    "explain": "«man» = se.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "___ es hier ein Café? (hay)",
+    "answer": "Gibt",
+    "accept": [
+     "Gibt"
+    ],
+    "explain": "«Gibt es …?» = ¿Hay …?",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Man»): «Acá se habla alemán».",
+    "answer": "Man spricht hier Deutsch.",
+    "words": [
+     "spricht",
+     "hier",
+     "Deutsch.",
+     "Man"
+    ],
+    "explain": "«Man spricht hier Deutsch.»",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada expresión con su significado.",
+    "pairs": [
+     {
+      "left": "es gibt",
+      "right": "hay"
+     },
+     {
+      "left": "man",
+      "right": "se / uno"
+     },
+     {
+      "left": "Gibt es …?",
+      "right": "¿Hay …?"
+     },
+     {
+      "left": "Wie sagt man …?",
+      "right": "¿Cómo se dice …?"
+     }
+    ],
+    "answer": "es gibt = hay · man = se / uno · Gibt es …? = ¿Hay …? · Wie sagt man …? = ¿Cómo se dice …?",
+    "explain": "es gibt = hay · man = se / uno · Gibt es …? = ¿Hay …? · Wie sagt man …? = ¿Cómo se dice …?",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "Después de «es gibt», la cosa que hay va en…",
+    "options": [
+     "acusativo (einen Park)",
+     "dativo",
+     "nominativo"
+    ],
+    "answer": "acusativo (einen Park)",
+    "explain": "Es gibt + acusativo.",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "u51",
+  "title": "Pedir con cortesía: ich hätte gern, könnten Sie",
+  "nivel": 18,
+  "bloques": [
+   {
+    "p": "Para pedir algo con **buena educación** (en un negocio, con alguien que no conocés) se usan formas especiales. No hace falta entender la gramática: aprendelas como frases hechas."
+   },
+   {
+    "tabla": [
+     [
+      "Ich hätte gern …",
+      "Quisiera …",
+      "Ich hätte gern einen Kaffee."
+     ],
+     [
+      "Könnten Sie …?",
+      "¿Podría …?",
+      "Könnten Sie mir helfen?"
+     ],
+     [
+      "Würden Sie bitte …?",
+      "¿Sería tan amable de …?",
+      "Würden Sie bitte warten?"
+     ],
+     [
+      "Entschuldigen Sie, …",
+      "Disculpe, …",
+      "Entschuldigen Sie, wo ist der Bahnhof?"
+     ]
+    ]
+   },
+   {
+    "nota": "**hätte, könnten, würden** son las versiones corteses (condicional) de **haben, können, werden**. Comparalas: «Ich habe einen Kaffee» (tengo un café) contra «Ich **hätte** gern einen Kaffee» (quisiera un café). Con ellas nadie te va a escuchar mal."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "En una panadería pedís cortésmente:",
+    "options": [
+     "Ich hätte gern ein Brötchen.",
+     "Gib mir ein Brötchen!",
+     "Ich habe ein Brötchen."
+    ],
+    "answer": "Ich hätte gern ein Brötchen.",
+    "explain": "«Ich hätte gern …» = Quisiera …",
+    "nivel": 18
+   },
+   {
+    "type": "choice",
+    "prompt": "«Könnten Sie mir helfen?» significa…",
+    "options": [
+     "¿Podría ayudarme?",
+     "¿Puede ir?",
+     "¿Quiere comer?"
+    ],
+    "answer": "¿Podría ayudarme?",
+    "explain": "«helfen» = ayudar.",
+    "nivel": 18
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich ___ gern einen Kaffee. (quisiera)",
+    "answer": "hätte",
+    "accept": [
+     "hätte",
+     "haette"
+    ],
+    "explain": "«hätte» = quisiera (cortés).",
+    "estricto": true,
+    "nivel": 18
+   },
+   {
+    "type": "choice",
+    "prompt": "«Entschuldigen Sie» sirve para…",
+    "options": [
+     "llamar la atención con cortesía",
+     "despedirse",
+     "agradecer"
+    ],
+    "answer": "llamar la atención con cortesía",
+    "explain": "«Entschuldigen Sie» = Disculpe.",
+    "nivel": 18
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada frase con su significado.",
+    "pairs": [
+     {
+      "left": "Ich hätte gern …",
+      "right": "Quisiera …"
+     },
+     {
+      "left": "Könnten Sie …?",
+      "right": "¿Podría …?"
+     },
+     {
+      "left": "Würden Sie …?",
+      "right": "¿Sería tan amable de …?"
+     },
+     {
+      "left": "Entschuldigen Sie",
+      "right": "Disculpe"
+     }
+    ],
+    "answer": "Ich hätte gern … = Quisiera … · Könnten Sie …? = ¿Podría …? · Würden Sie …? = ¿Sería tan amable de …? · Entschuldigen Sie = Disculpe",
+    "explain": "Ich hätte gern … = Quisiera … · Könnten Sie …? = ¿Podría …? · Würden Sie …? = ¿Sería tan amable de …? · Entschuldigen Sie = Disculpe",
+    "nivel": 18
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Könnten»): «¿Podría ayudarme?»",
+    "answer": "Könnten Sie mir helfen?",
+    "words": [
+     "Könnten",
+     "Sie",
+     "helfen?",
+     "mir"
+    ],
+    "explain": "«Könnten Sie mir helfen?»",
+    "nivel": 18
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Qué suena más cortés?",
+    "options": [
+     "Könnten Sie das wiederholen?",
+     "Wiederhol das!",
+     "Du wiederholst das."
+    ],
+    "answer": "Könnten Sie das wiederholen?",
+    "explain": "«Könnten Sie …?» es lo más cortés.",
+    "nivel": 18
+   }
+  ]
+ },
+ {
+  "id": "u52",
+  "title": "De quién es: Annas Buch",
+  "nivel": 12,
+  "bloques": [
+   {
+    "p": "Para decir que algo **es de alguien** agregás una **-s** al nombre, sin apóstrofo, y la cosa va después:"
+   },
+   {
+    "tabla": [
+     [
+      "Annas Buch",
+      "el libro de Anna"
+     ],
+     [
+      "Toms Auto",
+      "el auto de Tom"
+     ],
+     [
+      "Lisas Katze",
+      "la gata de Lisa"
+     ],
+     [
+      "Thomas' Auto",
+      "el auto de Thomas (si termina en -s, solo apóstrofo)"
+     ]
+    ]
+   },
+   {
+    "ejemplos": [
+     [
+      "Das ist Annas Buch.",
+      "Este es el libro de Anna."
+     ],
+     [
+      "Tims Schwester heißt Lisa.",
+      "La hermana de Tim se llama Lisa."
+     ]
+    ]
+   },
+   {
+    "nota": "Para las cosas y las personas que no son nombres propios se usa **von** + dativo: «das Auto **von** meinem Vater» (el auto de mi papá), «das Haus **von** Max» (la casa de Max). En alemán **no se usa el apóstrofo**: «Annas», nunca «Anna's»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«Annas Hund» significa…",
+    "options": [
+     "el perro de Anna",
+     "Anna es un perro",
+     "Anna tiene perro"
+    ],
+    "answer": "el perro de Anna",
+    "explain": "Nombre + s = «de».",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "Das ist ___ Buch. (de Tom)",
+    "answer": "Toms",
+    "accept": [
+     "Toms"
+    ],
+    "explain": "Tom + s = Toms.",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cuál es correcta?",
+    "options": [
+     "Das ist Lisas Tasche.",
+     "Das ist Lisa Tasche.",
+     "Das ist Lisa's Tasche."
+    ],
+    "answer": "Das ist Lisas Tasche.",
+    "explain": "Sin apóstrofo: «Lisas».",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "Con nombres que terminan en -s se pone…",
+    "options": [
+     "solo un apóstrofo: Thomas' Auto",
+     "-ss",
+     "nada"
+    ],
+    "answer": "solo un apóstrofo: Thomas' Auto",
+    "explain": "Thomas' Auto: el apóstrofo reemplaza la -s.",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "Das ist das Auto ___ meinem Vater. (de)",
+    "answer": "von",
+    "accept": [
+     "von"
+    ],
+    "explain": "«von» + dativo = de.",
+    "nivel": 12
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Das»): «Este es el libro de Anna».",
+    "answer": "Das ist Annas Buch.",
+    "words": [
+     "Buch.",
+     "Das",
+     "ist",
+     "Annas"
+    ],
+    "explain": "«Das ist Annas Buch.»",
+    "nivel": 12
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada expresión con su significado.",
+    "pairs": [
+     {
+      "left": "Annas Buch",
+      "right": "el libro de Anna"
+     },
+     {
+      "left": "Toms Auto",
+      "right": "el auto de Tom"
+     },
+     {
+      "left": "Lisas Katze",
+      "right": "la gata de Lisa"
+     },
+     {
+      "left": "das Haus von Max",
+      "right": "la casa de Max"
+     }
+    ],
+    "answer": "Annas Buch = el libro de Anna · Toms Auto = el auto de Tom · Lisas Katze = la gata de Lisa · das Haus von Max = la casa de Max",
+    "explain": "Annas Buch = el libro de Anna · Toms Auto = el auto de Tom · Lisas Katze = la gata de Lisa · das Haus von Max = la casa de Max",
+    "nivel": 12
+   }
+  ]
+ },
+ {
+  "id": "s01",
+  "title": "En la panadería",
+  "nivel": 10,
+  "bloques": [
+   {
+    "p": "Ahora a practicar situaciones reales. Este es un diálogo típico en la **Bäckerei** (panadería). Leelo en voz alta:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Guten Morgen! Was darf es sein?",
+      "¡Buen día! ¿Qué le sirvo?"
+     ],
+     [
+      "Ich hätte gern zwei Brötchen, bitte.",
+      "Quisiera dos pancitos, por favor."
+     ],
+     [
+      "Sonst noch etwas?",
+      "¿Algo más?"
+     ],
+     [
+      "Nein, danke. Das ist alles.",
+      "No, gracias. Eso es todo."
+     ],
+     [
+      "Das macht zwei Euro.",
+      "Son dos euros."
+     ],
+     [
+      "Bitte schön. – Danke. Auf Wiedersehen!",
+      "Aquí tiene. – Gracias. ¡Hasta luego!"
+     ]
+    ]
+   },
+   {
+    "nota": "«Was darf es sein?» es lo que te pregunta quien atiende. «Das macht … Euro» significa «son … euros». Y «Das ist alles» (eso es todo) cierra la compra. «Bitte schön» se dice cuando te entregan algo."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Quien atiende te dice «Was darf es sein?». Te pregunta…",
+    "options": [
+     "¿Qué le sirvo?",
+     "¿Cuánto es?",
+     "¿Cómo se llama?"
+    ],
+    "answer": "¿Qué le sirvo?",
+    "explain": "«Was darf es sein?» = ¿Qué le sirvo?",
+    "nivel": 10
+   },
+   {
+    "type": "choice",
+    "prompt": "Querés dos pancitos. ¿Qué decís?",
+    "options": [
+     "Ich hätte gern zwei Brötchen, bitte.",
+     "Ich bin zwei Brötchen.",
+     "Wo sind zwei Brötchen?"
+    ],
+    "answer": "Ich hätte gern zwei Brötchen, bitte.",
+    "explain": "«Ich hätte gern …» = Quisiera …",
+    "nivel": 10
+   },
+   {
+    "type": "choice",
+    "prompt": "«Sonst noch etwas?» significa…",
+    "options": [
+     "¿Algo más?",
+     "¿Algo menos?",
+     "¿Quién es?"
+    ],
+    "answer": "¿Algo más?",
+    "explain": "«sonst noch etwas» = ¿algo más?",
+    "nivel": 10
+   },
+   {
+    "type": "fill",
+    "prompt": "Das ist ___. (eso es todo)",
+    "answer": "alles",
+    "accept": [
+     "alles"
+    ],
+    "explain": "«Das ist alles.»",
+    "nivel": 10
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada frase con su significado.",
+    "pairs": [
+     {
+      "left": "Was darf es sein?",
+      "right": "¿Qué le sirvo?"
+     },
+     {
+      "left": "Sonst noch etwas?",
+      "right": "¿Algo más?"
+     },
+     {
+      "left": "Das macht zwei Euro.",
+      "right": "Son dos euros."
+     },
+     {
+      "left": "Bitte schön.",
+      "right": "Aquí tiene."
+     }
+    ],
+    "answer": "Was darf es sein? = ¿Qué le sirvo? · Sonst noch etwas? = ¿Algo más? · Das macht zwei Euro. = Son dos euros. · Bitte schön. = Aquí tiene.",
+    "explain": "Was darf es sein? = ¿Qué le sirvo? · Sonst noch etwas? = ¿Algo más? · Das macht zwei Euro. = Son dos euros. · Bitte schön. = Aquí tiene.",
+    "nivel": 10
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Das»): «Son dos euros».",
+    "answer": "Das macht zwei Euro.",
+    "words": [
+     "macht",
+     "Das",
+     "zwei",
+     "Euro."
+    ],
+    "explain": "«Das macht zwei Euro.»",
+    "nivel": 10
+   },
+   {
+    "type": "choice",
+    "prompt": "Terminaste de comprar. ¿Qué decís?",
+    "options": [
+     "Nein, danke. Das ist alles.",
+     "Ja, bitte. Das ist alles.",
+     "Nein, ich bin alles."
+    ],
+    "answer": "Nein, danke. Das ist alles.",
+    "explain": "«Nein, danke. Das ist alles.»",
+    "nivel": 10
+   }
+  ]
+ },
+ {
+  "id": "s02",
+  "title": "En el restaurante",
+  "nivel": 12,
+  "bloques": [
+   {
+    "p": "Un almuerzo en un **Restaurant**. Estas frases te van a servir en cualquier mesa de Alemania, Austria o Suiza:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Einen Tisch für zwei Personen, bitte.",
+      "Una mesa para dos personas, por favor."
+     ],
+     [
+      "Die Speisekarte, bitte.",
+      "La carta, por favor."
+     ],
+     [
+      "Was möchten Sie trinken?",
+      "¿Qué desea tomar?"
+     ],
+     [
+      "Ich nehme ein Wasser und ein Schnitzel.",
+      "Voy a pedir un agua y una milanesa."
+     ],
+     [
+      "Guten Appetit!",
+      "¡Buen provecho!"
+     ],
+     [
+      "Die Rechnung, bitte. – Zusammen oder getrennt?",
+      "La cuenta, por favor. – ¿Juntos o por separado?"
+     ],
+     [
+      "Stimmt so.",
+      "Quédese con el vuelto."
+     ]
+    ]
+   },
+   {
+    "nota": "En los países de habla alemana **se paga en la mesa**, no en la caja: llamás al mozo y decís «Die Rechnung, bitte». El mozo suele preguntar «Zusammen oder getrennt?» (¿juntos o por separado?). La propina (**das Trinkgeld**) se deja redondeando la cuenta: «Stimmt so»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Pedís la cuenta:",
+    "options": [
+     "Die Rechnung, bitte.",
+     "Die Speisekarte, bitte.",
+     "Guten Appetit!"
+    ],
+    "answer": "Die Rechnung, bitte.",
+    "explain": "«Rechnung» = cuenta.",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "«Guten Appetit!» se dice…",
+    "options": [
+     "antes de comer",
+     "al pagar",
+     "al llegar"
+    ],
+    "answer": "antes de comer",
+    "explain": "«Guten Appetit!» = ¡buen provecho!",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "«Zusammen oder getrennt?» significa…",
+    "options": [
+     "¿Juntos o por separado?",
+     "¿Dónde o cuándo?",
+     "¿Té o café?"
+    ],
+    "answer": "¿Juntos o por separado?",
+    "explain": "Se pregunta al pagar.",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "Die ___, bitte. (la carta)",
+    "answer": "Speisekarte",
+    "accept": [
+     "Speisekarte"
+    ],
+    "explain": "«Speisekarte» = carta (menú).",
+    "nivel": 12
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich ___ ein Wasser. (nehmen)",
+    "answer": "nehme",
+    "accept": [
+     "nehme"
+    ],
+    "explain": "Con «ich»: «nehme».",
+    "nivel": 12
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada frase con su significado.",
+    "pairs": [
+     {
+      "left": "Die Rechnung",
+      "right": "la cuenta"
+     },
+     {
+      "left": "Die Speisekarte",
+      "right": "la carta"
+     },
+     {
+      "left": "Stimmt so.",
+      "right": "Quédese con el vuelto."
+     },
+     {
+      "left": "Guten Appetit!",
+      "right": "¡Buen provecho!"
+     }
+    ],
+    "answer": "Die Rechnung = la cuenta · Die Speisekarte = la carta · Stimmt so. = Quédese con el vuelto. · Guten Appetit! = ¡Buen provecho!",
+    "explain": "Die Rechnung = la cuenta · Die Speisekarte = la carta · Stimmt so. = Quédese con el vuelto. · Guten Appetit! = ¡Buen provecho!",
+    "nivel": 12
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Voy a pedir una milanesa».",
+    "answer": "Ich nehme ein Schnitzel.",
+    "words": [
+     "nehme",
+     "Schnitzel.",
+     "ein",
+     "Ich"
+    ],
+    "explain": "«Ich nehme ein Schnitzel.»",
+    "nivel": 12
+   },
+   {
+    "type": "choice",
+    "prompt": "Querés una mesa para dos:",
+    "options": [
+     "Einen Tisch für zwei Personen, bitte.",
+     "Ein Tisch zwei bitte.",
+     "Ich bin zwei Personen."
+    ],
+    "answer": "Einen Tisch für zwei Personen, bitte.",
+    "explain": "«für zwei Personen» = para dos personas.",
+    "nivel": 12
+   }
+  ]
+ },
+ {
+  "id": "s03",
+  "title": "En la estación de tren",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Tomar el tren es una de las mejores formas de recorrer Alemania. Estas frases te sacan de apuros en el **Bahnhof**:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Eine Fahrkarte nach Berlin, bitte.",
+      "Un pasaje a Berlín, por favor."
+     ],
+     [
+      "Einfach oder hin und zurück?",
+      "¿Ida o ida y vuelta?"
+     ],
+     [
+      "Hin und zurück, bitte.",
+      "Ida y vuelta, por favor."
+     ],
+     [
+      "Von welchem Gleis fährt der Zug?",
+      "¿De qué andén sale el tren?"
+     ],
+     [
+      "Der Zug fährt von Gleis fünf.",
+      "El tren sale del andén cinco."
+     ],
+     [
+      "Wann kommt der Zug an?",
+      "¿Cuándo llega el tren?"
+     ],
+     [
+      "Der Zug hat Verspätung.",
+      "El tren tiene retraso."
+     ]
+    ]
+   },
+   {
+    "nota": "«**Verspätung**» significa retraso y la vas a ver en los carteles de las estaciones. Y mirá el verbo: «Wann **kommt** der Zug **an**?» es el separable **ankommen**: la partícula «an» se va al final."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Pedís un pasaje de ida y vuelta:",
+    "options": [
+     "Hin und zurück, bitte.",
+     "Einfach, bitte.",
+     "Zug, bitte."
+    ],
+    "answer": "Hin und zurück, bitte.",
+    "explain": "«hin und zurück» = ida y vuelta.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Gleis» significa…",
+    "options": [
+     "andén",
+     "tren",
+     "boleto"
+    ],
+    "answer": "andén",
+    "explain": "«Gleis» = andén (o vía).",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Der Zug hat Verspätung» significa…",
+    "options": [
+     "El tren tiene retraso.",
+     "El tren llegó.",
+     "El tren es nuevo."
+    ],
+    "answer": "El tren tiene retraso.",
+    "explain": "«Verspätung» = retraso.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Eine ___ nach Berlin, bitte. (un pasaje)",
+    "answer": "Fahrkarte",
+    "accept": [
+     "Fahrkarte"
+    ],
+    "explain": "«Fahrkarte» = pasaje.",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado.",
+    "pairs": [
+     {
+      "left": "einfach",
+      "right": "ida (solo)"
+     },
+     {
+      "left": "hin und zurück",
+      "right": "ida y vuelta"
+     },
+     {
+      "left": "das Gleis",
+      "right": "el andén"
+     },
+     {
+      "left": "die Verspätung",
+      "right": "el retraso"
+     }
+    ],
+    "answer": "einfach = ida (solo) · hin und zurück = ida y vuelta · das Gleis = el andén · die Verspätung = el retraso",
+    "explain": "einfach = ida (solo) · hin und zurück = ida y vuelta · das Gleis = el andén · die Verspätung = el retraso",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Wann»): «¿Cuándo llega el tren?»",
+    "answer": "Wann kommt der Zug an?",
+    "words": [
+     "Zug",
+     "kommt",
+     "an?",
+     "der",
+     "Wann"
+    ],
+    "explain": "El separable «an» va al final.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cómo preguntás de qué andén sale el tren?",
+    "options": [
+     "Von welchem Gleis fährt der Zug?",
+     "Wie heißt der Zug?",
+     "Wer fährt den Zug?"
+    ],
+    "answer": "Von welchem Gleis fährt der Zug?",
+    "explain": "«Von welchem Gleis …?» = ¿De qué andén …?",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "s04",
+  "title": "En el hotel",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Llegaste a un **Hotel** de Viena, Berlín o Zúrich. Así es el diálogo típico en la recepción:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Guten Tag! Ich habe ein Zimmer reserviert.",
+      "¡Buenas tardes! Tengo una habitación reservada."
+     ],
+     [
+      "Wie ist Ihr Name, bitte?",
+      "¿Cuál es su nombre, por favor?"
+     ],
+     [
+      "Auf den Namen Lopez.",
+      "A nombre de López."
+     ],
+     [
+      "Für wie viele Nächte?",
+      "¿Por cuántas noches?"
+     ],
+     [
+      "Für drei Nächte.",
+      "Por tres noches."
+     ],
+     [
+      "Wo ist das Frühstück?",
+      "¿Dónde está el desayuno?"
+     ],
+     [
+      "Das Frühstück ist von sieben bis zehn Uhr.",
+      "El desayuno es de siete a diez."
+     ],
+     [
+      "Hier ist Ihr Schlüssel.",
+      "Acá tiene su llave."
+     ]
+    ]
+   },
+   {
+    "nota": "Si no tenés reserva, preguntás: **«Haben Sie ein Zimmer frei?»** (¿Tiene una habitación libre?). Y recordá que «von … bis …» significa «de … a …»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Llegás al hotel con reserva. Decís…",
+    "options": [
+     "Ich habe ein Zimmer reserviert.",
+     "Ich bin ein Zimmer.",
+     "Ich reserviere dich."
+    ],
+    "answer": "Ich habe ein Zimmer reserviert.",
+    "explain": "«reserviert» = reservada.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Für wie viele Nächte?» pregunta…",
+    "options": [
+     "¿Por cuántas noches?",
+     "¿Cuánto cuesta?",
+     "¿Cómo se llama?"
+    ],
+    "answer": "¿Por cuántas noches?",
+    "explain": "«Nächte» = noches.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Hier ist Ihr ___. (la llave)",
+    "answer": "Schlüssel",
+    "accept": [
+     "Schlüssel",
+     "Schluessel"
+    ],
+    "explain": "«Schlüssel» = llave.",
+    "estricto": true,
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cómo preguntás si hay una habitación libre?",
+    "options": [
+     "Haben Sie ein Zimmer frei?",
+     "Wo ist das Zimmer frei?",
+     "Ist das Zimmer Sie?"
+    ],
+    "answer": "Haben Sie ein Zimmer frei?",
+    "explain": "«frei» = libre.",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado.",
+    "pairs": [
+     {
+      "left": "das Zimmer",
+      "right": "la habitación"
+     },
+     {
+      "left": "die Nacht",
+      "right": "la noche"
+     },
+     {
+      "left": "der Schlüssel",
+      "right": "la llave"
+     },
+     {
+      "left": "das Frühstück",
+      "right": "el desayuno"
+     }
+    ],
+    "answer": "das Zimmer = la habitación · die Nacht = la noche · der Schlüssel = la llave · das Frühstück = el desayuno",
+    "explain": "das Zimmer = la habitación · die Nacht = la noche · der Schlüssel = la llave · das Frühstück = el desayuno",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Wo»): «¿Dónde está el desayuno?»",
+    "answer": "Wo ist das Frühstück?",
+    "words": [
+     "Frühstück?",
+     "ist",
+     "das",
+     "Wo"
+    ],
+    "explain": "«Wo ist das Frühstück?»",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«von sieben bis zehn Uhr» significa…",
+    "options": [
+     "de siete a diez",
+     "a las diecisiete",
+     "hace diez horas"
+    ],
+    "answer": "de siete a diez",
+    "explain": "«von … bis …» = de … a …",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "s05",
+  "title": "En la farmacia y con el médico",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Si te sentís mal de viaje, estas frases te ayudan en la **Apotheke** (farmacia) o con el **Arzt** (médico):"
+   },
+   {
+    "ejemplos": [
+     [
+      "Was fehlt Ihnen?",
+      "¿Qué le pasa?"
+     ],
+     [
+      "Ich habe Kopfschmerzen.",
+      "Tengo dolor de cabeza."
+     ],
+     [
+      "Ich habe Fieber.",
+      "Tengo fiebre."
+     ],
+     [
+      "Seit gestern.",
+      "Desde ayer."
+     ],
+     [
+      "Haben Sie Tabletten gegen Schmerzen?",
+      "¿Tiene pastillas para el dolor?"
+     ],
+     [
+      "Nehmen Sie zwei Tabletten pro Tag.",
+      "Tome dos pastillas por día."
+     ],
+     [
+      "Gute Besserung!",
+      "¡Que te mejores!"
+     ]
+    ]
+   },
+   {
+    "nota": "**«Gute Besserung!»** es lo que se le dice a alguien enfermo, igual que «¡Que te mejores!». Y **«seit»** significa «desde» (hace cuánto): «seit gestern» (desde ayer), «seit drei Tagen» (hace tres días)."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«Gute Besserung!» se le dice a alguien que…",
+    "options": [
+     "está enfermo",
+     "cumple años",
+     "se va de viaje"
+    ],
+    "answer": "está enfermo",
+    "explain": "«Gute Besserung» = ¡que te mejores!",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Was fehlt Ihnen?» pregunta…",
+    "options": [
+     "¿Qué le pasa?",
+     "¿Cómo se llama?",
+     "¿Dónde vive?"
+    ],
+    "answer": "¿Qué le pasa?",
+    "explain": "Es lo que pregunta el médico.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich habe ___. (fiebre)",
+    "answer": "Fieber",
+    "accept": [
+     "Fieber"
+    ],
+    "explain": "«Fieber» = fiebre.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Seit gestern» significa…",
+    "options": [
+     "desde ayer",
+     "hasta mañana",
+     "durante hoy"
+    ],
+    "answer": "desde ayer",
+    "explain": "«seit» = desde.",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada palabra con su significado.",
+    "pairs": [
+     {
+      "left": "Kopfschmerzen",
+      "right": "dolor de cabeza"
+     },
+     {
+      "left": "Fieber",
+      "right": "fiebre"
+     },
+     {
+      "left": "Tabletten",
+      "right": "pastillas"
+     },
+     {
+      "left": "Gute Besserung!",
+      "right": "¡Que te mejores!"
+     }
+    ],
+    "answer": "Kopfschmerzen = dolor de cabeza · Fieber = fiebre · Tabletten = pastillas · Gute Besserung! = ¡Que te mejores!",
+    "explain": "Kopfschmerzen = dolor de cabeza · Fieber = fiebre · Tabletten = pastillas · Gute Besserung! = ¡Que te mejores!",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Ich»): «Tengo fiebre desde ayer».",
+    "answer": "Ich habe seit gestern Fieber.",
+    "words": [
+     "seit",
+     "Fieber.",
+     "habe",
+     "gestern",
+     "Ich"
+    ],
+    "explain": "«Ich habe seit gestern Fieber.»",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "En la farmacia pedís algo para el dolor:",
+    "options": [
+     "Haben Sie Tabletten gegen Schmerzen?",
+     "Haben Sie Tabletten für mich Name?",
+     "Ich bin Tabletten."
+    ],
+    "answer": "Haben Sie Tabletten gegen Schmerzen?",
+    "explain": "«gegen» = contra / para.",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "s06",
+  "title": "Invitar a alguien",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Hacer planes con amigos es parte de aprender un idioma. Así invitás, aceptás y rechazás con buena onda:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Hast du Lust, ins Kino zu gehen?",
+      "¿Tenés ganas de ir al cine?"
+     ],
+     [
+      "Ja, gern! Das ist eine gute Idee!",
+      "¡Sí, con gusto! ¡Es una buena idea!"
+     ],
+     [
+      "Leider habe ich keine Zeit.",
+      "Lamentablemente no tengo tiempo."
+     ],
+     [
+      "Wann treffen wir uns?",
+      "¿Cuándo nos encontramos?"
+     ],
+     [
+      "Um sieben Uhr vor dem Kino.",
+      "A las siete delante del cine."
+     ],
+     [
+      "Kommst du mit?",
+      "¿Venís con nosotros?"
+     ],
+     [
+      "Bis dann!",
+      "¡Hasta luego!"
+     ]
+    ]
+   },
+   {
+    "nota": "«**Hast du Lust, … zu …?**» (¿Tenés ganas de …?) es una fórmula: la palabra «zu» va justo antes del verbo en infinitivo («ins Kino **zu gehen**»). Y para decir que no, «**leider**» (lamentablemente) suaviza la respuesta."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Invitás a alguien al cine:",
+    "options": [
+     "Hast du Lust, ins Kino zu gehen?",
+     "Hast du Kino?",
+     "Gehst du Lust?"
+    ],
+    "answer": "Hast du Lust, ins Kino zu gehen?",
+    "explain": "«Hast du Lust …?» = ¿Tenés ganas de …?",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "Aceptás con gusto:",
+    "options": [
+     "Ja, gern!",
+     "Leider nein.",
+     "Bis dann!"
+    ],
+    "answer": "Ja, gern!",
+    "explain": "«gern» = con gusto.",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Leider habe ich keine Zeit» significa…",
+    "options": [
+     "Lamentablemente no tengo tiempo.",
+     "Tengo mucho tiempo.",
+     "No tengo dinero."
+    ],
+    "answer": "Lamentablemente no tengo tiempo.",
+    "explain": "«leider» = lamentablemente.",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Wann ___ wir uns? (treffen)",
+    "answer": "treffen",
+    "accept": [
+     "treffen"
+    ],
+    "explain": "Con «wir»: «treffen».",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada frase con su significado.",
+    "pairs": [
+     {
+      "left": "Hast du Lust?",
+      "right": "¿Tenés ganas?"
+     },
+     {
+      "left": "Ja, gern!",
+      "right": "¡Sí, con gusto!"
+     },
+     {
+      "left": "Leider nicht.",
+      "right": "Lamentablemente no."
+     },
+     {
+      "left": "Bis dann!",
+      "right": "¡Hasta luego!"
+     }
+    ],
+    "answer": "Hast du Lust? = ¿Tenés ganas? · Ja, gern! = ¡Sí, con gusto! · Leider nicht. = Lamentablemente no. · Bis dann! = ¡Hasta luego!",
+    "explain": "Hast du Lust? = ¿Tenés ganas? · Ja, gern! = ¡Sí, con gusto! · Leider nicht. = Lamentablemente no. · Bis dann! = ¡Hasta luego!",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Wann»): «¿Cuándo nos encontramos?»",
+    "answer": "Wann treffen wir uns?",
+    "words": [
+     "uns?",
+     "treffen",
+     "wir",
+     "Wann"
+    ],
+    "explain": "«Wann treffen wir uns?»",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Das ist eine gute Idee» significa…",
+    "options": [
+     "Es una buena idea.",
+     "Es una mala idea.",
+     "No tengo ideas."
+    ],
+    "answer": "Es una buena idea.",
+    "explain": "«Idee» = idea.",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "s07",
+  "title": "Mi día",
+  "nivel": 14,
+  "bloques": [
+   {
+    "p": "Contar tu día es de lo primero que se practica en un idioma. Con **dann** (después, entonces) vas encadenando los pasos:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Ich stehe um sieben Uhr auf.",
+      "Me levanto a las siete."
+     ],
+     [
+      "Dann frühstücke ich.",
+      "Después desayuno."
+     ],
+     [
+      "Um acht gehe ich zur Arbeit.",
+      "A las ocho voy al trabajo."
+     ],
+     [
+      "Am Mittag esse ich Suppe.",
+      "Al mediodía como sopa."
+     ],
+     [
+      "Am Abend lese ich ein Buch.",
+      "A la noche leo un libro."
+     ],
+     [
+      "Um elf gehe ich ins Bett.",
+      "A las once me voy a dormir."
+     ]
+    ]
+   },
+   {
+    "nota": "Después de **dann** (o de «um acht», «am Abend») el verbo sigue en **segunda posición**: «Dann **frühstücke** ich». El sujeto pasa después del verbo. Y «**ins Bett gehen**» es «irse a la cama»."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "«Dann» significa…",
+    "options": [
+     "después / entonces",
+     "nunca",
+     "antes"
+    ],
+    "answer": "después / entonces",
+    "explain": "«dann» = después.",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Dann»): «Después desayuno».",
+    "answer": "Dann frühstücke ich.",
+    "words": [
+     "ich.",
+     "frühstücke",
+     "Dann"
+    ],
+    "explain": "«Dann frühstücke ich.»",
+    "nivel": 14
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich ___ um sieben Uhr auf. (aufstehen)",
+    "answer": "stehe",
+    "accept": [
+     "stehe"
+    ],
+    "explain": "Con «ich»: «stehe … auf».",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "«Um acht gehe ich zur Arbeit»: ¿cuándo?",
+    "options": [
+     "a las ocho",
+     "a los ocho",
+     "el ocho"
+    ],
+    "answer": "a las ocho",
+    "explain": "«um acht» = a las ocho.",
+    "nivel": 14
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada expresión con su significado.",
+    "pairs": [
+     {
+      "left": "aufstehen",
+      "right": "levantarse"
+     },
+     {
+      "left": "frühstücken",
+      "right": "desayunar"
+     },
+     {
+      "left": "zur Arbeit gehen",
+      "right": "ir al trabajo"
+     },
+     {
+      "left": "ins Bett gehen",
+      "right": "irse a dormir"
+     }
+    ],
+    "answer": "aufstehen = levantarse · frühstücken = desayunar · zur Arbeit gehen = ir al trabajo · ins Bett gehen = irse a dormir",
+    "explain": "aufstehen = levantarse · frühstücken = desayunar · zur Arbeit gehen = ir al trabajo · ins Bett gehen = irse a dormir",
+    "nivel": 14
+   },
+   {
+    "type": "choice",
+    "prompt": "¿Cuál es correcta?",
+    "options": [
+     "Dann esse ich Suppe.",
+     "Dann ich esse Suppe.",
+     "Dann Suppe esse ich."
+    ],
+    "answer": "Dann esse ich Suppe.",
+    "explain": "El verbo va en segunda posición.",
+    "nivel": 14
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Am»): «A la noche leo un libro».",
+    "answer": "Am Abend lese ich ein Buch.",
+    "words": [
+     "ich",
+     "Am",
+     "Buch.",
+     "lese",
+     "Abend",
+     "ein"
+    ],
+    "explain": "«Am Abend lese ich ein Buch.»",
+    "nivel": 14
+   }
+  ]
+ },
+ {
+  "id": "s08",
+  "title": "Hablar por teléfono",
+  "nivel": 16,
+  "bloques": [
+   {
+    "p": "El teléfono tiene sus propias frases hechas. Un llamado típico a una oficina:"
+   },
+   {
+    "ejemplos": [
+     [
+      "Hallo, hier ist Anna.",
+      "Hola, habla Anna."
+     ],
+     [
+      "Kann ich bitte mit Herrn Müller sprechen?",
+      "¿Puedo hablar con el señor Müller?"
+     ],
+     [
+      "Einen Moment, bitte.",
+      "Un momento, por favor."
+     ],
+     [
+      "Er ist leider nicht da.",
+      "Lamentablemente no está."
+     ],
+     [
+      "Kann ich eine Nachricht hinterlassen?",
+      "¿Puedo dejar un mensaje?"
+     ],
+     [
+      "Ich rufe später noch einmal an.",
+      "Llamo de nuevo más tarde."
+     ],
+     [
+      "Auf Wiederhören!",
+      "¡Hasta luego! (por teléfono)"
+     ]
+    ]
+   },
+   {
+    "nota": "Para presentarte decís **«Hier ist …»** («acá está…»), no «yo soy». Y por teléfono la despedida es **«Auf Wiederhören!»** (hasta volver a oírnos) en vez de «Auf Wiedersehen» (hasta volver a vernos). «Herr» es señor y «Frau» es señora."
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "prompt": "Llamás y te presentás:",
+    "options": [
+     "Hallo, hier ist Anna.",
+     "Hallo, Anna ist hier ich.",
+     "Anna hier hallo."
+    ],
+    "answer": "Hallo, hier ist Anna.",
+    "explain": "«Hier ist …» = habla …",
+    "nivel": 16
+   },
+   {
+    "type": "choice",
+    "prompt": "Por teléfono te despedís con…",
+    "options": [
+     "Auf Wiederhören!",
+     "Auf Wiedersehen!",
+     "Guten Appetit!"
+    ],
+    "answer": "Auf Wiederhören!",
+    "explain": "«hören» = oír.",
+    "nivel": 16
+   },
+   {
+    "type": "choice",
+    "prompt": "«Einen Moment, bitte» significa…",
+    "options": [
+     "Un momento, por favor.",
+     "Un mes, por favor.",
+     "Una vez más."
+    ],
+    "answer": "Un momento, por favor.",
+    "explain": "«Moment» = momento.",
+    "nivel": 16
+   },
+   {
+    "type": "fill",
+    "prompt": "Ich ___ später noch einmal an. (anrufen)",
+    "answer": "rufe",
+    "accept": [
+     "rufe"
+    ],
+    "explain": "Con «ich»: «rufe … an».",
+    "nivel": 16
+   },
+   {
+    "type": "match",
+    "prompt": "Unir cada frase con su significado.",
+    "pairs": [
+     {
+      "left": "Hier ist Anna.",
+      "right": "Habla Anna."
+     },
+     {
+      "left": "Einen Moment, bitte.",
+      "right": "Un momento, por favor."
+     },
+     {
+      "left": "Er ist nicht da.",
+      "right": "No está."
+     },
+     {
+      "left": "eine Nachricht",
+      "right": "un mensaje"
+     }
+    ],
+    "answer": "Hier ist Anna. = Habla Anna. · Einen Moment, bitte. = Un momento, por favor. · Er ist nicht da. = No está. · eine Nachricht = un mensaje",
+    "explain": "Hier ist Anna. = Habla Anna. · Einen Moment, bitte. = Un momento, por favor. · Er ist nicht da. = No está. · eine Nachricht = un mensaje",
+    "nivel": 16
+   },
+   {
+    "type": "order",
+    "prompt": "Ordená (empezá con «Kann»): «¿Puedo dejar un mensaje?»",
+    "answer": "Kann ich eine Nachricht hinterlassen?",
+    "words": [
+     "ich",
+     "hinterlassen?",
+     "eine",
+     "Nachricht",
+     "Kann"
+    ],
+    "explain": "«Kann ich eine Nachricht hinterlassen?»",
+    "nivel": 16
+   },
+   {
+    "type": "choice",
+    "prompt": "«Er ist leider nicht da» significa…",
+    "options": [
+     "Lamentablemente no está.",
+     "Él no es de acá.",
+     "Él da algo."
+    ],
+    "answer": "Lamentablemente no está.",
+    "explain": "«da sein» = estar (presente).",
+    "nivel": 16
+   }
+  ]
  }
 ];
