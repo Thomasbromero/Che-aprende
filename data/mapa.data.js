@@ -54,5 +54,6 @@ window.MAPA = {
     { nombre: "Glaciares", niveles: 6, fondo: "assets/mapa/zona-25.svg?v=2", decoraciones: [] },
     { nombre: "Tierra del Fuego", niveles: 6, fondo: "assets/mapa/zona-26.svg?v=2", decoraciones: [] },
     { nombre: "Antártida Argentina", niveles: 6, fondo: "assets/mapa/zona-27.svg?v=2", decoraciones: [] },
+    { nombre: "Buenos Aires de noche", niveles: 6, fondo: "assets/mapa/zona-28.svg?v=2", decoraciones: [] },
   ],
 };
